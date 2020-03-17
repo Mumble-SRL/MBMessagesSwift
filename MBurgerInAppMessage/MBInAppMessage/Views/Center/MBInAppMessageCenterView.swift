@@ -61,7 +61,7 @@ class MBInAppMessageCenterView: MBInAppMessageView {
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(closeButton)
-        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.buttonsBackgroundColor(forMessage: message)
+        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
         
         UIView.performWithoutAnimation {
             closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -140,7 +140,21 @@ class MBInAppMessageCenterView: MBInAppMessageView {
                 fatalError("Are allowed only a max of 2 buttons")
             }
             for (index, button) in buttons.enumerated() {
-                let button = MBInAppMessageViewStyle.button(forMessageButton: button, message: message, styleDelegate: styleDelegate, height: 44)
+                let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
+                var backgroundColor: UIColor! = UIColor.white
+                var textColor: UIColor! = UIColor.white
+                var borderColor: UIColor?
+                if index == 0 {
+                    backgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
+                        MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
+                    textColor = styleDelegate?.button1TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TextColor(forMessage: message)
+                } else {
+                    backgroundColor = styleDelegate?.button2BackgroundColor(forMessage: message) ??
+                        MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
+                    textColor = styleDelegate?.button2TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TextColor(forMessage: message)
+                    borderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: message)
+                }
+                let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, textColor: textColor, borderColor: borderColor, font: font, height: 44)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 addSubview(button)
                 NSLayoutConstraint.activate([

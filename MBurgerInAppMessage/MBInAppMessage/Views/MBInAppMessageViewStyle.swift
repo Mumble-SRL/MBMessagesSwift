@@ -36,7 +36,7 @@ internal class MBInAppMessageViewStyle {
         })
     }
     
-    static func buttonsBackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+    static func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.white
@@ -46,26 +46,7 @@ internal class MBInAppMessageViewStyle {
         })
     }
     
-    static internal func button(forMessageButton messageButton: MBInAppMessageButton,
-                                message: MBInAppMessage,
-                                styleDelegate: MBInAppMessageViewStyleDelegate?,
-                                height: CGFloat) -> UIButton {
-        let button = UIButton(type: .system)
-        
-        UIView.performWithoutAnimation {
-            button.setTitle(messageButton.title, for: .normal)
-            button.layoutIfNeeded()
-        }
-        
-        button.titleLabel?.font = styleDelegate?.buttonsTextFont(forMessage: message) ?? self.buttonsTextFont(forMessage: message)
-        button.backgroundColor = styleDelegate?.buttonsBackgroundColor(forMessage: message) ?? self.buttonsBackgroundColor(forMessage: message)
-        button.tintColor = styleDelegate?.buttonsTextColor(forMessage: message) ?? self.buttonsTextColor(forMessage: message)
-        button.layer.cornerRadius = height / 2
-
-        return button
-    }
-
-    static func buttonsTextColor(forMessage message: MBInAppMessage) -> UIColor {
+    static func button1TextColor(forMessage message: MBInAppMessage) -> UIColor {
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.black
@@ -75,6 +56,30 @@ internal class MBInAppMessageViewStyle {
         })
     }
     
+    static func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        return UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor.black
+            } else {
+                return UIColor.white
+            }
+        })
+    }
+    
+    static func button2TextColor(forMessage message: MBInAppMessage) -> UIColor {
+        return UIColor(dynamicProvider: { traitCollection in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor.white
+            } else {
+                return UIColor.black
+            }
+        })
+    }
+    
+    static func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {
+        button2TextColor(forMessage: message)
+    }
+
     static func titleFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .headline)
     }
@@ -85,6 +90,31 @@ internal class MBInAppMessageViewStyle {
     
     static func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .body)
+    }
+
+    static internal func button(forMessageButton messageButton: MBInAppMessageButton,
+                                backgroundColor: UIColor,
+                                textColor: UIColor,
+                                borderColor: UIColor? = nil,
+                                font: UIFont,
+                                height: CGFloat) -> UIButton {
+        let button = UIButton(type: .system)
+        
+        UIView.performWithoutAnimation {
+            button.setTitle(messageButton.title, for: .normal)
+            button.layoutIfNeeded()
+        }
+        
+        button.titleLabel?.font = font
+        button.backgroundColor = backgroundColor
+        button.tintColor = textColor
+        if let borderColor = borderColor {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = borderColor.cgColor
+        }
+        button.layer.cornerRadius = height / 2
+
+        return button
     }
 
 }
