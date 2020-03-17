@@ -23,7 +23,7 @@ class MBInAppMessage: NSObject {
     let buttons: [MBInAppMessageButton]?
     
     init(style: MBInAppMessageStyle!,
-         duration: TimeInterval = 3.0,
+         duration: TimeInterval = 5,
          title: String? = nil,
          body: String!,
          image: String? = nil,
@@ -41,7 +41,7 @@ class MBInAppMessage: NSObject {
     static func demoMessage(style: MBInAppMessageStyle) -> MBInAppMessage {
         let buttons = [
             MBInAppMessageButton(title: "Button1", link: "https://www.google.it"),
-            MBInAppMessageButton(title: "Button2", link: "https://www.mumble.com"),
+            MBInAppMessageButton(title: "Button2", link: "https://www.mumbleideas.com"),
         ]
         return MBInAppMessage(style: style,
                               title: "Demo title",

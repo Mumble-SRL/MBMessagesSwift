@@ -8,8 +8,75 @@
 
 import UIKit
 
+protocol MBInAppMessageViewDelegate: class {
+    func viewWillAppear(view: MBInAppMessageView)
+    func viewDidAppear(view: MBInAppMessageView)
+    func viewWillDisappear(view: MBInAppMessageView)
+    func viewDidDisappear(view: MBInAppMessageView)
+    func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton)
+}
+
+extension MBInAppMessageViewDelegate {
+    func viewWillAppear(view: MBInAppMessageView) {}
+    func viewDidAppear(view: MBInAppMessageView) {}
+    func viewWillDisappear(view: MBInAppMessageView) {}
+    func viewDidDisappear(view: MBInAppMessageView) {}
+}
+
+// MARK: - MBInAppMessageViewStyleDelegate
+
+protocol MBInAppMessageViewStyleDelegate: class {
+    func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle
+    func backgroundColor(forMessage message: MBInAppMessage) -> UIColor
+    func textColor(forMessage message: MBInAppMessage) -> UIColor
+    func buttonsBackgroundColor(forMessage message: MBInAppMessage) -> UIColor
+    func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor
+    func buttonsTextColor(forMessage message: MBInAppMessage) -> UIColor
+    func titleFont(forMessage message: MBInAppMessage) -> UIFont
+    func bodyFont(forMessage message: MBInAppMessage) -> UIFont
+    func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont
+}
+
+extension MBInAppMessageViewStyleDelegate {
+    func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle {
+        return MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
+    }
+    func backgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.backgroundColor(forMessage: message)
+    }
+    
+    func textColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.textColor(forMessage: message)
+    }
+    func buttonsBackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.buttonsBackgroundColor(forMessage: message)
+    }
+    func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor {
+        return buttonsBackgroundColor(forMessage: message)
+    }
+    func buttonsTextColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.buttonsTextColor(forMessage: message)
+    }
+    
+    func titleFont(forMessage message: MBInAppMessage) -> UIFont {
+        return MBInAppMessageViewStyle.titleFont(forMessage: message)
+    }
+    
+    func bodyFont(forMessage message: MBInAppMessage) -> UIFont {
+        return MBInAppMessageViewStyle.bodyFont(forMessage: message)
+    }
+    
+    func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont {
+        return MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
+    }
+}
+
+// MARK: - MBInAppMessageView
+
 class MBInAppMessageView: UIView {
     var message: MBInAppMessage!
+    weak var delegate: MBInAppMessageViewDelegate?
+    weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
     var contentView: UIView!
 
@@ -19,17 +86,21 @@ class MBInAppMessageView: UIView {
     var button1: UIButton?
     var button2: UIButton?
 
-    init(message: MBInAppMessage) {
+    init(message: MBInAppMessage,
+         delegate: MBInAppMessageViewDelegate? = nil, 
+         styleDelegate: MBInAppMessageViewStyleDelegate? = nil) {
         super.init(frame: .zero)
         self.message = message
-        configure(withMessage: message)
+        self.delegate = delegate
+        self.styleDelegate = styleDelegate
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(withMessage message: MBInAppMessage) {
+    func configure() {
         fatalError("Implement in subclasses")
     }
     
@@ -42,47 +113,27 @@ class MBInAppMessageView: UIView {
     }
     
     @objc func hide() {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
         performHide(duration: 0.3)
     }
     
     func performHide(duration: TimeInterval) {
         fatalError("Implement in subclasses")
     }
-    
-    static internal func button(forMessageButton messageButton: MBInAppMessageButton) -> UIButton {
-        let button = UIButton(type: .system)
         
-        UIView.performWithoutAnimation {
-            button.setTitle(messageButton.title, for: .normal)
-            button.layoutIfNeeded()
-        }
-        
-        button.layer.cornerRadius = 15
-        button.backgroundColor = UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.white
-            } else {
-                return UIColor.black
-            }
-        })
-        button.tintColor = UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.black
-            } else {
-                return UIColor.white
-            }
-        })
-        return button
-    }
-    
     @objc func buttonPressed(_ sender: UIButton) {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
         hide()
-        if sender == button1 {
-            print("call delegate button1")
-        } else if sender == button2 {
-            print("call delegate button2")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            guard let buttons = self.message.buttons else {
+                return
+            }
+            if sender == self.button1 {
+                self.delegate?.buttonPressed(view: self, button: buttons[0])
+                print("call delegate button1")
+            } else if sender == self.button2 {
+                self.delegate?.buttonPressed(view: self, button: buttons[1])
+                print("call delegate button2")
+            }
         }
     }
-
 }

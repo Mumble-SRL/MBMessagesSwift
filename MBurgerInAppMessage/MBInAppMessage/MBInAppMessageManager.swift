@@ -11,6 +11,8 @@ import UIKit
 
 class MBInAppMessageManager: NSObject {
     static func presentMessage(_ message: MBInAppMessage,
+                               delegate: MBInAppMessageViewDelegate? = nil,
+                               styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                                overViewController viewController: UIViewController) {
         var targetViewController = viewController
         if let navigationController = targetViewController.navigationController {
@@ -19,11 +21,20 @@ class MBInAppMessageManager: NSObject {
             targetViewController = tabBarController
         }
         if message.style == .bannerTop {
-            let banner = MBInAppMessageTopBanner(message: message)
+            let banner = MBInAppMessageTopBanner(message: message,
+                                                 delegate: delegate,
+                                                 styleDelegate: styleDelegate)
             banner.present(overViewController: targetViewController)
         } else if message.style == .bannerBottom {
-            let banner = MBInAppMessageBottomBanner(message: message)
+            let banner = MBInAppMessageBottomBanner(message: message,
+                                                    delegate: delegate,
+                                                    styleDelegate: styleDelegate)
             banner.present(overViewController: targetViewController)
+        } else if message.style == .center {
+            let centerView = MBInAppMessageCenterView(message: message,
+                                                      delegate: delegate,
+                                                      styleDelegate: styleDelegate)
+            centerView.present(overViewController: targetViewController)
         }
     }
 }

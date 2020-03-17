@@ -13,23 +13,42 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
     var bottomConstraintHidden: NSLayoutConstraint?
     var bottomConstraintNotHidden: NSLayoutConstraint?
     
-    override func configure(withMessage message: MBInAppMessage) {
+    override func configure() {
         layer.cornerRadius = 8
         clipsToBounds = true
         
         let padding: CGFloat = 10
         
-        let blurEffect = UIBlurEffect(style: .regular)
-        contentView = UIVisualEffectView(effect: blurEffect)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(contentView)
-        NSLayoutConstraint.activate([
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
+        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
+        if backgroundStyle == .translucent {
+            let blurEffect = UIBlurEffect(style: .regular)
+            contentView = UIVisualEffectView(effect: blurEffect)
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(contentView)
+            NSLayoutConstraint.activate([
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        } else {
+            contentView = UIView(frame: .zero)
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(contentView)
+            NSLayoutConstraint.activate([
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+            contentView.backgroundColor = UIColor.systemBackground
+            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
+                contentView.backgroundColor = backgroundColor
+            } else {
+                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: message)
+            }
+        }
+
         var targetView = contentView ?? self
         if let contentView = contentView as? UIVisualEffectView {
             targetView = contentView.contentView
@@ -49,7 +68,7 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
             gestureHandle.heightAnchor.constraint(equalToConstant: handleHeight),
         ])
         
-        let contentView = MBInAppMessageBannerContent(message: message)
+        let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(contentView)
         
@@ -95,10 +114,11 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
         
         bottomConstraintHidden.isActive = false
         bottomConstraintNotHidden.isActive = true
+        delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
             viewController.view.layoutIfNeeded()
         }, completion: { _ in
-            print("call delegate show")
+            self.delegate?.viewDidAppear(view: self)
         })
         
         if message.duration != -1 {
@@ -109,10 +129,11 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
     override func performHide(duration: TimeInterval) {
         bottomConstraintNotHidden?.isActive = false
         bottomConstraintHidden?.isActive = true
+        delegate?.viewWillDisappear(view: self)
         UIView.animate(withDuration: duration, animations: {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
-            print("call delegate hide")
+            self.delegate?.viewDidDisappear(view: self)
             self.removeFromSuperview()
         })
     }

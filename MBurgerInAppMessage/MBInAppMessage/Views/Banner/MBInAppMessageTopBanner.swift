@@ -16,27 +16,46 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
     var gestureHandle: UIView!
     var content: MBInAppMessageBannerContent!
     
-    override func configure(withMessage message: MBInAppMessage) {
+    override func configure() {
         layer.cornerRadius = 8
         clipsToBounds = true
                 
-        let blurEffect = UIBlurEffect(style: .regular)
-        contentView = UIVisualEffectView(effect: blurEffect)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(contentView)
-        NSLayoutConstraint.activate([
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
+        
+        if backgroundStyle == .translucent {
+            let blurEffect = UIBlurEffect(style: .regular)
+            contentView = UIVisualEffectView(effect: blurEffect)
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(contentView)
+            NSLayoutConstraint.activate([
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        } else {
+            contentView = UIView(frame: .zero)
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(contentView)
+            NSLayoutConstraint.activate([
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
+                contentView.backgroundColor = backgroundColor
+            } else {
+                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: message)
+            }
+        }
 
         var targetView = contentView ?? self
         if let contentView = contentView as? UIVisualEffectView {
             targetView = contentView.contentView
         }
 
-        let contentView = MBInAppMessageBannerContent(message: message)
+        let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(contentView)
         
@@ -97,10 +116,11 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
         
         topConstraintHidden.isActive = false
         topConstraintNotHidden.isActive = true
+        delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
             viewController.view.layoutIfNeeded()
         }, completion: { _ in
-            print("call delegate show")
+            self.delegate?.viewDidAppear(view: self)
         })
         
         if message.duration != -1 {
@@ -111,10 +131,11 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
     override func performHide(duration: TimeInterval) {
         topConstraintNotHidden?.isActive = false
         topConstraintHidden?.isActive = true
+        delegate?.viewWillDisappear(view: self)
         UIView.animate(withDuration: duration, animations: {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
-            print("call delegate hide")
+            self.delegate?.viewDidDisappear(view: self)
             self.removeFromSuperview()
         })
     }
