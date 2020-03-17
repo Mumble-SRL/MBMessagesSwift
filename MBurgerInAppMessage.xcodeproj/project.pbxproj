@@ -13,6 +13,13 @@
 		EC937C612420C8E2001B8AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC937C5F2420C8E2001B8AA1 /* Main.storyboard */; };
 		EC937C632420C8E4001B8AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC937C622420C8E4001B8AA1 /* Assets.xcassets */; };
 		EC937C662420C8E4001B8AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC937C642420C8E4001B8AA1 /* LaunchScreen.storyboard */; };
+		EC937C6E2420C9DD001B8AA1 /* MBInAppMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */; };
+		EC937C702420CB33001B8AA1 /* MBInAppMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */; };
+		EC937C722420CD3A001B8AA1 /* MBInAppMessageTopBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBanner.swift */; };
+		EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */; };
+		EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */; };
+		EC937C782420E001001B8AA1 /* MBInAppMessageBottomBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C772420E001001B8AA1 /* MBInAppMessageBottomBanner.swift */; };
+		ECEC51CE2420E33800A1A3EE /* MBInAppMessageBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		EC937C622420C8E4001B8AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC937C652420C8E4001B8AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC937C672420C8E4001B8AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessage.swift; sourceTree = "<group>"; };
+		EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageManager.swift; sourceTree = "<group>"; };
+		EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageTopBanner.swift; sourceTree = "<group>"; };
+		EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageView.swift; sourceTree = "<group>"; };
+		EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageImageLoader.swift; sourceTree = "<group>"; };
+		EC937C772420E001001B8AA1 /* MBInAppMessageBottomBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBottomBanner.swift; sourceTree = "<group>"; };
+		ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBannerContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +73,35 @@
 				EC937C592420C8E2001B8AA1 /* AppDelegate.swift */,
 				EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */,
 				EC937C5D2420C8E2001B8AA1 /* ViewController.swift */,
+				ECEC51CF2420E61B00A1A3EE /* MBInAppMessage */,
 				EC937C5F2420C8E2001B8AA1 /* Main.storyboard */,
 				EC937C622420C8E4001B8AA1 /* Assets.xcassets */,
 				EC937C642420C8E4001B8AA1 /* LaunchScreen.storyboard */,
 				EC937C672420C8E4001B8AA1 /* Info.plist */,
 			);
 			path = MBurgerInAppMessage;
+			sourceTree = "<group>";
+		};
+		EC937C792420E0A6001B8AA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */,
+				EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBanner.swift */,
+				EC937C772420E001001B8AA1 /* MBInAppMessageBottomBanner.swift */,
+				ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */,
+				EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECEC51CF2420E61B00A1A3EE /* MBInAppMessage */ = {
+			isa = PBXGroup;
+			children = (
+				EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */,
+				EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */,
+				EC937C792420E0A6001B8AA1 /* Views */,
+			);
+			path = MBInAppMessage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */,
+				EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */,
+				EC937C782420E001001B8AA1 /* MBInAppMessageBottomBanner.swift in Sources */,
 				EC937C5E2420C8E2001B8AA1 /* ViewController.swift in Sources */,
 				EC937C5A2420C8E2001B8AA1 /* AppDelegate.swift in Sources */,
+				ECEC51CE2420E33800A1A3EE /* MBInAppMessageBannerContent.swift in Sources */,
+				EC937C722420CD3A001B8AA1 /* MBInAppMessageTopBanner.swift in Sources */,
+				EC937C6E2420C9DD001B8AA1 /* MBInAppMessage.swift in Sources */,
+				EC937C702420CB33001B8AA1 /* MBInAppMessageManager.swift in Sources */,
 				EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,9 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        navigationItem.title = "In app messages"
     }
 
-
+    @IBAction func topBannerTapped() {
+        MBInAppMessageManager.presentMessage(MBInAppMessage.demoMessage(style: .bannerTop), overViewController: self)
+    }
+    
+    @IBAction func bottomBannerTapped() {
+        MBInAppMessageManager.presentMessage(MBInAppMessage.demoMessage(style: .bannerBottom), overViewController: self)
+    }
+    
+    @IBAction func centerTapped() {
+        MBInAppMessageManager.presentMessage(MBInAppMessage.demoMessage(style: .center), overViewController: self)
+    }
 }
 
