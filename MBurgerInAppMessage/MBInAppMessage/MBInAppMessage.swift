@@ -12,6 +12,7 @@ enum MBInAppMessageStyle {
     case bannerTop
     case bannerBottom
     case center
+    case fullscreenImage
 }
 
 class MBInAppMessage: NSObject {
@@ -20,6 +21,7 @@ class MBInAppMessage: NSObject {
     let title: String?
     let body: String!
     let image: String?
+    let backgroundImage: String?
     let buttons: [MBInAppMessageButton]?
     
     init(style: MBInAppMessageStyle!,
@@ -27,12 +29,14 @@ class MBInAppMessage: NSObject {
          title: String? = nil,
          body: String!,
          image: String? = nil,
+         backgroundImage: String? = nil,
          buttons: [MBInAppMessageButton]? = nil) {
         self.style = style
         self.duration = duration
         self.title = title
         self.body = body
         self.image = image
+        self.backgroundImage = backgroundImage
         self.buttons = buttons
     }
     
@@ -47,6 +51,7 @@ class MBInAppMessage: NSObject {
                               title: "Demo title",
                               body: "Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese",
                               image: "https://www.vegascreativesoftware.com/fileadmin/user_upload/products/vegas_post/1/vegas_image/vegas-image-luminence-key-a-int.jpg",
+                              //backgroundImage: "https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg",
                               buttons: buttons)
     }
     

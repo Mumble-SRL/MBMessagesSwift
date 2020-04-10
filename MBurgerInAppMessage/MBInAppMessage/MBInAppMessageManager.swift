@@ -35,6 +35,11 @@ class MBInAppMessageManager: NSObject {
                                                       delegate: delegate,
                                                       styleDelegate: styleDelegate)
             centerView.present(overViewController: targetViewController)
+        } else if message.style == .fullscreenImage {
+            let fullscreenImageview = MBInAppMessageFullscreenImageView(message: message,
+                                                                        delegate: delegate,
+                                                                        styleDelegate: styleDelegate)
+            fullscreenImageview.present(overViewController: targetViewController)
         }
     }
 }

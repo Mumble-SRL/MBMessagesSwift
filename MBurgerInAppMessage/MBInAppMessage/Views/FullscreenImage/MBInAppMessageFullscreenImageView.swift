@@ -1,85 +1,70 @@
 //
-//  MBInAppMessageCenterView.swift
+//  MBInAppMessageFullscreenImageView.swift
 //  MBurgerInAppMessage
 //
-//  Created by Lorenzo Oliveto on 17/03/2020.
+//  Created by Lorenzo Oliveto on 10/04/2020.
 //  Copyright © 2020 Lorenzo Oliveto. All rights reserved.
 //
 
 import UIKit
 
-class MBInAppMessageCenterView: MBInAppMessageView {
-
+class MBInAppMessageFullscreenImageView: MBInAppMessageView {
     var backgroundView: UIView?
     
     var bottomConstraintHidden: NSLayoutConstraint?
     var centerConstraintNotHidden: NSLayoutConstraint?
     
     var closeButton: UIButton!
-    
+
     override func configure() {
         layer.cornerRadius = 8
         clipsToBounds = true
-        
+        guard let messageImage = message.image else {
+            configure(image: nil)
+            return
+        }
+        MBInAppMessageImageLoader.loadImage(url: messageImage) { [weak self] image in
+            if let strongSelf = self {
+                strongSelf.configure(image: image)
+            }
+        }
+    }
+    
+    private func configure(image: UIImage?) {
         let padding: CGFloat = 20
-        
-        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
-        if backgroundStyle == .translucent {
-            let blurEffect = UIBlurEffect(style: .regular)
-            contentView = UIVisualEffectView(effect: blurEffect)
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
-            NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
-        } else {
-            contentView = UIView(frame: .zero)
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
-            NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
-            contentView.backgroundColor = UIColor.systemBackground
-            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
-                contentView.backgroundColor = backgroundColor
-            } else {
-                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: message)
-            }
-        }
 
-        var targetView = contentView ?? self
-        if let contentView = contentView as? UIVisualEffectView {
-            targetView = contentView.contentView
-        }
+        contentView = UIView(frame: .zero)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(contentView)
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        contentView.backgroundColor = UIColor.clear
         
-        if let backgroundImage = message.backgroundImage {
-            let backgroundImageView = UIImageView(frame: .zero)
-            backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-            backgroundImageView.contentMode = .scaleAspectFill
-            backgroundImageView.clipsToBounds = true
-            targetView.addSubview(backgroundImageView)
+        if let image = image {
+            let imageView = UIImageView(frame: .zero)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            contentView.addSubview(imageView)
+            let aspectRatio = image.size.width / image.size.height
             NSLayoutConstraint.activate([
-                backgroundImageView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
-                backgroundImageView.topAnchor.constraint(equalTo: targetView.topAnchor),
-                backgroundImageView.bottomAnchor.constraint(equalTo: targetView.bottomAnchor),
-                backgroundImageView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor)
+                imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+                imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: aspectRatio)
             ])
-            MBInAppMessageImageLoader.loadImage(url: backgroundImage) { (image) in
-                backgroundImageView.image = image
-            }
-            
-            self.backgroundImageView = backgroundImageView
+            imageView.image = image
+            self.imageView = imageView
         }
 
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        targetView.addSubview(closeButton)
+        contentView.addSubview(closeButton)
         closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
         
         UIView.performWithoutAnimation {
@@ -95,70 +80,12 @@ class MBInAppMessageCenterView: MBInAppMessageView {
         closeButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
         self.closeButton = closeButton
         
-        var lastVerticalView: UIView?
-        if let image = message.image {
-            let imageView = UIImageView(frame: .zero)
-            imageView.contentMode = .scaleAspectFill
-            imageView.clipsToBounds = true
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            targetView.addSubview(imageView)
-            MBInAppMessageImageLoader.loadImage(url: image) { (image) in
-                imageView.image = image
-            }
-            
-            NSLayoutConstraint.activate([
-                imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6),
-                imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-                imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
-            ])
-            lastVerticalView = imageView
-        }
-        
-        if let title = message.title {
-            let titleLabel = UILabel(frame: .zero)
-            titleLabel.translatesAutoresizingMaskIntoConstraints = false
-            titleLabel.lineBreakMode = .byWordWrapping
-            titleLabel.numberOfLines = 0
-            titleLabel.font = styleDelegate?.titleFont(forMessage: message) ?? MBInAppMessageViewStyle.titleFont(forMessage: message)
-            titleLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
-            titleLabel.text = title
-            titleLabel.textAlignment = .center
-            targetView.addSubview(titleLabel)
-
-            NSLayoutConstraint.activate([
-                titleLabel.leadingAnchor.constraint(equalTo: targetView.leadingAnchor, constant: padding),
-                titleLabel.trailingAnchor.constraint(equalTo: targetView.trailingAnchor, constant: -padding),
-                titleLabel.topAnchor.constraint(equalTo: lastVerticalView?.bottomAnchor ?? targetView.topAnchor, constant: padding)
-            ])
-
-            self.titleLabel = titleLabel
-            lastVerticalView = titleLabel
-        }
-        
-        let bodyLabel = UILabel(frame: .zero)
-        bodyLabel.translatesAutoresizingMaskIntoConstraints = false
-        bodyLabel.lineBreakMode = .byWordWrapping
-        bodyLabel.numberOfLines = 0
-        bodyLabel.font = styleDelegate?.bodyFont(forMessage: message) ?? MBInAppMessageViewStyle.bodyFont(forMessage: message)
-        bodyLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
-        bodyLabel.text = message.body
-        addSubview(bodyLabel)
-        
-        NSLayoutConstraint.activate([
-            bodyLabel.leadingAnchor.constraint(equalTo: targetView.leadingAnchor, constant: padding),
-            bodyLabel.trailingAnchor.constraint(equalTo: targetView.trailingAnchor, constant: -padding),
-            bodyLabel.topAnchor.constraint(equalTo: lastVerticalView?.bottomAnchor ?? targetView.topAnchor, constant: padding)
-        ])
-
-        self.bodyLabel = bodyLabel
-        lastVerticalView = bodyLabel
-
         if let buttons = message.buttons {
             if buttons.count > 2 {
                 fatalError("Are allowed only a max of 2 buttons")
             }
-            for (index, button) in buttons.enumerated() {
+            var lastButton: UIView?
+            for (index, button) in buttons.enumerated().reversed() {
                 let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
                 var backgroundColor: UIColor! = UIColor.white
                 var textColor: UIColor! = UIColor.white
@@ -175,12 +102,12 @@ class MBInAppMessageCenterView: MBInAppMessageView {
                 }
                 let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, textColor: textColor, borderColor: borderColor, font: font, height: 44)
                 button.translatesAutoresizingMaskIntoConstraints = false
-                addSubview(button)
+                contentView.addSubview(button)
                 NSLayoutConstraint.activate([
                     button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
                     button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
                     button.heightAnchor.constraint(equalToConstant: 44),
-                    button.topAnchor.constraint(equalTo: lastVerticalView?.bottomAnchor ?? bodyLabel.bottomAnchor, constant: index == 0 ? padding : 8)
+                    button.bottomAnchor.constraint(equalTo: lastButton?.topAnchor ?? contentView.bottomAnchor, constant: index != 0 ? -padding : -8)
                 ])
                 if index == 0 {
                     self.button1 = button
@@ -188,15 +115,8 @@ class MBInAppMessageCenterView: MBInAppMessageView {
                 if index == 1 {
                     self.button2 = button
                 }
-                lastVerticalView = button
+                lastButton = button
             }
-            
-        }
-
-        if let lastVerticalView = lastVerticalView {
-            lastVerticalView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding).isActive = true
-        } else {
-            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding).isActive = true
         }
         
         button1?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
@@ -277,4 +197,5 @@ class MBInAppMessageCenterView: MBInAppMessageView {
     @objc func closePressed() {
         hide()
     }
+
 }

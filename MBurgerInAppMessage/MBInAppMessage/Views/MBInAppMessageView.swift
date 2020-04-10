@@ -98,6 +98,7 @@ class MBInAppMessageView: UIView {
     
     var contentView: UIView!
 
+    var backgroundImageView: UIImageView?
     var imageView: UIImageView?
     var titleLabel: UILabel?
     var bodyLabel: UILabel!

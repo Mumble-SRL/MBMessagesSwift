@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8y-Xa-GfM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q8y-Xa-GfM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,34 +32,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVC-l0-80a">
-                                <rect key="frame" x="169" y="410" width="76" height="30"/>
+                                <rect key="frame" x="169" y="108" width="76" height="30"/>
                                 <state key="normal" title="Banner top"/>
                                 <connections>
                                     <action selector="topBannerTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7b-o1-09p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ev-hf-zV0">
-                                <rect key="frame" x="156" y="460" width="102" height="30"/>
+                                <rect key="frame" x="156" y="158" width="102" height="30"/>
                                 <state key="normal" title="Banner bottom"/>
                                 <connections>
                                     <action selector="bottomBannerTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="dUY-HK-fbo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97i-7h-Y8D">
-                                <rect key="frame" x="183.5" y="510" width="47" height="30"/>
+                                <rect key="frame" x="183.5" y="208" width="47" height="30"/>
                                 <state key="normal" title="Center"/>
                                 <connections>
                                     <action selector="centerTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="f7T-bj-4GM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6e1-qD-oa8">
+                                <rect key="frame" x="149" y="258" width="116" height="30"/>
+                                <state key="normal" title="Fullscreen image"/>
+                                <connections>
+                                    <action selector="fullscreenImageTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="QRe-iW-O4L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2ev-hf-zV0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0UF-OR-LLd"/>
                             <constraint firstItem="97i-7h-Y8D" firstAttribute="centerX" secondItem="2ev-hf-zV0" secondAttribute="centerX" id="3kt-Zn-kVP"/>
                             <constraint firstItem="PVC-l0-80a" firstAttribute="centerX" secondItem="2ev-hf-zV0" secondAttribute="centerX" id="Kwh-5P-TXd"/>
+                            <constraint firstItem="6e1-qD-oa8" firstAttribute="centerX" secondItem="97i-7h-Y8D" secondAttribute="centerX" id="OCc-lK-tP3"/>
+                            <constraint firstItem="PVC-l0-80a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QyH-5V-q7j"/>
                             <constraint firstItem="2ev-hf-zV0" firstAttribute="top" secondItem="PVC-l0-80a" secondAttribute="bottom" constant="20" id="Txc-p7-Of7"/>
                             <constraint firstItem="97i-7h-Y8D" firstAttribute="top" secondItem="2ev-hf-zV0" secondAttribute="bottom" constant="20" id="b62-k8-pfq"/>
+                            <constraint firstItem="6e1-qD-oa8" firstAttribute="top" secondItem="97i-7h-Y8D" secondAttribute="bottom" constant="20" id="cn1-id-XHc"/>
                             <constraint firstItem="2ev-hf-zV0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x2t-EM-QNN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

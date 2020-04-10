@@ -28,6 +28,10 @@ class ViewController: UIViewController {
     @IBAction func centerTapped() {
         MBInAppMessageManager.presentMessage(MBInAppMessage.demoMessage(style: .center), delegate: self, overViewController: self)
     }
+    
+    @IBAction func fullscreenImageTapped() {
+        MBInAppMessageManager.presentMessage(MBInAppMessage.demoMessage(style: .fullscreenImage), delegate: self, overViewController: self)
+    }
 }
 
 extension ViewController: MBInAppMessageViewDelegate {
