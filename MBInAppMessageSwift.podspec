@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-
+  s.frameworks = "SafariServices"
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
@@ -121,6 +121,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency 'MBurgerSwift'
+  s.dependency "MBurgerSwift"
 
 end

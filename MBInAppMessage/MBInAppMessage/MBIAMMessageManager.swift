@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SafariServices
 
 public class MBIAMMessageManager: NSObject {
     static func presentMessage(_ message: MBIAMMessage,
@@ -20,6 +21,7 @@ public class MBIAMMessageManager: NSObject {
         } else if let tabBarController = viewController.tabBarController {
             targetViewController = tabBarController
         }
+        let delegate = delegate ?? linkOpenerMessageViewDelegate(viewController: viewController)
         if message.style == .bannerTop {
             let banner = MBIAMMessageTopBannerView(message: message,
                                                    delegate: delegate,
@@ -40,6 +42,25 @@ public class MBIAMMessageManager: NSObject {
                                                                       delegate: delegate,
                                                                       styleDelegate: styleDelegate)
             fullscreenImageview.present(overViewController: targetViewController)
+        }
+    }
+}
+
+internal class linkOpenerMessageViewDelegate: MBIAMMessageViewDelegate {
+    weak var viewController: UIViewController?
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    func buttonPressed(view: MBIAMMessageView, button: MBIAMMessageButton) {
+        if button.link.hasPrefix("http") {
+            if let viewController = viewController {
+                if let link = button.link, let url = URL(string: link) {
+                    let safariViewController = SFSafariViewController(url: url)
+                    viewController.present(safariViewController, animated: true, completion: nil)
+                }
+            }
         }
     }
 }
