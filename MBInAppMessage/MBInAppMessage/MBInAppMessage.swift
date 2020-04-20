@@ -13,7 +13,7 @@ public class MBInAppMessage: NSObject, MBPluginProtocol {
     weak var delegate: MBIAMMessageViewDelegate?
     weak var styleDelegate: MBIAMMessageViewStyleDelegate?
 
-    override init() {
+    override public init() {
         super.init()
         checkMessages()
         NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
