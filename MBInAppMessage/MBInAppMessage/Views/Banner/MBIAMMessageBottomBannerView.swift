@@ -1,5 +1,5 @@
 //
-//  MBTopBanner.swift
+//  MBIAMessageBottomBannerView.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 17/03/2020.
@@ -8,20 +8,18 @@
 
 import UIKit
 
-class MBIAMMessageTopBannerView: MBIAMMessageView {
+class MBIAMMessageBottomBannerView: MBIAMMessageView {
     
-    var topConstraintHidden: NSLayoutConstraint?
-    var topConstraintNotHidden: NSLayoutConstraint?
-
-    var gestureHandle: UIView!
-    var content: MBInAppMessageBannerContent!
+    var bottomConstraintHidden: NSLayoutConstraint?
+    var bottomConstraintNotHidden: NSLayoutConstraint?
     
     override func configure() {
         layer.cornerRadius = 8
         clipsToBounds = true
-                
-        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBIAMMessageViewStyle.backgroundStyle(forMessage: message)
         
+        let padding: CGFloat = 10
+        
+        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBIAMMessageViewStyle.backgroundStyle(forMessage: message)
         if backgroundStyle == .translucent {
             let blurEffect = UIBlurEffect(style: .regular)
             contentView = UIVisualEffectView(effect: blurEffect)
@@ -43,6 +41,11 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
                 contentView.topAnchor.constraint(equalTo: topAnchor),
                 contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+            if #available(iOS 13.0, *) {
+                contentView.backgroundColor = UIColor.systemBackground
+            } else {
+                contentView.backgroundColor = UIColor.white
+            }
             if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
                 contentView.backgroundColor = backgroundColor
             } else {
@@ -54,26 +57,7 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
         if let contentView = contentView as? UIVisualEffectView {
             targetView = contentView.contentView
         }
-
-        let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        targetView.addSubview(contentView)
         
-        self.imageView = contentView.imageView
-        self.titleLabel = contentView.titleLabel
-        self.bodyLabel = contentView.bodyLabel
-        self.button1 = contentView.button1
-        self.button2 = contentView.button2
-        
-        button1?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-        button2?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-
-        NSLayoutConstraint.activate([
-            contentView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 0),
-        ])
-
         let handleHeight: CGFloat = 5
         let gestureHandle = UIView(frame: .zero)
         gestureHandle.translatesAutoresizingMaskIntoConstraints = false
@@ -87,12 +71,30 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
         
         NSLayoutConstraint.activate([
             gestureHandle.centerXAnchor.constraint(equalTo: targetView.centerXAnchor),
-            gestureHandle.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
+            gestureHandle.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 10),
             gestureHandle.widthAnchor.constraint(equalToConstant: 80),
             gestureHandle.heightAnchor.constraint(equalToConstant: handleHeight),
-            gestureHandle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
-        self.gestureHandle = gestureHandle
+        
+        let contentView = MBIAMMessageBannerContent(message: message, styleDelegate: styleDelegate)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        targetView.addSubview(contentView)
+        
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: gestureHandle.bottomAnchor, constant: 10),
+            contentView.bottomAnchor.constraint(equalTo: targetView.bottomAnchor, constant: -padding)
+        ])
+        
+        self.imageView = contentView.imageView
+        self.titleLabel = contentView.titleLabel
+        self.bodyLabel = contentView.bodyLabel
+        self.button1 = contentView.button1
+        self.button2 = contentView.button2
+        
+        button1?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        button2?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         
         let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(handleDismiss(_:)))
         panGesture.delegate = self
@@ -103,28 +105,28 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
         viewController.view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         
-        let topConstraintHidden = self.bottomAnchor.constraint(equalTo: viewController.view.topAnchor)
-        var topConstraintNotHidden: NSLayoutConstraint!
+        let bottomConstraintHidden = self.topAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+        var bottomConstraintNotHidden: NSLayoutConstraint!
         if #available(iOS 11.0, *) {
-            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor, constant: 8)
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
         } else {
-            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.topAnchor, constant: 8)
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor, constant: -8)
         }
-
-        self.topConstraintHidden = topConstraintHidden
-        self.topConstraintNotHidden = topConstraintNotHidden
-
+        
+        self.bottomConstraintHidden = bottomConstraintHidden
+        self.bottomConstraintNotHidden = bottomConstraintNotHidden
+        
         NSLayoutConstraint.activate([
             leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 8),
             trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: -8),
-            topConstraintHidden,
+            bottomConstraintHidden,
             heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
-                
+        
         viewController.view.layoutIfNeeded()
         
-        topConstraintHidden.isActive = false
-        topConstraintNotHidden.isActive = true
+        bottomConstraintHidden.isActive = false
+        bottomConstraintNotHidden.isActive = true
         delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
             viewController.view.layoutIfNeeded()
@@ -138,8 +140,8 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
     }
     
     override func performHide(duration: TimeInterval) {
-        topConstraintNotHidden?.isActive = false
-        topConstraintHidden?.isActive = true
+        bottomConstraintNotHidden?.isActive = false
+        bottomConstraintHidden?.isActive = true
         delegate?.viewWillDisappear(view: self)
         UIView.animate(withDuration: duration, animations: {
             self.superview?.layoutIfNeeded()
@@ -149,10 +151,8 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
         })
     }
     
-    
-    
     // MARK: - Gesture
-    
+
     var initialTouchPoint: CGPoint = CGPoint.zero
     
     @objc func handleDismiss(_ gesture: UIPanGestureRecognizer) {
@@ -166,18 +166,18 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
             initialTouchPoint = touchPoint
         case .changed:
-            topConstraintNotHidden?.constant = min(8 - (initialTouchPoint.y - touchPoint.y), 8)
-            self.superview?.layoutIfNeeded()
+            bottomConstraintNotHidden?.constant = max(touchPoint.y - initialTouchPoint.y, -8)
+            self.layoutIfNeeded()
         case .ended, .cancelled:
-            if initialTouchPoint.y - touchPoint.y > 30 {
+            if touchPoint.y - initialTouchPoint.y > 30 {
                 let height = self.frame.height + 8
-                let remainingHeight = height - (initialTouchPoint.y - touchPoint.y)
+                let remainingHeight = height - (touchPoint.y - initialTouchPoint.y)
                 let perc = remainingHeight / height
                 hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)))
             } else {
-                topConstraintNotHidden?.constant = 8
+                bottomConstraintNotHidden?.constant = -8
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.superview?.layoutIfNeeded()
+                    self.layoutIfNeeded()
                 }, completion: { _ in
                     if self.message.duration != -1 {
                         self.perform(#selector(self.hide), with: nil, afterDelay: self.message
@@ -191,16 +191,14 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
             break
         }
     }
-
 }
 
-extension MBIAMMessageTopBannerView: UIGestureRecognizerDelegate {
+extension MBIAMMessageBottomBannerView: UIGestureRecognizerDelegate {
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
-        guard let topConstraintNotHidden = topConstraintNotHidden else {
+        guard let constraintNotHidden = bottomConstraintNotHidden else {
             return false
         }
-        return topConstraintNotHidden.isActive
+        return constraintNotHidden.isActive
     }
-    
 }

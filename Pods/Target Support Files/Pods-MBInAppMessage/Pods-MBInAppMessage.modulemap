@@ -1,0 +1,6 @@
+framework module Pods_MBInAppMessage {
+  umbrella header "Pods-MBInAppMessage-umbrella.h"
+
+  export *
+  module * { export * }
+}

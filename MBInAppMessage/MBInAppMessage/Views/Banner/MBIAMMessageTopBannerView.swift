@@ -1,5 +1,5 @@
 //
-//  MBTopBanner.swift
+//  MBIAMMessageTopBannerView.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 17/03/2020.
@@ -14,7 +14,7 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
     var topConstraintNotHidden: NSLayoutConstraint?
 
     var gestureHandle: UIView!
-    var content: MBInAppMessageBannerContent!
+    var content: MBIAMMessageBannerContent!
     
     override func configure() {
         layer.cornerRadius = 8
@@ -55,7 +55,7 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
             targetView = contentView.contentView
         }
 
-        let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
+        let contentView = MBIAMMessageBannerContent(message: message, styleDelegate: styleDelegate)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(contentView)
         
