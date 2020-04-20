@@ -25,7 +25,8 @@ public class MBIAMMessageManager: NSObject {
         }
         var delegate = delegate
         if delegate == nil {
-            delegate = LinkOpenerMessageViewDelegate(viewController: viewController)
+            self.linkOpenerMessageViewDelegate = LinkOpenerMessageViewDelegate(viewController: viewController)
+            delegate = self.linkOpenerMessageViewDelegate
         }
         if message.style == .bannerTop {
             let banner = MBIAMMessageTopBannerView(message: message,
