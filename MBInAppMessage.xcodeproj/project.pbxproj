@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageViewStyle.swift; sourceTree = "<group>"; };
 		EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageFullscreenImageView.swift; sourceTree = "<group>"; };
-		EC937C562420C8E2001B8AA1 /* MBurgerInAppMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBurgerInAppMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBInAppMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC937C592420C8E2001B8AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC937C5D2420C8E2001B8AA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		EC937C4D2420C8E2001B8AA1 = {
 			isa = PBXGroup;
 			children = (
-				EC937C582420C8E2001B8AA1 /* MBurgerInAppMessage */,
+				EC937C582420C8E2001B8AA1 /* MBInAppMessage */,
 				EC937C572420C8E2001B8AA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,12 +84,12 @@
 		EC937C572420C8E2001B8AA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC937C562420C8E2001B8AA1 /* MBurgerInAppMessage.app */,
+				EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC937C582420C8E2001B8AA1 /* MBurgerInAppMessage */ = {
+		EC937C582420C8E2001B8AA1 /* MBInAppMessage */ = {
 			isa = PBXGroup;
 			children = (
 				EC937C592420C8E2001B8AA1 /* AppDelegate.swift */,
@@ -101,7 +101,7 @@
 				EC937C642420C8E4001B8AA1 /* LaunchScreen.storyboard */,
 				EC937C672420C8E4001B8AA1 /* Info.plist */,
 			);
-			path = MBurgerInAppMessage;
+			path = MBInAppMessage;
 			sourceTree = "<group>";
 		};
 		EC937C792420E0A6001B8AA1 /* Views */ = {
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC937C552420C8E2001B8AA1 /* MBurgerInAppMessage */ = {
+		EC937C552420C8E2001B8AA1 /* MBInAppMessage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBurgerInAppMessage" */;
+			buildConfigurationList = EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBInAppMessage" */;
 			buildPhases = (
 				EC937C522420C8E2001B8AA1 /* Sources */,
 				EC937C532420C8E2001B8AA1 /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = MBurgerInAppMessage;
+			name = MBInAppMessage;
 			productName = MBurgerInAppMessage;
-			productReference = EC937C562420C8E2001B8AA1 /* MBurgerInAppMessage.app */;
+			productReference = EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBurgerInAppMessage" */;
+			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBInAppMessage" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC937C552420C8E2001B8AA1 /* MBurgerInAppMessage */,
+				EC937C552420C8E2001B8AA1 /* MBInAppMessage */,
 			);
 		};
 /* End PBXProject section */
@@ -399,7 +399,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBurgerInAppMessage" */ = {
+		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBInAppMessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC937C682420C8E4001B8AA1 /* Debug */,
@@ -408,7 +408,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBurgerInAppMessage" */ = {
+		EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBInAppMessage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC937C6B2420C8E4001B8AA1 /* Debug */,
