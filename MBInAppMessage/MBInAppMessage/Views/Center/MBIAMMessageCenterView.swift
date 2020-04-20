@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBIAMMessageCenterView: MBIAMMessageView {
+public class MBIAMMessageCenterView: MBIAMMessageView {
 
     var backgroundView: UIView?
     

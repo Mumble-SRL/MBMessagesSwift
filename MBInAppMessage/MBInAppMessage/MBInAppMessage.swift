@@ -9,7 +9,7 @@
 import UIKit
 import MBurgerSwift
 
-class MBInAppMessage: NSObject, MBPluginProtocol {
+public class MBInAppMessage: NSObject, MBPluginProtocol {
     weak var delegate: MBIAMMessageViewDelegate?
     weak var styleDelegate: MBIAMMessageViewStyleDelegate?
 
@@ -19,7 +19,7 @@ class MBInAppMessage: NSObject, MBPluginProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    @objc internal func checkMessages() {
+    @objc public func checkMessages() {
         //TODO: call api
         print("Call in app messages api")
     }

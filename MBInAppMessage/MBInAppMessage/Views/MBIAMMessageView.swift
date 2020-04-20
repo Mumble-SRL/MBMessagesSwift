@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MBIAMMessageViewDelegate: class {
+public protocol MBIAMMessageViewDelegate: class {
     func viewWillAppear(view: MBIAMMessageView)
     func viewDidAppear(view: MBIAMMessageView)
     func viewWillDisappear(view: MBIAMMessageView)
@@ -17,7 +17,7 @@ protocol MBIAMMessageViewDelegate: class {
 }
 
 //TODO: call it when view appears/disappears
-extension MBIAMMessageViewDelegate {
+public extension MBIAMMessageViewDelegate {
     func viewWillAppear(view: MBIAMMessageView) {}
     func viewDidAppear(view: MBIAMMessageView) {}
     func viewWillDisappear(view: MBIAMMessageView) {}
@@ -26,7 +26,7 @@ extension MBIAMMessageViewDelegate {
 
 // MARK: - MBInAppMessageViewStyleDelegate
 
-protocol MBIAMMessageViewStyleDelegate: class {
+public protocol MBIAMMessageViewStyleDelegate: class {
     func backgroundStyle(forMessage message: MBIAMMessage) -> MBIAMMessageViewBackgroundStyle
     func backgroundColor(forMessage message: MBIAMMessage) -> UIColor
     func titleColor(forMessage message: MBIAMMessage) -> UIColor
@@ -42,7 +42,7 @@ protocol MBIAMMessageViewStyleDelegate: class {
     func buttonsTextFont(forMessage message: MBIAMMessage) -> UIFont
 }
 
-extension MBIAMMessageViewStyleDelegate {
+public extension MBIAMMessageViewStyleDelegate {
     func backgroundStyle(forMessage message: MBIAMMessage) -> MBIAMMessageViewBackgroundStyle {
         return MBIAMMessageViewStyle.backgroundStyle(forMessage: message)
     }
@@ -53,7 +53,7 @@ extension MBIAMMessageViewStyleDelegate {
     func titleColor(forMessage message: MBIAMMessage) -> UIColor {
         return MBIAMMessageViewStyle.titleColor(forMessage: message)
     }
-
+    
     func bodyColor(forMessage message: MBIAMMessage) -> UIColor {
         return MBIAMMessageViewStyle.bodyColor(forMessage: message)
     }
@@ -81,7 +81,7 @@ extension MBIAMMessageViewStyleDelegate {
     func button2BorderColor(forMessage message: MBIAMMessage) -> UIColor? {
         MBIAMMessageViewStyle.button2BorderColor(forMessage: message)
     }
-
+    
     func titleFont(forMessage message: MBIAMMessage) -> UIFont {
         return MBIAMMessageViewStyle.titleFont(forMessage: message)
     }
@@ -97,19 +97,19 @@ extension MBIAMMessageViewStyleDelegate {
 
 // MARK: - MBInAppMessageView
 
-class MBIAMMessageView: UIView {
+public class MBIAMMessageView: UIView {
     var message: MBIAMMessage!
     weak var delegate: MBIAMMessageViewDelegate?
     weak var styleDelegate: MBIAMMessageViewStyleDelegate?
     
     var contentView: UIView!
-
+    
     var imageView: UIImageView?
     var titleLabel: UILabel?
     var bodyLabel: UILabel!
     var button1: UIButton?
     var button2: UIButton?
-
+    
     init(message: MBIAMMessage,
          delegate: MBIAMMessageViewDelegate? = nil,
          styleDelegate: MBIAMMessageViewStyleDelegate? = nil) {
@@ -144,7 +144,7 @@ class MBIAMMessageView: UIView {
     func performHide(duration: TimeInterval) {
         fatalError("Implement in subclasses")
     }
-        
+    
     @objc func buttonPressed(_ sender: UIButton) {
         hide()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

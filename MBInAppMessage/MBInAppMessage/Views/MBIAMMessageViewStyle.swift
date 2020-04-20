@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MBIAMMessageViewBackgroundStyle {
+public enum MBIAMMessageViewBackgroundStyle {
     case solid
     case translucent
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBIAMMessageFullscreenImageView: MBIAMMessageView {
+public class MBIAMMessageFullscreenImageView: MBIAMMessageView {
     var backgroundView: UIView?
     
     var bottomConstraintHidden: NSLayoutConstraint?

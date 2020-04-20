@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBIAMMessageTopBannerView: MBIAMMessageView {
+public class MBIAMMessageTopBannerView: MBIAMMessageView {
     
     var topConstraintHidden: NSLayoutConstraint?
     var topConstraintNotHidden: NSLayoutConstraint?
@@ -195,7 +195,7 @@ class MBIAMMessageTopBannerView: MBIAMMessageView {
 }
 
 extension MBIAMMessageTopBannerView: UIGestureRecognizerDelegate {
-    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
         guard let topConstraintNotHidden = topConstraintNotHidden else {
             return false

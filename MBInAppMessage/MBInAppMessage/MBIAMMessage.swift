@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum MBIAMMessageStyle {
+public enum MBIAMMessageStyle {
     case bannerTop
     case bannerBottom
     case center
     case fullscreenImage
 }
 
-class MBIAMMessage: NSObject {
+public class MBIAMMessage: NSObject {
     let style: MBIAMMessageStyle!
     let duration: TimeInterval!
     let title: String?
@@ -63,7 +63,7 @@ class MBIAMMessage: NSObject {
     
 }
 
-class MBIAMMessageButton: NSObject {
+public class MBIAMMessageButton: NSObject {
     let title: String!
     let titleColor: UIColor?
     let backgroundColor: UIColor?

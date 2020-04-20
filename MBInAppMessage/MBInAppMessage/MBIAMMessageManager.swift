@@ -9,7 +9,7 @@
 
 import UIKit
 
-class MBIAMMessageManager: NSObject {
+public class MBIAMMessageManager: NSObject {
     static func presentMessage(_ message: MBIAMMessage,
                                delegate: MBIAMMessageViewDelegate? = nil,
                                styleDelegate: MBIAMMessageViewStyleDelegate? = nil,
@@ -22,23 +22,23 @@ class MBIAMMessageManager: NSObject {
         }
         if message.style == .bannerTop {
             let banner = MBIAMMessageTopBannerView(message: message,
-                                                 delegate: delegate,
-                                                 styleDelegate: styleDelegate)
+                                                   delegate: delegate,
+                                                   styleDelegate: styleDelegate)
             banner.present(overViewController: targetViewController)
         } else if message.style == .bannerBottom {
             let banner = MBIAMMessageBottomBannerView(message: message,
-                                                    delegate: delegate,
-                                                    styleDelegate: styleDelegate)
+                                                      delegate: delegate,
+                                                      styleDelegate: styleDelegate)
             banner.present(overViewController: targetViewController)
         } else if message.style == .center {
             let centerView = MBIAMMessageCenterView(message: message,
-                                                      delegate: delegate,
-                                                      styleDelegate: styleDelegate)
+                                                    delegate: delegate,
+                                                    styleDelegate: styleDelegate)
             centerView.present(overViewController: targetViewController)
         } else if message.style == .fullscreenImage {
             let fullscreenImageview = MBIAMMessageFullscreenImageView(message: message,
-                                                                        delegate: delegate,
-                                                                        styleDelegate: styleDelegate)
+                                                                      delegate: delegate,
+                                                                      styleDelegate: styleDelegate)
             fullscreenImageview.present(overViewController: targetViewController)
         }
     }
