@@ -41,7 +41,11 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
                 contentView.topAnchor.constraint(equalTo: topAnchor),
                 contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-            contentView.backgroundColor = UIColor.systemBackground
+            if #available(iOS 13.0, *) {
+                contentView.backgroundColor = UIColor.systemBackground
+            } else {
+                contentView.backgroundColor = UIColor.white
+            }
             if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
                 contentView.backgroundColor = backgroundColor
             } else {
@@ -58,7 +62,11 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
         let gestureHandle = UIView(frame: .zero)
         gestureHandle.translatesAutoresizingMaskIntoConstraints = false
         gestureHandle.layer.cornerRadius = handleHeight / 2
-        gestureHandle.backgroundColor = UIColor.systemFill
+        if #available(iOS 13.0, *) {
+            gestureHandle.backgroundColor = UIColor.systemFill
+        } else {
+            gestureHandle.backgroundColor = UIColor.gray
+        }
         targetView.addSubview(gestureHandle)
         
         NSLayoutConstraint.activate([
@@ -98,7 +106,12 @@ class MBInAppMessageBottomBanner: MBInAppMessageView {
         translatesAutoresizingMaskIntoConstraints = false
         
         let bottomConstraintHidden = self.topAnchor.constraint(equalTo: viewController.view.bottomAnchor)
-        let bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+        var bottomConstraintNotHidden: NSLayoutConstraint!
+        if #available(iOS 11.0, *) {
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+        } else {
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor, constant: -8)
+        }
         
         self.bottomConstraintHidden = bottomConstraintHidden
         self.bottomConstraintNotHidden = bottomConstraintNotHidden

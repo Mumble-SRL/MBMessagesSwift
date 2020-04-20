@@ -68,7 +68,11 @@ class MBInAppMessageFullscreenImageView: MBInAppMessageView {
         closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
         
         UIView.performWithoutAnimation {
-            closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+            if #available(iOS 13.0, *) {
+                closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+            } else {
+                closeButton.setTitle("X", for: .normal)
+            }
             closeButton.layoutIfNeeded()
         }
         NSLayoutConstraint.activate([

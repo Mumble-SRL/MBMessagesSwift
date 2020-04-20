@@ -78,7 +78,11 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
         let gestureHandle = UIView(frame: .zero)
         gestureHandle.translatesAutoresizingMaskIntoConstraints = false
         gestureHandle.layer.cornerRadius = handleHeight / 2
-        gestureHandle.backgroundColor = UIColor.systemFill
+        if #available(iOS 13.0, *) {
+            gestureHandle.backgroundColor = UIColor.systemFill
+        } else {
+            gestureHandle.backgroundColor = UIColor.gray
+        }
         targetView.addSubview(gestureHandle)
         
         NSLayoutConstraint.activate([
@@ -100,7 +104,12 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
         translatesAutoresizingMaskIntoConstraints = false
         
         let topConstraintHidden = self.bottomAnchor.constraint(equalTo: viewController.view.topAnchor)
-        let topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        var topConstraintNotHidden: NSLayoutConstraint!
+        if #available(iOS 11.0, *) {
+            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        } else {
+            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.topAnchor, constant: 8)
+        }
 
         self.topConstraintHidden = topConstraintHidden
         self.topConstraintNotHidden = topConstraintNotHidden

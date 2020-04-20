@@ -26,7 +26,11 @@ internal class MBInAppMessageViewStyle {
         if let backgroundColor = message.backgroundColor {
             return backgroundColor
         }
-        return UIColor.systemBackground
+        if #available(iOS 13.0, *) {
+            return UIColor.systemBackground
+        } else {
+            return UIColor.white
+        }
     }
     
     static func titleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -44,13 +48,17 @@ internal class MBInAppMessageViewStyle {
     }
 
     private static func textColor() -> UIColor {
-        return UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.white
-            } else {
-                return UIColor.black
-            }
-        })
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return UIColor.white
+                } else {
+                    return UIColor.black
+                }
+            })
+        } else {
+            return UIColor.black
+        }
     }
     
     static func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -58,13 +66,17 @@ internal class MBInAppMessageViewStyle {
             let firstButtonBackgroundColor = firstButton.backgroundColor {
             return firstButtonBackgroundColor
         }
-        return UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.white
-            } else {
-                return UIColor.black
-            }
-        })
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return UIColor.white
+                } else {
+                    return UIColor.black
+                }
+            })
+        } else {
+            return UIColor.black
+        }
     }
     
     static func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -72,13 +84,17 @@ internal class MBInAppMessageViewStyle {
             let firstButtonTitleColor = firstButton.titleColor {
             return firstButtonTitleColor
         }
-        return UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.black
-            } else {
-                return UIColor.white
-            }
-        })
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return UIColor.black
+                } else {
+                    return UIColor.white
+                }
+            })
+        } else {
+            return UIColor.white
+        }
     }
     
     static func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -88,13 +104,17 @@ internal class MBInAppMessageViewStyle {
                 return secondButtonBackgroundColor
             }
         }
-        return UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.black
-            } else {
-                return UIColor.white
-            }
-        })
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return UIColor.black
+                } else {
+                    return UIColor.white
+                }
+            })
+        } else {
+            return UIColor.white
+        }
     }
     
     static func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -104,13 +124,17 @@ internal class MBInAppMessageViewStyle {
                 return secondButtonTitleColor
             }
         }
-        return UIColor(dynamicProvider: { traitCollection in
-            if traitCollection.userInterfaceStyle == .dark {
-                return UIColor.white
-            } else {
-                return UIColor.black
-            }
-        })
+        if #available(iOS 13.0, *) {
+            return UIColor(dynamicProvider: { traitCollection in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return UIColor.white
+                } else {
+                    return UIColor.black
+                }
+            })
+        } else {
+            return UIColor.black
+        }
     }
     
     static func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {

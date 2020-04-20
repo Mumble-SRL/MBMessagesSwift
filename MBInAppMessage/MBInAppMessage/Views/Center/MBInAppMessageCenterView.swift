@@ -45,7 +45,11 @@ class MBInAppMessageCenterView: MBInAppMessageView {
                 contentView.topAnchor.constraint(equalTo: topAnchor),
                 contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-            contentView.backgroundColor = UIColor.systemBackground
+            if #available(iOS 13.0, *) {
+                contentView.backgroundColor = UIColor.systemBackground
+            } else {
+                contentView.backgroundColor = UIColor.white
+            }
             if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
                 contentView.backgroundColor = backgroundColor
             } else {
@@ -64,7 +68,11 @@ class MBInAppMessageCenterView: MBInAppMessageView {
         closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
         
         UIView.performWithoutAnimation {
-            closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+            if #available(iOS 13.0, *) {
+                closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+            } else {
+                closeButton.setTitle("X", for: .normal)
+            }
             closeButton.layoutIfNeeded()
         }
         NSLayoutConstraint.activate([
