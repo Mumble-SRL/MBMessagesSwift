@@ -58,25 +58,6 @@ class MBInAppMessageCenterView: MBInAppMessageView {
             targetView = contentView.contentView
         }
         
-        if let backgroundImage = message.backgroundImage {
-            let backgroundImageView = UIImageView(frame: .zero)
-            backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-            backgroundImageView.contentMode = .scaleAspectFill
-            backgroundImageView.clipsToBounds = true
-            targetView.addSubview(backgroundImageView)
-            NSLayoutConstraint.activate([
-                backgroundImageView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
-                backgroundImageView.topAnchor.constraint(equalTo: targetView.topAnchor),
-                backgroundImageView.bottomAnchor.constraint(equalTo: targetView.bottomAnchor),
-                backgroundImageView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor)
-            ])
-            MBInAppMessageImageLoader.loadImage(url: backgroundImage) { (image) in
-                backgroundImageView.image = image
-            }
-            
-            self.backgroundImageView = backgroundImageView
-        }
-
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(closeButton)
@@ -121,7 +102,7 @@ class MBInAppMessageCenterView: MBInAppMessageView {
             titleLabel.lineBreakMode = .byWordWrapping
             titleLabel.numberOfLines = 0
             titleLabel.font = styleDelegate?.titleFont(forMessage: message) ?? MBInAppMessageViewStyle.titleFont(forMessage: message)
-            titleLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
+            titleLabel.textColor = styleDelegate?.titleColor(forMessage: message) ?? MBInAppMessageViewStyle.titleColor(forMessage: message)
             titleLabel.text = title
             titleLabel.textAlignment = .center
             targetView.addSubview(titleLabel)
@@ -141,7 +122,7 @@ class MBInAppMessageCenterView: MBInAppMessageView {
         bodyLabel.lineBreakMode = .byWordWrapping
         bodyLabel.numberOfLines = 0
         bodyLabel.font = styleDelegate?.bodyFont(forMessage: message) ?? MBInAppMessageViewStyle.bodyFont(forMessage: message)
-        bodyLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
+        bodyLabel.textColor = styleDelegate?.bodyColor(forMessage: message) ?? MBInAppMessageViewStyle.bodyColor(forMessage: message)
         bodyLabel.text = message.body
         addSubview(bodyLabel)
         
@@ -161,19 +142,19 @@ class MBInAppMessageCenterView: MBInAppMessageView {
             for (index, button) in buttons.enumerated() {
                 let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
                 var backgroundColor: UIColor! = UIColor.white
-                var textColor: UIColor! = UIColor.white
+                var titleColor: UIColor! = UIColor.white
                 var borderColor: UIColor?
                 if index == 0 {
                     backgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
                         MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
-                    textColor = styleDelegate?.button1TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TextColor(forMessage: message)
+                    titleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
                 } else {
                     backgroundColor = styleDelegate?.button2BackgroundColor(forMessage: message) ??
                         MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
-                    textColor = styleDelegate?.button2TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TextColor(forMessage: message)
+                    titleColor = styleDelegate?.button2TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TitleColor(forMessage: message)
                     borderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: message)
                 }
-                let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, textColor: textColor, borderColor: borderColor, font: font, height: 44)
+                let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, titleColor: titleColor, borderColor: borderColor, font: font, height: 44)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 addSubview(button)
                 NSLayoutConstraint.activate([

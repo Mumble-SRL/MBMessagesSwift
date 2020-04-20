@@ -28,12 +28,13 @@ extension MBInAppMessageViewDelegate {
 protocol MBInAppMessageViewStyleDelegate: class {
     func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle
     func backgroundColor(forMessage message: MBInAppMessage) -> UIColor
-    func textColor(forMessage message: MBInAppMessage) -> UIColor
+    func titleColor(forMessage message: MBInAppMessage) -> UIColor
+    func bodyColor(forMessage message: MBInAppMessage) -> UIColor
     func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor
     func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor
-    func button1TextColor(forMessage message: MBInAppMessage) -> UIColor
+    func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor
     func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor
-    func button2TextColor(forMessage message: MBInAppMessage) -> UIColor
+    func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor
     func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor?
     func titleFont(forMessage message: MBInAppMessage) -> UIFont
     func bodyFont(forMessage message: MBInAppMessage) -> UIFont
@@ -48,10 +49,14 @@ extension MBInAppMessageViewStyleDelegate {
         return MBInAppMessageViewStyle.backgroundColor(forMessage: message)
     }
     
-    func textColor(forMessage message: MBInAppMessage) -> UIColor {
-        return MBInAppMessageViewStyle.textColor(forMessage: message)
+    func titleColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.titleColor(forMessage: message)
     }
 
+    func bodyColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.bodyColor(forMessage: message)
+    }
+    
     func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor {
         return button1BackgroundColor(forMessage: message)
     }
@@ -60,16 +65,16 @@ extension MBInAppMessageViewStyleDelegate {
         return MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
     }
     
-    func button1TextColor(forMessage message: MBInAppMessage) -> UIColor {
-        return MBInAppMessageViewStyle.button1TextColor(forMessage: message)
+    func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
     }
     
     func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
         return MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
     }
     
-    func button2TextColor(forMessage message: MBInAppMessage) -> UIColor {
-        return MBInAppMessageViewStyle.button2TextColor(forMessage: message)
+    func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.button2TitleColor(forMessage: message)
     }
     
     func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {
@@ -98,7 +103,6 @@ class MBInAppMessageView: UIView {
     
     var contentView: UIView!
 
-    var backgroundImageView: UIImageView?
     var imageView: UIImageView?
     var titleLabel: UILabel?
     var bodyLabel: UILabel!

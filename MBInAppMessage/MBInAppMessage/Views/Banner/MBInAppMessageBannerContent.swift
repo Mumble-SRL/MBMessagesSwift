@@ -61,7 +61,7 @@ class MBInAppMessageBannerContent: UIView {
             titleLabel.lineBreakMode = .byTruncatingTail
             titleLabel.text = title
             titleLabel.font = styleDelegate?.titleFont(forMessage: message) ?? MBInAppMessageViewStyle.titleFont(forMessage: message)
-            titleLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
+            titleLabel.textColor = styleDelegate?.titleColor(forMessage: message) ?? MBInAppMessageViewStyle.titleColor(forMessage: message)
             addSubview(titleLabel)
 
             NSLayoutConstraint.activate([
@@ -79,7 +79,7 @@ class MBInAppMessageBannerContent: UIView {
         bodyLabel.numberOfLines = 3
         bodyLabel.font = styleDelegate?.bodyFont(forMessage: message) ?? MBInAppMessageViewStyle.bodyFont(forMessage: message)
         bodyLabel.text = message.body
-        bodyLabel.textColor = styleDelegate?.textColor(forMessage: message) ?? MBInAppMessageViewStyle.textColor(forMessage: message)
+        bodyLabel.textColor = styleDelegate?.bodyColor(forMessage: message) ?? MBInAppMessageViewStyle.bodyColor(forMessage: message)
         addSubview(bodyLabel)
         
         NSLayoutConstraint.activate([
@@ -107,8 +107,8 @@ class MBInAppMessageBannerContent: UIView {
                 if buttons.count == 1 {
                     let button1BackgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
                         MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
-                    let button1TextColor = styleDelegate?.button1TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TextColor(forMessage: message)
-                    let button = MBInAppMessageViewStyle.button(forMessageButton: buttons[0], backgroundColor: button1BackgroundColor, textColor: button1TextColor, font:
+                    let button1TitleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
+                    let button = MBInAppMessageViewStyle.button(forMessageButton: buttons[0], backgroundColor: button1BackgroundColor, titleColor: button1TitleColor, font:
                         buttonsFont, height: buttonsHeight)
                     button.translatesAutoresizingMaskIntoConstraints = false
                     addSubview(button)
@@ -123,18 +123,18 @@ class MBInAppMessageBannerContent: UIView {
                 } else {
                     let button1BackgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
                         MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
-                    let button1TextColor = styleDelegate?.button1TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TextColor(forMessage: message)
+                    let button1TitleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
 
                     let button2BackgroundColor = styleDelegate?.button2BackgroundColor(forMessage: message) ??
                         MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
-                    let button2TextColor = styleDelegate?.button2TextColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TextColor(forMessage: message)
+                    let button2TitleColor = styleDelegate?.button2TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TitleColor(forMessage: message)
                     let button2BorderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: message)
 
-                    let button1 = MBInAppMessageViewStyle.button(forMessageButton: buttons[0], backgroundColor: button1BackgroundColor, textColor: button1TextColor, font:
+                    let button1 = MBInAppMessageViewStyle.button(forMessageButton: buttons[0], backgroundColor: button1BackgroundColor, titleColor: button1TitleColor, font:
                     buttonsFont, height: buttonsHeight)
                     button1.translatesAutoresizingMaskIntoConstraints = false
                     addSubview(button1)
-                    let button2 = MBInAppMessageViewStyle.button(forMessageButton: buttons[1], backgroundColor: button2BackgroundColor, textColor: button2TextColor, borderColor: button2BorderColor, font:
+                    let button2 = MBInAppMessageViewStyle.button(forMessageButton: buttons[1], backgroundColor: button2BackgroundColor, titleColor: button2TitleColor, borderColor: button2BorderColor, font:
                         buttonsFont, height: buttonsHeight)
                     button2.translatesAutoresizingMaskIntoConstraints = false
                     addSubview(button2)

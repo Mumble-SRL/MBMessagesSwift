@@ -55,25 +55,6 @@ class MBInAppMessageTopBanner: MBInAppMessageView {
             targetView = contentView.contentView
         }
 
-        if let backgroundImage = message.backgroundImage {
-            let backgroundImageView = UIImageView(frame: .zero)
-            backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-            backgroundImageView.contentMode = .scaleAspectFill
-            backgroundImageView.clipsToBounds = true
-            targetView.addSubview(backgroundImageView)
-            NSLayoutConstraint.activate([
-                backgroundImageView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
-                backgroundImageView.topAnchor.constraint(equalTo: targetView.topAnchor),
-                backgroundImageView.bottomAnchor.constraint(equalTo: targetView.bottomAnchor),
-                backgroundImageView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor)
-            ])
-            MBInAppMessageImageLoader.loadImage(url: backgroundImage) { (image) in
-                backgroundImageView.image = image
-            }
-            
-            self.backgroundImageView = backgroundImageView
-        }
-
         let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(contentView)

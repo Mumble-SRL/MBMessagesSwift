@@ -23,10 +23,27 @@ internal class MBInAppMessageViewStyle {
     }
     
     static func backgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        if let backgroundColor = message.backgroundColor {
+            return backgroundColor
+        }
         return UIColor.systemBackground
     }
     
-    static func textColor(forMessage message: MBInAppMessage) -> UIColor {
+    static func titleColor(forMessage message: MBInAppMessage) -> UIColor {
+        if let titleColor = message.titleColor {
+            return titleColor
+        }
+        return textColor()
+    }
+    
+    static func bodyColor(forMessage message: MBInAppMessage) -> UIColor {
+        if let bodyColor = message.bodyColor {
+            return bodyColor
+        }
+        return textColor()
+    }
+
+    private static func textColor() -> UIColor {
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.white
@@ -37,6 +54,10 @@ internal class MBInAppMessageViewStyle {
     }
     
     static func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        if let firstButton = message.buttons?.first,
+            let firstButtonBackgroundColor = firstButton.backgroundColor {
+            return firstButtonBackgroundColor
+        }
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.white
@@ -46,7 +67,11 @@ internal class MBInAppMessageViewStyle {
         })
     }
     
-    static func button1TextColor(forMessage message: MBInAppMessage) -> UIColor {
+    static func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
+        if let firstButton = message.buttons?.first,
+            let firstButtonTitleColor = firstButton.titleColor {
+            return firstButtonTitleColor
+        }
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.black
@@ -57,6 +82,12 @@ internal class MBInAppMessageViewStyle {
     }
     
     static func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        if message.buttons?.count ?? 0 >= 2 {
+            let secondButton = message.buttons![1]
+            if let secondButtonBackgroundColor = secondButton.backgroundColor {
+                return secondButtonBackgroundColor
+            }
+        }
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.black
@@ -66,7 +97,13 @@ internal class MBInAppMessageViewStyle {
         })
     }
     
-    static func button2TextColor(forMessage message: MBInAppMessage) -> UIColor {
+    static func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor {
+        if message.buttons?.count ?? 0 >= 2 {
+            let secondButton = message.buttons![1]
+            if let secondButtonTitleColor = secondButton.titleColor {
+                return secondButtonTitleColor
+            }
+        }
         return UIColor(dynamicProvider: { traitCollection in
             if traitCollection.userInterfaceStyle == .dark {
                 return UIColor.white
@@ -77,7 +114,7 @@ internal class MBInAppMessageViewStyle {
     }
     
     static func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {
-        button2TextColor(forMessage: message)
+        button2TitleColor(forMessage: message)
     }
 
     static func titleFont(forMessage message: MBInAppMessage) -> UIFont {
@@ -91,10 +128,10 @@ internal class MBInAppMessageViewStyle {
     static func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .body)
     }
-
+    
     static internal func button(forMessageButton messageButton: MBInAppMessageButton,
                                 backgroundColor: UIColor,
-                                textColor: UIColor,
+                                titleColor: UIColor,
                                 borderColor: UIColor? = nil,
                                 font: UIFont,
                                 height: CGFloat) -> UIButton {
@@ -107,7 +144,7 @@ internal class MBInAppMessageViewStyle {
         
         button.titleLabel?.font = font
         button.backgroundColor = backgroundColor
-        button.tintColor = textColor
+        button.tintColor = titleColor
         if let borderColor = borderColor {
             button.layer.borderWidth = 1
             button.layer.borderColor = borderColor.cgColor
