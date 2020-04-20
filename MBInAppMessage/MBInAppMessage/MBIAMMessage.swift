@@ -48,7 +48,7 @@ public class MBIAMMessage: NSObject {
     
     //TODO remove
     
-    static func demoMessage(style: MBIAMMessageStyle) -> MBIAMMessage {
+    public static func demoMessage(style: MBIAMMessageStyle) -> MBIAMMessage {
         let buttons = [
             MBIAMMessageButton(title: "Button1", link: "https://www.google.it"),
             MBIAMMessageButton(title: "Button2", link: "https://www.mumbleideas.com"),

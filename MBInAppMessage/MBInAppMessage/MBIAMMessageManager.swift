@@ -13,7 +13,7 @@ import SafariServices
 public class MBIAMMessageManager: NSObject {
     static var linkOpenerMessageViewDelegate: LinkOpenerMessageViewDelegate?
     
-    static func presentMessage(_ message: MBIAMMessage,
+    public static func presentMessage(_ message: MBIAMMessage,
                                delegate: MBIAMMessageViewDelegate? = nil,
                                styleDelegate: MBIAMMessageViewStyleDelegate? = nil,
                                overViewController viewController: UIViewController) {
@@ -23,7 +23,10 @@ public class MBIAMMessageManager: NSObject {
         } else if let tabBarController = viewController.tabBarController {
             targetViewController = tabBarController
         }
-        let delegate = delegate ?? LinkOpenerMessageViewDelegate(viewController: viewController)
+        var delegate = delegate
+        if delegate == nil {
+            delegate = LinkOpenerMessageViewDelegate(viewController: viewController)
+        }
         if message.style == .bannerTop {
             let banner = MBIAMMessageTopBannerView(message: message,
                                                    delegate: delegate,
@@ -44,9 +47,6 @@ public class MBIAMMessageManager: NSObject {
                                                                       delegate: delegate,
                                                                       styleDelegate: styleDelegate)
             fullscreenImageview.present(overViewController: targetViewController)
-        }
-        if let delegate = delegate as? LinkOpenerMessageViewDelegate {
-            self.linkOpenerMessageViewDelegate = delegate
         }
     }
 }
@@ -71,6 +71,7 @@ internal class LinkOpenerMessageViewDelegate: MBIAMMessageViewDelegate {
     }
     
     func viewDidDisappear(view: MBIAMMessageView) {
+        // Is this ok?
         MBIAMMessageManager.linkOpenerMessageViewDelegate = nil
     }
 }
