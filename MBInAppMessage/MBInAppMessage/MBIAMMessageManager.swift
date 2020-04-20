@@ -11,6 +11,8 @@ import UIKit
 import SafariServices
 
 public class MBIAMMessageManager: NSObject {
+    static var linkOpenerMessageViewDelegate: LinkOpenerMessageViewDelegate?
+    
     static func presentMessage(_ message: MBIAMMessage,
                                delegate: MBIAMMessageViewDelegate? = nil,
                                styleDelegate: MBIAMMessageViewStyleDelegate? = nil,
@@ -21,7 +23,7 @@ public class MBIAMMessageManager: NSObject {
         } else if let tabBarController = viewController.tabBarController {
             targetViewController = tabBarController
         }
-        let delegate = delegate ?? linkOpenerMessageViewDelegate(viewController: viewController)
+        let delegate = delegate ?? LinkOpenerMessageViewDelegate(viewController: viewController)
         if message.style == .bannerTop {
             let banner = MBIAMMessageTopBannerView(message: message,
                                                    delegate: delegate,
@@ -43,10 +45,13 @@ public class MBIAMMessageManager: NSObject {
                                                                       styleDelegate: styleDelegate)
             fullscreenImageview.present(overViewController: targetViewController)
         }
+        if let delegate = delegate as? LinkOpenerMessageViewDelegate {
+            self.linkOpenerMessageViewDelegate = delegate
+        }
     }
 }
 
-internal class linkOpenerMessageViewDelegate: MBIAMMessageViewDelegate {
+internal class LinkOpenerMessageViewDelegate: MBIAMMessageViewDelegate {
     weak var viewController: UIViewController?
     
     init(viewController: UIViewController) {
@@ -59,8 +64,13 @@ internal class linkOpenerMessageViewDelegate: MBIAMMessageViewDelegate {
                 if let link = button.link, let url = URL(string: link) {
                     let safariViewController = SFSafariViewController(url: url)
                     viewController.present(safariViewController, animated: true, completion: nil)
+                    
                 }
             }
         }
+    }
+    
+    func viewDidDisappear(view: MBIAMMessageView) {
+        MBIAMMessageManager.linkOpenerMessageViewDelegate = nil
     }
 }
