@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1807375B1EE49138355846A /* Pods_MBInAppMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7DF7C11C5B7F290B371AF7 /* Pods_MBInAppMessage.framework */; };
+		EC036995244DEBC000220F2F /* MBInAppMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBInAppMessage.swift */; };
 		EC0F42A2242113E600A3130A /* MBIAMMessageViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F42A1242113E600A3130A /* MBIAMMessageViewStyle.swift */; };
 		EC4C8F492440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F482440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift */; };
 		EC937C5A2420C8E2001B8AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C592420C8E2001B8AA1 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		7B7DF7C11C5B7F290B371AF7 /* Pods_MBInAppMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBInAppMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C158B484A11C6D3ECD5834C1 /* Pods-MBInAppMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBInAppMessage.debug.xcconfig"; path = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		C77AE80A9CE2F2CF4AB4D98F /* Pods-MBInAppMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBInAppMessage.release.xcconfig"; path = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.release.xcconfig"; sourceTree = "<group>"; };
+		EC036994244DEBC000220F2F /* MBInAppMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessage.swift; sourceTree = "<group>"; };
 		EC0F42A1242113E600A3130A /* MBIAMMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageViewStyle.swift; sourceTree = "<group>"; };
 		EC4C8F482440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageFullscreenImageView.swift; sourceTree = "<group>"; };
 		EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBInAppMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 		ECEC51CF2420E61B00A1A3EE /* MBInAppMessage */ = {
 			isa = PBXGroup;
 			children = (
+				EC036994244DEBC000220F2F /* MBInAppMessage.swift */,
 				EC937C6D2420C9DD001B8AA1 /* MBIAMMessage.swift */,
 				EC937C6F2420CB33001B8AA1 /* MBIAMMessageManager.swift */,
 				EC937C792420E0A6001B8AA1 /* Views */,
@@ -172,7 +175,7 @@
 				EC937C522420C8E2001B8AA1 /* Sources */,
 				EC937C532420C8E2001B8AA1 /* Frameworks */,
 				EC937C542420C8E2001B8AA1 /* Resources */,
-				CFACDC02EC8A88719BE0FCBE /* [CP] Embed Pods Frameworks */,
+				1A0B596ADDA57A09E9E0F500 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +233,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A0B596ADDA57A09E9E0F500 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		83D7D8422E074F56FB0B1902 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,23 +272,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CFACDC02EC8A88719BE0FCBE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -289,6 +292,7 @@
 				EC937C702420CB33001B8AA1 /* MBIAMMessageManager.swift in Sources */,
 				EC4C8F492440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift in Sources */,
 				EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */,
+				EC036995244DEBC000220F2F /* MBInAppMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

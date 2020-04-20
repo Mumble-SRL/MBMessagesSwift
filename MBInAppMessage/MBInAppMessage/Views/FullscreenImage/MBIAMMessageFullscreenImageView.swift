@@ -23,7 +23,7 @@ class MBIAMMessageFullscreenImageView: MBIAMMessageView {
             configure(image: nil)
             return
         }
-        MBInAppMessageImageLoader.loadImage(url: messageImage) { [weak self] image in
+        MBIAMMessageImageLoader.loadImage(url: messageImage) { [weak self] image in
             if let strongSelf = self {
                 strongSelf.configure(image: image)
             }

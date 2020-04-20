@@ -42,8 +42,4 @@ class MBIAMMessageManager: NSObject {
             fullscreenImageview.present(overViewController: targetViewController)
         }
     }
-    
-    func checkMessages() {
-        //TODO: call api
-    }
 }

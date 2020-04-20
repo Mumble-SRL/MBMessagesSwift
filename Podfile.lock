@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBurgerSwift:
-    :commit: 54f4f21f2c261ec32b4bcccc283914208259d13b
+    :commit: 6493a92468d1363b0520d1b9975c2dc6ce0360cb
     :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
 
 SPEC CHECKSUMS:
