@@ -101,35 +101,38 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         addGestureRecognizer(panGesture)
     }
     
-    override func present(overViewController viewController: UIViewController) {
-        viewController.view.addSubview(self)
+    override func present() {
+        guard let window = UIApplication.shared.windows.first else {
+            return
+        }
+        window.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         
-        let bottomConstraintHidden = self.topAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+        let bottomConstraintHidden = self.topAnchor.constraint(equalTo: window.bottomAnchor)
         var bottomConstraintNotHidden: NSLayoutConstraint!
         if #available(iOS 11.0, *) {
-            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor, constant: -8)
         } else {
-            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor, constant: -8)
+            bottomConstraintNotHidden = self.bottomAnchor.constraint(equalTo: window.bottomAnchor, constant: -8)
         }
         
         self.bottomConstraintHidden = bottomConstraintHidden
         self.bottomConstraintNotHidden = bottomConstraintNotHidden
         
         NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 8),
-            trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: -8),
+            leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 8),
+            trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -8),
             bottomConstraintHidden,
             heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
         
-        viewController.view.layoutIfNeeded()
+        window.layoutIfNeeded()
         
         bottomConstraintHidden.isActive = false
         bottomConstraintNotHidden.isActive = true
         delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
-            viewController.view.layoutIfNeeded()
+            window.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidAppear(view: self)
         })
@@ -147,8 +150,12 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
+            if callCompletionBlock {
+                if let completionBlock = self.completionBlock {
+                    completionBlock()
+                }
+            }
             self.removeFromSuperview()
-            //TODO: call completion block
         })
     }
     

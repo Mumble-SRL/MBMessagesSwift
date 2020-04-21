@@ -35,37 +35,43 @@ public class MBInAppMessageManager: NSObject {
                                        messages: [MBInAppMessage],
                                        delegate: MBInAppMessageViewDelegate? = nil,
                                        styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
-                                       overViewController viewController: UIViewController) {
+                                       overViewController viewController: UIViewController?) {
         guard index < messages.count else {
             return
         }
         let message = messages[index]
+        var messageView: MBInAppMessageView?
         if message.style == .bannerTop {
-            let banner = MBInAppMessageTopBannerView(message: message,
-                                                   delegate: delegate,
-                                                   styleDelegate: styleDelegate,
-                                                   viewController: viewController)
-            banner.present(overViewController: viewController)
-        } else if message.style == .bannerBottom {
-            let banner = MBInAppMessageBottomBannerView(message: message,
+            messageView = MBInAppMessageTopBannerView(message: message,
                                                       delegate: delegate,
                                                       styleDelegate: styleDelegate,
                                                       viewController: viewController)
-            banner.present(overViewController: viewController)
+        } else if message.style == .bannerBottom {
+            messageView = MBInAppMessageBottomBannerView(message: message,
+                                                         delegate: delegate,
+                                                         styleDelegate: styleDelegate,
+                                                         viewController: viewController)
         } else if message.style == .center {
-            let centerView = MBInAppMessageCenterView(message: message,
-                                                    delegate: delegate,
-                                                    styleDelegate: styleDelegate,
-                                                    viewController: viewController)
-            centerView.present(overViewController: viewController)
+            messageView = MBInAppMessageCenterView(message: message,
+                                                   delegate: delegate,
+                                                   styleDelegate: styleDelegate,
+                                                   viewController: viewController)
         } else if message.style == .fullscreenImage {
-            let fullscreenImageview = MBInAppMessageFullscreenImageView(message: message,
-                                                                      delegate: delegate,
-                                                                      styleDelegate: styleDelegate,
-                                                                      viewController: viewController)
-            fullscreenImageview.present(overViewController: viewController)
+            messageView = MBInAppMessageFullscreenImageView(message: message,
+                                                            delegate: delegate,
+                                                            styleDelegate: styleDelegate,
+                                                            viewController: viewController)
         }
-        //TODO: next message
+        if let messageView = messageView {
+            if index + 1 < messages.count {
+                messageView.completionBlock = {
+                    MBInAppMessageManager.presentMessage(atIndex: index + 1,
+                                                         messages: messages,
+                                                         overViewController: topMostViewController())
+                }
+            }
+            messageView.present()
+        }
     }
     
     private static func topMostViewController(_ controller: UIViewController? = nil) -> UIViewController? {

@@ -127,44 +127,48 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
         button2?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
     }
     
-    override func present(overViewController viewController: UIViewController) {
+    override func present() {
+        guard let window = UIApplication.shared.windows.first else {
+            return
+        }
+
         let backgroundView = UIView(frame: .zero)
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-        viewController.view.addSubview(backgroundView)
+        window.addSubview(backgroundView)
         backgroundView.alpha = 0
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundView = backgroundView
         
         NSLayoutConstraint.activate([
-            backgroundView.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor),
-            backgroundView.topAnchor.constraint(equalTo: viewController.view.topAnchor)
+            backgroundView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: window.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: window.bottomAnchor),
+            backgroundView.topAnchor.constraint(equalTo: window.topAnchor)
         ])
 
-        viewController.view.addSubview(self)
+        window.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         
-        let bottomConstraintHidden = self.topAnchor.constraint(equalTo: viewController.view.bottomAnchor)
-        let centerConstraintNotHidden = self.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor)
+        let bottomConstraintHidden = self.topAnchor.constraint(equalTo: window.bottomAnchor)
+        let centerConstraintNotHidden = self.centerYAnchor.constraint(equalTo: window.centerYAnchor)
         
         self.bottomConstraintHidden = bottomConstraintHidden
         self.centerConstraintNotHidden = centerConstraintNotHidden
         
         NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 20),
-            trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: -20),
+            leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 20),
+            trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -20),
             bottomConstraintHidden,
             heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
         
-        viewController.view.layoutIfNeeded()
+        window.layoutIfNeeded()
         
         bottomConstraintHidden.isActive = false
         centerConstraintNotHidden.isActive = true
         delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
-            viewController.view.layoutIfNeeded()
+            window.layoutIfNeeded()
             backgroundView.alpha = 1
         }, completion: { _ in
             self.delegate?.viewDidAppear(view: self)
@@ -188,10 +192,14 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
             self.backgroundView?.alpha = 0
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
+            if callCompletionBlock {
+                if let completionBlock = self.completionBlock {
+                    completionBlock()
+                }
+            }
             self.removeFromSuperview()
             self.backgroundView?.removeFromSuperview()
             self.backgroundView = nil
-            //TODO: call completion
         })
     }
     

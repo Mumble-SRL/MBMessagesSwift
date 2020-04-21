@@ -99,7 +99,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
         addGestureRecognizer(panGesture)
     }
     
-    override func present(overViewController viewController: UIViewController) {
+    override func present() {
         guard let window = UIApplication.shared.windows.first else {
             return
         }
@@ -148,7 +148,11 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
-            //TODO: call completion
+            if callCompletionBlock {
+                if let completionBlock = self.completionBlock {
+                    completionBlock()
+                }
+            }
             self.removeFromSuperview()
         })
     }

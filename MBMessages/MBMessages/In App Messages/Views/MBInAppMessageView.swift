@@ -17,7 +17,6 @@ public protocol MBInAppMessageViewDelegate: class {
     func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton)
 }
 
-//TODO: call it when view appears/disappears
 public extension MBInAppMessageViewDelegate {
     func viewWillAppear(view: MBInAppMessageView) {}
     func viewDidAppear(view: MBInAppMessageView) {}
@@ -113,6 +112,9 @@ public class MBInAppMessageView: UIView {
     
     weak var viewController: UIViewController?
     
+    /// Completion block called by the manager to display next messages if no button is pressed and the message view is dismissed
+    var completionBlock: (() -> Void)?
+    
     init(message: MBInAppMessage,
          delegate: MBInAppMessageViewDelegate? = nil,
          styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
@@ -133,7 +135,7 @@ public class MBInAppMessageView: UIView {
         fatalError("Implement in subclasses")
     }
     
-    func present(overViewController viewController: UIViewController) {
+    func present() {
         fatalError("Implement in subclasses")
     }
     
