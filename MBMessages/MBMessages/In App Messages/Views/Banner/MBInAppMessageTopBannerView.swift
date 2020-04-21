@@ -100,34 +100,37 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
     }
     
     override func present(overViewController viewController: UIViewController) {
-        viewController.view.addSubview(self)
+        guard let window = UIApplication.shared.windows.first else {
+            return
+        }
+        window.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         
-        let topConstraintHidden = self.bottomAnchor.constraint(equalTo: viewController.view.topAnchor)
+        let topConstraintHidden = self.bottomAnchor.constraint(equalTo: window.topAnchor)
         var topConstraintNotHidden: NSLayoutConstraint!
         if #available(iOS 11.0, *) {
-            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor, constant: 8)
+            topConstraintNotHidden = self.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 8)
         } else {
-            topConstraintNotHidden = self.topAnchor.constraint(equalTo: viewController.view.topAnchor, constant: 8)
+            topConstraintNotHidden = self.topAnchor.constraint(equalTo: window.topAnchor, constant: 8)
         }
 
         self.topConstraintHidden = topConstraintHidden
         self.topConstraintNotHidden = topConstraintNotHidden
 
         NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 8),
-            trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: -8),
+            leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 8),
+            trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -8),
             topConstraintHidden,
             heightAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
                 
-        viewController.view.layoutIfNeeded()
+        window.layoutIfNeeded()
         
         topConstraintHidden.isActive = false
         topConstraintNotHidden.isActive = true
         delegate?.viewWillAppear(view: self)
         UIView.animate(withDuration: 0.3, animations: {
-            viewController.view.layoutIfNeeded()
+            window.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidAppear(view: self)
         })
@@ -137,7 +140,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
         }
     }
     
-    override func performHide(duration: TimeInterval) {
+    override func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
         topConstraintNotHidden?.isActive = false
         topConstraintHidden?.isActive = true
         delegate?.viewWillDisappear(view: self)
@@ -145,6 +148,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
+            //TODO: call completion
             self.removeFromSuperview()
         })
     }
@@ -171,7 +175,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
                 let height = self.frame.height + 8
                 let remainingHeight = height - (initialTouchPoint.y - touchPoint.y)
                 let perc = remainingHeight / height
-                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)))
+                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)), callCompletionBlock: true)
             } else {
                 topConstraintNotHidden?.constant = 8
                 UIView.animate(withDuration: 0.2, animations: {

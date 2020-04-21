@@ -178,7 +178,7 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
         }
     }
     
-    override func performHide(duration: TimeInterval) {
+    override func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
         centerConstraintNotHidden?.isActive = false
         bottomConstraintHidden?.isActive = true
         
@@ -191,15 +191,16 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
             self.removeFromSuperview()
             self.backgroundView?.removeFromSuperview()
             self.backgroundView = nil
+            //TODO: call completion
         })
     }
     
     @objc func backgroundViewPressed() {
-        hide()
+        hide(callCompletionBlock: true)
     }
 
     @objc func closePressed() {
-        hide()
+        hide(callCompletionBlock: true)
     }
 
 }

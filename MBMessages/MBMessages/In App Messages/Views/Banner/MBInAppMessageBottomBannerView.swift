@@ -139,7 +139,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         }
     }
     
-    override func performHide(duration: TimeInterval) {
+    override func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
         bottomConstraintNotHidden?.isActive = false
         bottomConstraintHidden?.isActive = true
         delegate?.viewWillDisappear(view: self)
@@ -148,6 +148,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
             self.removeFromSuperview()
+            //TODO: call completion block
         })
     }
     
@@ -173,7 +174,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
                 let height = self.frame.height + 8
                 let remainingHeight = height - (touchPoint.y - initialTouchPoint.y)
                 let perc = remainingHeight / height
-                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)))
+                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)), callCompletionBlock: true)
             } else {
                 bottomConstraintNotHidden?.constant = -8
                 UIView.animate(withDuration: 0.2, animations: {

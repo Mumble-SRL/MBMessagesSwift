@@ -137,21 +137,21 @@ public class MBInAppMessageView: UIView {
         fatalError("Implement in subclasses")
     }
     
-    func hideWithDuration(duration: TimeInterval) {
-        performHide(duration: duration)
+    func hideWithDuration(duration: TimeInterval, callCompletionBlock: Bool) {
+        performHide(duration: duration, callCompletionBlock: callCompletionBlock)
     }
     
-    @objc func hide() {
+    @objc func hide(callCompletionBlock: Bool) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
-        performHide(duration: 0.3)
+        performHide(duration: 0.3, callCompletionBlock: callCompletionBlock)
     }
     
-    func performHide(duration: TimeInterval) {
+    func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
         fatalError("Implement in subclasses")
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        hide()
+        hide(callCompletionBlock: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             guard let buttons = self.message.buttons else {
                 return

@@ -15,11 +15,11 @@ public protocol MBMessagesDelegate: class {
 }
 
 public class MBMessages: NSObject, MBPluginProtocol {
-    weak var delegate: MBMessagesDelegate?
-    weak var viewDelegate: MBInAppMessageViewDelegate?
-    weak var styleDelegate: MBInAppMessageViewStyleDelegate?
+    public weak var delegate: MBMessagesDelegate?
+    public weak var viewDelegate: MBInAppMessageViewDelegate?
+    public weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
-    private var messagesDelay: TimeInterval = 1
+    public var messagesDelay: TimeInterval = 1
     
     override public init() {
         super.init()
