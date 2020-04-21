@@ -18,18 +18,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func topBannerTapped() {
-        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .bannerTop)])
+        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .bannerTop)], ignoreShowedMessages: true)
     }
     
     @IBAction func bottomBannerTapped() {
-        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .bannerBottom)])
+        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .bannerBottom)], ignoreShowedMessages: true)
     }
     
     @IBAction func centerTapped() {
-        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .center)])
+        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .center)], ignoreShowedMessages: true)
     }
     
     @IBAction func fullscreenImageTapped() {
-        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .fullscreenImage)])
+        MBInAppMessageManager.presentMessages([MBInAppMessage.demoMessage(style: .fullscreenImage)], ignoreShowedMessages: true)
     }
 }

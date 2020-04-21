@@ -13,21 +13,25 @@ public class MBInAppMessageManager: NSObject {
     //TODO: messages analytics showed message + tap buttons
     static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
-                                styleDelegate: MBInAppMessageViewStyleDelegate? = nil) {
-        let filteredMessages = messages.filter({ !messageHasBeenShowed(messageId: $0.id) })
-        guard filteredMessages.count != 0 else {
+                                styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
+                                ignoreShowedMessages: Bool = false) {
+        var messagesToShow = messages
+        if !ignoreShowedMessages {
+            messagesToShow = messages.filter({ !messageHasBeenShowed(messageId: $0.id) })
+        }
+        guard messagesToShow.count != 0 else {
             return
         }
         guard let topMostViewController = topMostViewController() else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.presentMessages(filteredMessages,
+                self.presentMessages(messagesToShow,
                                      delegate: delegate,
                                      styleDelegate: styleDelegate)
             }
             return
         }
         presentMessage(atIndex: 0,
-                       messages: filteredMessages,
+                       messages: messagesToShow,
                        delegate: delegate,
                        styleDelegate: styleDelegate,
                        overViewController: topMostViewController)
