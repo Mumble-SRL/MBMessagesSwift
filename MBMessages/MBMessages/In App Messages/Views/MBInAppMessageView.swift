@@ -144,6 +144,7 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func hide(callCompletionBlock: NSNumber = NSNumber(value: true)) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide(callCompletionBlock:)), object: nil)
         performHide(duration: 0.3, callCompletionBlock: callCompletionBlock.boolValue)
     }
