@@ -187,8 +187,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
                     self.superview?.layoutIfNeeded()
                 }, completion: { _ in
                     if self.message.duration != -1 {
-                        self.perform(#selector(self.hide), with: nil, afterDelay: self.message
-                            .duration)
+                        self.perform(#selector(self.hide), with: nil, afterDelay: self.message.duration)
                     }
                 })
             }

@@ -144,15 +144,17 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func hide() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hideWithoutCallingCompletionBlock), object: nil)
-        performHide(duration: 0.3, callCompletionBlock: true)
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        if self.superview != nil {
+            performHide(duration: 0.3, callCompletionBlock: true)
+        }
     }
     
     @objc func hideWithoutCallingCompletionBlock() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hideWithoutCallingCompletionBlock), object: nil)
-        performHide(duration: 0.3, callCompletionBlock: false)
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        if self.superview != nil {
+            performHide(duration: 0.3, callCompletionBlock: false)
+        }
     }
     
     func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
