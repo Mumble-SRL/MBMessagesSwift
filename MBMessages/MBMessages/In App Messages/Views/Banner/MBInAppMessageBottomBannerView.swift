@@ -138,7 +138,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         })
         
         if message.duration != -1 {
-            self.perform(#selector(hide(callCompletionBlock:)), with: NSNumber(value: true), afterDelay: message.duration)
+            self.perform(#selector(hide), with: nil, afterDelay: message.duration)
         }
     }
     
@@ -171,7 +171,8 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         
         switch gesture.state {
         case .began:
-            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide(callCompletionBlock:)), object: nil)
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hideWithoutCallingCompletionBlock), object: nil)
             initialTouchPoint = touchPoint
         case .changed:
             bottomConstraintNotHidden?.constant = max(touchPoint.y - initialTouchPoint.y, -8)
@@ -188,8 +189,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
                     self.layoutIfNeeded()
                 }, completion: { _ in
                     if self.message.duration != -1 {
-                        self.perform(#selector(self.hide(callCompletionBlock:)), with: NSNumber(value: true), afterDelay: self.message
-                            .duration)
+                        self.perform(#selector(self.hide), with: nil, afterDelay: self.message.duration)
                     }
                 })
             }

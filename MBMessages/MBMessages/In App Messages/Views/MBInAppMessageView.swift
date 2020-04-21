@@ -139,14 +139,20 @@ public class MBInAppMessageView: UIView {
         fatalError("Implement in subclasses")
     }
     
-    func hideWithDuration(duration: TimeInterval, callCompletionBlock: Bool = true) {
-        performHide(duration: duration, callCompletionBlock: callCompletionBlock)
+    func hideWithDuration(duration: TimeInterval) {
+        performHide(duration: duration, callCompletionBlock: true)
     }
     
-    @objc func hide(callCompletionBlock: NSNumber = NSNumber(value: true)) {
+    @objc func hide() {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide(callCompletionBlock:)), object: nil)
-        performHide(duration: 0.3, callCompletionBlock: callCompletionBlock.boolValue)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hideWithoutCallingCompletionBlock), object: nil)
+        performHide(duration: 0.3, callCompletionBlock: true)
+    }
+    
+    @objc func hideWithoutCallingCompletionBlock() {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hideWithoutCallingCompletionBlock), object: nil)
+        performHide(duration: 0.3, callCompletionBlock: false)
     }
     
     func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
@@ -154,7 +160,7 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        hide(callCompletionBlock: false)
+        hideWithoutCallingCompletionBlock()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             guard let buttons = self.message.buttons else {
                 return
