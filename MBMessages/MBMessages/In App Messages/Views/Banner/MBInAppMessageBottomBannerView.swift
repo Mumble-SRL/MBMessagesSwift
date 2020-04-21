@@ -138,7 +138,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         })
         
         if message.duration != -1 {
-            self.perform(#selector(hide), with: true, afterDelay: message.duration)
+            self.perform(#selector(hide), with: nil, afterDelay: message.duration)
         }
     }
     
@@ -181,7 +181,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
                 let height = self.frame.height + 8
                 let remainingHeight = height - (touchPoint.y - initialTouchPoint.y)
                 let perc = remainingHeight / height
-                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)), callCompletionBlock: true)
+                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)))
             } else {
                 bottomConstraintNotHidden?.constant = -8
                 UIView.animate(withDuration: 0.2, animations: {

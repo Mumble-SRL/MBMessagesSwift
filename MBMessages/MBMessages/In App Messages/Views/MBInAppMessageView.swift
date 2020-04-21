@@ -139,11 +139,11 @@ public class MBInAppMessageView: UIView {
         fatalError("Implement in subclasses")
     }
     
-    func hideWithDuration(duration: TimeInterval, callCompletionBlock: Bool) {
+    func hideWithDuration(duration: TimeInterval, callCompletionBlock: Bool = true) {
         performHide(duration: duration, callCompletionBlock: callCompletionBlock)
     }
     
-    @objc func hide(callCompletionBlock: Bool) {
+    @objc func hide(callCompletionBlock: Bool = true) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(hide), object: nil)
         performHide(duration: 0.3, callCompletionBlock: callCompletionBlock)
     }

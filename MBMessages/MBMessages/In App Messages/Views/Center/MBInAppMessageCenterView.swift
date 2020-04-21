@@ -242,7 +242,7 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         backgroundView.addGestureRecognizer(tap)
         
         if message.duration != -1 {
-            self.perform(#selector(hide), with: true, afterDelay: message.duration)
+            self.perform(#selector(hide), with: nil, afterDelay: message.duration)
         }
     }
     
@@ -268,10 +268,10 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
     }
     
     @objc func backgroundViewPressed() {
-        hide(callCompletionBlock: true)
+        hide()
     }
 
     @objc func closePressed() {
-        hide(callCompletionBlock: true)
+        hide()
     }
 }

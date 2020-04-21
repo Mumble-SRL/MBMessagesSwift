@@ -179,7 +179,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
                 let height = self.frame.height + 8
                 let remainingHeight = height - (initialTouchPoint.y - touchPoint.y)
                 let perc = remainingHeight / height
-                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)), callCompletionBlock: true)
+                hideWithDuration(duration: TimeInterval(max(perc * 0.3, 0)))
             } else {
                 topConstraintNotHidden?.constant = 8
                 UIView.animate(withDuration: 0.2, animations: {
