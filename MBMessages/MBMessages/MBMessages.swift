@@ -39,9 +39,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
                                     return
                                 }
                                 let delay = self?.messagesDelay ?? 0
-                                var messages = body.map({ MBInAppMessage(dictionary: $0) })
-                                messages.append(contentsOf: body.map({ MBInAppMessage(dictionary: $0) }))
-                                messages.append(contentsOf: body.map({ MBInAppMessage(dictionary: $0) }))
+                                let messages = body.map({ MBInAppMessage(dictionary: $0) })
                                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                                     MBInAppMessageManager.presentMessages(messages,
                                                                           delegate: self?.viewDelegate,

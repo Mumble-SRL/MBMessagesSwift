@@ -13,19 +13,20 @@ public class MBInAppMessageManager: NSObject {
     static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
                                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil) {
-        guard messages.count != 0 else {
+        let filteredMessages = messages.filter({ !messageHasBeenShowed(messageId: $0.id) })
+        guard filteredMessages.count != 0 else {
             return
         }
         guard let topMostViewController = topMostViewController() else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.presentMessages(messages,
+                self.presentMessages(filteredMessages,
                                      delegate: delegate,
                                      styleDelegate: styleDelegate)
             }
             return
         }
         presentMessage(atIndex: 0,
-                       messages: messages,
+                       messages: filteredMessages,
                        delegate: delegate,
                        styleDelegate: styleDelegate,
                        overViewController: topMostViewController)
@@ -70,6 +71,7 @@ public class MBInAppMessageManager: NSObject {
                                                          overViewController: topMostViewController())
                 }
             }
+            setMessageShowed(messageId: message.id)
             messageView.present()
         }
     }
@@ -95,5 +97,27 @@ public class MBInAppMessageManager: NSObject {
             return topMostViewController(presented)
         }
         return controller
+    }
+    
+    
+    //MARK: - Showed message handling
+    
+    private static func messageHasBeenShowed(messageId: Int) -> Bool {
+        let userDefaults = UserDefaults.standard
+        let showedMessages = userDefaults.object(forKey: showedMessagesKey) as? [Int] ?? []
+        return showedMessages.contains(messageId)
+    }
+    
+    private static func setMessageShowed(messageId: Int) {
+        let userDefaults = UserDefaults.standard
+        var showedMessages = userDefaults.object(forKey: showedMessagesKey) as? [Int] ?? []
+        if !showedMessages.contains(messageId) {
+            showedMessages.append(messageId)
+            UserDefaults.standard.set(showedMessages, forKey: showedMessagesKey)
+        }
+    }
+    
+    private static var showedMessagesKey: String {
+        return "com.mumble.mburger.messages.showedMessages"
     }
 }
