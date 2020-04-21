@@ -20,7 +20,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
     public weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
     public var messagesDelay: TimeInterval = 1
-        
+    
     override public init() {
         super.init()
         checkMessages()
@@ -45,8 +45,8 @@ public class MBMessages: NSObject, MBPluginProtocol {
                                                                           delegate: self?.viewDelegate,
                                                                           styleDelegate: self?.styleDelegate)
                                 })
-        }, failure: { error in
-            self.delegate?.inAppMessageCheckFailed(sender: self, error: error)
+            }, failure: { error in
+                self.delegate?.inAppMessageCheckFailed(sender: self, error: error)
         })
     }
     
@@ -61,38 +61,38 @@ public class MBMessages: NSObject, MBPluginProtocol {
         }
     }
     
-    static func registerPushDevice(deviceToken: Data,
-                                   success: (() -> Void)? = nil,
-                                   failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func registerDeviceToPush(deviceToken: Data,
+                                            success: (() -> Void)? = nil,
+                                            failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.registerDevice(deviceToken: deviceToken, success: success, failure: failure)
     }
     
-    static func registerPush(toTopic topic: String,
-                             success: (() -> Void)? = nil,
-                             failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func registerPushMessages(toTopic topic: String,
+                                            success: (() -> Void)? = nil,
+                                            failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.register(toTopic: topic, success: success, failure: failure)
     }
     
-    static func registerPush(toTopics topics: [String],
-                             success: (() -> Void)? = nil,
-                             failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func registerPushMessages(toTopics topics: [String],
+                                            success: (() -> Void)? = nil,
+                                            failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.register(toTopics: topics, success: success, failure: failure)
     }
     
-    static func unregisterPush(fromTopic topic: String,
-                               success: (() -> Void)? = nil,
-                               failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func unregisterPushMessages(fromTopic topic: String,
+                                              success: (() -> Void)? = nil,
+                                              failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.unregister(fromTopic: topic, success: success, failure: failure)
     }
     
-    static func unregisterPush(fromTopics topics: [String],
-                               success: (() -> Void)? = nil,
-                               failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func unregisterPushMessages(fromTopics topics: [String],
+                                              success: (() -> Void)? = nil,
+                                              failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.unregister(fromTopics: topics, success: success, failure: failure)
     }
     
-    static func unregisterPushFromAllTopics(success: (() -> Void)? = nil,
-                                            failure: ((_ error: Error?) -> Void)? = nil) {
+    public static func unregisterPushMessagesFromAllTopics(success: (() -> Void)? = nil,
+                                                           failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.unregisterFromAllTopics(success: success, failure: failure)
     }
     
