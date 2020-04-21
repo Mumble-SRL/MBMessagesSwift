@@ -16,9 +16,11 @@
 		13F279E524A6FF30E098A6012F8F2AD7 /* MBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6049E0E4F7C72BB3C3DBA27F5706E23 /* MBRequest.swift */; };
 		140B20510504375FF6E9A3FFF664A36C /* MBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAD3E4F82D329DD21C3ACC5107842B /* MBUser.swift */; };
 		16C83DBA6AAC528D183853CB2F8D8ACA /* MBUserContractStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FC958D56A1D71C43840D6585BA95 /* MBUserContractStatus.swift */; };
+		1E0228F8305EF56A9D9DD2CCF18CF465 /* Pods-MBMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 364023857168154DD35B1F8070A80C09 /* Pods-MBMessages-dummy.m */; };
 		1FF0EDA8252387181C8A3F43B402C35E /* MBAuthContractAcceptanceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0871E465073A90668D930CB112B28A /* MBAuthContractAcceptanceParameter.swift */; };
 		21106982FE437EEAFAB0FF50F3EC57A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778A7CC4D0B0843916C44F475C88EFDC /* Foundation.framework */; };
 		220D60BD20DD0C4A18A4103A7E8227B5 /* MBImagesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F633DDD6AA34175945A9532843EC127 /* MBImagesElement.swift */; };
+		2E659575E782FE9712A41C27CFF63BF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778A7CC4D0B0843916C44F475C88EFDC /* Foundation.framework */; };
 		30DDBF70A42DDB630A590BB9A2BE6B5D /* MBAddressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C51B3630258433690A572A081FFB750 /* MBAddressElement.swift */; };
 		356999F476AEBC40216B008D64FD52E3 /* MBDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02D8966EA761DEF65AEB93B1804B7CA /* MBDecodable.swift */; };
 		380E0D4C758CE1BF5298591E2AB07E2E /* MBGeneralElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BDAD8DF31126ECE617A3507C67A56 /* MBGeneralElement.swift */; };
@@ -50,12 +52,10 @@
 		A34F2FBBC2A5780F4B7D899E9CCCD9C2 /* MBPaginationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C74AF8D2452F76B0588C378AE01BF1 /* MBPaginationInfo.swift */; };
 		A35A91C35C32D551D25FC30879B80B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778A7CC4D0B0843916C44F475C88EFDC /* Foundation.framework */; };
 		AB069FEA2E1AF7578343EAFB0AD20781 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F3140F5138D6EEF5EF6F175C0B669561 /* SAMKeychainQuery.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B870420A876F3FC8340E14F230061B41 /* Pods-MBInAppMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7F20908DC67611E4CEB0801F13FA26B /* Pods-MBInAppMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B94C4BA733E1C667C34DB72D04968891 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778A7CC4D0B0843916C44F475C88EFDC /* Foundation.framework */; };
 		BB5C8D6D486E5AB9162B2205622029B4 /* SAMKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2581E542F13100160E1F6D7D2BA5095 /* SAMKeychain-dummy.m */; };
 		BF88925D0DAB40CB65A3CCDF7AD75929 /* MBMediaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969A33A41D8FF96A8C2A3F9C4EA558B /* MBMediaElement.swift */; };
-		C18EDFD233382003C36C05E35CD985A6 /* Pods-MBInAppMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F09F171C4DCAA2C28775530DE9EEE37A /* Pods-MBInAppMessage-dummy.m */; };
 		C32A948A9B09D52E184AA8FD3C577803 /* MBPollElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658AC7A8DA6236AC80C2820912CB29D7 /* MBPollElement.swift */; };
+		C8DD6D9BC666FB2AD1BD05DAE5BDB778 /* Pods-MBMessages-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F5D1B8FEF322D330822F57A2DEBB1A5 /* Pods-MBMessages-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9B1EFC681026952C4E82EB7D86A23F2 /* SAMKeychain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1C1EC40757D65BCADF5A295FFCDF295 /* SAMKeychain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBF871A8DBBA0360A7FE899B78441E19 /* MBGeneralParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D99488593906D65ACF82BB80C4E0 /* MBGeneralParameter.swift */; };
 		D3F4D219CAAF1129F068F45509A864FF /* MBLegalContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14FFB2D8A8FAF7AF9184552A0E3DB0 /* MBLegalContract.swift */; };
@@ -79,7 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1EE13C070153D2678DC1E57173E2B4CD /* PBXContainerItemProxy */ = {
+		4B7AF38518DBA56A7A686E6F6790B0EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -93,21 +93,21 @@
 			remoteGlobalIDString = 5572D14DECB5A676C1B31B30A3BA7F10;
 			remoteInfo = SAMKeychain;
 		};
-		647D920905C4989BDA09E2CFD8A2DDFA /* PBXContainerItemProxy */ = {
+		5449DB96A1B523E5E032551D811CFE83 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8DBD1EB833A242D1B4C867B0058BA435;
 			remoteInfo = MBurgerSwift;
 		};
-		A12ADD9552F4A8AA812649220902DFBC /* PBXContainerItemProxy */ = {
+		ED863EF131414B1EB7821B812D354E82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
 			remoteInfo = MBNetworkingSwift;
 		};
-		ED863EF131414B1EB7821B812D354E82 /* PBXContainerItemProxy */ = {
+		FB7FB050D7B47BB23B8C63490DFF2D1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -120,13 +120,14 @@
 		01C74AF8D2452F76B0588C378AE01BF1 /* MBPaginationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationInfo.swift; path = MBurgerSwift/MBPagination/MBPaginationInfo.swift; sourceTree = "<group>"; };
 		06982DEFE141D82BD8E709633B28C5FD /* MBSortParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSortParameter.swift; path = MBurgerSwift/MBParameter/MBSortParameter.swift; sourceTree = "<group>"; };
 		06F70A54B59756F88F826104C34CB914 /* MBRelationElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRelationElement.swift; path = MBurgerSwift/MBElement/MBRelationElement.swift; sourceTree = "<group>"; };
+		08EC79A05E477EB64FA945D2DC0BF71A /* Pods-MBMessages.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MBMessages.modulemap"; sourceTree = "<group>"; };
 		0B80B9E1E718EC2AC2F2D43469A23881 /* MBurgerSwift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBurgerSwift.h; path = MBurgerSwift/MBurgerSwift.h; sourceTree = "<group>"; };
 		0BBBB2833B325569A0D26EE39B203D66 /* SAMKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-prefix.pch"; sourceTree = "<group>"; };
+		0FC1EA9709BB8009E90974AC4213436D /* Pods-MBMessages-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBMessages-acknowledgements.plist"; sourceTree = "<group>"; };
 		1747D99488593906D65ACF82BB80C4E0 /* MBGeneralParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralParameter.swift; path = MBurgerSwift/MBParameter/MBGeneralParameter.swift; sourceTree = "<group>"; };
 		1AC8448A2CCDDD7D6177C227760C0794 /* MBurgerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBurgerSwift-umbrella.h"; sourceTree = "<group>"; };
 		1BDFAA3DF6DE9C1A6FB8413A8784E0D8 /* MBFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFile.swift; path = MBurgerSwift/MBElement/MBFile.swift; sourceTree = "<group>"; };
 		1E731D8B7D48BA3D8D9573F20EA9CB11 /* SAMKeychain.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SAMKeychain.bundle; path = Support/SAMKeychain.bundle; sourceTree = "<group>"; };
-		1F4928B41B183848AD888F17B4C2F702 /* Pods-MBInAppMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBInAppMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		27C7A79B63B8E4408D25D1AA1B44F45E /* MBProject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBProject.swift; path = MBurgerSwift/MBProject/MBProject.swift; sourceTree = "<group>"; };
 		27FAB1830C159B54DE8A91BDD4AD9D8A /* MBNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBNetworking.h; path = MBNetworking/MBNetworking.h; sourceTree = "<group>"; };
 		2B496572AEB4DCE0EDAF57E36F62F17B /* MBUserPublishedSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserPublishedSection.swift; path = MBurgerSwift/MBAuth/MBUserPublishedSection.swift; sourceTree = "<group>"; };
@@ -135,12 +136,13 @@
 		2F5A3F0378BE99721A09177320F67A6C /* MBNetworkingSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBNetworkingSwift-Info.plist"; sourceTree = "<group>"; };
 		2F633DDD6AA34175945A9532843EC127 /* MBImagesElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBImagesElement.swift; path = MBurgerSwift/MBElement/MBImagesElement.swift; sourceTree = "<group>"; };
 		3088FC958D56A1D71C43840D6585BA95 /* MBUserContractStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserContractStatus.swift; path = MBurgerSwift/MBAuth/MBUserContractStatus.swift; sourceTree = "<group>"; };
+		30B0B5CB39866EEC4AFEEFF9683E4238 /* Pods-MBMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		317C42D6BB11FFDF58B1B1743963B344 /* MBNetworkingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBNetworkingSwift.framework; path = MBNetworkingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		340D1886F4A5743E4828EB797D6FCD40 /* Pods-MBInAppMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBInAppMessage.release.xcconfig"; sourceTree = "<group>"; };
+		364023857168154DD35B1F8070A80C09 /* Pods-MBMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBMessages-dummy.m"; sourceTree = "<group>"; };
 		3B5E4DE1824436171619982FF79BE22A /* SAMKeychain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SAMKeychain.debug.xcconfig; sourceTree = "<group>"; };
 		3B64C81F20CDAB92B4BBF9A170712211 /* SAMKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SAMKeychain.release.xcconfig; sourceTree = "<group>"; };
-		3B74769CC82F4ECF2E2958CAF4809419 /* Pods-MBInAppMessage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MBInAppMessage.modulemap"; sourceTree = "<group>"; };
 		3E130D70FA0C83179601B9953345589F /* MBManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBManager.swift; path = MBurgerSwift/MBManager/MBManager.swift; sourceTree = "<group>"; };
+		3F5D1B8FEF322D330822F57A2DEBB1A5 /* Pods-MBMessages-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBMessages-umbrella.h"; sourceTree = "<group>"; };
 		3F62D3065840E8661D414B5BC8E28008 /* MBDropdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDropdownElement.swift; path = MBurgerSwift/MBElement/MBDropdownElement.swift; sourceTree = "<group>"; };
 		406E971730A1A8AE79B2894318946538 /* MBPluginProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPluginProtocol.swift; path = MBurgerSwift/MBPlugin/MBPluginProtocol.swift; sourceTree = "<group>"; };
 		447A3CA928DBD4CA8D187F45C2CE75A6 /* MBMarkdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMarkdownElement.swift; path = MBurgerSwift/MBElement/MBMarkdownElement.swift; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 		480DD0124211E4E551AC251FEC35E147 /* MBAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuth.swift; path = MBurgerSwift/MBAuth/MBAuth.swift; sourceTree = "<group>"; };
 		48CB1E098F587BB32672F2D71EC01445 /* MBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBError.swift; path = MBNetworking/MBError.swift; sourceTree = "<group>"; };
 		498C32038BA2FDDB37A311282EB462BA /* SAMKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SAMKeychain.modulemap; sourceTree = "<group>"; };
-		4A1309D448759DD77890C9A245440B57 /* Pods-MBInAppMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBInAppMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4B0871E465073A90668D930CB112B28A /* MBAuthContractAcceptanceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuthContractAcceptanceParameter.swift; path = MBurgerSwift/MBAuth/MBAuthContractAcceptanceParameter.swift; sourceTree = "<group>"; };
 		4D2BE00A184F8467BC7BE3463B71301E /* MBElementProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElementProtocol.swift; path = MBurgerSwift/MBElement/MBElementProtocol.swift; sourceTree = "<group>"; };
 		52712A2F80E50161953783CF4BD22A4A /* MBFilterParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFilterParameter.swift; path = MBurgerSwift/MBParameter/MBFilterParameter.swift; sourceTree = "<group>"; };
@@ -161,10 +162,8 @@
 		6D12E7AC31D33B7EDB8090CEDCA184FC /* MBurgerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBurgerSwift.debug.xcconfig; sourceTree = "<group>"; };
 		7032E4E8FAA9DFE5C2851492DE66E19D /* MBValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBValidation.swift; path = MBNetworking/MBValidation.swift; sourceTree = "<group>"; };
 		73C72B5A6BC4257CC244FC312B2A3978 /* MBDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecoder.swift; path = MBurgerSwift/MBDecodable/MBDecoder.swift; sourceTree = "<group>"; };
-		75B3437DBD0DF9694144EB4FC50E4D48 /* Pods_MBInAppMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MBInAppMessage.framework; path = "Pods-MBInAppMessage.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		778A7CC4D0B0843916C44F475C88EFDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		832736E99B4578098C7CA7643640F110 /* MBResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResult.swift; path = MBNetworking/MBResult.swift; sourceTree = "<group>"; };
-		83481EA05032C3928DF8929EB2986C92 /* Pods-MBInAppMessage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBInAppMessage-frameworks.sh"; sourceTree = "<group>"; };
 		8C11016E282390F2730D8886C0135626 /* MBClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBClient.swift; path = MBurgerSwift/MBClient.swift; sourceTree = "<group>"; };
 		8CEF26081279112EF5B91EBA18135856 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		8E484BDE21CBEB172CCD65061C13D7DA /* MBApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBApiManager.swift; path = MBurgerSwift/MBManager/MBApiManager.swift; sourceTree = "<group>"; };
@@ -176,10 +175,11 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1A5DB8FA652BA2EDD8B92C23C3CA071 /* SAMKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychain.m; path = Sources/SAMKeychain.m; sourceTree = "<group>"; };
 		A2A475F50F08619E7AAC1479BAA1D9E1 /* MBSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSection.swift; path = MBurgerSwift/MBSection/MBSection.swift; sourceTree = "<group>"; };
+		A62944E38AC64FD025475FE91B02749D /* Pods-MBMessages-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBMessages-Info.plist"; sourceTree = "<group>"; };
 		A76FCBF4CABCB50CE58ADE09158D9FDC /* MBResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResponse.swift; path = MBNetworking/MBResponse.swift; sourceTree = "<group>"; };
-		A9BD52BC7CC0F7BDB0CC6C5F9CB29F28 /* Pods-MBInAppMessage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBInAppMessage-Info.plist"; sourceTree = "<group>"; };
 		AA25DCCA4F5AEEC89B543C6D795F29DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		ABEE0BF8CAF60F16E1A28F878B826BCF /* MBParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameters.swift; path = MBNetworking/MBParameters.swift; sourceTree = "<group>"; };
+		AD1EF6F5488B3353B24B76DE024FA81B /* Pods-MBMessages-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBMessages-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AF5C3530FC7CA2D7D583182153651A15 /* MBDateElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDateElement.swift; path = MBurgerSwift/MBElement/MBDateElement.swift; sourceTree = "<group>"; };
 		B6049E0E4F7C72BB3C3DBA27F5706E23 /* MBRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRequest.swift; path = MBNetworking/MBRequest.swift; sourceTree = "<group>"; };
 		B689173A298997F7D1766AD6EE19ED3D /* SAMKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychainQuery.h; path = Sources/SAMKeychainQuery.h; sourceTree = "<group>"; };
@@ -187,23 +187,23 @@
 		BA251709DF0CFC63167C0CABD05A6AB8 /* MBGeofenceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeofenceParameter.swift; path = MBurgerSwift/MBParameter/MBGeofenceParameter.swift; sourceTree = "<group>"; };
 		BD946861D122725C47944359261DFED0 /* MBElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElement.swift; path = MBurgerSwift/MBElement/MBElement.swift; sourceTree = "<group>"; };
 		BFF5547F6223B24BFAB08A50D142AB81 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C78877227B925F4B908ACEB55AF61EF4 /* Pods-MBInAppMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBInAppMessage-acknowledgements.plist"; sourceTree = "<group>"; };
 		C78BDAD8DF31126ECE617A3507C67A56 /* MBGeneralElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralElement.swift; path = MBurgerSwift/MBElement/MBGeneralElement.swift; sourceTree = "<group>"; };
-		C7F20908DC67611E4CEB0801F13FA26B /* Pods-MBInAppMessage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBInAppMessage-umbrella.h"; sourceTree = "<group>"; };
 		C97A7291E0F259349A6C3BFA1602ADFD /* MBurgerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBurgerSwift.modulemap; sourceTree = "<group>"; };
 		CDE84D218EDFECEADB4B6857EA39B6F3 /* MBParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameter.swift; path = MBurgerSwift/MBParameter/MBParameter.swift; sourceTree = "<group>"; };
 		D1C1EC40757D65BCADF5A295FFCDF295 /* SAMKeychain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-umbrella.h"; sourceTree = "<group>"; };
 		D2581E542F13100160E1F6D7D2BA5095 /* SAMKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain-dummy.m"; sourceTree = "<group>"; };
+		D6EC063B86192EE87258FE29E9A3FF16 /* Pods-MBMessages-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBMessages-frameworks.sh"; sourceTree = "<group>"; };
 		D920EB0CABE27278388277893E8AD94D /* MBPaginationParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationParameter.swift; path = MBurgerSwift/MBParameter/MBPaginationParameter.swift; sourceTree = "<group>"; };
 		DF66AC5D7FDD000DE4659710DE1BFE2F /* MBNetworkingSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.release.xcconfig; sourceTree = "<group>"; };
 		E02D8966EA761DEF65AEB93B1804B7CA /* MBDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecodable.swift; path = MBurgerSwift/MBDecodable/MBDecodable.swift; sourceTree = "<group>"; };
 		E81C607D0F4EA540ADDD57BCFB8BBB26 /* MBMulitpartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMulitpartFormData.swift; path = MBNetworking/MBMulitpartFormData.swift; sourceTree = "<group>"; };
+		E8316E4B1923B8B9E7A14FF6E8476D3B /* Pods_MBMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MBMessages.framework; path = "Pods-MBMessages.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98CCF23A89D4506F4557E63145F89C9 /* MBNetworkingSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBNetworkingSwift-dummy.m"; sourceTree = "<group>"; };
 		EC14FFB2D8A8FAF7AF9184552A0E3DB0 /* MBLegalContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBLegalContract.swift; path = MBurgerSwift/MBProject/MBLegalContract.swift; sourceTree = "<group>"; };
 		EDCE338B6C6E8B7CD37D9D08983BC3A9 /* MBNetworkingSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBNetworkingSwift.modulemap; sourceTree = "<group>"; };
 		EF99CE3D5528C202527ADC61F62E4DC4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		F09F171C4DCAA2C28775530DE9EEE37A /* Pods-MBInAppMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBInAppMessage-dummy.m"; sourceTree = "<group>"; };
 		F147CC42151D4EA54C845266912FE157 /* MBNetworkingSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.debug.xcconfig; sourceTree = "<group>"; };
+		F26A393247AFFE0961CAAAA6632D6BC6 /* Pods-MBMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBMessages.release.xcconfig"; sourceTree = "<group>"; };
 		F3075579DB50328BBD00EFB2C0792CC0 /* MBurgerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBurgerSwift-dummy.m"; sourceTree = "<group>"; };
 		F3140F5138D6EEF5EF6F175C0B669561 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychainQuery.m; path = Sources/SAMKeychainQuery.m; sourceTree = "<group>"; };
 		F39D83F5A59929A20CA9AD61FEEDC50F /* MBNetworkingSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBNetworkingSwift-umbrella.h"; sourceTree = "<group>"; };
@@ -213,11 +213,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0C21A66B6D710CDA18F56AC16D5C0BA7 /* Frameworks */ = {
+		05C06459A7C15F7F820B6BA8BD06AE0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94C4BA733E1C667C34DB72D04968891 /* Foundation.framework in Frameworks */,
+				2E659575E782FE9712A41C27CFF63BF1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,20 +326,23 @@
 			path = "../Target Support Files/SAMKeychain";
 			sourceTree = "<group>";
 		};
+		4CCD14371D980D0496845E5CE545B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				317C42D6BB11FFDF58B1B1743963B344 /* MBNetworkingSwift.framework */,
+				652C84349C3673262F0D28DB86673B8C /* MBurgerSwift.framework */,
+				E8316E4B1923B8B9E7A14FF6E8476D3B /* Pods_MBMessages.framework */,
+				612028EAFF1C2054A0EB821A9C9F2440 /* SAMKeychain.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5D23EBE4ECAD8F6F78EAB5494E9D74DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				1E731D8B7D48BA3D8D9573F20EA9CB11 /* SAMKeychain.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		622CA9C8EF2B69DBA25EA745CD0504E3 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6A22ECAE65F0CC4F8C7B63EFF6B2C03B /* Pods-MBInAppMessage */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		69042F7E428F96F9AAB3101A224225CB /* SAMKeychain */ = {
@@ -354,23 +357,6 @@
 			);
 			name = SAMKeychain;
 			path = SAMKeychain;
-			sourceTree = "<group>";
-		};
-		6A22ECAE65F0CC4F8C7B63EFF6B2C03B /* Pods-MBInAppMessage */ = {
-			isa = PBXGroup;
-			children = (
-				3B74769CC82F4ECF2E2958CAF4809419 /* Pods-MBInAppMessage.modulemap */,
-				4A1309D448759DD77890C9A245440B57 /* Pods-MBInAppMessage-acknowledgements.markdown */,
-				C78877227B925F4B908ACEB55AF61EF4 /* Pods-MBInAppMessage-acknowledgements.plist */,
-				F09F171C4DCAA2C28775530DE9EEE37A /* Pods-MBInAppMessage-dummy.m */,
-				83481EA05032C3928DF8929EB2986C92 /* Pods-MBInAppMessage-frameworks.sh */,
-				A9BD52BC7CC0F7BDB0CC6C5F9CB29F28 /* Pods-MBInAppMessage-Info.plist */,
-				C7F20908DC67611E4CEB0801F13FA26B /* Pods-MBInAppMessage-umbrella.h */,
-				1F4928B41B183848AD888F17B4C2F702 /* Pods-MBInAppMessage.debug.xcconfig */,
-				340D1886F4A5743E4828EB797D6FCD40 /* Pods-MBInAppMessage.release.xcconfig */,
-			);
-			name = "Pods-MBInAppMessage";
-			path = "Target Support Files/Pods-MBInAppMessage";
 			sourceTree = "<group>";
 		};
 		A65A5163381450C1B33D3C64655052B9 /* Frameworks */ = {
@@ -389,8 +375,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				A65A5163381450C1B33D3C64655052B9 /* Frameworks */,
 				24120B7C9EA106BE4D9DD7A476AEEFFC /* Pods */,
-				EEF687DE874CA92EB43F3B88919DC22E /* Products */,
-				622CA9C8EF2B69DBA25EA745CD0504E3 /* Targets Support Files */,
+				4CCD14371D980D0496845E5CE545B561 /* Products */,
+				D2E92AE7804693467F0C9DB68906A955 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -403,6 +389,31 @@
 				AA25DCCA4F5AEEC89B543C6D795F29DD /* Security.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		D2E92AE7804693467F0C9DB68906A955 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E16F9A9DD5BAD45DBC5D3C3F95A8BD08 /* Pods-MBMessages */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E16F9A9DD5BAD45DBC5D3C3F95A8BD08 /* Pods-MBMessages */ = {
+			isa = PBXGroup;
+			children = (
+				08EC79A05E477EB64FA945D2DC0BF71A /* Pods-MBMessages.modulemap */,
+				AD1EF6F5488B3353B24B76DE024FA81B /* Pods-MBMessages-acknowledgements.markdown */,
+				0FC1EA9709BB8009E90974AC4213436D /* Pods-MBMessages-acknowledgements.plist */,
+				364023857168154DD35B1F8070A80C09 /* Pods-MBMessages-dummy.m */,
+				D6EC063B86192EE87258FE29E9A3FF16 /* Pods-MBMessages-frameworks.sh */,
+				A62944E38AC64FD025475FE91B02749D /* Pods-MBMessages-Info.plist */,
+				3F5D1B8FEF322D330822F57A2DEBB1A5 /* Pods-MBMessages-umbrella.h */,
+				30B0B5CB39866EEC4AFEEFF9683E4238 /* Pods-MBMessages.debug.xcconfig */,
+				F26A393247AFFE0961CAAAA6632D6BC6 /* Pods-MBMessages.release.xcconfig */,
+			);
+			name = "Pods-MBMessages";
+			path = "Target Support Files/Pods-MBMessages";
 			sourceTree = "<group>";
 		};
 		EA9E7ACDE1891920E4130CAA59C2B992 /* MBurgerSwift */ = {
@@ -452,17 +463,6 @@
 			path = MBurgerSwift;
 			sourceTree = "<group>";
 		};
-		EEF687DE874CA92EB43F3B88919DC22E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				317C42D6BB11FFDF58B1B1743963B344 /* MBNetworkingSwift.framework */,
-				652C84349C3673262F0D28DB86673B8C /* MBurgerSwift.framework */,
-				75B3437DBD0DF9694144EB4FC50E4D48 /* Pods_MBInAppMessage.framework */,
-				612028EAFF1C2054A0EB821A9C9F2440 /* SAMKeychain.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -485,6 +485,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB4806F4A1B03490253A517DE56879C7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8DD6D9BC666FB2AD1BD05DAE5BDB778 /* Pods-MBMessages-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EEB69E3CEB782F1CB165374AB375D28B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,17 +502,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8787D08E1C785E91C98ECBFE26F9DB3 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B870420A876F3FC8340E14F230061B41 /* Pods-MBInAppMessage-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0599EE1B7B28ED41DAFD2F7848A1BF8A /* Pods-MBMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893CA191EAD3A2F937952282940FFB40 /* Build configuration list for PBXNativeTarget "Pods-MBMessages" */;
+			buildPhases = (
+				CB4806F4A1B03490253A517DE56879C7 /* Headers */,
+				8D1DE324A877AD7446FAFA086EC67CC2 /* Sources */,
+				05C06459A7C15F7F820B6BA8BD06AE0C /* Frameworks */,
+				A510BF6C937AFD98C5EC80B003F8F469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6DA5624AEED9C42379092722F1CF844 /* PBXTargetDependency */,
+				9A486CD9C9488EC4FE8F36ADCF492692 /* PBXTargetDependency */,
+				044062224488B90BC771B3C33E620F46 /* PBXTargetDependency */,
+			);
+			name = "Pods-MBMessages";
+			productName = "Pods-MBMessages";
+			productReference = E8316E4B1923B8B9E7A14FF6E8476D3B /* Pods_MBMessages.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5572D14DECB5A676C1B31B30A3BA7F10 /* SAMKeychain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA969B5BD43DCA0A7B7ACB265DAC90E /* Build configuration list for PBXNativeTarget "SAMKeychain" */;
@@ -561,27 +582,6 @@
 			productReference = 652C84349C3673262F0D28DB86673B8C /* MBurgerSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BC95CD392DF3560B6AC13B4CEDF78F04 /* Pods-MBInAppMessage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEDF586B617EDDE854BF36D318393339 /* Build configuration list for PBXNativeTarget "Pods-MBInAppMessage" */;
-			buildPhases = (
-				F8787D08E1C785E91C98ECBFE26F9DB3 /* Headers */,
-				0F26270F63E36E4E036E0D4B0BA2E912 /* Sources */,
-				0C21A66B6D710CDA18F56AC16D5C0BA7 /* Frameworks */,
-				72204DB01E9A9AC3E29D86EE13C46EFF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E8AE5AEC87B2E988B4386D8E5F93801E /* PBXTargetDependency */,
-				2FDB79ED055C87936C5FDF37EB12ACF8 /* PBXTargetDependency */,
-				E3ACF193EC40B7E00AEFCA44B4A652EE /* PBXTargetDependency */,
-			);
-			name = "Pods-MBInAppMessage";
-			productName = "Pods-MBInAppMessage";
-			productReference = 75B3437DBD0DF9694144EB4FC50E4D48 /* Pods_MBInAppMessage.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -600,13 +600,13 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = EEF687DE874CA92EB43F3B88919DC22E /* Products */;
+			productRefGroup = 4CCD14371D980D0496845E5CE545B561 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */,
 				8DBD1EB833A242D1B4C867B0058BA435 /* MBurgerSwift */,
-				BC95CD392DF3560B6AC13B4CEDF78F04 /* Pods-MBInAppMessage */,
+				0599EE1B7B28ED41DAFD2F7848A1BF8A /* Pods-MBMessages */,
 				5572D14DECB5A676C1B31B30A3BA7F10 /* SAMKeychain */,
 			);
 		};
@@ -628,7 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72204DB01E9A9AC3E29D86EE13C46EFF /* Resources */ = {
+		A510BF6C937AFD98C5EC80B003F8F469 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -645,11 +645,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0F26270F63E36E4E036E0D4B0BA2E912 /* Sources */ = {
+		8D1DE324A877AD7446FAFA086EC67CC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C18EDFD233382003C36C05E35CD985A6 /* Pods-MBInAppMessage-dummy.m in Sources */,
+				1E0228F8305EF56A9D9DD2CCF18CF465 /* Pods-MBMessages-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,29 +727,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		044062224488B90BC771B3C33E620F46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SAMKeychain;
+			target = 5572D14DECB5A676C1B31B30A3BA7F10 /* SAMKeychain */;
+			targetProxy = 4B7AF38518DBA56A7A686E6F6790B0EB /* PBXContainerItemProxy */;
+		};
 		1D5878DC4BB9860590AE24E6E1CD995D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SAMKeychain;
 			target = 5572D14DECB5A676C1B31B30A3BA7F10 /* SAMKeychain */;
 			targetProxy = 502B445D63BD96FF31CE8A49CB0EC595 /* PBXContainerItemProxy */;
 		};
-		2FDB79ED055C87936C5FDF37EB12ACF8 /* PBXTargetDependency */ = {
+		9A486CD9C9488EC4FE8F36ADCF492692 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBurgerSwift;
 			target = 8DBD1EB833A242D1B4C867B0058BA435 /* MBurgerSwift */;
-			targetProxy = 647D920905C4989BDA09E2CFD8A2DDFA /* PBXContainerItemProxy */;
-		};
-		E3ACF193EC40B7E00AEFCA44B4A652EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SAMKeychain;
-			target = 5572D14DECB5A676C1B31B30A3BA7F10 /* SAMKeychain */;
-			targetProxy = 1EE13C070153D2678DC1E57173E2B4CD /* PBXContainerItemProxy */;
-		};
-		E8AE5AEC87B2E988B4386D8E5F93801E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBNetworkingSwift;
-			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
-			targetProxy = A12ADD9552F4A8AA812649220902DFBC /* PBXContainerItemProxy */;
+			targetProxy = 5449DB96A1B523E5E032551D811CFE83 /* PBXContainerItemProxy */;
 		};
 		E93C4F431C04EDEE786B3CA47A497BBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -757,45 +751,15 @@
 			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
 			targetProxy = ED863EF131414B1EB7821B812D354E82 /* PBXContainerItemProxy */;
 		};
+		F6DA5624AEED9C42379092722F1CF844 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBNetworkingSwift;
+			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
+			targetProxy = FB7FB050D7B47BB23B8C63490DFF2D1C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		139BEEC7939F706B532CA4CB22DDE85D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B64C81F20CDAB92B4BBF9A170712211 /* SAMKeychain.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SAMKeychain/SAMKeychain-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SAMKeychain/SAMKeychain-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SAMKeychain/SAMKeychain.modulemap";
-				PRODUCT_MODULE_NAME = SAMKeychain;
-				PRODUCT_NAME = SAMKeychain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -860,6 +824,45 @@
 			};
 			name = Debug;
 		};
+		240F39DD08FB3FF3799AA1D23876B08A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26A393247AFFE0961CAAAA6632D6BC6 /* Pods-MBMessages.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MBMessages/Pods-MBMessages-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MBMessages/Pods-MBMessages.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2C31407650F96D4A2A2848208DEEFC35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CF6888FD541EDAEABE9FAEBC67F6F17 /* MBurgerSwift.release.xcconfig */;
@@ -897,7 +900,7 @@
 			};
 			name = Release;
 		};
-		590B86B0234A2FD0131C5D7737B66076 /* Debug */ = {
+		4008F12F7FF6F02FD1B2907FDE331C8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B5E4DE1824436171619982FF79BE22A /* SAMKeychain.debug.xcconfig */;
 			buildSettings = {
@@ -925,16 +928,52 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		6CEFEF886E2F6400EEB6EDF0520D4C9E /* Release */ = {
+		4E63C50964081636C78BBBC4DCADE3AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 340D1886F4A5743E4828EB797D6FCD40 /* Pods-MBInAppMessage.release.xcconfig */;
+			baseConfigurationReference = 3B64C81F20CDAB92B4BBF9A170712211 /* SAMKeychain.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SAMKeychain/SAMKeychain-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SAMKeychain/SAMKeychain-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SAMKeychain/SAMKeychain.modulemap";
+				PRODUCT_MODULE_NAME = SAMKeychain;
+				PRODUCT_NAME = SAMKeychain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8868E3424E5C3D87BC3C52A23B775DC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30B0B5CB39866EEC4AFEEFF9683E4238 /* Pods-MBMessages.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -947,7 +986,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MBMessages/Pods-MBMessages-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -956,7 +995,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-MBMessages/Pods-MBMessages.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -965,11 +1004,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		A15F58A73BD22F0C78EDD3C935E7E33D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1103,44 +1141,6 @@
 			};
 			name = Release;
 		};
-		C495C2EDA8E8613405012ACF773B2F50 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F4928B41B183848AD888F17B4C2F702 /* Pods-MBInAppMessage.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CAF540EEA519E76A6EB07CC91731FDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF66AC5D7FDD000DE4659710DE1BFE2F /* MBNetworkingSwift.release.xcconfig */;
@@ -1199,11 +1199,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEDF586B617EDDE854BF36D318393339 /* Build configuration list for PBXNativeTarget "Pods-MBInAppMessage" */ = {
+		893CA191EAD3A2F937952282940FFB40 /* Build configuration list for PBXNativeTarget "Pods-MBMessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C495C2EDA8E8613405012ACF773B2F50 /* Debug */,
-				6CEFEF886E2F6400EEB6EDF0520D4C9E /* Release */,
+				8868E3424E5C3D87BC3C52A23B775DC3 /* Debug */,
+				240F39DD08FB3FF3799AA1D23876B08A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1211,8 +1211,8 @@
 		CAA969B5BD43DCA0A7B7ACB265DAC90E /* Build configuration list for PBXNativeTarget "SAMKeychain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				590B86B0234A2FD0131C5D7737B66076 /* Debug */,
-				139BEEC7939F706B532CA4CB22DDE85D /* Release */,
+				4008F12F7FF6F02FD1B2907FDE331C8B /* Debug */,
+				4E63C50964081636C78BBBC4DCADE3AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
