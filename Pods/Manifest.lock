@@ -6,7 +6,7 @@ PODS:
   - SAMKeychain (1.5.3)
 
 DEPENDENCIES:
-  - "MBurgerSwift (from `git@github.com:Mumble-SRL/MBurgerSwift.git`, branch `develop`)"
+  - "MBurgerSwift (from `git@github.com:Mumble-SRL/MBurgerSwift.git`, branch `metadata-management`)"
 
 SPEC REPOS:
   trunk:
@@ -15,12 +15,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   MBurgerSwift:
-    :branch: develop
+    :branch: metadata-management
     :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
 
 CHECKOUT OPTIONS:
   MBurgerSwift:
-    :commit: 6493a92468d1363b0520d1b9975c2dc6ce0360cb
+    :commit: f973ee59801309fec8ab933906a1aed304aba195
     :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
 
 SPEC CHECKSUMS:
@@ -28,6 +28,6 @@ SPEC CHECKSUMS:
   MBurgerSwift: e9e39042dcf24ccb6b638f382cafbe3305c3fba2
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
-PODFILE CHECKSUM: 5cf9c27a48d40cdaa4bf305f61b593dbac4925fd
+PODFILE CHECKSUM: 47a8ba5c9c955014e5c5a0a6c5b97cfb2514dbd9
 
 COCOAPODS: 1.9.1

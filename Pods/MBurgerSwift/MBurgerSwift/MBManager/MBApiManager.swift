@@ -124,12 +124,18 @@ public final class MBApiManager {
             
             MBAuth.saveNewTokenIfPresent(inResponse: response.response)
             
-            DispatchQueue.main.async {
-                if let body = unwrappedJson["body"] as? [String: Any] {
-                   success(body)
-                } else {
-                    success(unwrappedJson)
+            let statusCode = unwrappedJson["status_code"] as? Int ?? 0
+            if statusCode == 0 {
+                DispatchQueue.main.async {
+                    if let body = unwrappedJson["body"] as? [String: Any] {
+                        success(body)
+                    } else {
+                        success(unwrappedJson)
+                    }
                 }
+            } else {
+                let message = unwrappedJson["message"] as? String ?? ""
+                failure(MBError.customError(reason: message))
             }
         case .error(let error):
             DispatchQueue.main.async {

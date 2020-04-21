@@ -41,7 +41,7 @@ class MBInAppMessageImageLoader: UIView {
                     completion(nil)
                     return
             }
-            DispatchQueue.main.async() {
+            DispatchQueue.main.async {
                 try? data.write(to: fileUrl)
                 completion(image)
             }

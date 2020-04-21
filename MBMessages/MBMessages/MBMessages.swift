@@ -19,6 +19,8 @@ public class MBMessages: NSObject, MBPluginProtocol {
     weak var viewDelegate: MBInAppMessageViewDelegate?
     weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
+    private var messagesDelay: TimeInterval = 1
+    
     override public init() {
         super.init()
         checkMessages()
@@ -32,8 +34,17 @@ public class MBMessages: NSObject, MBPluginProtocol {
                              method: .get,
                              development: MBManager.shared.development,
                              encoding: URLParameterEncoder.queryItems,
-                             success: { response in
-                                print(response)
+                             success: { [weak self] response in
+                                guard let body = response["body"] as? [[String: Any]] else {
+                                    return
+                                }
+                                let delay = self?.messagesDelay ?? 0
+                                let messages = body.map({ MBInAppMessage(dictionary: $0) })
+                                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                                    MBInAppMessageManager.presentMessages(messages,
+                                                                          delegate: self?.viewDelegate,
+                                                                          styleDelegate: self?.styleDelegate)
+                                })
         }, failure: { error in
             self.delegate?.inAppMessageCheckFailed(sender: self, error: error)
         })

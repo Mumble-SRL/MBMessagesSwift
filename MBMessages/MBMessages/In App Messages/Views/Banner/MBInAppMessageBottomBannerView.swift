@@ -73,7 +73,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
             gestureHandle.centerXAnchor.constraint(equalTo: targetView.centerXAnchor),
             gestureHandle.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 10),
             gestureHandle.widthAnchor.constraint(equalToConstant: 80),
-            gestureHandle.heightAnchor.constraint(equalToConstant: handleHeight),
+            gestureHandle.heightAnchor.constraint(equalToConstant: handleHeight)
         ])
         
         let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)

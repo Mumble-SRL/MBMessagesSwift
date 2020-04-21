@@ -10,7 +10,7 @@ import Foundation
 
 /// The manager of the SDK.
 public final class MBManager {
-    private init() {}
+    private init() { }
     
     /// Creates and returns a singleton `MBManager`.
     /// - Warning: Don't allocate an instance of MBManager yourself.

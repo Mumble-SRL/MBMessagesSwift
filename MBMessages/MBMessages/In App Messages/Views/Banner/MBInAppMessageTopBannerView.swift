@@ -71,7 +71,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: targetView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: targetView.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 0),
+            contentView.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 0)
         ])
 
         let handleHeight: CGFloat = 5
@@ -148,8 +148,6 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
             self.removeFromSuperview()
         })
     }
-    
-    
     
     // MARK: - Gesture
     
