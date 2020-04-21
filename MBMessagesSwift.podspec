@@ -15,18 +15,18 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "MBInAppMessageSwift"
+  s.name         = "MBMessagesSwift"
   s.version      = "0.1"
-  s.summary      = "MBurger in app messages plugin."
+  s.summary      = "MBurger messages plugin."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "MBurger in app messages plugin used to show in app messages using MBurger iOS SDK."
+  s.description  = "MBurger messages plugin used to show in app messages using MBurger iOS SDK."
 
-  s.homepage     = "https://github.com/Mumble-SRL/MBInAppMessageSwift"
+  s.homepage     = "https://github.com/Mumble-SRL/MBMessagesSwift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -77,8 +77,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBInAppMessageSwift.git', tag: '0.1' }
-  s.source_files = "MBInAppMessage/MBInAppMessage/*.{h,m,swift}", "MBInAppMessage/MBInAppMessage/**/*.{h,m,swift}", "MBInAppMessage/MBInAppMessage/MBInAppMessage/**/*.{h,m,swift}"
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBMessagesSwift.git', tag: '0.1' }
+  s.source_files = "MBMessages/MBMessages/*.{h,m,swift}", "MBMessages/MBMessages/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

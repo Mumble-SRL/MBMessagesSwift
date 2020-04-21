@@ -8,33 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		E1807375B1EE49138355846A /* Pods_MBInAppMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7DF7C11C5B7F290B371AF7 /* Pods_MBInAppMessage.framework */; };
-		EC036995244DEBC000220F2F /* MBInAppMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBInAppMessage.swift */; };
-		EC0F42A2242113E600A3130A /* MBIAMMessageViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F42A1242113E600A3130A /* MBIAMMessageViewStyle.swift */; };
-		EC4C8F492440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F482440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift */; };
+		EC036995244DEBC000220F2F /* MBMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBMessages.swift */; };
+		EC0F42A2242113E600A3130A /* MBInAppMessageViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */; };
+		EC4C8F492440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */; };
 		EC937C5A2420C8E2001B8AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C592420C8E2001B8AA1 /* AppDelegate.swift */; };
 		EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */; };
 		EC937C5E2420C8E2001B8AA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C5D2420C8E2001B8AA1 /* ViewController.swift */; };
 		EC937C612420C8E2001B8AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC937C5F2420C8E2001B8AA1 /* Main.storyboard */; };
 		EC937C632420C8E4001B8AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC937C622420C8E4001B8AA1 /* Assets.xcassets */; };
 		EC937C662420C8E4001B8AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC937C642420C8E4001B8AA1 /* LaunchScreen.storyboard */; };
-		EC937C6E2420C9DD001B8AA1 /* MBIAMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6D2420C9DD001B8AA1 /* MBIAMMessage.swift */; };
-		EC937C702420CB33001B8AA1 /* MBIAMMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBIAMMessageManager.swift */; };
-		EC937C722420CD3A001B8AA1 /* MBIAMMessageTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C712420CD3A001B8AA1 /* MBIAMMessageTopBannerView.swift */; };
-		EC937C742420CE38001B8AA1 /* MBIAMMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C732420CE38001B8AA1 /* MBIAMMessageView.swift */; };
-		EC937C762420D495001B8AA1 /* MBIAMMessageImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C752420D495001B8AA1 /* MBIAMMessageImageLoader.swift */; };
-		EC937C782420E001001B8AA1 /* MBIAMMessageBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C772420E001001B8AA1 /* MBIAMMessageBottomBannerView.swift */; };
-		ECCE524A242103C7001DB16C /* MBIAMMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE5249242103C7001DB16C /* MBIAMMessageCenterView.swift */; };
-		ECEC51CE2420E33800A1A3EE /* MBIAMMessageBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC51CD2420E33800A1A3EE /* MBIAMMessageBannerContent.swift */; };
+		EC937C6E2420C9DD001B8AA1 /* MBInAppMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */; };
+		EC937C702420CB33001B8AA1 /* MBInAppMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */; };
+		EC937C722420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift */; };
+		EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */; };
+		EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */; };
+		EC937C782420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */; };
+		ECCE524A242103C7001DB16C /* MBInAppMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */; };
+		ECEC51CE2420E33800A1A3EE /* MBInAppMessageBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B7DF7C11C5B7F290B371AF7 /* Pods_MBInAppMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBInAppMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C158B484A11C6D3ECD5834C1 /* Pods-MBInAppMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBInAppMessage.debug.xcconfig"; path = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		C77AE80A9CE2F2CF4AB4D98F /* Pods-MBInAppMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBInAppMessage.release.xcconfig"; path = "Target Support Files/Pods-MBInAppMessage/Pods-MBInAppMessage.release.xcconfig"; sourceTree = "<group>"; };
-		EC036994244DEBC000220F2F /* MBInAppMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessage.swift; sourceTree = "<group>"; };
-		EC0F42A1242113E600A3130A /* MBIAMMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageViewStyle.swift; sourceTree = "<group>"; };
-		EC4C8F482440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageFullscreenImageView.swift; sourceTree = "<group>"; };
-		EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBInAppMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC036994244DEBC000220F2F /* MBMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessages.swift; sourceTree = "<group>"; };
+		EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageViewStyle.swift; sourceTree = "<group>"; };
+		EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageFullscreenImageView.swift; sourceTree = "<group>"; };
+		EC937C562420C8E2001B8AA1 /* MBMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC937C592420C8E2001B8AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC937C5D2420C8E2001B8AA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,14 +42,14 @@
 		EC937C622420C8E4001B8AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC937C652420C8E4001B8AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC937C672420C8E4001B8AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC937C6D2420C9DD001B8AA1 /* MBIAMMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessage.swift; sourceTree = "<group>"; };
-		EC937C6F2420CB33001B8AA1 /* MBIAMMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageManager.swift; sourceTree = "<group>"; };
-		EC937C712420CD3A001B8AA1 /* MBIAMMessageTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageTopBannerView.swift; sourceTree = "<group>"; };
-		EC937C732420CE38001B8AA1 /* MBIAMMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageView.swift; sourceTree = "<group>"; };
-		EC937C752420D495001B8AA1 /* MBIAMMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageImageLoader.swift; sourceTree = "<group>"; };
-		EC937C772420E001001B8AA1 /* MBIAMMessageBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageBottomBannerView.swift; sourceTree = "<group>"; };
-		ECCE5249242103C7001DB16C /* MBIAMMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageCenterView.swift; sourceTree = "<group>"; };
-		ECEC51CD2420E33800A1A3EE /* MBIAMMessageBannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBIAMMessageBannerContent.swift; sourceTree = "<group>"; };
+		EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessage.swift; sourceTree = "<group>"; };
+		EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageManager.swift; sourceTree = "<group>"; };
+		EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageTopBannerView.swift; sourceTree = "<group>"; };
+		EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageView.swift; sourceTree = "<group>"; };
+		EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageImageLoader.swift; sourceTree = "<group>"; };
+		EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBottomBannerView.swift; sourceTree = "<group>"; };
+		ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageCenterView.swift; sourceTree = "<group>"; };
+		ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBannerContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +84,32 @@
 		EC0F42A32421193900A3130A /* Center */ = {
 			isa = PBXGroup;
 			children = (
-				ECCE5249242103C7001DB16C /* MBIAMMessageCenterView.swift */,
+				ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */,
 			);
 			path = Center;
+			sourceTree = "<group>";
+		};
+		EC1286A5244EF0CE005A4005 /* MBPush */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MBPush;
+			sourceTree = "<group>";
+		};
+		EC1286A6244EF0DE005A4005 /* In App Messages */ = {
+			isa = PBXGroup;
+			children = (
+				EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */,
+				EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */,
+				EC937C792420E0A6001B8AA1 /* Views */,
+			);
+			path = "In App Messages";
 			sourceTree = "<group>";
 		};
 		EC4C8F472440AE840019F59E /* FullscreenImage */ = {
 			isa = PBXGroup;
 			children = (
-				EC4C8F482440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift */,
+				EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */,
 			);
 			path = FullscreenImage;
 			sourceTree = "<group>";
@@ -100,7 +117,7 @@
 		EC937C4D2420C8E2001B8AA1 = {
 			isa = PBXGroup;
 			children = (
-				EC937C582420C8E2001B8AA1 /* MBInAppMessage */,
+				EC937C582420C8E2001B8AA1 /* MBMessages */,
 				EC937C572420C8E2001B8AA1 /* Products */,
 				84D48EBDD0D49E79717D68CD /* Pods */,
 				7BFCB2B5648F4278BBE5870B /* Frameworks */,
@@ -110,35 +127,35 @@
 		EC937C572420C8E2001B8AA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */,
+				EC937C562420C8E2001B8AA1 /* MBMessages.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC937C582420C8E2001B8AA1 /* MBInAppMessage */ = {
+		EC937C582420C8E2001B8AA1 /* MBMessages */ = {
 			isa = PBXGroup;
 			children = (
 				EC937C592420C8E2001B8AA1 /* AppDelegate.swift */,
 				EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */,
 				EC937C5D2420C8E2001B8AA1 /* ViewController.swift */,
-				ECEC51CF2420E61B00A1A3EE /* MBInAppMessage */,
+				ECEC51CF2420E61B00A1A3EE /* MBMessages */,
 				EC937C5F2420C8E2001B8AA1 /* Main.storyboard */,
 				EC937C622420C8E4001B8AA1 /* Assets.xcassets */,
 				EC937C642420C8E4001B8AA1 /* LaunchScreen.storyboard */,
 				EC937C672420C8E4001B8AA1 /* Info.plist */,
 			);
-			path = MBInAppMessage;
+			path = MBMessages;
 			sourceTree = "<group>";
 		};
 		EC937C792420E0A6001B8AA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EC937C732420CE38001B8AA1 /* MBIAMMessageView.swift */,
-				EC0F42A1242113E600A3130A /* MBIAMMessageViewStyle.swift */,
+				EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */,
+				EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */,
 				ECCE5248242103A9001DB16C /* Banner */,
 				EC0F42A32421193900A3130A /* Center */,
 				EC4C8F472440AE840019F59E /* FullscreenImage */,
-				EC937C752420D495001B8AA1 /* MBIAMMessageImageLoader.swift */,
+				EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,30 +163,29 @@
 		ECCE5248242103A9001DB16C /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				EC937C712420CD3A001B8AA1 /* MBIAMMessageTopBannerView.swift */,
-				EC937C772420E001001B8AA1 /* MBIAMMessageBottomBannerView.swift */,
-				ECEC51CD2420E33800A1A3EE /* MBIAMMessageBannerContent.swift */,
+				EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift */,
+				EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */,
+				ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
 		};
-		ECEC51CF2420E61B00A1A3EE /* MBInAppMessage */ = {
+		ECEC51CF2420E61B00A1A3EE /* MBMessages */ = {
 			isa = PBXGroup;
 			children = (
-				EC036994244DEBC000220F2F /* MBInAppMessage.swift */,
-				EC937C6D2420C9DD001B8AA1 /* MBIAMMessage.swift */,
-				EC937C6F2420CB33001B8AA1 /* MBIAMMessageManager.swift */,
-				EC937C792420E0A6001B8AA1 /* Views */,
+				EC036994244DEBC000220F2F /* MBMessages.swift */,
+				EC1286A6244EF0DE005A4005 /* In App Messages */,
+				EC1286A5244EF0CE005A4005 /* MBPush */,
 			);
-			path = MBInAppMessage;
+			path = MBMessages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC937C552420C8E2001B8AA1 /* MBInAppMessage */ = {
+		EC937C552420C8E2001B8AA1 /* MBMessages */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBInAppMessage" */;
+			buildConfigurationList = EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBMessages" */;
 			buildPhases = (
 				83D7D8422E074F56FB0B1902 /* [CP] Check Pods Manifest.lock */,
 				EC937C522420C8E2001B8AA1 /* Sources */,
@@ -181,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = MBInAppMessage;
+			name = MBMessages;
 			productName = MBurgerInAppMessage;
-			productReference = EC937C562420C8E2001B8AA1 /* MBInAppMessage.app */;
+			productReference = EC937C562420C8E2001B8AA1 /* MBMessages.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBInAppMessage" */;
+			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessages" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC937C552420C8E2001B8AA1 /* MBInAppMessage */,
+				EC937C552420C8E2001B8AA1 /* MBMessages */,
 			);
 		};
 /* End PBXProject section */
@@ -279,20 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0F42A2242113E600A3130A /* MBIAMMessageViewStyle.swift in Sources */,
-				EC937C762420D495001B8AA1 /* MBIAMMessageImageLoader.swift in Sources */,
-				EC937C742420CE38001B8AA1 /* MBIAMMessageView.swift in Sources */,
-				EC937C782420E001001B8AA1 /* MBIAMMessageBottomBannerView.swift in Sources */,
-				ECCE524A242103C7001DB16C /* MBIAMMessageCenterView.swift in Sources */,
+				EC0F42A2242113E600A3130A /* MBInAppMessageViewStyle.swift in Sources */,
+				EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */,
+				EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */,
+				EC937C782420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift in Sources */,
+				ECCE524A242103C7001DB16C /* MBInAppMessageCenterView.swift in Sources */,
 				EC937C5E2420C8E2001B8AA1 /* ViewController.swift in Sources */,
 				EC937C5A2420C8E2001B8AA1 /* AppDelegate.swift in Sources */,
-				ECEC51CE2420E33800A1A3EE /* MBIAMMessageBannerContent.swift in Sources */,
-				EC937C722420CD3A001B8AA1 /* MBIAMMessageTopBannerView.swift in Sources */,
-				EC937C6E2420C9DD001B8AA1 /* MBIAMMessage.swift in Sources */,
-				EC937C702420CB33001B8AA1 /* MBIAMMessageManager.swift in Sources */,
-				EC4C8F492440AEA30019F59E /* MBIAMMessageFullscreenImageView.swift in Sources */,
+				ECEC51CE2420E33800A1A3EE /* MBInAppMessageBannerContent.swift in Sources */,
+				EC937C722420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift in Sources */,
+				EC937C6E2420C9DD001B8AA1 /* MBInAppMessage.swift in Sources */,
+				EC937C702420CB33001B8AA1 /* MBInAppMessageManager.swift in Sources */,
+				EC4C8F492440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift in Sources */,
 				EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */,
-				EC036995244DEBC000220F2F /* MBInAppMessage.swift in Sources */,
+				EC036995244DEBC000220F2F /* MBMessages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBInAppMessage" */ = {
+		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC937C682420C8E4001B8AA1 /* Debug */,
@@ -484,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBInAppMessage" */ = {
+		EC937C6A2420C8E4001B8AA1 /* Build configuration list for PBXNativeTarget "MBMessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC937C6B2420C8E4001B8AA1 /* Debug */,

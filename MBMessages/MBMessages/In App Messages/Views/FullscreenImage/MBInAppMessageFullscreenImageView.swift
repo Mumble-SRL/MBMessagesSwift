@@ -1,5 +1,5 @@
 //
-//  MBIAMMessageFullscreenImageView.swift
+//  MBInAppMessageFullscreenImageView.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 10/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MBIAMMessageFullscreenImageView: MBIAMMessageView {
+public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
     var backgroundView: UIView?
     
     var bottomConstraintHidden: NSLayoutConstraint?
@@ -23,7 +23,7 @@ public class MBIAMMessageFullscreenImageView: MBIAMMessageView {
             configure(image: nil)
             return
         }
-        MBIAMMessageImageLoader.loadImage(url: messageImage) { [weak self] image in
+        MBInAppMessageImageLoader.loadImage(url: messageImage) { [weak self] image in
             if let strongSelf = self {
                 strongSelf.configure(image: image)
             }
@@ -65,7 +65,7 @@ public class MBIAMMessageFullscreenImageView: MBIAMMessageView {
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(closeButton)
-        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBIAMMessageViewStyle.button1BackgroundColor(forMessage: message)
+        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
         
         UIView.performWithoutAnimation {
             if #available(iOS 13.0, *) {
@@ -90,21 +90,21 @@ public class MBIAMMessageFullscreenImageView: MBIAMMessageView {
             }
             var lastButton: UIView?
             for (index, button) in buttons.enumerated().reversed() {
-                let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBIAMMessageViewStyle.buttonsTextFont(forMessage: message)
+                let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
                 var backgroundColor: UIColor! = UIColor.white
                 var titleColor: UIColor! = UIColor.white
                 var borderColor: UIColor?
                 if index == 0 {
                     backgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
-                        MBIAMMessageViewStyle.button1BackgroundColor(forMessage: message)
-                    titleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBIAMMessageViewStyle.button1TitleColor(forMessage: message)
+                        MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
+                    titleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
                 } else {
                     backgroundColor = styleDelegate?.button2BackgroundColor(forMessage: message) ??
-                        MBIAMMessageViewStyle.button2BackgroundColor(forMessage: message)
-                    titleColor = styleDelegate?.button2TitleColor(forMessage: message) ?? MBIAMMessageViewStyle.button2TitleColor(forMessage: message)
-                    borderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBIAMMessageViewStyle.button2BorderColor(forMessage: message)
+                        MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
+                    titleColor = styleDelegate?.button2TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TitleColor(forMessage: message)
+                    borderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: message)
                 }
-                let button = MBIAMMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, titleColor: titleColor, borderColor: borderColor, font: font, height: 44)
+                let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, titleColor: titleColor, borderColor: borderColor, font: font, height: 44)
                 button.translatesAutoresizingMaskIntoConstraints = false
                 contentView.addSubview(button)
                 NSLayoutConstraint.activate([

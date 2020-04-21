@@ -1,5 +1,5 @@
 //
-//  MBIAMMessageImageLoader.swift
+//  MBInAppMessageImageLoader.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 17/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBIAMMessageImageLoader: UIView {
+class MBInAppMessageImageLoader: UIView {
 
     static func loadImage(url: String?, completion: @escaping (UIImage?) -> Void) {
         guard let urlString = url else {

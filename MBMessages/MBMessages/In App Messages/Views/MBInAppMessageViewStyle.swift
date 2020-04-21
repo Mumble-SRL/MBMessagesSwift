@@ -1,5 +1,5 @@
 //
-//  MBIAMMessageViewStyle.swift
+//  MBInAppMessageViewStyle.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 17/03/2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-public enum MBIAMMessageViewBackgroundStyle {
+public enum MBInAppMessageViewBackgroundStyle {
     case solid
     case translucent
 }
 
-internal class MBIAMMessageViewStyle {
-    static func backgroundStyle(forMessage message: MBIAMMessage) -> MBIAMMessageViewBackgroundStyle {
+internal class MBInAppMessageViewStyle {
+    static func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle {
         if message.style == .center {
             return .solid
         } else {
@@ -22,7 +22,7 @@ internal class MBIAMMessageViewStyle {
         }
     }
     
-    static func backgroundColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func backgroundColor(forMessage message: MBInAppMessage) -> UIColor {
         if let backgroundColor = message.backgroundColor {
             return backgroundColor
         }
@@ -33,14 +33,14 @@ internal class MBIAMMessageViewStyle {
         }
     }
     
-    static func titleColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func titleColor(forMessage message: MBInAppMessage) -> UIColor {
         if let titleColor = message.titleColor {
             return titleColor
         }
         return textColor()
     }
     
-    static func bodyColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func bodyColor(forMessage message: MBInAppMessage) -> UIColor {
         if let bodyColor = message.bodyColor {
             return bodyColor
         }
@@ -51,7 +51,7 @@ internal class MBIAMMessageViewStyle {
         return color(lightColor: UIColor.black, darkColor: UIColor.white)
     }
     
-    static func button1BackgroundColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
         if let firstButton = message.buttons?.first,
             let firstButtonBackgroundColor = firstButton.backgroundColor {
             return firstButtonBackgroundColor
@@ -59,7 +59,7 @@ internal class MBIAMMessageViewStyle {
         return color(lightColor: UIColor.black, darkColor: UIColor.white)
     }
     
-    static func button1TitleColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
         if let firstButton = message.buttons?.first,
             let firstButtonTitleColor = firstButton.titleColor {
             return firstButtonTitleColor
@@ -67,7 +67,7 @@ internal class MBIAMMessageViewStyle {
         return color(lightColor: UIColor.white, darkColor: UIColor.black)
     }
     
-    static func button2BackgroundColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
         if message.buttons?.count ?? 0 >= 2 {
             let secondButton = message.buttons![1]
             if let secondButtonBackgroundColor = secondButton.backgroundColor {
@@ -77,7 +77,7 @@ internal class MBIAMMessageViewStyle {
         return color(lightColor: UIColor.white, darkColor: UIColor.black)
     }
     
-    static func button2TitleColor(forMessage message: MBIAMMessage) -> UIColor {
+    static func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor {
         if message.buttons?.count ?? 0 >= 2 {
             let secondButton = message.buttons![1]
             if let secondButtonTitleColor = secondButton.titleColor {
@@ -87,19 +87,19 @@ internal class MBIAMMessageViewStyle {
         return color(lightColor: UIColor.black, darkColor: UIColor.white)
     }
     
-    static func button2BorderColor(forMessage message: MBIAMMessage) -> UIColor? {
+    static func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {
         button2TitleColor(forMessage: message)
     }
 
-    static func titleFont(forMessage message: MBIAMMessage) -> UIFont {
+    static func titleFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .headline)
     }
     
-    static func bodyFont(forMessage message: MBIAMMessage) -> UIFont {
+    static func bodyFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .body)
     }
     
-    static func buttonsTextFont(forMessage message: MBIAMMessage) -> UIFont {
+    static func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont {
         return UIFont.preferredFont(forTextStyle: .body)
     }
     
@@ -117,7 +117,7 @@ internal class MBIAMMessageViewStyle {
         }
     }
     
-    static internal func button(forMessageButton messageButton: MBIAMMessageButton,
+    static internal func button(forMessageButton messageButton: MBInAppMessageButton,
                                 backgroundColor: UIColor,
                                 titleColor: UIColor,
                                 borderColor: UIColor? = nil,

@@ -1,5 +1,5 @@
 //
-//  MBIAMMessage.swift
+//  MBInAppMessage.swift
 //  MBInAppMessage
 //
 //  Created by Lorenzo Oliveto on 17/03/2020.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-public enum MBIAMMessageStyle {
+public enum MBInAppMessageStyle {
     case bannerTop
     case bannerBottom
     case center
     case fullscreenImage
 }
 
-public class MBIAMMessage: NSObject {
-    let style: MBIAMMessageStyle!
+public class MBInAppMessage: NSObject {
+    let style: MBInAppMessageStyle!
     let duration: TimeInterval!
     let title: String?
     let titleColor: UIColor?
@@ -24,9 +24,9 @@ public class MBIAMMessage: NSObject {
     let bodyColor: UIColor?
     let image: String?
     let backgroundColor: UIColor?
-    let buttons: [MBIAMMessageButton]?
+    let buttons: [MBInAppMessageButton]?
     
-    init(style: MBIAMMessageStyle!,
+    init(style: MBInAppMessageStyle!,
          duration: TimeInterval = 5,
          title: String? = nil,
          titleColor: UIColor? = nil,
@@ -34,7 +34,7 @@ public class MBIAMMessage: NSObject {
          bodyColor: UIColor? = nil,
          image: String? = nil,
          backgroundColor: UIColor? = nil,
-         buttons: [MBIAMMessageButton]? = nil) {
+         buttons: [MBInAppMessageButton]? = nil) {
         self.style = style
         self.duration = duration
         self.title = title
@@ -48,22 +48,22 @@ public class MBIAMMessage: NSObject {
     
     //TODO remove
     
-    public static func demoMessage(style: MBIAMMessageStyle) -> MBIAMMessage {
+    public static func demoMessage(style: MBInAppMessageStyle) -> MBInAppMessage {
         let buttons = [
-            MBIAMMessageButton(title: "Button1", link: "https://www.google.it"),
-            MBIAMMessageButton(title: "Button2", link: "https://www.mumbleideas.com"),
+            MBInAppMessageButton(title: "Button1", link: "https://www.google.it"),
+            MBInAppMessageButton(title: "Button2", link: "https://www.mumbleideas.com"),
         ]
-        return MBIAMMessage(style: style,
-                            title: "Demo title",
-                            body: "Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese",
-                            image: "https://www.vegascreativesoftware.com/fileadmin/user_upload/products/vegas_post/1/vegas_image/vegas-image-luminence-key-a-int.jpg",
-                            buttons: buttons)
+        return MBInAppMessage(style: style,
+                              title: "Demo title",
+                              body: "Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese",
+                              image: "https://www.vegascreativesoftware.com/fileadmin/user_upload/products/vegas_post/1/vegas_image/vegas-image-luminence-key-a-int.jpg",
+                              buttons: buttons)
     }
     
     
 }
 
-public class MBIAMMessageButton: NSObject {
+public class MBInAppMessageButton: NSObject {
     let title: String!
     let titleColor: UIColor?
     let backgroundColor: UIColor?
