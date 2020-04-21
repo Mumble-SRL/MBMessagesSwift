@@ -8,6 +8,7 @@
 
 import UIKit
 import MBurgerSwift
+import MBNetworkingSwift
 
 public protocol MBMessagesDelegate: class {
     func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
@@ -17,7 +18,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
     weak var delegate: MBMessagesDelegate?
     weak var viewDelegate: MBInAppMessageViewDelegate?
     weak var styleDelegate: MBInAppMessageViewStyleDelegate?
-
+    
     override public init() {
         super.init()
         checkMessages()
@@ -28,11 +29,14 @@ public class MBMessages: NSObject, MBPluginProtocol {
         MBApiManager.request(withToken: MBManager.shared.apiToken,
                              locale: MBManager.shared.localeString,
                              apiName: "messages",
-                             method: .get, success: { response in
-                       print(response)
+                             method: .get,
+                             development: MBManager.shared.development,
+                             encoding: URLParameterEncoder.queryItems,
+                             success: { response in
+                                print(response)
         }, failure: { error in
             self.delegate?.inAppMessageCheckFailed(sender: self, error: error)
         })
     }
-
+    
 }
