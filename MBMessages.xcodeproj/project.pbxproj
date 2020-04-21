@@ -10,6 +10,7 @@
 		76AD81EC307BB51704A31C1C /* Pods_MBMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9A4014E04AF56F33D8EE20 /* Pods_MBMessages.framework */; };
 		EC036995244DEBC000220F2F /* MBMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBMessages.swift */; };
 		EC0F42A2242113E600A3130A /* MBInAppMessageViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */; };
+		EC1286B0244F2EB9005A4005 /* MBPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1286AF244F2EB9005A4005 /* MBPush.swift */; };
 		EC4C8F492440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */; };
 		EC937C5A2420C8E2001B8AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C592420C8E2001B8AA1 /* AppDelegate.swift */; };
 		EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C5B2420C8E2001B8AA1 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		EB9A4014E04AF56F33D8EE20 /* Pods_MBMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC036994244DEBC000220F2F /* MBMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessages.swift; sourceTree = "<group>"; };
 		EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageViewStyle.swift; sourceTree = "<group>"; };
+		EC1286AF244F2EB9005A4005 /* MBPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBPush.swift; sourceTree = "<group>"; };
 		EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageFullscreenImageView.swift; sourceTree = "<group>"; };
 		EC937C562420C8E2001B8AA1 /* MBMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC937C592420C8E2001B8AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,21 +95,22 @@
 			path = Center;
 			sourceTree = "<group>";
 		};
-		EC1286A5244EF0CE005A4005 /* MBPush */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MBPush;
-			sourceTree = "<group>";
-		};
 		EC1286A6244EF0DE005A4005 /* In App Messages */ = {
 			isa = PBXGroup;
 			children = (
-				EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */,
 				EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */,
+				EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */,
 				EC937C792420E0A6001B8AA1 /* Views */,
 			);
 			path = "In App Messages";
+			sourceTree = "<group>";
+		};
+		EC1286AE244F2EA7005A4005 /* Push Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				EC1286AF244F2EB9005A4005 /* MBPush.swift */,
+			);
+			path = "Push Notifications";
 			sourceTree = "<group>";
 		};
 		EC4C8F472440AE840019F59E /* FullscreenImage */ = {
@@ -179,7 +182,7 @@
 			children = (
 				EC036994244DEBC000220F2F /* MBMessages.swift */,
 				EC1286A6244EF0DE005A4005 /* In App Messages */,
-				EC1286A5244EF0CE005A4005 /* MBPush */,
+				EC1286AE244F2EA7005A4005 /* Push Notifications */,
 			);
 			path = MBMessages;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC0F42A2242113E600A3130A /* MBInAppMessageViewStyle.swift in Sources */,
+				EC1286B0244F2EB9005A4005 /* MBPush.swift in Sources */,
 				EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */,
 				EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */,
 				EC937C782420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift in Sources */,

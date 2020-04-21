@@ -10,6 +10,7 @@ import UIKit
 import SafariServices
 
 public class MBInAppMessageManager: NSObject {
+    //TODO: messages analytics showed message + tap buttons
     static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
                                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil) {
@@ -99,8 +100,7 @@ public class MBInAppMessageManager: NSObject {
         return controller
     }
     
-    
-    //MARK: - Showed message handling
+    // MARK: - Showed message handling
     
     private static func messageHasBeenShowed(messageId: Int) -> Bool {
         let userDefaults = UserDefaults.standard

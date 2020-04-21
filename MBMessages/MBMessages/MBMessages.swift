@@ -20,7 +20,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
     public weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
     public var messagesDelay: TimeInterval = 1
-    
+        
     override public init() {
         super.init()
         checkMessages()
@@ -50,4 +50,51 @@ public class MBMessages: NSObject, MBPluginProtocol {
         })
     }
     
+    // MARK: - Push handling
+    
+    public static var pushToken: String {
+        set {
+            MBPush.pushToken = newValue
+        }
+        get {
+            return MBPush.pushToken
+        }
+    }
+    
+    static func registerPushDevice(deviceToken: Data,
+                                   success: (() -> Void)? = nil,
+                                   failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.registerDevice(deviceToken: deviceToken, success: success, failure: failure)
+    }
+    
+    static func registerPush(toTopic topic: String,
+                             success: (() -> Void)? = nil,
+                             failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.register(toTopic: topic, success: success, failure: failure)
+    }
+    
+    static func registerPush(toTopics topics: [String],
+                             success: (() -> Void)? = nil,
+                             failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.register(toTopics: topics, success: success, failure: failure)
+    }
+    
+    static func unregisterPush(fromTopic topic: String,
+                               success: (() -> Void)? = nil,
+                               failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.unregister(fromTopic: topic, success: success, failure: failure)
+    }
+    
+    static func unregisterPush(fromTopics topics: [String],
+                               success: (() -> Void)? = nil,
+                               failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.unregister(fromTopics: topics, success: success, failure: failure)
+    }
+    
+    static func unregisterPushFromAllTopics(success: (() -> Void)? = nil,
+                                            failure: ((_ error: Error?) -> Void)? = nil) {
+        MBPush.unregisterFromAllTopics(success: success, failure: failure)
+    }
+    
+    //TODO: messages analytics: api when push arrives + api when push is tapped
 }
