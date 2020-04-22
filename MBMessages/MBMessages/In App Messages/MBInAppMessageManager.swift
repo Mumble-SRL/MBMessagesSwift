@@ -10,7 +10,6 @@ import UIKit
 import SafariServices
 
 public class MBInAppMessageManager: NSObject {
-    //TODO: messages analytics showed message + tap buttons
     static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
                                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil,

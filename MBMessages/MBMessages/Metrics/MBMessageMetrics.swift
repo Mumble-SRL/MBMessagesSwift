@@ -43,6 +43,9 @@ class MBMessageMetrics: NSObject {
                                                   forMetric metric: MBMessageMetricsMetric) {
         //TODO: real key and test
         if let notificationId = userInfo["notification_id"] as? Int {
+            if metric == .interaction && !pushNotificationViewSent(notificationId: notificationId) {
+                createMessageMetricForPush(metric: .view, pushId: notificationId)
+            }
             createMessageMetricForPush(metric: metric, pushId: notificationId)
         }
     }
@@ -87,6 +90,24 @@ class MBMessageMetrics: NSObject {
                 failure(error)
             }
         })
-        
+    }
+    
+    private static func pushNotificationViewSent(notificationId: Int) -> Bool {
+        let userDefaults = UserDefaults.standard
+        let viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
+        return viewSentNotificationIds.contains(notificationId)
+    }
+    
+    private static func setPushNotificationViewShowed(notificationId: Int) {
+        let userDefaults = UserDefaults.standard
+        var viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
+        if !viewSentNotificationIds.contains(notificationId) {
+            viewSentNotificationIds.append(notificationId)
+            UserDefaults.standard.set(viewSentNotificationIds, forKey: pushNotificationViewedKey)
+        }
+    }
+    
+    private static var pushNotificationViewedKey: String {
+        return "com.mumble.mburger.messages.pushNotificationViewed"
     }
 }
