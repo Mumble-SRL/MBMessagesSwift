@@ -24,8 +24,17 @@ public class MBMessages: NSObject, MBPluginProtocol {
     /// Settings this var to true will always display the messages returned by the api, even if they've been already showed
     public var debug = false
     
-    override public init() {
+    public init(delegate: MBMessagesDelegate? = nil,
+                viewDelegate: MBInAppMessageViewDelegate? = nil,
+                styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
+                messagesDelay: TimeInterval = 1,
+                debug: Bool = false) {
         super.init()
+        self.delegate = delegate
+        self.viewDelegate = viewDelegate
+        self.styleDelegate = styleDelegate
+        self.messagesDelay = messagesDelay
+        self.debug = debug
         checkMessages()
         NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
     }

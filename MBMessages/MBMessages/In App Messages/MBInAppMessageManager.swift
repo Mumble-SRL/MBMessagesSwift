@@ -72,6 +72,8 @@ public class MBInAppMessageManager: NSObject {
                 messageView.completionBlock = {
                     MBInAppMessageManager.presentMessage(atIndex: index + 1,
                                                          messages: messages,
+                                                         delegate: delegate,
+                                                         styleDelegate: styleDelegate,
                                                          overViewController: topMostViewController())
                 }
             }

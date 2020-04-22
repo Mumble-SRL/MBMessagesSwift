@@ -150,6 +150,7 @@ public class MBInAppMessageView: UIView {
         }
     }
     
+    /// Used when a button is pressed, the completion block of the view is not called, but the one passed yes
     @objc func hideWithoutCallingCompletionBlock(completionBlock: (() -> Void)?) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         if self.superview != nil {
