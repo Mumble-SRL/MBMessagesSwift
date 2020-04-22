@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { git: 'https://github.com/Mumble-SRL/MBMessagesSwift.git', tag: '0.1' }
-  s.source_files = "MBMessagesSwift/*.{h,m,swift}", "MBMessagesSwift/**/*.{h,m,swift}"
+  s.source_files = "MBMessages/*.{h,m,swift}", "MBMessages/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
