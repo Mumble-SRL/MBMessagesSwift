@@ -140,7 +140,8 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
         }
     }
     
-    override func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
+    override func performHide(duration: TimeInterval,
+                              completionBlock: (() -> Void)? = nil) {
         topConstraintNotHidden?.isActive = false
         topConstraintHidden?.isActive = true
         delegate?.viewWillDisappear(view: self)
@@ -148,10 +149,8 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
             self.superview?.layoutIfNeeded()
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
-            if callCompletionBlock {
-                if let completionBlock = self.completionBlock {
-                    completionBlock()
-                }
+            if let completionBlock = completionBlock {
+                completionBlock()
             }
             self.removeFromSuperview()
         })

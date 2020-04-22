@@ -246,7 +246,8 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         }
     }
     
-    override func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
+    override func performHide(duration: TimeInterval,
+                              completionBlock: (() -> Void)? = nil) {
         centerConstraintNotHidden?.isActive = false
         bottomConstraintHidden?.isActive = true
         
@@ -256,10 +257,8 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
             self.backgroundView?.alpha = 0
         }, completion: { _ in
             self.delegate?.viewDidDisappear(view: self)
-            if callCompletionBlock {
-                if let completionBlock = self.completionBlock {
-                    completionBlock()
-                }
+            if let completionBlock = completionBlock {
+                completionBlock()
             }
             self.removeFromSuperview()
             self.backgroundView?.removeFromSuperview()

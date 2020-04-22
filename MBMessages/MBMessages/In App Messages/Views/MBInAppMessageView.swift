@@ -140,31 +140,31 @@ public class MBInAppMessageView: UIView {
     }
     
     func hideWithDuration(duration: TimeInterval) {
-        performHide(duration: duration, callCompletionBlock: true)
+        performHide(duration: duration, completionBlock: self.completionBlock)
     }
     
     @objc func hide() {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         if self.superview != nil {
-            performHide(duration: 0.3, callCompletionBlock: true)
+            performHide(duration: 0.3, completionBlock: self.completionBlock)
         }
     }
     
-    @objc func hideWithoutCallingCompletionBlock() {
+    @objc func hideWithoutCallingCompletionBlock(completionBlock: (() -> Void)?) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         if self.superview != nil {
-            performHide(duration: 0.3, callCompletionBlock: false)
+            performHide(duration: 0.3, completionBlock: completionBlock)
         }
     }
     
-    func performHide(duration: TimeInterval, callCompletionBlock: Bool) {
+    func performHide(duration: TimeInterval,
+                     completionBlock: (() -> Void)? = nil) {
         fatalError("Implement in subclasses")
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
         MBMessageMetrics.createMessageMetricForMessage(metric: .interaction, messageId: message.id)
-        hideWithoutCallingCompletionBlock()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        hideWithoutCallingCompletionBlock {
             guard let buttons = self.message.buttons else {
                 return
             }
