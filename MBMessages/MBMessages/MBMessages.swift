@@ -21,6 +21,9 @@ public class MBMessages: NSObject, MBPluginProtocol {
     
     public var messagesDelay: TimeInterval = 1
     
+    /// Settings this var to true will always display the messages returned by the api, even if they've been already showed
+    public var debug = false
+    
     override public init() {
         super.init()
         checkMessages()
@@ -43,7 +46,8 @@ public class MBMessages: NSObject, MBPluginProtocol {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                                     MBInAppMessageManager.presentMessages(messages,
                                                                           delegate: self?.viewDelegate,
-                                                                          styleDelegate: self?.styleDelegate)
+                                                                          styleDelegate: self?.styleDelegate,
+                                                                          ignoreShowedMessages: self?.debug ?? false)
                                 })
             }, failure: { error in
                 self.delegate?.inAppMessageCheckFailed(sender: self, error: error)

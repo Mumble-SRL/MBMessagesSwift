@@ -74,7 +74,7 @@ class MBMessageMetrics: NSObject {
         }
         MBApiManager.request(withToken: MBManager.shared.apiToken,
                              locale: MBManager.shared.localeString,
-                             apiName: "metric",
+                             apiName: "metrics",
                              method: .post,
                              parameters: parameters,
                              development: MBManager.shared.development,
