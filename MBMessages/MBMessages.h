@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 //! Project version number for MBMessagesSwift.
-FOUNDATION_EXPORT double MBMessagesSwiftVersionNumber;
+FOUNDATION_EXPORT double MBMessagesVersionNumber;
 
 //! Project version string for MBMessagesSwift.
-FOUNDATION_EXPORT const unsigned char MBMessagesSwiftVersionString[];
+FOUNDATION_EXPORT const unsigned char MBMessagesVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <MBMessagesSwift/PublicHeader.h>
 
