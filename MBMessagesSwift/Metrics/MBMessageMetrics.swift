@@ -21,20 +21,26 @@ enum MBMessageMetricsMetric: String {
 }
 
 class MBMessageMetrics: NSObject {
-    static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: Any] {
+    static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, userDidInteractWithNotificationBlock: (([String: AnyHashable]) -> Void)?) {
+        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: AnyHashable] {
+            if let userDidInteractWithNotificationBlock = userDidInteractWithNotificationBlock {
+                userDidInteractWithNotificationBlock(userInfo)
+            }
             checkNotificationPayload(userInfo: userInfo, forMetric: .interaction)
         }
     }
     
     static func userNotificationCenter(willPresent notification: UNNotification) {
-        if let userInfo = notification.request.content.userInfo as? [String: Any] {
+        if let userInfo = notification.request.content.userInfo as? [String: AnyHashable] {
             checkNotificationPayload(userInfo: userInfo, forMetric: .view)
         }
     }
     
-    public static func userNotificationCenter(didReceive response: UNNotificationResponse) {
-        if let userInfo = response.notification.request.content.userInfo as? [String: Any] {
+    public static func userNotificationCenter(didReceive response: UNNotificationResponse, userDidInteractWithNotificationBlock: (([String: AnyHashable]) -> Void)?) {
+        if let userInfo = response.notification.request.content.userInfo as? [String: AnyHashable] {
+            if let userDidInteractWithNotificationBlock = userDidInteractWithNotificationBlock {
+                userDidInteractWithNotificationBlock(userInfo)
+            }
             checkNotificationPayload(userInfo: userInfo, forMetric: .interaction)
         }
     }

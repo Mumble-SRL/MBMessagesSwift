@@ -23,7 +23,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
     
     /// Settings this var to true will always display the messages returned by the api, even if they've been already showed
     public var debug = false
-    
+        
     public init(delegate: MBMessagesDelegate? = nil,
                 viewDelegate: MBInAppMessageViewDelegate? = nil,
                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
@@ -74,6 +74,9 @@ public class MBMessages: NSObject, MBPluginProtocol {
         }
     }
     
+    /// Block called when the user interacts with a push notification, can be used as an entry point
+    public static var userDidInteractWithNotificationBlock: (([String: AnyHashable]) -> Void)?
+
     public static func registerDeviceToPush(deviceToken: Data,
                                             success: (() -> Void)? = nil,
                                             failure: ((_ error: Error?) -> Void)? = nil) {
@@ -109,10 +112,10 @@ public class MBMessages: NSObject, MBPluginProtocol {
         MBPush.unregisterFromAllTopics(success: success, failure: failure)
     }
     
-    // MARK: - Metrics
+    // MARK: - Metrics and notifications callbacks
     
     public static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)
+        MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions, userDidInteractWithNotificationBlock: userDidInteractWithNotificationBlock)
     }
     
     public static func userNotificationCenter(willPresent notification: UNNotification) {
@@ -120,6 +123,6 @@ public class MBMessages: NSObject, MBPluginProtocol {
     }
     
     public static func userNotificationCenter(didReceive response: UNNotificationResponse) {
-        MBMessageMetrics.userNotificationCenter(didReceive: response)
+        MBMessageMetrics.userNotificationCenter(didReceive: response, userDidInteractWithNotificationBlock: userDidInteractWithNotificationBlock)
     }
 }
