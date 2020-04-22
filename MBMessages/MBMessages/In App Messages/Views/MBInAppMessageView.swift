@@ -162,6 +162,7 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
+        MBMessageMetrics.createMessageMetricForMessage(metric: .interaction, messageId: message.id)
         hideWithoutCallingCompletionBlock()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             guard let buttons = self.message.buttons else {

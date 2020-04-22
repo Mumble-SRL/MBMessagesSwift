@@ -96,5 +96,17 @@ public class MBMessages: NSObject, MBPluginProtocol {
         MBPush.unregisterFromAllTopics(success: success, failure: failure)
     }
     
-    //TODO: messages analytics: api when push arrives + api when push is tapped
+    // MARK: - Metrics
+    
+    public static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)
+    }
+    
+    public static func userNotificationCenter(willPresent notification: UNNotification) {
+        MBMessageMetrics.userNotificationCenter(willPresent: notification)
+    }
+    
+    public static func userNotificationCenter(didReceive response: UNNotificationResponse) {
+        MBMessageMetrics.userNotificationCenter(didReceive: response)
+    }
 }

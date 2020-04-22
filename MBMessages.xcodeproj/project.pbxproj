@@ -24,6 +24,7 @@
 		EC937C742420CE38001B8AA1 /* MBInAppMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */; };
 		EC937C762420D495001B8AA1 /* MBInAppMessageImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */; };
 		EC937C782420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */; };
+		ECC823D52450436000578A96 /* MBMessageMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC823D42450436000578A96 /* MBMessageMetrics.swift */; };
 		ECCE524A242103C7001DB16C /* MBInAppMessageCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */; };
 		ECEC51CE2420E33800A1A3EE /* MBInAppMessageBannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageView.swift; sourceTree = "<group>"; };
 		EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageImageLoader.swift; sourceTree = "<group>"; };
 		EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBottomBannerView.swift; sourceTree = "<group>"; };
+		ECC823D42450436000578A96 /* MBMessageMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessageMetrics.swift; sourceTree = "<group>"; };
 		ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageCenterView.swift; sourceTree = "<group>"; };
 		ECEC51CD2420E33800A1A3EE /* MBInAppMessageBannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBannerContent.swift; sourceTree = "<group>"; };
 		ED72E8DD7067BF223B955791 /* Pods-MBMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMessages.debug.xcconfig"; path = "Target Support Files/Pods-MBMessages/Pods-MBMessages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ECC823D3245042AD00578A96 /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				ECC823D42450436000578A96 /* MBMessageMetrics.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
 		ECCE5248242103A9001DB16C /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 				EC036994244DEBC000220F2F /* MBMessages.swift */,
 				EC1286A6244EF0DE005A4005 /* In App Messages */,
 				EC1286AE244F2EA7005A4005 /* Push Notifications */,
+				ECC823D3245042AD00578A96 /* Metrics */,
 			);
 			path = MBMessages;
 			sourceTree = "<group>";
@@ -333,6 +344,7 @@
 				EC937C722420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift in Sources */,
 				EC937C6E2420C9DD001B8AA1 /* MBInAppMessage.swift in Sources */,
 				EC937C702420CB33001B8AA1 /* MBInAppMessageManager.swift in Sources */,
+				ECC823D52450436000578A96 /* MBMessageMetrics.swift in Sources */,
 				EC4C8F492440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift in Sources */,
 				EC937C5C2420C8E2001B8AA1 /* SceneDelegate.swift in Sources */,
 				EC036995244DEBC000220F2F /* MBMessages.swift in Sources */,

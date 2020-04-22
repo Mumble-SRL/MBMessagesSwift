@@ -77,6 +77,7 @@ public class MBInAppMessageManager: NSObject {
                 }
             }
             setMessageShowed(messageId: message.id)
+            MBMessageMetrics.createMessageMetricForMessage(metric: .view, messageId: message.id)
             messageView.present()
         }
     }
