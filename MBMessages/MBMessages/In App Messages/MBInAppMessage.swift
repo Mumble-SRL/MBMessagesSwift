@@ -158,11 +158,11 @@ public enum MBInAppMessageButtonLinkType {
 }
 
 public class MBInAppMessageButton: NSObject {
-    let title: String!
+    public let title: String!
     let titleColor: UIColor?
     let backgroundColor: UIColor?
-    let link: String!
-    let linkType: MBInAppMessageButtonLinkType!
+    public let link: String!
+    public let linkType: MBInAppMessageButtonLinkType!
     
     init(title: String,
          titleColor: UIColor? = nil,
