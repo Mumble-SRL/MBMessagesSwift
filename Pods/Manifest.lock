@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBurgerSwift:
-    :commit: ba3da93c00284b3f64960b7d33ffa79bb7fbc83c
+    :commit: 2ae81d60af68d673ecbaab0658be18b70773b5f6
     :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
 
 SPEC CHECKSUMS:
@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   MPushSwift: 57b2dce59e51a17ae8f10d7863cbab8386eee485
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
-PODFILE CHECKSUM: 3bb23c0a7ac7ca61b3971399577f510df2fdab19
+PODFILE CHECKSUM: 9ac7511f33a06c0f58741df3c95a22be97268d91
 
 COCOAPODS: 1.9.1

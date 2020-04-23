@@ -51,6 +51,46 @@ public final class MBManager {
         let index = localeIdentifier.index(localeIdentifier.startIndex, offsetBy: 2)
         return String(localeIdentifier.prefix(upTo: index))
     }
+    
+    public func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        
+        guard plugins.count != 0 else {
+            return
+        }
+        let sortedPlugins = plugins.sorted(by: { (p1, p2) -> Bool in
+            return p1.applicationStartupOrder > p2.applicationStartupOrder
+        })
+        var startupBlocks = [ApplicationStartupBlock]()
+        for plugin in sortedPlugins {
+            if let startupBlock = plugin.applicationStartupBlock() {
+                startupBlocks.append(startupBlock)
+            }
+        }
+        
+        guard startupBlocks.count != 0 else {
+            return
+        }
+        
+        executeStartupBlock(index: 0,
+                            startupBlocks: startupBlocks,
+                            launchOptions: launchOptions)
+    }
+    
+    private func executeStartupBlock(index: Int,
+                                     startupBlocks: [ApplicationStartupBlock],
+                                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        guard index < startupBlocks.count else {
+            return
+        }
+        let startupBlock = startupBlocks[index]
+        startupBlock(launchOptions, {
+            if index + 1 < startupBlocks.count {
+                self.executeStartupBlock(index: index + 1,
+                                         startupBlocks: startupBlocks,
+                                         launchOptions: launchOptions)
+            }
+        })
+    }
 }
 
 extension Locale {

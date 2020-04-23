@@ -113,16 +113,29 @@ public class MBMessages: NSObject, MBPluginProtocol {
     }
     
     // MARK: - Metrics and notifications callbacks
-    
-    public static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions, userDidInteractWithNotificationBlock: userDidInteractWithNotificationBlock)
-    }
-    
+        
     public static func userNotificationCenter(willPresent notification: UNNotification) {
         MBMessageMetrics.userNotificationCenter(willPresent: notification)
     }
     
     public static func userNotificationCenter(didReceive response: UNNotificationResponse) {
         MBMessageMetrics.userNotificationCenter(didReceive: response, userDidInteractWithNotificationBlock: userDidInteractWithNotificationBlock)
+    }
+    
+    // MARK: - Plugin startup
+    
+    public var applicationStartupOrder: Int {
+        return 2
+    }
+    
+    public func applicationStartupBlock() -> ApplicationStartupBlock? {
+        let block: ApplicationStartupBlock = { launchOptions, completionBlock in
+            MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions, userDidInteractWithNotificationBlock: MBMessages.userDidInteractWithNotificationBlock, completionBlock: {
+                if let completionBlock = completionBlock {
+                    completionBlock()
+                }
+            })
+        }
+        return block
     }
 }

@@ -21,18 +21,20 @@ enum MBMessageMetricsMetric: String {
 }
 
 class MBMessageMetrics: NSObject {
-    static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, userDidInteractWithNotificationBlock: (([String: AnyHashable]) -> Void)?) {
+    static func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, userDidInteractWithNotificationBlock: (([String: AnyHashable]) -> Void)?, completionBlock: @escaping () -> Void) {
         if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [String: AnyHashable] {
             if let userDidInteractWithNotificationBlock = userDidInteractWithNotificationBlock {
                 userDidInteractWithNotificationBlock(userInfo)
             }
-            checkNotificationPayload(userInfo: userInfo, forMetric: .interaction)
+            checkNotificationPayload(userInfo: userInfo, forMetric: .interaction, completionBlock: completionBlock)
+        } else {
+            completionBlock()
         }
     }
     
     static func userNotificationCenter(willPresent notification: UNNotification) {
         if let userInfo = notification.request.content.userInfo as? [String: AnyHashable] {
-            checkNotificationPayload(userInfo: userInfo, forMetric: .view)
+            checkNotificationPayload(userInfo: userInfo, forMetric: .view, completionBlock: {})
         }
     }
     
@@ -41,24 +43,39 @@ class MBMessageMetrics: NSObject {
             if let userDidInteractWithNotificationBlock = userDidInteractWithNotificationBlock {
                 userDidInteractWithNotificationBlock(userInfo)
             }
-            checkNotificationPayload(userInfo: userInfo, forMetric: .interaction)
+            checkNotificationPayload(userInfo: userInfo, forMetric: .interaction, completionBlock: {})
         }
     }
     
     internal static func checkNotificationPayload(userInfo: [String: Any],
-                                                  forMetric metric: MBMessageMetricsMetric) {
+                                                  forMetric metric: MBMessageMetricsMetric,
+                                                  completionBlock: @escaping () -> Void) {
         //TODO: real key and test
         if let notificationId = userInfo["notification_id"] as? Int {
             if metric == .interaction && !pushNotificationViewSent(notificationId: notificationId) {
-                createMessageMetricForPush(metric: .view, pushId: notificationId)
+                createMessageMetricForPush(metric: .view, pushId: notificationId, completionBlock: {
+                    createMessageMetricForPush(metric: metric,
+                                               pushId: notificationId,
+                                               completionBlock: completionBlock)
+                })
+            } else {
+                createMessageMetricForPush(metric: metric,
+                                           pushId: notificationId,
+                                           completionBlock: completionBlock)
             }
-            createMessageMetricForPush(metric: metric, pushId: notificationId)
+        } else {
+            completionBlock()
         }
     }
     
     internal static func createMessageMetricForPush(metric: MBMessageMetricsMetric,
-                                                    pushId: Int) {
-        createMessageMetric(type: .push, metric: metric, pushId: pushId)
+                                                    pushId: Int,
+                                                    completionBlock: @escaping () -> Void) {
+        createMessageMetric(type: .push, metric: metric, pushId: pushId, success: {
+            completionBlock()
+        }, failure: { _ in
+            completionBlock()
+        })
     }
     
     internal static func createMessageMetricForMessage(metric: MBMessageMetricsMetric,
