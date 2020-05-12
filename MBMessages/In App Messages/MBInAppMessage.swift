@@ -116,19 +116,6 @@ public class MBInAppMessage: NSObject {
                   backgroundColor: backgroundColor,
                   buttons: buttons.count != 0 ? buttons : nil)
     }
-
-    public static func demoMessage(style: MBInAppMessageStyle) -> MBInAppMessage {
-        let buttons = [
-            MBInAppMessageButton(title: "Button1", link: "https://www.google.it", linkType: "link"),
-            MBInAppMessageButton(title: "Button2", link: "https://www.mumbleideas.com", linkType: "link")
-        ]
-        return MBInAppMessage(id: -1,
-                              style: style,
-                              title: "Demo title",
-                              body: "Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese",
-                              image: "https://www.vegascreativesoftware.com/fileadmin/user_upload/products/vegas_post/1/vegas_image/vegas-image-luminence-key-a-int.jpg",
-                              buttons: buttons)
-    }
     
     private static func colorFromField(dictionary: [String: Any], key: String) -> UIColor? {
         if dictionary[key] is NSNull {

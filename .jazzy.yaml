@@ -1,0 +1,43 @@
+clean: true
+objc: false
+readme: Readme.md
+framework_root: MBMessages
+module: MBMessages
+module_version: 0.1
+sdk: iphonesimulator
+
+xcodebuild_arguments:
+    - "-workspace"
+    - "MBMessages.xcworkspace"
+    - "-scheme"
+    - "MBMessages"
+
+author: Mumble
+author_url: https://mumbleideas.it/
+github_url: https://github.com/Mumble-SRL/MBMessagesSwift
+
+theme: fullwidth
+
+custom_categories:
+  - name: MBMessages
+    children:
+    - MBMessages
+    - MBMessagesDelegate
+  - name: In App Messages
+    children:
+    - MBInAppMessageManager
+    - MBInAppMessage
+    - MBInAppMessageStyle
+    - MBInAppMessageViewBackgroundStyle
+    - MBInAppMessageButton
+    - MBInAppMessageButtonLinkType
+  - name: Views
+    children:
+    - MBInAppMessageView
+    - MBInAppMessageViewDelegate
+    - MBInAppMessageViewStyleDelegate
+    - MBInAppMessageTopBannerView
+    - MBInAppMessageBottomBannerView
+    - MBInAppMessageBannerContent
+    - MBInAppMessageCenterView
+    - MBInAppMessageFullscreenImageView

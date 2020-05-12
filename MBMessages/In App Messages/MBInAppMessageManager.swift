@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-public class MBInAppMessageManager: NSObject {
+internal class MBInAppMessageManager: NSObject {
     static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
                                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
