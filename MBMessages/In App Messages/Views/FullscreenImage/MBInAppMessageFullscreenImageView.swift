@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// This view is displayed in the middle of the screen, coming from the bottom (as a modal view) when the in app message has the style `MBInAppMessageStyle.fullscreenImage`.
+/// This view has only a big image as the background, the close button, and the actions button as the bottom. It's useful if the content to displayed is just a big visual image.
 public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
     var backgroundView: UIView?
     

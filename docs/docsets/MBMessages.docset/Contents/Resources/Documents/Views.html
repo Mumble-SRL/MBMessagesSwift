@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           MBMessages 0.1 Docs
         </a>
-         (26% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -65,10 +65,7 @@
             <a class="nav-group-name-link" href="In%20App%20Messages.html">In App Messages</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessageManager">MBInAppMessageManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessage">MBInAppMessage</a>
+                <a class="nav-group-task-link" href="Classes/MBInAppMessage.html">MBInAppMessage</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a>
@@ -101,9 +98,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBInAppMessageBottomBannerView.html">MBInAppMessageBottomBannerView</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageBannerContent">MBInAppMessageBannerContent</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageCenterView">MBInAppMessageCenterView</a>
@@ -150,7 +144,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A general view used as an interface. This class is just an interface and should not be instantiate, the SDK will instantiate only subclasses of this class.</p>
 
                       </div>
                       <div class="declaration">
@@ -177,7 +171,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This protocol can be used to receive calls when a <code><a href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> is displayed and is hidden, it will also receives a call when a button is pressed.
+Implement this delegate if your app need to perform actions when a button is tapped, e.g. open a section of the app if a button with an in-app link is pressed.
+All functions of this protocol are optional and, by default, they don&rsquo;t do anything.</p>
 
                         <a href="Protocols/MBInAppMessageViewDelegate.html" class="slightly-smaller">See more</a>
                       </div>
@@ -218,7 +214,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This protocol can be used to use different colors and fonts to the in-app messages views.
+Returning values from those functions will override the defults and the colors and fonts setted in the dashboard.</p>
 
                         <a href="Protocols/MBInAppMessageViewStyleDelegate.html" class="slightly-smaller">See more</a>
                       </div>
@@ -246,7 +243,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This view is displayed as a banner coming from the top when the in app message has the style <code>MBInAppMessageStyle.topBanner</code></p>
 
                         <a href="Classes/MBInAppMessageTopBannerView.html" class="slightly-smaller">See more</a>
                       </div>
@@ -275,7 +272,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This view is displayed as a banner coming from the bottom when the in app message has the style <code>MBInAppMessageStyle.bottomBanner</code></p>
 
                         <a href="Classes/MBInAppMessageBottomBannerView.html" class="slightly-smaller">See more</a>
                       </div>
@@ -285,33 +282,6 @@
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBInAppMessageBottomBannerView</span> <span class="p">:</span> <span class="kt"><a href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MBInAppMessageBottomBannerView</span><span class="p">:</span> <span class="kt">UIGestureRecognizerDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@MBMessages@objc(cs)MBInAppMessageBannerContent"></a>
-                    <a name="//apple_ref/swift/Class/MBInAppMessageBannerContent" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@MBMessages@objc(cs)MBInAppMessageBannerContent">MBInAppMessageBannerContent</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBInAppMessageBannerContent</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                         </div>
                       </div>
@@ -331,7 +301,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This view is displayed in the middle of the screen, coming from the bottom (as a modal view) when the in app message has the style <code><a href="Enums/MBInAppMessageStyle.html#/s:10MBMessages19MBInAppMessageStyleO6centeryA2CmF">MBInAppMessageStyle.center</a></code></p>
 
                       </div>
                       <div class="declaration">
@@ -358,7 +328,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This view is displayed in the middle of the screen, coming from the bottom (as a modal view) when the in app message has the style <code><a href="Enums/MBInAppMessageStyle.html#/s:10MBMessages19MBInAppMessageStyleO15fullscreenImageyA2CmF">MBInAppMessageStyle.fullscreenImage</a></code>.
+This view has only a big image as the background, the close button, and the actions button as the bottom. It&rsquo;s useful if the content to displayed is just a big visual image.</p>
 
                       </div>
                       <div class="declaration">

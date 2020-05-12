@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MBInAppMessageBannerContent: UIView {
+internal class MBInAppMessageBannerContent: UIView {
     var imageView: UIImageView?
     var titleLabel: UILabel?
     var bodyLabel: UILabel!

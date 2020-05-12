@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This view is displayed in the middle of the screen, coming from the bottom (as a modal view) when the in app message has the style `MBInAppMessageStyle.center`
 public class MBInAppMessageCenterView: MBInAppMessageView {
 
     var backgroundView: UIView?

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// This view is displayed as a banner coming from the bottom when the in app message has the style `MBInAppMessageStyle.bottomBanner`
 public class MBInAppMessageBottomBannerView: MBInAppMessageView {
     
     var bottomConstraintHidden: NSLayoutConstraint?
@@ -201,6 +202,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
 }
 
 extension MBInAppMessageBottomBannerView: UIGestureRecognizerDelegate {
+    /// Prevents the user to scroll the view down when the animation is in progress, or the view is not visible.
     public override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
         guard let constraintNotHidden = bottomConstraintNotHidden else {

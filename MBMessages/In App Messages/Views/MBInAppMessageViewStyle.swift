@@ -8,14 +8,18 @@
 
 import UIKit
 
+/// The style of the background of the messages
+/// For banner messages the default is `MBInAppMessageViewBackgroundStyle.translucent`, for the others it's `MBInAppMessageViewBackgroundStyle.solid`
 public enum MBInAppMessageViewBackgroundStyle {
+    /// A solid color background
     case solid
+    /// A translucent background, created with `UIVisualEffectView`
     case translucent
 }
 
 internal class MBInAppMessageViewStyle {
     static func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle {
-        if message.style == .center {
+        if message.style == .center || message.style == .fullscreenImage {
             return .solid
         } else {
             return .translucent

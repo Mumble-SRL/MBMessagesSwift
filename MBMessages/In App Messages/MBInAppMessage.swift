@@ -9,12 +9,21 @@
 import UIKit
 import MBurgerSwift
 
+/// The presentation style of the message, this enum represents the style in which the message will appear
 public enum MBInAppMessageStyle {
+    /// Messages with this style will appear as a banner from the top
     case bannerTop
+    /// Messages with this style will appear as a banner from the bottom
     case bannerBottom
+    /// Messages with this style will appear as a center message
     case center
+    /// Messages with this style will appear as fullscreen images
     case fullscreenImage
     
+    /// Returns a `MBInAppMessageStyle` given a `String`, typically coming from APIs.
+    /// - Parameters:
+    ///   - string: The string to convert.
+    /// - Returns: the style corrispondent to the string. If no style matches it returns `MBInAppMessageStyle.center`
     static func styleFromString(_ string: String) -> MBInAppMessageStyle {
         switch string {
         case "banner_top":
@@ -31,18 +40,30 @@ public enum MBInAppMessageStyle {
     }
 }
 
+/// This class represents an in app message retrieved by the MBurger in app messages APIs
 public class MBInAppMessage: NSObject {
-    let id: Int
-    let style: MBInAppMessageStyle!
-    let duration: TimeInterval!
-    let title: String?
-    let titleColor: UIColor?
-    let body: String!
-    let bodyColor: UIColor?
-    let image: String?
-    let backgroundColor: UIColor?
-    let buttons: [MBInAppMessageButton]?
+    /// The id of the message
+    public let id: Int
+    /// The style of the message
+    public let style: MBInAppMessageStyle!
+    /// The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds
+    public let duration: TimeInterval!
+    /// The title of the message, it's optional and defaults to nil.
+    public let title: String?
+    /// An optional color for the title, defaults to nil.
+    public let titleColor: UIColor?
+    /// The boody of the message
+    public let body: String!
+    /// An optional color for the body, defaults to nil.
+    public let bodyColor: UIColor?
+    /// An optional image of the message, defaults to nil.
+    public let image: String?
+    /// An optional background color, defaults to nil.
+    public let backgroundColor: UIColor?
+    /// An array of buttons, max 2 elements
+    public let buttons: [MBInAppMessageButton]?
     
+    /// Initializes a message with the parameters passed
     init(id: Int,
          style: MBInAppMessageStyle!,
          duration: TimeInterval? = 5,
@@ -65,6 +86,7 @@ public class MBInAppMessage: NSObject {
         self.buttons = buttons
     }
     
+    /// Initializes a message with the dictionary returned by the APIs
     convenience init(dictionary: [String: Any]) {
         let id = dictionary["id"] as? Int ?? 0
         let styleString = dictionary["type"] as? String ?? ""
@@ -117,6 +139,7 @@ public class MBInAppMessage: NSObject {
                   buttons: buttons.count != 0 ? buttons : nil)
     }
     
+    /// Returns a color from the field of the dictionary with the key passed
     private static func colorFromField(dictionary: [String: Any], key: String) -> UIColor? {
         if dictionary[key] is NSNull {
             return nil
@@ -128,10 +151,17 @@ public class MBInAppMessage: NSObject {
     }
 }
 
+/// This class represents the type of link attttached to a button
 public enum MBInAppMessageButtonLinkType {
+    /// A web link
     case link
+    /// An in app link
     case inApp
     
+    /// Returns a MBInAppMessageButtonLinkType given a string, ttipically from the APIs
+    /// - Parameters:
+    ///   - string: The string to convert.
+    /// - Returns: the link type corrispondent to the string. If no style matches it returns `MBInAppMessageButtonLinkType.link`
     static func butttonLinkType(_ string: String) -> MBInAppMessageButtonLinkType {
         switch string {
         case "link":
@@ -144,13 +174,20 @@ public enum MBInAppMessageButtonLinkType {
     }
 }
 
+/// This class represent a button of an in app message
 public class MBInAppMessageButton: NSObject {
+    /// The title of the button
     public let title: String!
-    let titleColor: UIColor?
-    let backgroundColor: UIColor?
+    /// An optional color for the title
+    public let titleColor: UIColor?
+    /// An optional background color
+    public let backgroundColor: UIColor?
+    /// The link of the button
     public let link: String!
+    /// The type of link of the button
     public let linkType: MBInAppMessageButtonLinkType!
     
+    /// Initializes a button with the parameters passed
     init(title: String,
          titleColor: UIColor? = nil,
          backgroundColor: UIColor? = nil,

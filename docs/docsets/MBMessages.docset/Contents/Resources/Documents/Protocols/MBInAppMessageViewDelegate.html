@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           MBMessages 0.1 Docs
         </a>
-         (26% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -65,10 +65,7 @@
             <a class="nav-group-name-link" href="../In%20App%20Messages.html">In App Messages</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessageManager">MBInAppMessageManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessage">MBInAppMessage</a>
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessage.html">MBInAppMessage</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a>
@@ -103,9 +100,6 @@
                 <a class="nav-group-task-link" href="../Classes/MBInAppMessageBottomBannerView.html">MBInAppMessageBottomBannerView</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageBannerContent">MBInAppMessageBannerContent</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageCenterView">MBInAppMessageCenterView</a>
               </li>
               <li class="nav-group-task">
@@ -126,7 +120,9 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>This protocol can be used to receive calls when a <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> is displayed and is hidden, it will also receives a call when a button is pressed.
+Implement this delegate if your app need to perform actions when a button is tapped, e.g. open a section of the app if a button with an in-app link is pressed.
+All functions of this protocol are optional and, by default, they don&rsquo;t do anything.</p>
 
           </div>
         </section>
@@ -151,13 +147,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function is called just before a <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> appears.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -166,6 +161,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view that will be showed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -186,13 +200,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function is called just after a <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> is displayed, when the animation finishes.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -201,6 +214,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view that has been showed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -221,13 +253,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function is called just before a <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> is being removed.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -236,6 +267,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view that will disappear.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -256,13 +306,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This function is called just after a <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> has been removed, when the animation finishes.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -271,6 +320,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">viewDidDisappear</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view that disappeared.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -282,14 +350,21 @@
                     <a name="//apple_ref/swift/Method/buttonPressed(view:button:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:10MBMessages26MBInAppMessageViewDelegateP13buttonPressed4view0G0yAA0bcdE0C_AA0bcD6ButtonCtF">buttonPressed(view:<wbr>button:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Ths function is called when a button of the <code><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></code> has been pressed. Tthis function will be called after the animation for the view has finished.</p>
 
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -298,6 +373,37 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buttonPressed</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt"><a href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a></span><span class="p">,</span> <span class="nv">button</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessageButton.html">MBInAppMessageButton</a></span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view that disappeared.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>button</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The button that has been pressed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

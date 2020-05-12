@@ -25,7 +25,6 @@ custom_categories:
     - MBMessagesDelegate
   - name: In App Messages
     children:
-    - MBInAppMessageManager
     - MBInAppMessage
     - MBInAppMessageStyle
     - MBInAppMessageViewBackgroundStyle
@@ -38,6 +37,5 @@ custom_categories:
     - MBInAppMessageViewStyleDelegate
     - MBInAppMessageTopBannerView
     - MBInAppMessageBottomBannerView
-    - MBInAppMessageBannerContent
     - MBInAppMessageCenterView
     - MBInAppMessageFullscreenImageView

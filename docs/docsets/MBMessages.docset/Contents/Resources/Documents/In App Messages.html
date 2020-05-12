@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           MBMessages 0.1 Docs
         </a>
-         (26% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -65,10 +65,7 @@
             <a class="nav-group-name-link" href="In%20App%20Messages.html">In App Messages</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessageManager">MBInAppMessageManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="In%20App%20Messages.html#/c:@M@MBMessages@objc(cs)MBInAppMessage">MBInAppMessage</a>
+                <a class="nav-group-task-link" href="Classes/MBInAppMessage.html">MBInAppMessage</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a>
@@ -103,9 +100,6 @@
                 <a class="nav-group-task-link" href="Classes/MBInAppMessageBottomBannerView.html">MBInAppMessageBottomBannerView</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageBannerContent">MBInAppMessageBannerContent</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageCenterView">MBInAppMessageCenterView</a>
               </li>
               <li class="nav-group-task">
@@ -131,35 +125,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@MBMessages@objc(cs)MBInAppMessageManager"></a>
-                    <a name="//apple_ref/swift/Class/MBInAppMessageManager" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@MBMessages@objc(cs)MBInAppMessageManager">MBInAppMessageManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class manages the presenting and the queue of in app messages. It&rsquo;s called by the plugin when the messages are checked after the delay setted.
-This class saves when a message is showed and display only the messages that are not showed (if <code>debug</code> is disabled)
-It manages also the queue of messages and finds out the main <code>UIViewController</code> where messages will be showed</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBInAppMessageManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@MBMessages@objc(cs)MBInAppMessage"></a>
                     <a name="//apple_ref/swift/Class/MBInAppMessage" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@MBMessages@objc(cs)MBInAppMessage">MBInAppMessage</a>
@@ -170,8 +135,9 @@ It manages also the queue of messages and finds out the main <code>UIViewControl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This class represents an in app message retrieved by the MBurger in app messages APIs</p>
 
+                        <a href="Classes/MBInAppMessage.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -197,7 +163,7 @@ It manages also the queue of messages and finds out the main <code>UIViewControl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The presentation style of the message, this enum represents the style in which the message will appear</p>
 
                         <a href="Enums/MBInAppMessageStyle.html" class="slightly-smaller">See more</a>
                       </div>
@@ -225,7 +191,8 @@ It manages also the queue of messages and finds out the main <code>UIViewControl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The style of the background of the messages
+For banner messages the default is <code><a href="Enums/MBInAppMessageViewBackgroundStyle.html#/s:10MBMessages33MBInAppMessageViewBackgroundStyleO11translucentyA2CmF">MBInAppMessageViewBackgroundStyle.translucent</a></code>, for the others it&rsquo;s <code><a href="Enums/MBInAppMessageViewBackgroundStyle.html#/s:10MBMessages33MBInAppMessageViewBackgroundStyleO5solidyA2CmF">MBInAppMessageViewBackgroundStyle.solid</a></code></p>
 
                         <a href="Enums/MBInAppMessageViewBackgroundStyle.html" class="slightly-smaller">See more</a>
                       </div>
@@ -253,7 +220,7 @@ It manages also the queue of messages and finds out the main <code>UIViewControl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This class represent a button of an in app message</p>
 
                         <a href="Classes/MBInAppMessageButton.html" class="slightly-smaller">See more</a>
                       </div>
@@ -281,7 +248,7 @@ It manages also the queue of messages and finds out the main <code>UIViewControl
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This class represents the type of link attttached to a button</p>
 
                         <a href="Enums/MBInAppMessageButtonLinkType.html" class="slightly-smaller">See more</a>
                       </div>
