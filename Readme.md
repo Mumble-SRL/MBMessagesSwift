@@ -187,3 +187,55 @@ func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
 
 
 # Push notifications
+
+With this plugin you can also manage the push notification section of MBurger, this is a wrapper around MPush, the underlying platform, so you should refer to the [MPush documentation 
+](https://github.com/Mumble-SRL/MPush-Swift) to understand the concepts and to start the push integration. In order to use `MBMessagesSwift` instead of `MPushSwift` you have to do the following changes:
+
+Set the push token like this:
+
+```swift
+MBMessages.pushToken = "YOUR_PUSH_TOKEN"
+```
+
+And then register your device to topics (all the other function have a similar syntax change):
+
+```swift
+MBMessages.registerDeviceToPush(deviceToken: deviceToken, success: {
+    MBMessages.registerPushMessages(toTopic: "YOUR_TOPIC")
+})
+```
+# User interaction with a push
+
+With `MBMessagesSwift` you can setup a callback that will be called when the user interacts with a push notification or opens the app from a push. You can setup the code like this, the payload variable will be the payload of the push:
+
+```swift
+MBMessages.userDidInteractWithNotificationBlock = { payload in
+	 // Do actions in response
+    print("Notification arrived:\n\(payload)")
+}
+```
+In order to this to function you will have to tell `MBMessagesSwift` that a notification has arrived so you need to add this in those lines in your `UNUserNotificationCenterDelegate` class, often the `AppDelegate`.
+
+```swift
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                            willPresent notification: UNNotification,
+                            withCompletionHandler
+    completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    // Add this line
+    MBMessages.userNotificationCenter(willPresent: notification)
+    completionHandler(UNNotificationPresentationOptions.alert)
+}
+    
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                            didReceive response: UNNotificationResponse,
+                            withCompletionHandler
+    completionHandler: @escaping () -> Void) {
+    // Add this line
+    MBMessages.userNotificationCenter(didReceive: response)
+    completionHandler()
+}
+```
+
+# Message Metrics
+
+Using `MBMessagesSwift` gives you also the chanche to collect informations about your user and the push, those will be displyed on the [MBurger](https://mburger.cloud) dashboard. As described in the prervious paragraph, in order for this to function, you have to tell `MBMessagesSwift` that a push has arrived, if you've already done it in the step above you're fine, otherwise you need to add `MBMessages.userNotificationCenter(willPresent: notification)` and `MBMessages.userNotificationCenter(didReceive: response)` to your `UNUserNotificationCenterDelegate` class.
