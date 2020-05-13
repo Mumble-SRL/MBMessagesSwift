@@ -23,7 +23,7 @@ $ gem install cocoapods
 To integrate the MBurgerSwift into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
-platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'TargetName' do
     pod 'MBMessagesSwift'
