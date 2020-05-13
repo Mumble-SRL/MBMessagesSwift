@@ -98,11 +98,44 @@ let messagesPlugin = MBMessages(delegate: [the delegate],
 - **viewDelegate**: the view delegates will receive calls when views of messages are showed or hidden, it will also receives a call when the button of the views will be touched, so you need to implement this protocol if you want to open an in-app link from an in app message. See [MBInAppMessageViewDelegate](#MBInAppMessageViewDelegate) for a detailed description of the protocol.
 - **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylizeinappmessages) for more details
 
-###MBMessagesDelegate
-
-
-###MBMessagesDelegate
-
 #Stylize in app messages
+
+###MBMessagesDelegate
+
+Implement this protocol if you want to receive a function call when in app messages view are showed or hidden. You will need to use this protocol also if you want to responsd to a user tapping on buttons on in app messages view.
+
+`viewWillAppear` and `viewDidAppear` are called when the view is showed, `viewWillDisappear` and `viewDidDisappear` when it's hidden.
+
+```swift
+func viewWillAppear(view: MBInAppMessageView)
+func viewDidAppear(view: MBInAppMessageView)
+func viewWillDisappear(view: MBInAppMessageView)
+func viewDidDisappear(view: MBInAppMessageView)
+```
+
+To respond to a user tapping on a button you have to implement `func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton)`, here's an example:
+
+```swift
+func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton) {
+    let linkType = button.linkType
+    if linkType == .link && button.link.hasPrefix("http") {
+        if let url = URL(string: button.link) {
+		    //Open url
+        }
+    } else {
+		// Open in app link (button.link)
+    }
+}
+```
+
+
+###MBMessagesDelegate
+
+Implement this protocol if you want to receives a call when the fetches of the message fails from the server:
+
+```swift
+func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
+```
+
 
 #Push notifications
