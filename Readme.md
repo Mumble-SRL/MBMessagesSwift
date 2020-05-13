@@ -79,7 +79,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-##Parameters of initialization
+## Parameters of initialization
 
 You can set a couples of parameters when initializing the `MBMessages` plugin:
 
@@ -98,9 +98,9 @@ let messagesPlugin = MBMessages(delegate: [the delegate],
 - **viewDelegate**: the view delegates will receive calls when views of messages are showed or hidden, it will also receives a call when the button of the views will be touched, so you need to implement this protocol if you want to open an in-app link from an in app message. See [MBInAppMessageViewDelegate](#MBInAppMessageViewDelegate) for a detailed description of the protocol.
 - **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylizeinappmessages) for more details
 
-#Stylize in app messages
+# Stylize in app messages
 
-###MBMessagesDelegate
+### MBMessagesDelegate
 
 Implement this protocol if you want to receive a function call when in app messages view are showed or hidden. You will need to use this protocol also if you want to responsd to a user tapping on buttons on in app messages view.
 
@@ -129,7 +129,7 @@ func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton) {
 ```
 
 
-###MBMessagesDelegate
+### MBMessagesDelegate
 
 Implement this protocol if you want to receives a call when the fetches of the message fails from the server:
 
@@ -138,4 +138,4 @@ func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
 ```
 
 
-#Push notifications
+# Push notifications
