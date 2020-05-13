@@ -2,9 +2,9 @@
 ![License: MIT](https://img.shields.io/badge/pod-v1.0.2-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
-# MBMessagesSwiftt
+# MBMessagesSwift
 
-MBMessagesSwiftt is a plugin libary for [MBurger](https://mburger.cloud), that lets you display in app messages and manage push notifications in your app. The minimum deployment target for the library is iOS 11.0.
+MBMessagesSwift is a plugin libary for [MBurger](https://mburger.cloud), that lets you display in app messages and manage push notifications in your app. The minimum deployment target for the library is iOS 11.0.
 
 # Installation
 
@@ -94,7 +94,7 @@ let messagesPlugin = MBMessages(delegate: [the delegate],
 
 - **messagesDelay**: it's the time after which the messages will be displayed once fetched
 - **debug**: if this is set to `true`, all the message returned by the server will be displayed, if this is set to `false` a message will appear only once for app installation. This is `false` by default
-- **debug**: the delegate will receive a call if the fettch of the messages fails, with the error that caused the fail, see [MBMessagesDelegate](#MBMessagesDelegate) for more details.
+- **debug**: the delegate will receive a call if the fetch of the messages fails, with the error that caused the fail, see [MBMessagesDelegate](#MBMessagesDelegate) for more details.
 - **viewDelegate**: the view delegates will receive calls when views of messages are showed or hidden, it will also receives a call when the button of the views will be touched, so you need to implement this protocol if you want to open an in-app link from an in app message. See [MBInAppMessageViewDelegate](#MBInAppMessageViewDelegate) for a detailed description of the protocol.
 - **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylizeinappmessages) for more details
 
