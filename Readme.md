@@ -4,7 +4,11 @@
 
 # MBMessagesSwift
 
-MBMessagesSwift is a plugin libary for [MBurger](https://mburger.cloud), that lets you display in app messages and manage push notifications in your app. The minimum deployment target for the library is iOS 11.0.
+MBMessagesSwift is a plugin libary for [MBurger](https://mburger.cloud), that lets you display in app messages and manage push notifications in your app. The minimum deployment target for the library is iOS 11.0. 
+
+Using this library you can display the messages that you set up in the MBurger dashboard in your app. You can also setup and manage push notifications connected to your MBurger project.
+
+[//]: # (TODO: aggiungere immagine)
 
 # Installation
 
@@ -79,7 +83,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-## Parameters of initialization
+## Initialize MBMessages with parameters
 
 You can set a couples of parameters when initializing the `MBMessages` plugin:
 
@@ -99,6 +103,50 @@ let messagesPlugin = MBMessages(delegate: [the delegate],
 - **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylizeinappmessages) for more details
 
 # Stylize in app messages
+
+If you want to specify fonts and colors of the messages displayed you can use the `MBInAppMessageViewStyleDelegate` protocol. All the functions of the protocol are optional, if a function is not implemented the framework will use a default value. The elements that can be stylized are the following:
+
+- **backgroundStyle**: can be a solid color or a translucent color
+- **backgroundColor**: the color of the background
+- **titleColor**: the text color for the title of the message
+- **bodyColor**: the text color for the body
+- **closeButtonColor**: the color of the close button
+- **button1BackgroundColor**: the background color of the first action button
+- **button1TitleColor**: the text color of the first action button
+- **button2BackgroundColor**: the background color of the second action button
+- **button2TitleColor**: the text color of the second action button
+- **button2BorderColor**: the border color of the second action button
+- **titleFont**: the font of the title
+- **bodyFont**: the font of the body
+- **buttonsTextFont**: the font of the buttons titles
+
+Example:
+
+```swift
+func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle {
+    return .solid
+}
+    
+func backgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+    return .green
+}
+    
+func titleColor(forMessage message: MBInAppMessage) -> UIColor {
+    return .blue
+}
+    
+func bodyColor(forMessage message: MBInAppMessage) -> UIColor {
+    return .darkText
+}
+    
+func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
+    return .white
+}
+    
+func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+    return .cyan
+}
+```
 
 ### MBMessagesDelegate
 
