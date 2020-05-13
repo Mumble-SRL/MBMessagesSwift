@@ -210,7 +210,7 @@ With `MBMessagesSwift` you can setup a callback that will be called when the use
 
 ```swift
 MBMessages.userDidInteractWithNotificationBlock = { payload in
-	 // Do actions in response
+    // Do actions in response
     print("Notification arrived:\n\(payload)")
 }
 ```
