@@ -120,10 +120,10 @@ func buttonPressed(view: MBInAppMessageView, button: MBInAppMessageButton) {
     let linkType = button.linkType
     if linkType == .link && button.link.hasPrefix("http") {
         if let url = URL(string: button.link) {
-		    //Open url
+            //Open url
         }
     } else {
-		// Open in app link (button.link)
+        // Open in app link (button.link)
     }
 }
 ```
