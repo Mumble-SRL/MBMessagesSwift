@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MBMessages Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/MBMessages" class="dashAnchor"></a>
+
+    <a title="MBMessages Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MBMessages 0.1 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/Mumble-SRL/MBMessagesSwift">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MBMessages Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MBMessages Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../MBMessages.html">MBMessages</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBMessages.html">MBMessages</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../In%20App%20Messages.html">In App Messages</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessage.html">MBInAppMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageViewBackgroundStyle.html">MBInAppMessageViewBackgroundStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageButton.html">MBInAppMessageButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageButtonLinkType.html">MBInAppMessageButtonLinkType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Views.html">Views</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageTopBannerView.html">MBInAppMessageTopBannerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageBottomBannerView.html">MBInAppMessageBottomBannerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageCenterView">MBInAppMessageCenterView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageFullscreenImageView">MBInAppMessageFullscreenImageView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>MBMessages</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBMessages</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">MBPluginProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>This is the main entry point to manage all the messages features of MBurger.
+To use create an instance of MBMessages and add it to the MBManager plugins.
+<code>MBManager.shared.plugins = [MBMessages()]</code>
+You can pass other options described below in the init method described below.
+You will also need to add this line if you want to start the messages fetch at startup:
+<code>MBManager.shared.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)</code></p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC8delegateAA0A8Delegate_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC8delegateAA0A8Delegate_pSgvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The delegate of the plugin, you can use this to check if the message check fails.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC12viewDelegateAA018MBInAppMessageViewC0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC12viewDelegateAA018MBInAppMessageViewC0_pSgvp">viewDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The view delegate of the plugin, you can use this to have callbacks when messages
+are showed or hidden. You will need to use this if the app needs to intercept
+the pressing of the buttons.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">viewDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC13styleDelegateAA023MBInAppMessageViewStyleC0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/styleDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC13styleDelegateAA023MBInAppMessageViewStyleC0_pSgvp">styleDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The style delegate of the plugin, you can use tthis to customize colors and fonts of
+<code>MBMessageView</code> instances. Settings a custom color with this delegate will override the one inserted in the dashboard.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC13messagesDelaySdvp"></a>
+                    <a name="//apple_ref/swift/Property/messagesDelay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC13messagesDelaySdvp">messagesDelay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The delayed used to delay the presenting of the message after a successful fetch.
+The default is 1 second.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">messagesDelay</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC5debugSbvp"></a>
+                    <a name="//apple_ref/swift/Property/debug" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC5debugSbvp">debug</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Settings this var to true will always display the messages returned by the api, even if they&rsquo;ve been already showed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debug</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC8delegate12viewDelegate05styleD013messagesDelay5debugAbA0aD0_pSg_AA018MBInAppMessageViewD0_pSgAA0ijkl5StyleD0_pSgSdSbtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(delegate:viewDelegate:styleDelegate:messagesDelay:debug:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC8delegate12viewDelegate05styleD013messagesDelay5debugAbA0aD0_pSg_AA018MBInAppMessageViewD0_pSgAA0ijkl5StyleD0_pSgSdSbtcfc">init(delegate:<wbr>viewDelegate:<wbr>styleDelegate:<wbr>messagesDelay:<wbr>debug:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method initialises the messages plugin with the parameters passed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">viewDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">messagesDelay</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nv">debug</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a></code> of the plugin. Use this to receive a callback when the manager encounters an error retrieving the messages from the server</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewDelegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></code> of the plugin. Use this to receive callbacks when <code>MBMessageView</code> instances are showed or when a button is pressed</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>styleDelegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></code> of the plugin. Use this to customize colors and fonts of <code>MBMessageView</code> instances.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>messagesDelay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The delay applied before a <code>MBMessageView</code> is showed. Defaults to 1 second</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>debug</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If this is true the plugin will show all the messages, even if they&rsquo;ve already been shoowed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@MBMessages@objc(cs)MBMessages(im)checkMessages"></a>
+                    <a name="//apple_ref/swift/Method/checkMessages()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@MBMessages@objc(cs)MBMessages(im)checkMessages">checkMessages()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method checks the messages from the server and shows them.
+It&rsquo;s called automatically at startup, but it can be ccalled to force the check.
+If the check fails it wil call the <code>inAppMessageCheckFailed</code> of the <code><a href="../Classes/MBMessages.html#/s:10MBMessagesAAC8delegateAA0A8Delegate_pSgvp">delegate</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">checkMessages</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Push%20handling"></a>
+                <a name="//apple_ref/swift/Section/Push handling" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Push%20handling"></a>
+                  <h3 class="section-name"><p>Push handling</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC9pushTokenSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/pushToken" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC9pushTokenSSvpZ">pushToken</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>pushToken</code> of the push notifications plugin of MBurger.
+This will set the token of the MPushSwift SDK.
+If you need help setting up the push notifiications go to the <a href="https://docs.mumbleideas.it/mpush/ios/introduction/">MPush documentation</a>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">pushToken</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC36userDidInteractWithNotificationBlockySDySSs11AnyHashableVGcSgvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/userDidInteractWithNotificationBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC36userDidInteractWithNotificationBlockySDySSs11AnyHashableVGcSgvpZ">userDidInteractWithNotificationBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that will be called when the user interacts with a push notification, it can be used as an unique point to take actions when the user interacts with a notification.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">userDidInteractWithNotificationBlock</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">notificationDictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyHashable</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notificationDictionary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>userInfo</code> dictionary arrived with the notification</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC20registerDeviceToPush11deviceToken7success7failurey10Foundation4DataV_yycSgys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/registerDeviceToPush(deviceToken:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC20registerDeviceToPush11deviceToken7success7failurey10Foundation4DataV_yycSgys5Error_pSgcSgtFZ">registerDeviceToPush(deviceToken:<wbr>success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Register a device token to receive push notifications.
+This will call the device registration of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">registerDeviceToPush</span><span class="p">(</span><span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+                                        <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                        <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deviceToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The device token data returned in didRegisterForRemoteNotificationsWithDeviceToken</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC20registerPushMessages7toTopic7success7failureySS_yycSgys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/registerPushMessages(toTopic:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC20registerPushMessages7toTopic7success7failureySS_yycSgys5Error_pSgcSgtFZ">registerPushMessages(toTopic:<wbr>success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Register the current device to a push topic.
+This will call the topic registration of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">registerPushMessages</span><span class="p">(</span><span class="n">toTopic</span> <span class="nv">topic</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                        <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                        <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>topic</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The topic you will register to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC20registerPushMessages8toTopics7success7failureySaySSG_yycSgys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/registerPushMessages(toTopics:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC20registerPushMessages8toTopics7success7failureySaySSG_yycSgys5Error_pSgcSgtFZ">registerPushMessages(toTopics:<wbr>success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Register the current device to an array of push topics.
+This will call the topics registration of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">registerPushMessages</span><span class="p">(</span><span class="n">toTopics</span> <span class="nv">topics</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span>
+                                        <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                        <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>topics</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The topics you will register to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC22unregisterPushMessages9fromTopic7success7failureySS_yycSgys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/unregisterPushMessages(fromTopic:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC22unregisterPushMessages9fromTopic7success7failureySS_yycSgys5Error_pSgcSgtFZ">unregisterPushMessages(fromTopic:<wbr>success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unregister the current device from a push topic.
+This will call the topic unregister of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">unregisterPushMessages</span><span class="p">(</span><span class="n">fromTopic</span> <span class="nv">topic</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                                          <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                          <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>topic</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The topic you will unregister from</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC22unregisterPushMessages10fromTopics7success7failureySaySSG_yycSgys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/unregisterPushMessages(fromTopics:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC22unregisterPushMessages10fromTopics7success7failureySaySSG_yycSgys5Error_pSgcSgtFZ">unregisterPushMessages(fromTopics:<wbr>success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unregister the current device from an array of topics.
+This will call the topics unregister of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">unregisterPushMessages</span><span class="p">(</span><span class="n">fromTopics</span> <span class="nv">topics</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span>
+                                          <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                          <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>topics</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The topics you will unregister from</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC35unregisterPushMessagesFromAllTopics7success7failureyyycSg_ys5Error_pSgcSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/unregisterPushMessagesFromAllTopics(success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC35unregisterPushMessagesFromAllTopics7success7failureyyycSg_ys5Error_pSgcSgtFZ">unregisterPushMessagesFromAllTopics(success:<wbr>failure:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unregister the current device from all topics is registred to.
+This will call the function to unregister all topics of the MPushSwift SDK.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">unregisterPushMessagesFromAllTopics</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                                       <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes successfully. This block has no return value and no arguments.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Metrics%20and%20notifications%20callbacks"></a>
+                <a name="//apple_ref/swift/Section/Metrics and notifications callbacks" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Metrics%20and%20notifications%20callbacks"></a>
+                  <h3 class="section-name"><p>Metrics and notifications callbacks</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC22userNotificationCenter11willPresentySo14UNNotificationC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/userNotificationCenter(willPresent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC22userNotificationCenter11willPresentySo14UNNotificationC_tFZ">userNotificationCenter(willPresent:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function and <code>userNotificationCenter(didReceive response...</code> is used by the <code>MBMessages</code> SDK to have informations when a push arrives and the user interacts with it.
+You need to call this function from the app (when it receives it as a <code>UNUserNotificationCenter</code> delegate) in order to see metrics of push notifications in the dashboard and to have the <code><a href="../Classes/MBMessages.html#/s:10MBMessagesAAC36userDidInteractWithNotificationBlockySDySSs11AnyHashableVGcSgvpZ">userDidInteractWithNotificationBlock</a></code> called.
+Example usage:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span>
+                            <span class="n">willPresent</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">UNNotification</span><span class="p">,</span>
+                            <span class="n">withCompletionHandler</span>
+    <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationPresentationOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">MBMessages</span><span class="o">.</span><span class="nf">userNotificationCenter</span><span class="p">(</span><span class="nv">willPresent</span><span class="p">:</span> <span class="n">notification</span><span class="p">)</span>
+    <span class="nf">completionHandler</span><span class="p">(</span><span class="kt">UNNotificationPresentationOptions</span><span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">willPresent</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">UNNotification</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification passed by the <code>UserNotifications</code> framework to the delegate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC22userNotificationCenter10didReceiveySo22UNNotificationResponseC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/userNotificationCenter(didReceive:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC22userNotificationCenter10didReceiveySo22UNNotificationResponseC_tFZ">userNotificationCenter(didReceive:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function and <code>userNotificationCenter(willPresent notification...</code> is used by the <code>MBMessages</code> SDK to have informations when a push arrives and the user interacts with it.
+You need to call this function from the app (when it receives it as a <code>UNUserNotificationCenter</code> delegate) in order to see metrics of push notifications in the dashboard and to have the <code><a href="../Classes/MBMessages.html#/s:10MBMessagesAAC36userDidInteractWithNotificationBlockySDySSs11AnyHashableVGcSgvpZ">userDidInteractWithNotificationBlock</a></code> called.
+Example usage:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span>
+                            <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span>
+                            <span class="n">withCompletionHandler</span>
+    <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">MBMessages</span><span class="o">.</span><span class="nf">userNotificationCenter</span><span class="p">(</span><span class="nv">didReceive</span><span class="p">:</span> <span class="n">response</span><span class="p">)</span>
+    <span class="nf">completionHandler</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The response passed by the <code>UserNotifications</code> framework to the delegate.
+*</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Plugin%20startup"></a>
+                <a name="//apple_ref/swift/Section/Plugin startup" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Plugin%20startup"></a>
+                  <h3 class="section-name"><p>Plugin startup</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC23applicationStartupOrderSivp"></a>
+                    <a name="//apple_ref/swift/Property/applicationStartupOrder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC23applicationStartupOrderSivp">applicationStartupOrder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The order in wich MBurger will call the startup blocks.
+This function is used by the main MBurger SDK and should not be called.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">applicationStartupOrder</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the order as an int.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessagesAAC23applicationStartupBlockySDySo29UIApplicationLaunchOptionsKeyaypGSg_yycSgtcSgyF"></a>
+                    <a name="//apple_ref/swift/Method/applicationStartupBlock()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessagesAAC23applicationStartupBlockySDySo29UIApplicationLaunchOptionsKeyaypGSg_yycSgtcSgyF">applicationStartupBlock()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The startup blocks called by the main MBurger SDK.
+This function is used by the main MBurger SDK and should not be called.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">applicationStartupBlock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">ApplicationStartupBlock</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a block that is executed at startup.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-05-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

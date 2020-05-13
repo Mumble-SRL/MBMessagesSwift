@@ -9,6 +9,26 @@
 import Foundation
 import MBNetworkingSwift
 
+/// Error returned by the MBurger apis
+struct MBurgerError: LocalizedError {
+    public var errorDescription: String? { return message }
+    public var failureReason: String? { return message }
+    public var recoverySuggestion: String? { return nil }
+    public var helpAnchor: String? { return nil }
+
+    /// Status code of the error
+    public var statusCode: Int
+    
+    /// Message of the error
+    private var message: String?
+
+    /// Initializes and returns a new error
+    init(statusCode: Int, message: String?) {
+        self.statusCode = statusCode
+        self.message = message
+    }
+}
+
 /// This class is responsible to make all the networking requests to the MBurger Api, MBManager, MBClient and MBAdmin are built above this class.
 public final class MBApiManager {
     private init() {}
@@ -124,16 +144,36 @@ public final class MBApiManager {
             
             MBAuth.saveNewTokenIfPresent(inResponse: response.response)
             
-            DispatchQueue.main.async {
-                if let body = unwrappedJson["body"] as? [String: Any] {
-                   success(body)
-                } else {
-                    success(unwrappedJson)
+            let statusCode = unwrappedJson["status_code"] as? Int ?? 0
+            if statusCode == 0 {
+                DispatchQueue.main.async {
+                    if let body = unwrappedJson["body"] as? [String: Any] {
+                        success(body)
+                    } else {
+                        success(unwrappedJson)
+                    }
                 }
+            } else {
+                let message = unwrappedJson["message"] as? String
+                failure(MBurgerError(statusCode: statusCode, message: message))
             }
         case .error(let error):
+            var failureError = error
+            if let error = error as? MBError {
+                switch error {
+                case .validationFailure(_, let data):
+                    if let data = data,
+                        let dictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        let statusCode = dictionary["status_code"] as? Int ?? 0
+                        let message = dictionary["message"] as? String
+                        failureError = MBurgerError(statusCode: statusCode, message: message)
+                    }
+                default:
+                    break
+                }
+            }
             DispatchQueue.main.async {
-                failure(error)
+                failure(failureError)
             }
         }
     }

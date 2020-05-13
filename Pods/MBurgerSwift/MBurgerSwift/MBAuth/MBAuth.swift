@@ -363,24 +363,20 @@ public struct MBAuth {
         }
     }
     
-    static func handlePlugins(_ resp: [String: Any], user: MBUser) {
-        //@TODO: - handlue plugins
-        /*
+    static func handlePlugins(_ resp: [String: Any], user: inout MBUser) {
         let plugins = MBManager.shared.plugins
         if plugins.count != 0 {
             var pluginDictionary = [String: Any]()
             for plugin in plugins {
-                var userKey: String = ""
-//                var object = [String: Any]()
-                if let objcForResp = plugin.object(forUserResponse: resp) {
-                    userKey = plugin.userKey
+                guard let userKey = plugin.userKey else {
+                    continue
                 }
-                pluginDictionary[userKey] = ""
+                if let objcForResp = plugin.object(forUserResponse: resp) {
+                    pluginDictionary[userKey] = objcForResp
+                }
             }
-            print(pluginDictionary)
-//            user.pluginsObjects = pluginDictionary
+            user.pluginsObjects = pluginDictionary
         }
- */
     }
 }
 

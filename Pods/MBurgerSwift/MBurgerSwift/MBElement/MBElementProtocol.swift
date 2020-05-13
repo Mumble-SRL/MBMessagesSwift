@@ -42,7 +42,9 @@ public enum MBElementType: Int, Codable {
     case markdown = 9
     /// A relation element.
     case relation = 10
-    
+    /// A color element.
+    case color = 11
+
     init(string: String) {
         switch string.lowercased() {
         case "text", "textarea": self = .text

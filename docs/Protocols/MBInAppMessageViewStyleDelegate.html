@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MBInAppMessageViewStyleDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/MBInAppMessageViewStyleDelegate" class="dashAnchor"></a>
+
+    <a title="MBInAppMessageViewStyleDelegate Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          MBMessages 0.1 Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/Mumble-SRL/MBMessagesSwift">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">MBMessages Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MBInAppMessageViewStyleDelegate Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../MBMessages.html">MBMessages</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBMessages.html">MBMessages</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../In%20App%20Messages.html">In App Messages</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessage.html">MBInAppMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageViewBackgroundStyle.html">MBInAppMessageViewBackgroundStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageButton.html">MBInAppMessageButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBInAppMessageButtonLinkType.html">MBInAppMessageButtonLinkType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Views.html">Views</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageView">MBInAppMessageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageTopBannerView.html">MBInAppMessageTopBannerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageBottomBannerView.html">MBInAppMessageBottomBannerView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageCenterView">MBInAppMessageCenterView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageFullscreenImageView">MBInAppMessageFullscreenImageView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>MBInAppMessageViewStyleDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MBInAppMessageViewStyleDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol can be used to use different colors and fonts to the in-app messages views.
+Returning values from those functions will override the defults and the colors and fonts setted in the dashboard.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP010backgroundF003forD0AA0bcde10BackgroundF0OAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundStyle(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP010backgroundF003forD0AA0bcde10BackgroundF0OAA0bcD0C_tF">backgroundStyle(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The background style that will be used for the message.
+The default value is <code><a href="../Enums/MBInAppMessageViewBackgroundStyle.html#/s:10MBMessages33MBInAppMessageViewBackgroundStyleO11translucentyA2CmF">MBInAppMessageViewBackgroundStyle.translucent</a></code> for banner messages, <code><a href="../Enums/MBInAppMessageViewBackgroundStyle.html#/s:10MBMessages33MBInAppMessageViewBackgroundStyleO5solidyA2CmF">MBInAppMessageViewBackgroundStyle.solid</a></code> otherwise</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">backgroundStyle</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/MBInAppMessageViewBackgroundStyle.html">MBInAppMessageViewBackgroundStyle</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The background style for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP15backgroundColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP15backgroundColor03forD0So7UIColorCAA0bcD0C_tF">backgroundColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The background color for the view.
+Default value: if the message has a background color the function returns that value, otherwise it will return <code>UIColor.systemBackground</code> for iOS 13.0+ and <code>UIColor.white</code> if the it&rsquo;s a lower iOS version.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">backgroundColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The background color for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP10titleColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/titleColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP10titleColor03forD0So7UIColorCAA0bcD0C_tF">titleColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The title text color for the view.
+Default value: if the message has a title color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">titleColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title color for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP9bodyColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/bodyColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP9bodyColor03forD0So7UIColorCAA0bcD0C_tF">bodyColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The text color for the body label for the view.
+Default value: if the message has a body color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bodyColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The body color for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP16closeButtonColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/closeButtonColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP16closeButtonColor03forD0So7UIColorCAA0bcD0C_tF">closeButtonColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The color for the close button.
+Default value: the default value is the same as <code>button1BackgroundColor</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">closeButtonColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The close button color for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP22button1BackgroundColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/button1BackgroundColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP22button1BackgroundColor03forD0So7UIColorCAA0bcD0C_tF">button1BackgroundColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The background color for the first action button.
+Default value: if the first button has a background color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">button1BackgroundColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The background color for the first action button</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP17button1TitleColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/button1TitleColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP17button1TitleColor03forD0So7UIColorCAA0bcD0C_tF">button1TitleColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The title color for the first action button.
+Default value: if the first button has a title color the function returns that value, otherwise it will return <code>UIColor.white</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.black</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">button1TitleColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title color for the first action button</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP22button2BackgroundColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/button2BackgroundColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP22button2BackgroundColor03forD0So7UIColorCAA0bcD0C_tF">button2BackgroundColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The background color for the second action button.
+Default value: if the second button has a background color the function returns that value, otherwise it will return <code>UIColor.white</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.black</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">button2BackgroundColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The background color for the second action button</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP17button2TitleColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/button2TitleColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP17button2TitleColor03forD0So7UIColorCAA0bcD0C_tF">button2TitleColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The title color for the second action button.
+Default value: if the second button has a title color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">button2TitleColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title color for the second action button</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP18button2BorderColor03forD0So7UIColorCSgAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/button2BorderColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP18button2BorderColor03forD0So7UIColorCSgAA0bcD0C_tF">button2BorderColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The border color for the second action button.
+Default value: the default value is the same as the title color.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">button2BorderColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The border color for the second action button</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP9titleFont03forD0So6UIFontCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/titleFont(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP9titleFont03forD0So6UIFontCAA0bcD0C_tF">titleFont(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The font used fot the title.
+Default value: the default value is the headline font <code>UIFont.preferredFont(forTextStyle: .headline)</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">titleFont</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title font</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP8bodyFont03forD0So6UIFontCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/bodyFont(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP8bodyFont03forD0So6UIFontCAA0bcD0C_tF">bodyFont(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The font used fot the body.
+Default value: the default value is the body font <code>UIFont.preferredFont(forTextStyle: .body)</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">bodyFont</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The body font</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP15buttonsTextFont03forD0So6UIFontCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/buttonsTextFont(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP15buttonsTextFont03forD0So6UIFontCAA0bcD0C_tF">buttonsTextFont(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The font used fot the titles of the buttons.
+Default value: the default value is the body font <code>UIFont.preferredFont(forTextStyle: .body)</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buttonsTextFont</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The font for the titles of the buttons.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-05-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
