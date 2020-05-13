@@ -45,11 +45,11 @@ CocoaPods is the preferred methot to install the library.
 
 To install the library manually drag and drop the folder `MBMessages` to your project structure in XCode. 
 
-Note that `MBMessages` has `MBurgerSwift (1.0.5)` and `MPushSwift (0.2.12)` as dependencies, so you have to install also those libraries.
+Note that `MBMessagesSwift` has `MBurgerSwift (1.0.5)` and `MPushSwift (0.2.12)` as dependencies, so you have to install also those libraries.
 
 # Initialization
 
-To initialize the SDK you have to add the `MBMessages` class to the array of plugins of `MBurger`.
+To initialize the SDK you have to add `MBMessages` to the array of plugins of `MBurger`.
 
 ```swift
 import MBurgerSwift
