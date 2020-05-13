@@ -96,7 +96,7 @@ let messagesPlugin = MBMessages(delegate: [the delegate],
 - **debug**: if this is set to `true`, all the message returned by the server will be displayed, if this is set to `false` a message will appear only once for app installation. This is `false` by default
 - **debug**: the delegate will receive a call if the fettch of the messages fails, with the error that caused the fail, see [MBMessagesDelegate](#MBMessagesDelegate) for more details.
 - **viewDelegate**: the view delegates will receive calls when views of messages are showed or hidden, it will also receives a call when the button of the views will be touched, so you need to implement this protocol if you want to open an in-app link from an in app message. See [MBInAppMessageViewDelegate](#MBInAppMessageViewDelegate) for a detailed description of the protocol.
-- **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylize in app messages) for more details
+- **styleDelegate**: you can use this protocol to specify colors and fonts of the in app messages. See [Stylize in app messages](#Stylizeinappmessages) for more details
 
 ###MBMessagesDelegate
 
