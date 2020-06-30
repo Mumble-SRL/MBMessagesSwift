@@ -53,6 +53,8 @@ public class MBCampaign: NSObject {
     /// If automation is on for this campaing
     public let automationIsOn: Bool
 
+    public let triggers: [MBTrigger]?
+    
     /// Initializes a campaign with the parameters passed
     init(id: Int,
          title: String,
@@ -62,7 +64,8 @@ public class MBCampaign: NSObject {
          push: MBPushMessage? = nil,
          startDate: Date,
          endDate: Date,
-         automationIsOn: Bool) {
+         automationIsOn: Bool,
+         triggers: [MBTrigger]?) {
         self.id = id
         self.title = title
         self.campaignDescription = campaignDescription
@@ -72,6 +75,7 @@ public class MBCampaign: NSObject {
         self.startDate = startDate
         self.endDate = endDate
         self.automationIsOn = automationIsOn
+        self.triggers = triggers
     }
     
     /// Initializes a campaign with the dictionary returned by the APIs
@@ -104,6 +108,11 @@ public class MBCampaign: NSObject {
 
         let automationIsOn = dictionary["automation"] as? Bool ?? false
 
+        var triggers: [MBTrigger]?
+        if let triggersDictionaries = dictionary["triggers"] as? [[String: Any]] {
+            triggers = triggersDictionaries.map({ MBTrigger(dictionary: $0) })
+        }
+        
         self.init(id: id,
                   title: title,
                   campaignDescription: description,
@@ -112,6 +121,7 @@ public class MBCampaign: NSObject {
                   push: push,
                   startDate: startDate,
                   endDate: endDate,
-                  automationIsOn: automationIsOn)
+                  automationIsOn: automationIsOn,
+                  triggers: triggers)
     }
 }

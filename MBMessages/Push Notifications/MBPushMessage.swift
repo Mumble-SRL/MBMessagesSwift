@@ -7,8 +7,8 @@
 //
 
 public class MBPushMessage: NSObject {
-    /// The id of the message
-    public let id: Int
+    /// The id of the push message
+    public let id: String
 
     /// The title of the push message
     public let title: String
@@ -16,11 +16,11 @@ public class MBPushMessage: NSObject {
     /// The body of the push message
     public let body: String
     
-    /// If the push notification was sent or not
+    /// If the push notification was sent or not by the server
     public let sent: Bool
 
     /// Initializes a push message with the parameters passed
-    init(id: Int,
+    init(id: String,
          title: String,
          body: String,
          sent: Bool) {
@@ -32,7 +32,7 @@ public class MBPushMessage: NSObject {
 
     /// Initializes a message with the dictionary returned by the APIs
     convenience init(dictionary: [String: Any]) {
-        let id = dictionary["id"] as? Int ?? 0
+        let id = dictionary["id"] as? String ?? ""
         
         var title = ""
         var body = ""

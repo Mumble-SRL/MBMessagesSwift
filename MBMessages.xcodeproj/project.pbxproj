@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4928253D2BC8129E964D2D04 /* Pods_MBMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810CFE60D1934B17DBD63161 /* Pods_MBMessages.framework */; };
+		EC83B0B824AB342400F4AC2D /* MBTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC83B0B724AB342400F4AC2D /* MBTrigger.swift */; };
 		ECC824052450817F00578A96 /* MBMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC824032450817F00578A96 /* MBMessages.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC8240E2450819200578A96 /* MBMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBMessages.swift */; };
 		ECC8240F2450828900578A96 /* MBInAppMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */; };
@@ -34,6 +35,7 @@
 		EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageViewStyle.swift; sourceTree = "<group>"; };
 		EC1286AF244F2EB9005A4005 /* MBPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBPush.swift; sourceTree = "<group>"; };
 		EC4C8F482440AEA30019F59E /* MBInAppMessageFullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageFullscreenImageView.swift; sourceTree = "<group>"; };
+		EC83B0B724AB342400F4AC2D /* MBTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTrigger.swift; sourceTree = "<group>"; };
 		EC937C6D2420C9DD001B8AA1 /* MBInAppMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessage.swift; sourceTree = "<group>"; };
 		EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageManager.swift; sourceTree = "<group>"; };
 		EC937C712420CD3A001B8AA1 /* MBInAppMessageTopBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageTopBannerView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,15 @@
 			path = FullscreenImage;
 			sourceTree = "<group>";
 		};
+		EC83B0B624AB340800F4AC2D /* Campaign */ = {
+			isa = PBXGroup;
+			children = (
+				ECD9BA4E24AB21B900CED430 /* MBCampaign.swift */,
+				EC83B0B724AB342400F4AC2D /* MBTrigger.swift */,
+			);
+			path = Campaign;
+			sourceTree = "<group>";
+		};
 		EC937C4D2420C8E2001B8AA1 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +170,7 @@
 				ECC824032450817F00578A96 /* MBMessages.h */,
 				ECC824042450817F00578A96 /* Info.plist */,
 				EC036994244DEBC000220F2F /* MBMessages.swift */,
-				ECD9BA4E24AB21B900CED430 /* MBCampaign.swift */,
+				EC83B0B624AB340800F4AC2D /* Campaign */,
 				EC1286A6244EF0DE005A4005 /* In App Messages */,
 				EC1286AE244F2EA7005A4005 /* Push Notifications */,
 				ECC823D3245042AD00578A96 /* Metrics */,
@@ -315,6 +326,7 @@
 				ECC824172450828900578A96 /* MBInAppMessageFullscreenImageView.swift in Sources */,
 				ECC824182450828900578A96 /* MBInAppMessageImageLoader.swift in Sources */,
 				ECC824192450828900578A96 /* MBPush.swift in Sources */,
+				EC83B0B824AB342400F4AC2D /* MBTrigger.swift in Sources */,
 				ECC8241A2450828900578A96 /* MBMessageMetrics.swift in Sources */,
 				ECC8240E2450819200578A96 /* MBMessages.swift in Sources */,
 			);
