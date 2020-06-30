@@ -45,24 +45,24 @@ public class MBCampaign: NSObject {
     public let push: MBPushMessage?
     
     /// The start date of the campaign
-    public let startDate: Date!
+    public let startDate: Date
     
     /// The end date of the campaign
-    public let endDate: Date!
+    public let endDate: Date
 
     /// If automation is on for this campaing
-    public let automationIsOn: Bool!
+    public let automationIsOn: Bool
 
     /// Initializes a campaign with the parameters passed
     init(id: Int,
-         title: String!,
-         campaignDescription: String!,
-         type: CampaignType!,
+         title: String,
+         campaignDescription: String,
+         type: CampaignType,
          message: MBInAppMessage? = nil,
          push: MBPushMessage? = nil,
-         startDate: Date!,
-         endDate: Date!,
-         automationIsOn: Bool!) {
+         startDate: Date,
+         endDate: Date,
+         automationIsOn: Bool) {
         self.id = id
         self.title = title
         self.campaignDescription = campaignDescription
