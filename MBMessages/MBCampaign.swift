@@ -58,7 +58,6 @@ public class MBCampaign: NSObject {
          title: String!,
          campaignDescription: String!,
          type: CampaignType!,
-         duration: TimeInterval? = 5,
          message: MBInAppMessage? = nil,
          push: MBPushMessage? = nil,
          startDate: Date!,
@@ -77,6 +76,7 @@ public class MBCampaign: NSObject {
     
     /// Initializes a campaign with the dictionary returned by the APIs
     convenience init(dictionary: [String: Any]) {
+        print(dictionary)
         
         let id = dictionary["id"] as? Int ?? 0
         let title = dictionary["title"] as? String ?? ""
