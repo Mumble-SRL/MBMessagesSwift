@@ -55,7 +55,7 @@ class MBColorElement: MBElement {
         try container.encode(colorHex, forKey: .colorHex)
     }
     
-    private func colorWithHexString(hexString: String, alpha:CGFloat = 1.0) -> UIColor {
+    private func colorWithHexString(hexString: String, alpha: CGFloat = 1.0) -> UIColor {
         
         // Convert hex string to an integer
         let hexint = Int(self.intFromHexString(hexStr: hexString))

@@ -43,7 +43,7 @@ public enum MBInAppMessageStyle {
 /// This class represents an in app message retrieved by the MBurger in app messages APIs
 public class MBInAppMessage: NSObject {
     /// The id of the message
-    public let id: Int
+    public let id: Int!
     /// The style of the message
     public let style: MBInAppMessageStyle!
     /// The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds

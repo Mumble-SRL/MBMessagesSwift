@@ -25,7 +25,7 @@ public protocol MBMessagesDelegate: class {
 /// You can pass other options described below in the init method described below.
 /// You will also need to add this line if you want to start the messages fetch at startup:
 /// `MBManager.shared.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)`
-public class MBMessages: NSObject, MBPluginProtocol {
+public class MBMessages: NSObject, MBPlugin {
     
     /// The delegate of the plugin, you can use this to check if the message check fails.
     public weak var delegate: MBMessagesDelegate?

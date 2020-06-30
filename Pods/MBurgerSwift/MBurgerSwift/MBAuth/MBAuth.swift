@@ -265,9 +265,8 @@ public struct MBAuth {
                              development: MBManager.shared.development,
                              encoding: URLParameterEncoder.queryItems,
                              success: { response in
-                                let user = MBUser(dictionary: response)
-                                //@TODO: - test this method when plugin is ready
-//                                handlePlugins(response, user: user)
+                                var user = MBUser(dictionary: response)
+                                handlePlugins(response, user: &user)
                                 success(user)
         }, failure: { error in
             failure(error)

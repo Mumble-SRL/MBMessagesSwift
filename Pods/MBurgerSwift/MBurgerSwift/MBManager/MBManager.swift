@@ -23,7 +23,7 @@ public final class MBManager {
     public var development: Bool = false
     
     /// An array of plugin objects that can add functionality to the core MBurger.
-    public var plugins: [MBPluginProtocol] = []
+    public var plugins: [MBPlugin] = []
     
     /// The locale used to make the requests.
     public var locale: Locale?
@@ -54,42 +54,8 @@ public final class MBManager {
     
     public func applicationDidFinishLaunchingWithOptions(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         
-        guard plugins.count != 0 else {
-            return
-        }
-        let sortedPlugins = plugins.sorted(by: { (p1, p2) -> Bool in
-            return p1.applicationStartupOrder > p2.applicationStartupOrder
-        })
-        var startupBlocks = [ApplicationStartupBlock]()
-        for plugin in sortedPlugins {
-            if let startupBlock = plugin.applicationStartupBlock() {
-                startupBlocks.append(startupBlock)
-            }
-        }
-        
-        guard startupBlocks.count != 0 else {
-            return
-        }
-        
-        executeStartupBlock(index: 0,
-                            startupBlocks: startupBlocks,
-                            launchOptions: launchOptions)
-    }
-    
-    private func executeStartupBlock(index: Int,
-                                     startupBlocks: [ApplicationStartupBlock],
-                                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        guard index < startupBlocks.count else {
-            return
-        }
-        let startupBlock = startupBlocks[index]
-        startupBlock(launchOptions, {
-            if index + 1 < startupBlocks.count {
-                self.executeStartupBlock(index: index + 1,
-                                         startupBlocks: startupBlocks,
-                                         launchOptions: launchOptions)
-            }
-        })
+        MBPluginsManager.handlePluginStartup(plugins: plugins,
+                                             launchOptions: launchOptions)        
     }
 }
 

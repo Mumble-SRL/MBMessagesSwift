@@ -25,6 +25,16 @@ public struct MBFilterParameter: MBParameter {
         self.value = value
     }
     
+    /// Initializes a filter parameter object to filter the sections that have at least an element with name ? = `name` and value = `value`.
+    /// - Note: This initializer calls `MBFilter.init(field:value:)` and the value becomes "name|value"
+    /// - Parameters:
+    ///   - field: The `field` used to filter.
+    ///   - value: The `value` used to filter the elements.
+    public init(field: String, name: String, value: String) {
+        self.field = field
+        self.value = name + "|" + value
+    }
+
     public func parameterRepresentation() -> [String: Any] {
         let key = "filter[\(field)]"
         return [

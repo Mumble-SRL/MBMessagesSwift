@@ -12,7 +12,7 @@ import Foundation
 public typealias ApplicationStartupBlock = (_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?, _ completionBlock: (() -> Void)?) -> Void
 
 /// A plugin that can be attached to add more functionalities to MBurger.
-public protocol MBPluginProtocol {
+public protocol MBPlugin {
     
     /// The key used in the user dictionary, used to retrieve and set the data.
     var userKey: String? { get }
@@ -29,7 +29,7 @@ public protocol MBPluginProtocol {
 }
 
 /// Default values for plugin protocol
-public extension MBPluginProtocol {
+public extension MBPlugin {
     
     /// The default value for the user key is nil
     var userKey: String? {

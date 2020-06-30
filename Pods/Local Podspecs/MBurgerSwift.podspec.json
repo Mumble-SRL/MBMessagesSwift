@@ -22,7 +22,6 @@
     "MBurgerSwift/*.{h,m,swift}",
     "MBurgerSwift/**/*.{h,m,swift}"
   ],
-  "frameworks": "CoreLocation",
   "dependencies": {
     "SAMKeychain": [
 
