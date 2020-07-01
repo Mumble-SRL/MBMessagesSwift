@@ -91,9 +91,9 @@ public class MBMessages: NSObject, MBPlugin {
                                 MBPluginsManager.campaignsReceived(campaigns: campaigns)
                                 
                                 let delay = self?.messagesDelay ?? 0
-                                let messagesCampaigns = campaigns.filter({ $0.type == .inAppMessage })
+                                let validMessagesCampaigns = campaigns.filter({ $0.type == .inAppMessage && !$0.automationIsOn })
                                 
-                                let messages = messagesCampaigns.compactMap({ $0.message })
+                                let messages = validMessagesCampaigns.compactMap({ $0.message })
                                 
                                 guard messages.count != 0 else {
                                     return
