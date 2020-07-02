@@ -12,21 +12,29 @@ class MBInAppMessageImageLoader: UIView {
 
     static func loadImage(url: String?, completion: @escaping (UIImage?) -> Void) {
         guard let urlString = url else {
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
             return
         }
         guard let url = URL(string: urlString) else {
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
             return
         }
         guard let fileUrl = fileUrlForUrl(url: url) else {
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
             return
         }
         
         if FileManager.default.fileExists(atPath: fileUrl.path) {
             if let image = UIImage(contentsOfFile: fileUrl.path) {
-                completion(image)
+                DispatchQueue.main.async {
+                    completion(image)
+                }
                 return
             }
         }
@@ -38,7 +46,9 @@ class MBInAppMessageImageLoader: UIView {
                 let data = data, error == nil,
                 let image = UIImage(data: data)
                 else {
-                    completion(nil)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
                     return
             }
             DispatchQueue.main.async {

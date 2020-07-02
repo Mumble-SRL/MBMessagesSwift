@@ -30,11 +30,7 @@ internal class MBInAppMessageViewStyle {
         if let backgroundColor = message.backgroundColor {
             return backgroundColor
         }
-        if #available(iOS 13.0, *) {
-            return UIColor.systemBackground
-        } else {
-            return UIColor.white
-        }
+        return color(lightColor: UIColor.white.withAlphaComponent(0.9), darkColor: UIColor(white: 30.0 / 255, alpha: 0.84))
     }
     
     static func titleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -51,6 +47,14 @@ internal class MBInAppMessageViewStyle {
         return textColor()
     }
 
+    static func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor {
+        return color(lightColor: UIColor.black, darkColor: UIColor.white)
+    }
+    
+    static func closeButtonBackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        return color(lightColor: UIColor.white, darkColor: UIColor.black)
+    }
+
     private static func textColor() -> UIColor {
         return color(lightColor: UIColor.black, darkColor: UIColor.white)
     }
@@ -60,7 +64,12 @@ internal class MBInAppMessageViewStyle {
             let firstButtonBackgroundColor = firstButton.backgroundColor {
             return firstButtonBackgroundColor
         }
-        return color(lightColor: UIColor.black, darkColor: UIColor.white)
+        
+        if message.style == MBInAppMessageStyle.fullscreenImage {
+            return UIColor.white
+        } else {
+            return mBurgerColor()
+        }
     }
     
     static func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -68,7 +77,12 @@ internal class MBInAppMessageViewStyle {
             let firstButtonTitleColor = firstButton.titleColor {
             return firstButtonTitleColor
         }
-        return color(lightColor: UIColor.white, darkColor: UIColor.black)
+        
+        if message.style == MBInAppMessageStyle.fullscreenImage {
+            return mBurgerDarkColor()
+        } else {
+            return UIColor.white
+        }
     }
     
     static func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -78,7 +92,7 @@ internal class MBInAppMessageViewStyle {
                 return secondButtonBackgroundColor
             }
         }
-        return color(lightColor: UIColor.white, darkColor: UIColor.black)
+        return UIColor.clear
     }
     
     static func button2TitleColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -88,7 +102,11 @@ internal class MBInAppMessageViewStyle {
                 return secondButtonTitleColor
             }
         }
-        return color(lightColor: UIColor.black, darkColor: UIColor.white)
+        if message.style == MBInAppMessageStyle.fullscreenImage {
+            return UIColor.white
+        } else {
+            return mBurgerColor()
+        }
     }
     
     static func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor? {
@@ -96,17 +114,29 @@ internal class MBInAppMessageViewStyle {
     }
 
     static func titleFont(forMessage message: MBInAppMessage) -> UIFont {
-        return UIFont.preferredFont(forTextStyle: .headline)
+        return UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 20, weight: .bold))
     }
     
     static func bodyFont(forMessage message: MBInAppMessage) -> UIFont {
-        return UIFont.preferredFont(forTextStyle: .body)
+        return UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 19))
     }
     
     static func buttonsTextFont(forMessage message: MBInAppMessage) -> UIFont {
-        return UIFont.preferredFont(forTextStyle: .body)
+        if message.style == MBInAppMessageStyle.center {
+            return UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 17, weight: .semibold))
+        } else {
+            return UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 14, weight: .semibold))
+        }
     }
     
+    private static func mBurgerColor() -> UIColor {
+        UIColor(red: 19.0 / 255, green: 140.0 / 255, blue: 252.0 / 255, alpha: 1)
+    }
+    
+    private static func mBurgerDarkColor() -> UIColor {
+        UIColor(red: 4.0 / 255, green: 20.0 / 255, blue: 68.0 / 255, alpha: 1)
+    }
+
     static private func color(lightColor: UIColor, darkColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor(dynamicProvider: { traitCollection in

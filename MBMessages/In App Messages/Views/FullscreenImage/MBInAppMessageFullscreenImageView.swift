@@ -19,7 +19,7 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
     var closeButton: UIButton!
 
     override func configure() {
-        layer.cornerRadius = 8
+        layer.cornerRadius = 10
         clipsToBounds = true
         guard let messageImage = message.image else {
             configure(image: nil)
@@ -67,8 +67,14 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(closeButton)
-        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
-        
+        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.closeButtonColor(forMessage: message)
+        closeButton.backgroundColor = styleDelegate?.closeButtonBackgroundColor(forMessage: message) ?? MBInAppMessageViewStyle.closeButtonBackgroundColor(forMessage: message)
+        closeButton.layoutIfNeeded()
+        closeButton.layer.cornerRadius = 15
+        closeButton.imageView?.contentMode = .scaleAspectFit
+        let closeButtonPadding: CGFloat = 8
+        closeButton.imageEdgeInsets = UIEdgeInsets(top: closeButtonPadding, left: closeButtonPadding, bottom: closeButtonPadding, right: closeButtonPadding)
+
         UIView.performWithoutAnimation {
             if #available(iOS 13.0, *) {
                 closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -78,9 +84,9 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
             closeButton.layoutIfNeeded()
         }
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: contentView.topAnchor),
-            closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            closeButton.widthAnchor.constraint(equalToConstant: 44),
+            closeButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            closeButton.widthAnchor.constraint(equalToConstant: 30),
             closeButton.heightAnchor.constraint(equalTo: closeButton.widthAnchor)
         ])
         closeButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
@@ -134,7 +140,8 @@ public class MBInAppMessageFullscreenImageView: MBInAppMessageView {
             return
         }
 
-        let backgroundView = UIView(frame: .zero)
+        let blurEffect = UIBlurEffect(style: .dark)
+        let backgroundView = UIVisualEffectView(effect: blurEffect)
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         window.addSubview(backgroundView)
         backgroundView.alpha = 0

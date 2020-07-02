@@ -15,32 +15,47 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
     var bottomConstraintNotHidden: NSLayoutConstraint?
     
     override func configure() {
-        layer.cornerRadius = 8
-        clipsToBounds = true
-        
         let padding: CGFloat = 10
+        
+        layer.shadowColor = UIColor(white: 162.0 / 255, alpha: 1).cgColor
+        layer.shadowOpacity = 0.37
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 10
+
+        let mainContainer = UIView(frame: .zero)
+        mainContainer.layer.cornerRadius = 10
+        mainContainer.clipsToBounds = true
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(mainContainer)
+        
+        NSLayoutConstraint.activate([
+            mainContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mainContainer.topAnchor.constraint(equalTo: topAnchor),
+            mainContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
         
         let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
         if backgroundStyle == .translucent {
             let blurEffect = UIBlurEffect(style: .regular)
             contentView = UIVisualEffectView(effect: blurEffect)
             contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
+            mainContainer.addSubview(contentView)
             NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                contentView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: mainContainer.topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor)
             ])
         } else {
             contentView = UIView(frame: .zero)
             contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
+            mainContainer.addSubview(contentView)
             NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                contentView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: mainContainer.topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor)
             ])
             if #available(iOS 13.0, *) {
                 contentView.backgroundColor = UIColor.systemBackground
@@ -64,9 +79,13 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         gestureHandle.translatesAutoresizingMaskIntoConstraints = false
         gestureHandle.layer.cornerRadius = handleHeight / 2
         if #available(iOS 13.0, *) {
-            gestureHandle.backgroundColor = UIColor.systemFill
+            if traitCollection.userInterfaceStyle == .dark {
+                gestureHandle.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+            } else {
+                gestureHandle.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            }
         } else {
-            gestureHandle.backgroundColor = UIColor.gray
+            gestureHandle.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         }
         targetView.addSubview(gestureHandle)
         

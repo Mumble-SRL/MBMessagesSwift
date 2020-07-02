@@ -9,8 +9,8 @@
 import UIKit
 import SafariServices
 
-internal class MBInAppMessageManager: NSObject {
-    static func presentMessages(_ messages: [MBInAppMessage],
+public class MBInAppMessageManager: NSObject {
+    public static func presentMessages(_ messages: [MBInAppMessage],
                                 delegate: MBInAppMessageViewDelegate? = nil,
                                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                                 ignoreShowedMessages: Bool = false) {

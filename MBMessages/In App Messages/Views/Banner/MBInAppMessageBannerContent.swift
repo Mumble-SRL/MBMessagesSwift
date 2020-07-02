@@ -28,7 +28,7 @@ internal class MBInAppMessageBannerContent: UIView {
     private func configure(withMessage message: MBInAppMessage,
                            styleDelegate: MBInAppMessageViewStyleDelegate?) {
         let padding: CGFloat = 10
-        let cornerRadius: CGFloat = 8
+        let cornerRadius: CGFloat = 10
         
         var lastVerticalView: UIView?
 
@@ -62,6 +62,7 @@ internal class MBInAppMessageBannerContent: UIView {
             titleLabel.text = title
             titleLabel.font = styleDelegate?.titleFont(forMessage: message) ?? MBInAppMessageViewStyle.titleFont(forMessage: message)
             titleLabel.textColor = styleDelegate?.titleColor(forMessage: message) ?? MBInAppMessageViewStyle.titleColor(forMessage: message)
+            titleLabel.adjustsFontForContentSizeCategory = true
             addSubview(titleLabel)
 
             NSLayoutConstraint.activate([

@@ -64,7 +64,8 @@ public class MBInAppMessage: NSObject {
     public let buttons: [MBInAppMessageButton]?
     
     /// Initializes a message with the parameters passed
-    init(id: Int,
+    //TODO: remove
+    public init(id: Int,
          style: MBInAppMessageStyle!,
          duration: TimeInterval? = 5,
          title: String? = nil,
@@ -188,7 +189,7 @@ public class MBInAppMessageButton: NSObject {
     public let linkType: MBInAppMessageButtonLinkType!
     
     /// Initializes a button with the parameters passed
-    init(title: String,
+    public init(title: String,
          titleColor: UIColor? = nil,
          backgroundColor: UIColor? = nil,
          link: String,
