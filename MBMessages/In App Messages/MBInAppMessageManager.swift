@@ -10,13 +10,13 @@ import UIKit
 import SafariServices
 
 public class MBInAppMessageManager: NSObject {
-    public static func presentMessages(_ messages: [MBInAppMessage],
+    public static func presentMessages(_ messages: [MBMessage],
                                        delegate: MBInAppMessageViewDelegate? = nil,
                                        styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                                        ignoreShowedMessages: Bool = false) {
-        var messagesToShow = messages
+        var messagesToShow = messages.filter({ $0.type == .inAppMessage })
         if !ignoreShowedMessages {
-            messagesToShow = messages.filter({ !messageHasBeenShowed(messageId: $0.id) })
+            messagesToShow = messages.filter({ !messageHasBeenShowed(message: $0 ) })
         }
         guard messagesToShow.count != 0 else {
             return
@@ -37,7 +37,7 @@ public class MBInAppMessageManager: NSObject {
     }
 
     private static func presentMessage(atIndex index: Int,
-                                       messages: [MBInAppMessage],
+                                       messages: [MBMessage],
                                        delegate: MBInAppMessageViewDelegate? = nil,
                                        styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                                        overViewController viewController: UIViewController?) {
@@ -45,23 +45,26 @@ public class MBInAppMessageManager: NSObject {
             return
         }
         let message = messages[index]
+        guard let inAppMessage = message.inAppMessage else {
+            return
+        }
         var messageView: MBInAppMessageView?
-        if message.style == .bannerTop {
+        if inAppMessage.style == .bannerTop {
             messageView = MBInAppMessageTopBannerView(message: message,
                                                       delegate: delegate,
                                                       styleDelegate: styleDelegate,
                                                       viewController: viewController)
-        } else if message.style == .bannerBottom {
+        } else if inAppMessage.style == .bannerBottom {
             messageView = MBInAppMessageBottomBannerView(message: message,
                                                          delegate: delegate,
                                                          styleDelegate: styleDelegate,
                                                          viewController: viewController)
-        } else if message.style == .center {
+        } else if inAppMessage.style == .center {
             messageView = MBInAppMessageCenterView(message: message,
                                                    delegate: delegate,
                                                    styleDelegate: styleDelegate,
                                                    viewController: viewController)
-        } else if message.style == .fullscreenImage {
+        } else if inAppMessage.style == .fullscreenImage {
             messageView = MBInAppMessageFullscreenImageView(message: message,
                                                             delegate: delegate,
                                                             styleDelegate: styleDelegate,
@@ -77,7 +80,7 @@ public class MBInAppMessageManager: NSObject {
                                                          overViewController: topMostViewController())
                 }
             }
-            setMessageShowed(messageId: message.id)
+            setMessageShowed(message: message)
             MBMessageMetrics.createMessageMetricForInAppMessage(metric: .view, messageId: message.id)
             messageView.present()
         }
@@ -108,13 +111,19 @@ public class MBInAppMessageManager: NSObject {
     
     // MARK: - Showed message handling
     
-    private static func messageHasBeenShowed(messageId: Int) -> Bool {
+    private static func messageHasBeenShowed(message: MBMessage) -> Bool {
+        guard let messageId = message.inAppMessage?.id else {
+            return false
+        }
         let userDefaults = UserDefaults.standard
         let showedMessages = userDefaults.object(forKey: showedMessagesKey) as? [Int] ?? []
         return showedMessages.contains(messageId)
     }
     
-    private static func setMessageShowed(messageId: Int) {
+    private static func setMessageShowed(message: MBMessage) {
+        guard let messageId = message.inAppMessage?.id else {
+            return
+        }
         let userDefaults = UserDefaults.standard
         var showedMessages = userDefaults.object(forKey: showedMessagesKey) as? [Int] ?? []
         if !showedMessages.contains(messageId) {

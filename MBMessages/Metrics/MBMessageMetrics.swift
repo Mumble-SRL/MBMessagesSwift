@@ -50,16 +50,16 @@ class MBMessageMetrics: NSObject {
     internal static func checkNotificationPayload(userInfo: [String: Any],
                                                   forMetric metric: MBMessageMetricsMetric,
                                                   completionBlock: @escaping () -> Void) {
-        if let notificationId = userInfo["push_id"] as? String {
-            if metric == .interaction && !pushNotificationViewSent(notificationId: notificationId) {
-                createMessageMetricForPush(metric: .view, pushId: notificationId, completionBlock: {
+        if let messageId = userInfo["message_id"] as? Int {
+            if metric == .interaction && !pushNotificationViewSent(notificationId: messageId) {
+                createMessageMetricForPush(metric: .view, messageId: messageId, completionBlock: {
                     createMessageMetricForPush(metric: metric,
-                                               pushId: notificationId,
+                                               messageId: messageId,
                                                completionBlock: completionBlock)
                 })
             } else {
                 createMessageMetricForPush(metric: metric,
-                                           pushId: notificationId,
+                                           messageId: messageId,
                                            completionBlock: completionBlock)
             }
         } else {
@@ -68,9 +68,9 @@ class MBMessageMetrics: NSObject {
     }
     
     internal static func createMessageMetricForPush(metric: MBMessageMetricsMetric,
-                                                    pushId: String,
+                                                    messageId: Int,
                                                     completionBlock: @escaping () -> Void) {
-        createMessageMetric(type: .push, metric: metric, pushId: pushId, success: {
+        createMessageMetric(metric: metric, messageId: messageId, success: {
             completionBlock()
         }, failure: { _ in
             completionBlock()
@@ -79,24 +79,16 @@ class MBMessageMetrics: NSObject {
     
     internal static func createMessageMetricForInAppMessage(metric: MBMessageMetricsMetric,
                                                             messageId: Int) {
-        createMessageMetric(type: .inapp, metric: metric, messageId: messageId)
+        createMessageMetric(metric: metric, messageId: messageId)
     }
     
-    private static func createMessageMetric(type: MBMessageMetricsMetricType,
-                                            metric: MBMessageMetricsMetric,
-                                            pushId: String? = nil,
-                                            messageId: Int? = nil,
+    private static func createMessageMetric(metric: MBMessageMetricsMetric,
+                                            messageId: Int,
                                             success: (() -> Void)? = nil,
                                             failure: ((_ error: Error) -> Void)? = nil) {
         var parameters = [String: Any]()
-        parameters["type"] = type.rawValue
         parameters["metric"] = metric.rawValue
-        if let pushId = pushId {
-            parameters["push_id"] = pushId
-        }
-        if let messageId = messageId {
-            parameters["message_id"] = NSNumber(value: messageId).stringValue
-        }
+        parameters["message_id"] = NSNumber(value: messageId).stringValue
         MBApiManager.request(withToken: MBManager.shared.apiToken,
                              locale: MBManager.shared.localeString,
                              apiName: "metrics",
@@ -114,15 +106,15 @@ class MBMessageMetrics: NSObject {
         })
     }
     
-    private static func pushNotificationViewSent(notificationId: String) -> Bool {
+    private static func pushNotificationViewSent(notificationId: Int) -> Bool {
         let userDefaults = UserDefaults.standard
-        let viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [String] ?? []
+        let viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
         return viewSentNotificationIds.contains(notificationId)
     }
     
-    private static func setPushNotificationViewShowed(notificationId: String) {
+    private static func setPushNotificationViewShowed(notificationId: Int) {
         let userDefaults = UserDefaults.standard
-        var viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [String] ?? []
+        var viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
         if !viewSentNotificationIds.contains(notificationId) {
             viewSentNotificationIds.append(notificationId)
             UserDefaults.standard.set(viewSentNotificationIds, forKey: pushNotificationViewedKey)

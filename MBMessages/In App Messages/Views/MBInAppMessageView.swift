@@ -204,7 +204,10 @@ public extension MBInAppMessageViewStyleDelegate {
 
 /// A general view used as an interface. This class is just an interface and should not be instantiate, the SDK will instantiate only subclasses of this class.
 public class MBInAppMessageView: UIView {
-    var message: MBInAppMessage!
+    var message: MBMessage!
+    var inAppMessage: MBInAppMessage? {
+        return message.inAppMessage
+    }
     weak var delegate: MBInAppMessageViewDelegate?
     weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
@@ -221,7 +224,7 @@ public class MBInAppMessageView: UIView {
     /// Completion block called by the manager to display next messages if no button is pressed and the message view is dismissed
     var completionBlock: (() -> Void)?
     
-    init(message: MBInAppMessage,
+    init(message: MBMessage,
          delegate: MBInAppMessageViewDelegate? = nil,
          styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
          viewController: UIViewController? = nil) {
@@ -272,7 +275,7 @@ public class MBInAppMessageView: UIView {
     @objc func buttonPressed(_ sender: UIButton) {
         MBMessageMetrics.createMessageMetricForInAppMessage(metric: .interaction, messageId: message.id)
         hideWithoutCallingCompletionBlock {
-            guard let buttons = self.message.buttons else {
+            guard let buttons = self.inAppMessage?.buttons else {
                 return
             }
             if sender == self.button1 {

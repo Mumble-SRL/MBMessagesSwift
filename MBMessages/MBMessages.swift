@@ -101,15 +101,13 @@ public class MBMessages: NSObject, MBPlugin {
                                 
                                 let delay = self?.messagesDelay ?? 0
                                 let validMessages = messages.filter({ $0.type == .inAppMessage && !$0.automationIsOn })
-                                
-                                let inAppMessages = validMessages.compactMap({ $0.inAppMessage })
-                                
+                                                                
                                 guard messages.count != 0 else {
                                     return
                                 }
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                                    MBInAppMessageManager.presentMessages(inAppMessages,
+                                    MBInAppMessageManager.presentMessages(validMessages,
                                                                           delegate: self?.viewDelegate,
                                                                           styleDelegate: self?.styleDelegate,
                                                                           ignoreShowedMessages: self?.debug ?? false)
@@ -281,7 +279,7 @@ public class MBMessages: NSObject, MBPlugin {
     /// Presents in app messages to the user.
     /// - Parameters:
     ///   - messages: In app messages that will be presented
-    public func presentInAppMessages(messages: [MBInAppMessage]) {
+    public func presentMessages(messages: [MBMessage]) {
         MBInAppMessageManager.presentMessages(messages,
                                               delegate: viewDelegate,
                                               styleDelegate: styleDelegate,

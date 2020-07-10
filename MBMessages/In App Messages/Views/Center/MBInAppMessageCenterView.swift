@@ -24,7 +24,11 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         
         let padding: CGFloat = 20
         
-        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
+        guard let inAppMessage = message.inAppMessage else {
+            return
+        }
+        
+        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: inAppMessage)
         if backgroundStyle == .translucent {
             let blurEffect = UIBlurEffect(style: .regular)
             contentView = UIVisualEffectView(effect: blurEffect)
@@ -51,10 +55,10 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
             } else {
                 contentView.backgroundColor = UIColor.white
             }
-            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
+            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: inAppMessage) {
                 contentView.backgroundColor = backgroundColor
             } else {
-                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: message)
+                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: inAppMessage)
             }
         }
 
@@ -66,8 +70,8 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         let closeButton = UIButton(type: .system)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(closeButton)
-        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: message) ?? MBInAppMessageViewStyle.closeButtonColor(forMessage: message)
-        closeButton.backgroundColor = styleDelegate?.closeButtonBackgroundColor(forMessage: message) ?? MBInAppMessageViewStyle.closeButtonBackgroundColor(forMessage: message)
+        closeButton.tintColor = styleDelegate?.closeButtonColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.closeButtonColor(forMessage: inAppMessage)
+        closeButton.backgroundColor = styleDelegate?.closeButtonBackgroundColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.closeButtonBackgroundColor(forMessage: inAppMessage)
         closeButton.layoutIfNeeded()
         closeButton.layer.cornerRadius = 15
         closeButton.imageView?.contentMode = .scaleAspectFit
@@ -92,7 +96,7 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         self.closeButton = closeButton
         
         var lastVerticalView: UIView?
-        if let image = message.image {
+        if let image = inAppMessage.image {
             let imageHeight: CGFloat = 175.0
             let imageView = UIImageView(frame: .zero)
             imageView.contentMode = .scaleAspectFit
@@ -119,13 +123,13 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
             lastVerticalView = imageView
         }
         
-        if let title = message.title {
+        if let title = inAppMessage.title {
             let titleLabel = UILabel(frame: .zero)
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.lineBreakMode = .byWordWrapping
             titleLabel.numberOfLines = 0
-            titleLabel.font = styleDelegate?.titleFont(forMessage: message) ?? MBInAppMessageViewStyle.titleFont(forMessage: message)
-            titleLabel.textColor = styleDelegate?.titleColor(forMessage: message) ?? MBInAppMessageViewStyle.titleColor(forMessage: message)
+            titleLabel.font = styleDelegate?.titleFont(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.titleFont(forMessage: inAppMessage)
+            titleLabel.textColor = styleDelegate?.titleColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.titleColor(forMessage: inAppMessage)
             titleLabel.text = title
             titleLabel.textAlignment = .center
             targetView.addSubview(titleLabel)
@@ -144,9 +148,9 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         bodyLabel.lineBreakMode = .byWordWrapping
         bodyLabel.numberOfLines = 0
-        bodyLabel.font = styleDelegate?.bodyFont(forMessage: message) ?? MBInAppMessageViewStyle.bodyFont(forMessage: message)
-        bodyLabel.textColor = styleDelegate?.bodyColor(forMessage: message) ?? MBInAppMessageViewStyle.bodyColor(forMessage: message)
-        bodyLabel.text = message.body
+        bodyLabel.font = styleDelegate?.bodyFont(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.bodyFont(forMessage: inAppMessage)
+        bodyLabel.textColor = styleDelegate?.bodyColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.bodyColor(forMessage: inAppMessage)
+        bodyLabel.text = inAppMessage.body
         bodyLabel.textAlignment = .center
         addSubview(bodyLabel)
         
@@ -159,24 +163,24 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         self.bodyLabel = bodyLabel
         lastVerticalView = bodyLabel
 
-        if let buttons = message.buttons {
+        if let buttons = inAppMessage.buttons {
             if buttons.count > 2 {
                 fatalError("Are allowed only a max of 2 buttons")
             }
             for (index, button) in buttons.enumerated() {
-                let font = styleDelegate?.buttonsTextFont(forMessage: message) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: message)
+                let font = styleDelegate?.buttonsTextFont(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.buttonsTextFont(forMessage: inAppMessage)
                 var backgroundColor: UIColor! = UIColor.white
                 var titleColor: UIColor! = UIColor.white
                 var borderColor: UIColor?
                 if index == 0 {
-                    backgroundColor = styleDelegate?.button1BackgroundColor(forMessage: message) ??
-                        MBInAppMessageViewStyle.button1BackgroundColor(forMessage: message)
-                    titleColor = styleDelegate?.button1TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: message)
+                    backgroundColor = styleDelegate?.button1BackgroundColor(forMessage: inAppMessage) ??
+                        MBInAppMessageViewStyle.button1BackgroundColor(forMessage: inAppMessage)
+                    titleColor = styleDelegate?.button1TitleColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.button1TitleColor(forMessage: inAppMessage)
                 } else {
-                    backgroundColor = styleDelegate?.button2BackgroundColor(forMessage: message) ??
-                        MBInAppMessageViewStyle.button2BackgroundColor(forMessage: message)
-                    titleColor = styleDelegate?.button2TitleColor(forMessage: message) ?? MBInAppMessageViewStyle.button2TitleColor(forMessage: message)
-                    borderColor = styleDelegate?.button2BorderColor(forMessage: message) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: message)
+                    backgroundColor = styleDelegate?.button2BackgroundColor(forMessage: inAppMessage) ??
+                        MBInAppMessageViewStyle.button2BackgroundColor(forMessage: inAppMessage)
+                    titleColor = styleDelegate?.button2TitleColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.button2TitleColor(forMessage: inAppMessage)
+                    borderColor = styleDelegate?.button2BorderColor(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.button2BorderColor(forMessage: inAppMessage)
                 }
                 let button = MBInAppMessageViewStyle.button(forMessageButton: button, backgroundColor: backgroundColor, titleColor: titleColor, borderColor: borderColor, font: font, height: 44)
                 button.translatesAutoresizingMaskIntoConstraints = false
@@ -257,8 +261,10 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(backgroundViewPressed))
         backgroundView.addGestureRecognizer(tap)
         
-        if message.duration != -1 {
-            self.perform(#selector(hide), with: nil, afterDelay: message.duration)
+        if let inAppMessage = message.inAppMessage {
+            if inAppMessage.duration != -1 {
+                self.perform(#selector(hide), with: nil, afterDelay: inAppMessage.duration)
+            }
         }
     }
     
