@@ -20,10 +20,10 @@ public class MBPushMessage: NSObject {
     public let sent: Bool
 
     /// Initializes a push message with the parameters passed
-    init(id: String,
-         title: String,
-         body: String,
-         sent: Bool) {
+    public init(id: String,
+                title: String,
+                body: String,
+                sent: Bool) {
         self.id = id
         self.title = title
         self.body = body

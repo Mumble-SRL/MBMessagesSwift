@@ -11,9 +11,9 @@ import SafariServices
 
 public class MBInAppMessageManager: NSObject {
     public static func presentMessages(_ messages: [MBInAppMessage],
-                                delegate: MBInAppMessageViewDelegate? = nil,
-                                styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
-                                ignoreShowedMessages: Bool = false) {
+                                       delegate: MBInAppMessageViewDelegate? = nil,
+                                       styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
+                                       ignoreShowedMessages: Bool = false) {
         var messagesToShow = messages
         if !ignoreShowedMessages {
             messagesToShow = messages.filter({ !messageHasBeenShowed(messageId: $0.id) })
@@ -78,7 +78,7 @@ public class MBInAppMessageManager: NSObject {
                 }
             }
             setMessageShowed(messageId: message.id)
-            MBMessageMetrics.createMessageMetricForMessage(metric: .view, messageId: message.id)
+            MBMessageMetrics.createMessageMetricForInAppMessage(metric: .view, messageId: message.id)
             messageView.present()
         }
     }

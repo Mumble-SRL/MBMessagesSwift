@@ -8,7 +8,7 @@ PODS:
   - SAMKeychain (1.5.3)
 
 DEPENDENCIES:
-  - "MBurgerSwift (from `git@github.com:Mumble-SRL/MBurgerSwift.git`, branch `develop`)"
+  - MBurgerSwift (from `../MBurgerSwift`)
   - MPushSwift
 
 SPEC REPOS:
@@ -19,13 +19,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   MBurgerSwift:
-    :branch: develop
-    :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
-
-CHECKOUT OPTIONS:
-  MBurgerSwift:
-    :commit: 3783637c0a110bbde601301eec44c7f934e5b7c4
-    :git: "git@github.com:Mumble-SRL/MBurgerSwift.git"
+    :path: "../MBurgerSwift"
 
 SPEC CHECKSUMS:
   MBNetworkingSwift: 293afd6c2a20e9d242204ad3a868f44fa7d8e23f
@@ -33,6 +27,6 @@ SPEC CHECKSUMS:
   MPushSwift: 57b2dce59e51a17ae8f10d7863cbab8386eee485
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
-PODFILE CHECKSUM: 9ac7511f33a06c0f58741df3c95a22be97268d91
+PODFILE CHECKSUM: 552cc280d8e676d8d4da95599757df6cc002b94d
 
 COCOAPODS: 1.9.3

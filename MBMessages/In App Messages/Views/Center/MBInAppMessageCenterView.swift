@@ -104,7 +104,7 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                 imageView.heightAnchor.constraint(equalToConstant: imageHeight),
-                imageView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 8),
+                imageView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 8)
             ])
             
             MBInAppMessageImageLoader.loadImage(url: image) { [weak self] (image) in

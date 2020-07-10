@@ -16,7 +16,7 @@ public protocol MBMessagesDelegate: class {
     /// - Parameters:
     ///   - sender: The `MBMessages` plugins that sent checked the messages.
     ///   - error: An optional error with the motivation oof the fail
-    func campaignsCheckFailed(sender: MBMessages, error: Error?)
+    func messagesCheckFailed(sender: MBMessages, error: Error?)
 }
 
 /// This is the main entry point to manage all the messages features of MBurger.
@@ -64,17 +64,21 @@ public class MBMessages: NSObject, MBPlugin {
         self.styleDelegate = styleDelegate
         self.messagesDelay = messagesDelay
         self.debug = debug
-        checkCampaigns()
-        NotificationCenter.default.addObserver(self, selector: #selector(checkCampaigns), name: UIApplication.willEnterForegroundNotification, object: nil)
+        performCheckMessages(fromStartup: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    /// This method checks the campaigns from the server and shows them, if needed.
+    /// This method checks the messages from the server and shows them, if needed.
     /// It's called automatically at startup, but it can be called to force the check.
-    /// If the check fails it wil call the `inAppMessageCheckFailed` of the `delegate`
-    @objc public func checkCampaigns() {
+    /// If the check fails it wil call the `messagesCheckFailed` of the `delegate`
+    @objc public func checkMessages() {
+        performCheckMessages(fromStartup: false)
+    }
+    
+    private func performCheckMessages(fromStartup: Bool) {
         MBApiManager.request(withToken: MBManager.shared.apiToken,
                              locale: MBManager.shared.localeString,
-                             apiName: "campaigns",
+                             apiName: "messages",
                              method: .get,
                              development: MBManager.shared.development,
                              encoding: URLParameterEncoder.queryItems,
@@ -87,26 +91,31 @@ public class MBMessages: NSObject, MBPlugin {
                                     return
                                 }
                                 
-                                let campaigns = body.map({ MBCampaign(dictionary: $0)})
-                                MBPluginsManager.campaignsReceived(campaigns: campaigns)
+                                var messagesAsAnyObject: [AnyObject] = body.map({ MBMessage(dictionary: $0)})
+                                
+                                MBPluginsManager.messagesReceived(messages: &messagesAsAnyObject, fromStartup: fromStartup)
+                                
+                                guard let messages = messagesAsAnyObject as? [MBMessage] else {
+                                    return
+                                }
                                 
                                 let delay = self?.messagesDelay ?? 0
-                                let validMessagesCampaigns = campaigns.filter({ $0.type == .inAppMessage && !$0.automationIsOn })
+                                let validMessages = messages.filter({ $0.type == .inAppMessage && !$0.automationIsOn })
                                 
-                                let messages = validMessagesCampaigns.compactMap({ $0.message })
+                                let inAppMessages = validMessages.compactMap({ $0.inAppMessage })
                                 
                                 guard messages.count != 0 else {
                                     return
                                 }
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                                    MBInAppMessageManager.presentMessages(messages,
+                                    MBInAppMessageManager.presentMessages(inAppMessages,
                                                                           delegate: self?.viewDelegate,
                                                                           styleDelegate: self?.styleDelegate,
                                                                           ignoreShowedMessages: self?.debug ?? false)
                                 })
             }, failure: { error in
-                self.delegate?.campaignsCheckFailed(sender: self, error: error)
+                self.delegate?.messagesCheckFailed(sender: self, error: error)
         })
     }
     

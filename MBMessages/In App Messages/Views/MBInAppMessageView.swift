@@ -270,7 +270,7 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        MBMessageMetrics.createMessageMetricForMessage(metric: .interaction, messageId: message.id)
+        MBMessageMetrics.createMessageMetricForInAppMessage(metric: .interaction, messageId: message.id)
         hideWithoutCallingCompletionBlock {
             guard let buttons = self.message.buttons else {
                 return
