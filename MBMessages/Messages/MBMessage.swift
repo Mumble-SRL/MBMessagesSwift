@@ -14,7 +14,7 @@ import UIKit
     case push
     
     static func messageType(fromString messageTypeString: String) -> MessageType {
-        if messageTypeString == "message" {
+        if messageTypeString == "inApp" {
             return .inAppMessage
         } else if messageTypeString == "push" {
             return .push

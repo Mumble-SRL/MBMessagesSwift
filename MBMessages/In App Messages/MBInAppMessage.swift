@@ -77,7 +77,7 @@ public class MBInAppMessage: NSObject {
                 buttons: [MBInAppMessageButton]? = nil) {
         self.id = id
         self.style = style
-        self.duration = duration
+        self.duration = duration ?? 5
         self.title = title
         self.titleColor = titleColor
         self.body = body
@@ -92,7 +92,7 @@ public class MBInAppMessage: NSObject {
         let id = dictionary["id"] as? Int ?? 0
         let styleString = dictionary["type"] as? String ?? ""
         let style = MBInAppMessageStyle.styleFromString(styleString)
-        let duration = dictionary["duration"] as? Int
+        let duration = !(dictionary["duration"] is NSNull) ? dictionary["duration"] as? Int : nil
         let title = dictionary["title"] as? String
         let titleColor = MBInAppMessage.colorFromField(dictionary: dictionary, key: "title_color")
         let body = dictionary["content"] as? String
