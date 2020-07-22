@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBMessages  Reference</title>
+    <title>Other Enumerations  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Section/MBMessages" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Section/Other Enumerations" class="dashAnchor"></a>
 
-    <a title="MBMessages  Reference"></a>
+    <a title="Other Enumerations  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">MBMessages Reference</a>
       <img class="carat" src="img/carat.png" />
-      MBMessages  Reference
+      Other Enumerations  Reference
     </p>
 
     <div class="content-wrapper">
@@ -135,8 +135,9 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MBMessages</h1>
-            
+            <h1>Other Enumerations</h1>
+            <p>The following enumerations are available globally.</p>
+
           </div>
         </section>
 
@@ -147,9 +148,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@MBMessages@objc(cs)MBMessages"></a>
-                    <a name="//apple_ref/swift/Class/MBMessages" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@MBMessages@objc(cs)MBMessages">MBMessages</a>
+                    <a name="/c:@M@MBMessages@E@MessageType"></a>
+                    <a name="//apple_ref/swift/Enum/MessageType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@MBMessages@E@MessageType">MessageType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,48 +158,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the main entry point to manage all the messages features of MBurger.
-To use create an instance of MBMessages and add it to the MBManager plugins.
-<code>MBManager.shared.plugins = [MBMessages()]</code>
-You can pass other options described below in the init method described below.
-You will also need to add this line if you want to start the messages fetch at startup:
-<code>MBManager.shared.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)</code></p>
+                        <p>The type of message, in-app message or push</p>
 
-                        <a href="Classes/MBMessages.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/MessageType.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBMessages</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">MBPlugin</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10MBMessages0A8DelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/MBMessagesDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages0A8DelegateP">MBMessagesDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The delegate of the plugin, you can use this to check if the message check fails.</p>
-
-                        <a href="Protocols/MBMessagesDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MBMessagesDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MessageType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>

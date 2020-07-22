@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBInAppMessage Class Reference</title>
+    <title>MBMessage Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/MBInAppMessage" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/MBMessage" class="dashAnchor"></a>
 
-    <a title="MBInAppMessage Class Reference"></a>
+    <a title="MBMessage Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MBMessages Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MBInAppMessage Class Reference
+      MBMessage Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -135,14 +135,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MBInAppMessage</h1>
+            <h1>MBMessage</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBInAppMessage</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBMessage</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>This class represents an in app message retrieved by the MBurger in app messages APIs</p>
+            <p>This object represents a message from MBurger</p>
 
           </div>
         </section>
@@ -154,9 +155,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC2idSiSgvp"></a>
+                    <a name="/s:10MBMessages9MBMessageC2idSivp"></a>
                     <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC2idSiSgvp">id</a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC2idSivp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -171,7 +172,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -181,63 +182,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC5styleAA0bcD5StyleOSgvp"></a>
-                    <a name="//apple_ref/swift/Property/style" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC5styleAA0bcD5StyleOSgvp">style</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The style of the message</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">style</span><span class="p">:</span> <span class="kt"><a href="../Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a></span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC8durationSdSgvp"></a>
-                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC8durationSdSgvp">duration</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC5titleSSSgvp"></a>
+                    <a name="/s:10MBMessages9MBMessageC5titleSSvp"></a>
                     <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC5titleSSSgvp">title</a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC5titleSSvp">title</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,14 +192,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The title of the message, it&rsquo;s optional and defaults to nil.</p>
+                        <p>The title of the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -262,9 +209,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC10titleColorSo7UIColorCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/titleColor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC10titleColorSo7UIColorCSgvp">titleColor</a>
+                    <a name="/s:10MBMessages9MBMessageC18messageDescriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/messageDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC18messageDescriptionSSvp">messageDescription</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -272,14 +219,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An optional color for the title, defaults to nil.</p>
+                        <p>The description of the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">messageDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -289,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC4bodySSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC4bodySSSgvp">body</a>
+                    <a name="/s:10MBMessages9MBMessageC4typeAA11MessageTypeOvp"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC4typeAA11MessageTypeOvp">type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -299,14 +246,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The boody of the message</p>
+                        <p>The type of message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MessageType.html">MessageType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -316,9 +263,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC9bodyColorSo7UIColorCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/bodyColor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC9bodyColorSo7UIColorCSgvp">bodyColor</a>
+                    <a name="/s:10MBMessages9MBMessageC12inAppMessageAA04MBIndE0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/inAppMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC12inAppMessageAA04MBIndE0CSgvp">inAppMessage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,14 +273,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An optional color for the body, defaults to nil.</p>
+                        <p>If the type of the message is in-app message, this is the in app message connected to the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">bodyColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">inAppMessage</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -343,9 +290,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC5imageSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/image" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC5imageSSSgvp">image</a>
+                    <a name="/s:10MBMessages9MBMessageC4pushAA13MBPushMessageCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/push" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC4pushAA13MBPushMessageCSgvp">push</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -353,14 +300,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An optional image of the message, defaults to nil.</p>
+                        <p>If the type of the message is push, this is the push message connected to the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">push</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBPushMessage.html">MBPushMessage</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -370,9 +317,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC15backgroundColorSo7UIColorCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/backgroundColor" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC15backgroundColorSo7UIColorCSgvp">backgroundColor</a>
+                    <a name="/s:10MBMessages9MBMessageC9startDate10Foundation0D0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/startDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC9startDate10Foundation0D0Vvp">startDate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -380,14 +327,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An optional background color, defaults to nil.</p>
+                        <p>The start date of the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">startDate</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
 
                         </div>
                       </div>
@@ -397,9 +344,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC7buttonsSayAA0bcD6ButtonCGSgvp"></a>
-                    <a name="//apple_ref/swift/Property/buttons" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC7buttonsSayAA0bcD6ButtonCGSgvp">buttons</a>
+                    <a name="/s:10MBMessages9MBMessageC7endDate10Foundation0D0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/endDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC7endDate10Foundation0D0Vvp">endDate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -407,14 +354,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An array of buttons, max 2 elements</p>
+                        <p>The end date of the message</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/MBInAppMessageButton.html">MBInAppMessageButton</a></span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">endDate</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
 
                         </div>
                       </div>
@@ -424,9 +371,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages14MBInAppMessageC2id5style8duration5title0H5Color4body0jI05image010backgroundI07buttonsACSi_AA0bcD5StyleOSgSdSgSSSgSo7UIColorCSgArurUSayAA0bcD6ButtonCGSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(id:style:duration:title:titleColor:body:bodyColor:image:backgroundColor:buttons:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages14MBInAppMessageC2id5style8duration5title0H5Color4body0jI05image010backgroundI07buttonsACSi_AA0bcD5StyleOSgSdSgSSSgSo7UIColorCSgArurUSayAA0bcD6ButtonCGSgtcfc">init(id:<wbr>style:<wbr>duration:<wbr>title:<wbr>titleColor:<wbr>body:<wbr>bodyColor:<wbr>image:<wbr>backgroundColor:<wbr>buttons:<wbr>)</a>
+                    <a name="/s:10MBMessages9MBMessageC14automationIsOnSbvp"></a>
+                    <a name="//apple_ref/swift/Property/automationIsOn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC14automationIsOnSbvp">automationIsOn</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -434,7 +381,61 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>If automation is on for this message</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">automationIsOn</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages9MBMessageC8triggersypSgvp"></a>
+                    <a name="//apple_ref/swift/Property/triggers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC8triggersypSgvp">triggers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The triggers for the messages</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">triggers</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endM014automationIsOn8triggersACSi_S2SAA0J4TypeOAA04MBIniJ0CSgAA06MBPushJ0CSg10Foundation0M0VAXSbypSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(id:title:messageDescription:type:inAppMessage:push:startDate:endDate:automationIsOn:triggers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endM014automationIsOn8triggersACSi_S2SAA0J4TypeOAA04MBIniJ0CSgAA06MBPushJ0CSg10Foundation0M0VAXSbypSgtcfc">init(id:<wbr>title:<wbr>messageDescription:<wbr>type:<wbr>inAppMessage:<wbr>push:<wbr>startDate:<wbr>endDate:<wbr>automationIsOn:<wbr>triggers:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a message with the parameters passed</p>
 
                       </div>
                       <div class="declaration">
@@ -442,15 +443,43 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-            <span class="nv">style</span><span class="p">:</span> <span class="kt"><a href="../Enums/MBInAppMessageStyle.html">MBInAppMessageStyle</a></span><span class="o">!</span><span class="p">,</span>
-            <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">?</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-            <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span>
-            <span class="nv">bodyColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">buttons</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/MBInAppMessageButton.html">MBInAppMessageButton</a></span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+            <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+            <span class="nv">messageDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+            <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MessageType.html">MessageType</a></span><span class="p">,</span>
+            <span class="nv">inAppMessage</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">push</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBPushMessage.html">MBPushMessage</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">startDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+            <span class="nv">endDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+            <span class="nv">automationIsOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+            <span class="nv">triggers</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@MBMessages@objc(cs)MBMessage(im)initWithDictionary:"></a>
+                    <a name="//apple_ref/swift/Method/init(dictionary:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@MBMessages@objc(cs)MBMessage(im)initWithDictionary:">init(dictionary:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a message with the dictionary returned by the APIs</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>

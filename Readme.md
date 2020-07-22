@@ -185,7 +185,6 @@ Implement this protocol if you want to receives a call when the fetches of the m
 func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
 ```
 
-
 # Push notifications
 
 With this plugin you can also manage the push notification section of MBurger, this is a wrapper around MPush, the underlying platform, so you should refer to the [MPush documentation 
@@ -204,6 +203,18 @@ MBMessages.registerDeviceToPush(deviceToken: deviceToken, success: {
     MBMessages.registerPushMessages(toTopic: "YOUR_TOPIC")
 })
 ```
+
+MBurger hsa 2 default topics that you should use in order to guarantee the correct functtionality of the engagement platform:
+
+* `MBMessages.projectPushTopic`: this topic represents all devices registred to push notifications for this project
+* `MBMessages.devicePushTopic`: this topic represents the current device
+
+```swift
+MBMessages.registerPushMessages(toTopics:[MBMessages.mburgerPushTopic,
+                                          MBMessages.devicePushTopic,
+                                          "OTHER_TOPIC"])
+```
+
 # User interaction with a push
 
 With `MBMessagesSwift` you can setup a callback that will be called when the user interacts with a push notification or opens the app from a push. You can setup the code like this, the payload variable will be the payload of the push:

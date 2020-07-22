@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBInAppMessageButtonLinkType Enumeration Reference</title>
+    <title>MBInAppMessageManager Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/MBInAppMessageButtonLinkType" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/MBInAppMessageManager" class="dashAnchor"></a>
 
-    <a title="MBInAppMessageButtonLinkType Enumeration Reference"></a>
+    <a title="MBInAppMessageManager Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MBMessages Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MBInAppMessageButtonLinkType Enumeration Reference
+      MBInAppMessageManager Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -135,14 +135,14 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MBInAppMessageButtonLinkType</h1>
+            <h1>MBInAppMessageManager</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MBInAppMessageButtonLinkType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBInAppMessageManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>This class represents the type of link attttached to a button</p>
+            <p>Undocumented</p>
 
           </div>
         </section>
@@ -154,9 +154,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10MBMessages28MBInAppMessageButtonLinkTypeO4linkyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/link" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages28MBInAppMessageButtonLinkTypeO4linkyA2CmF">link</a>
+                    <a name="/s:10MBMessages21MBInAppMessageManagerC15presentMessages_8delegate13styleDelegate012ignoreShowedG0ySayAA9MBMessageCG_AA0bcd4ViewJ0_pSgAA0bcdn5StyleJ0_pSgSbtFZ"></a>
+                    <a name="//apple_ref/swift/Method/presentMessages(_:delegate:styleDelegate:ignoreShowedMessages:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages21MBInAppMessageManagerC15presentMessages_8delegate13styleDelegate012ignoreShowedG0ySayAA9MBMessageCG_AA0bcd4ViewJ0_pSgAA0bcdn5StyleJ0_pSgSbtFZ">presentMessages(_:<wbr>delegate:<wbr>styleDelegate:<wbr>ignoreShowedMessages:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -164,41 +164,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A web link</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">link</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10MBMessages28MBInAppMessageButtonLinkTypeO02inC0yA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/inApp" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10MBMessages28MBInAppMessageButtonLinkTypeO02inC0yA2CmF">inApp</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>An in app link</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">inApp</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">presentMessages</span><span class="p">(</span><span class="n">_</span> <span class="nv">messages</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/MBMessage.html">MBMessage</a></span><span class="p">],</span>
+                                   <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                   <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                                   <span class="nv">ignoreShowedMessages</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

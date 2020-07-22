@@ -16,6 +16,18 @@ public class MBPushMessage: NSObject {
     /// The body of the push message
     public let body: String
     
+    /// The push notification badge value
+    public let badge: Int?
+
+    /// The push notification custom sound
+    public let sound: String?
+
+    /// The push notification launch image
+    public let launchImage: String?
+
+    /// Additional data for push notifications
+    public let userInfo: [String: Any]?
+
     /// If the push notification was sent or not by the server
     public let sent: Bool
 
@@ -23,10 +35,18 @@ public class MBPushMessage: NSObject {
     public init(id: String,
                 title: String,
                 body: String,
+                badge: Int?,
+                sound: String?,
+                launchImage: String?,
+                userInfo: [String: Any]?,
                 sent: Bool) {
         self.id = id
         self.title = title
         self.body = body
+        self.badge = badge
+        self.sound = sound
+        self.launchImage = launchImage
+        self.userInfo = userInfo
         self.sent = sent
     }
 
@@ -37,16 +57,28 @@ public class MBPushMessage: NSObject {
         var title = ""
         var body = ""
         var sent = false
+        var badge: Int?
+        var sound: String?
+        var launchImage: String?
+        var userInfo: [String: Any]?
         
         if let payload = dictionary["payload"] as? [String: Any] {
             title = payload["title"] as? String ?? ""
             body = payload["body"] as? String ?? ""
             sent = payload["sent"] as? Bool ?? false
+            badge = payload["badge"] as? Int
+            sound = payload["sound"] as? String
+            launchImage = payload["launch-image"] as? String
+            userInfo = payload["custom"] as? [String: Any]
         }
         
         self.init(id: id,
                   title: title,
                   body: body,
+                  badge: badge,
+                  sound: sound,
+                  launchImage: launchImage,
+                  userInfo: userInfo,
                   sent: sent)
     }
 }

@@ -136,6 +136,17 @@ public class MBMessages: NSObject, MBPlugin {
     ///   - notificationDictionary: The `userInfo` dictionary arrived with the notification
     public static var userDidInteractWithNotificationBlock: ((_ notificationDictionary: [String: AnyHashable]) -> Void)?
     
+    /// A push topic that represents all devices, used to send a push to all apps
+    public static var projectPushTopic: String {
+        return "project.all"
+    }
+    
+    /// A push topic that represents this device, used to send a push to only this device
+    public static var devicePushTopic: String {
+        let uuidString = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        return uuidString
+    }
+
     /// Register a device token to receive push notifications.
     /// This will call the device registration of the MPushSwift SDK.
     /// - Parameters:
