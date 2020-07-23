@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "MBMessagesSwift",
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "MBMessagesSwift",
