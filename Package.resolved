@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Mumble-SRL/MPush-Swift.git",
         "state": {
           "branch": null,
-          "revision": "f3e15cb2b8ea94ee3c7c8a83e117045f4ec5e419",
-          "version": "0.2.13"
+          "revision": "3abb4560e64e6edfb5a802a24e8acb7fb7cbfae6",
+          "version": "0.3.1"
         }
       }
     ]
