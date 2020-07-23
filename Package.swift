@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Mumble-SRL/MBurgerSwift.git", from: "1.0.0"),
-        .package(url: "https://github.com/Mumble-SRL/MPush-Swift.git", from: "0.3.1")
+        .package(url: "https://github.com/Mumble-SRL/MPush-Swift.git", from: "0.3.2")
     ],
     targets: [
         .target(
