@@ -6,6 +6,8 @@
 //  Copyright © 2020 Lorenzo Oliveto. All rights reserved.
 //
 
+import Foundation
+
 public class MBPushMessage: NSObject {
     /// The id of the push message
     public let id: String
