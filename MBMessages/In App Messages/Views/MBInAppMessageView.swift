@@ -57,7 +57,7 @@ public protocol MBInAppMessageViewStyleDelegate: class {
     /// - Returns: The background style for the message
     func backgroundStyle(forMessage message: MBInAppMessage) -> MBInAppMessageViewBackgroundStyle
     /// The background color for the view.
-    /// Default value: if the message has a background color the function returns that value, otherwise it will return `UIColor.systemBackground` for iOS 13.0+ and `UIColor.white` if the it's a lower iOS version.
+    /// Default value: if the message has a background color the function returns that value, otherwise it will return a black color (#1E1E1ED5) for dark style and `UIColor.white.withAlphaComponent(0.9)` for the light style.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The background color for the message
@@ -75,31 +75,42 @@ public protocol MBInAppMessageViewStyleDelegate: class {
     /// - Returns: The body color for the message
     func bodyColor(forMessage message: MBInAppMessage) -> UIColor
     /// The color for the close button.
-    /// Default value: the default value is the same as `button1BackgroundColor`.
+    /// Default value: `UIColor.black` if the `userInterfaceStyle` is `light`, `UIColor.white` if it's `dark`.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The close button color for the message
     func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor
+    /// The background color for the close button.
+    /// Default value: `UIColor.white` if the `userInterfaceStyle` is `light`, `UIColor.black` if it's `dark`.
+    /// - Parameters:
+    ///   - message: The in app message
+    /// - Returns: The close button color for the message
+    func closeButtonBackgroundColor(forMessage message: MBInAppMessage) -> UIColor
     /// The background color for the first action button.
-    /// Default value: if the first button has a background color the function returns that value, otherwise it will return `UIColor.black` if the `userInterfaceStyle` is `light`, `UIColor.white` if it's `dark`.
+    /// The default value is the main MBurger color (#138CFC) if the message is not a fullscreen image, `UIColor.white` otherwise.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The background color for the first action button
     func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor
     /// The title color for the first action button.
-    /// Default value: if the first button has a title color the function returns that value, otherwise it will return `UIColor.white` if the `userInterfaceStyle` is `light`, `UIColor.black` if it's `dark`.
+    /// Possible values: 
+    /// - If the first button has a title color the function returns that value.
+    /// - If the message is not a fullscreen image it will return `UIColor.white`.
+    /// - If the message is a fullscreen image it will return the dark MBurger color (#041444).
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The title color for the first action button
     func button1TitleColor(forMessage message: MBInAppMessage) -> UIColor
     /// The background color for the second action button.
-    /// Default value: if the second button has a background color the function returns that value, otherwise it will return `UIColor.white` if the `userInterfaceStyle` is `light`, `UIColor.black` if it's `dark`.
+    /// If the second button has a background color the function returns that value, otherwise it returns a transparent color `UIColor.clear`.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The background color for the second action button
     func button2BackgroundColor(forMessage message: MBInAppMessage) -> UIColor
     /// The title color for the second action button.
-    /// Default value: if the second button has a title color the function returns that value, otherwise it will return `UIColor.black` if the `userInterfaceStyle` is `light`, `UIColor.white` if it's `dark`.
+    /// - If the sencond button has a title color the function returns that value.
+    /// - If the message is not a fullscreen image it will return the MBurger color (#138CFC). `UIColor.white`.
+    /// - If the message is a fullscreen image it will return `UIColor.white`.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The title color for the second action button
@@ -111,19 +122,21 @@ public protocol MBInAppMessageViewStyleDelegate: class {
     /// - Returns: The border color for the second action button
     func button2BorderColor(forMessage message: MBInAppMessage) -> UIColor?
     /// The font used fot the title.
-    /// Default value: the default value is the headline font `UIFont.preferredFont(forTextStyle: .headline)`.
+    /// Default value: the default value is a bold font of 20pt `UIFont.systemFont(ofSize: 20, weight: .bold)`.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The title font
     func titleFont(forMessage message: MBInAppMessage) -> UIFont
     /// The font used fot the body.
-    /// Default value: the default value is the body font `UIFont.preferredFont(forTextStyle: .body)`.
+    /// Default value: the default value is a regular font of 19pt ``UIFont.systemFont(ofSize: 19)``.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The body font
     func bodyFont(forMessage message: MBInAppMessage) -> UIFont
     /// The font used fot the titles of the buttons.
-    /// Default value: the default value is the body font `UIFont.preferredFont(forTextStyle: .body)`.
+    /// Default values:
+    /// - Center messages: semibold font of 17pt `UIFont.systemFont(ofSize: 14, weight: .semibold)`.
+    /// - All other messages: semibold font of 14pt `UIFont.systemFont(ofSize: 14, weight: .semibold)`.
     /// - Parameters:
     ///   - message: The in app message
     /// - Returns: The font for the titles of the buttons.
@@ -147,7 +160,11 @@ public extension MBInAppMessageViewStyleDelegate {
     }
     
     func closeButtonColor(forMessage message: MBInAppMessage) -> UIColor {
-        return button1BackgroundColor(forMessage: message)
+        return MBInAppMessageViewStyle.closeButtonColor(forMessage: message)
+    }
+    
+    func closeButtonBackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
+        return MBInAppMessageViewStyle.closeButtonBackgroundColor(forMessage: message)
     }
     
     func button1BackgroundColor(forMessage message: MBInAppMessage) -> UIColor {
@@ -187,7 +204,10 @@ public extension MBInAppMessageViewStyleDelegate {
 
 /// A general view used as an interface. This class is just an interface and should not be instantiate, the SDK will instantiate only subclasses of this class.
 public class MBInAppMessageView: UIView {
-    var message: MBInAppMessage!
+    var message: MBMessage!
+    var inAppMessage: MBInAppMessage? {
+        return message.inAppMessage
+    }
     weak var delegate: MBInAppMessageViewDelegate?
     weak var styleDelegate: MBInAppMessageViewStyleDelegate?
     
@@ -204,7 +224,7 @@ public class MBInAppMessageView: UIView {
     /// Completion block called by the manager to display next messages if no button is pressed and the message view is dismissed
     var completionBlock: (() -> Void)?
     
-    init(message: MBInAppMessage,
+    init(message: MBMessage,
          delegate: MBInAppMessageViewDelegate? = nil,
          styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
          viewController: UIViewController? = nil) {
@@ -253,9 +273,9 @@ public class MBInAppMessageView: UIView {
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
-        MBMessageMetrics.createMessageMetricForMessage(metric: .interaction, messageId: message.id)
+        MBMessageMetrics.createMessageMetricForInAppMessage(metric: .interaction, messageId: message.id)
         hideWithoutCallingCompletionBlock {
-            guard let buttons = self.message.buttons else {
+            guard let buttons = self.inAppMessage?.buttons else {
                 return
             }
             if sender == self.button1 {

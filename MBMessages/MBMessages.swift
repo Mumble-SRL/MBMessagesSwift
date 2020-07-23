@@ -16,7 +16,7 @@ public protocol MBMessagesDelegate: class {
     /// - Parameters:
     ///   - sender: The `MBMessages` plugins that sent checked the messages.
     ///   - error: An optional error with the motivation oof the fail
-    func inAppMessageCheckFailed(sender: MBMessages, error: Error?)
+    func messagesCheckFailed(sender: MBMessages, error: Error?)
 }
 
 /// This is the main entry point to manage all the messages features of MBurger.
@@ -25,7 +25,7 @@ public protocol MBMessagesDelegate: class {
 /// You can pass other options described below in the init method described below.
 /// You will also need to add this line if you want to start the messages fetch at startup:
 /// `MBManager.shared.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions)`
-public class MBMessages: NSObject, MBPluginProtocol {
+public class MBMessages: NSObject, MBPlugin {
     
     /// The delegate of the plugin, you can use this to check if the message check fails.
     public weak var delegate: MBMessagesDelegate?
@@ -45,7 +45,7 @@ public class MBMessages: NSObject, MBPluginProtocol {
     
     /// Settings this var to true will always display the messages returned by the api, even if they've been already showed.
     public var debug = false
-        
+    
     /// This method initialises the messages plugin with the parameters passed
     /// - Parameters:
     ///   - delegate: The `MBMessagesDelegate` of the plugin. Use this to receive a callback when the manager encounters an error retrieving the messages from the server
@@ -64,14 +64,18 @@ public class MBMessages: NSObject, MBPluginProtocol {
         self.styleDelegate = styleDelegate
         self.messagesDelay = messagesDelay
         self.debug = debug
-        checkMessages()
+        performCheckMessages(fromStartup: true)
         NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    /// This method checks the messages from the server and shows them.
-    /// It's called automatically at startup, but it can be ccalled to force the check.
-    /// If the check fails it wil call the `inAppMessageCheckFailed` of the `delegate`
+    /// This method checks the messages from the server and shows them, if needed.
+    /// It's called automatically at startup, but it can be called to force the check.
+    /// If the check fails it wil call the `messagesCheckFailed` of the `delegate`
     @objc public func checkMessages() {
+        performCheckMessages(fromStartup: false)
+    }
+    
+    private func performCheckMessages(fromStartup: Bool) {
         MBApiManager.request(withToken: MBManager.shared.apiToken,
                              locale: MBManager.shared.localeString,
                              apiName: "messages",
@@ -82,16 +86,34 @@ public class MBMessages: NSObject, MBPluginProtocol {
                                 guard let body = response["body"] as? [[String: Any]] else {
                                     return
                                 }
+                                
+                                guard body.count != 0 else {
+                                    return
+                                }
+                                
+                                var messagesAsAnyObject: [AnyObject] = body.map({ MBMessage(dictionary: $0)})
+                                
+                                MBPluginsManager.messagesReceived(messages: &messagesAsAnyObject, fromStartup: fromStartup)
+                                
+                                guard let messages = messagesAsAnyObject as? [MBMessage] else {
+                                    return
+                                }
+                                
                                 let delay = self?.messagesDelay ?? 0
-                                let messages = body.map({ MBInAppMessage(dictionary: $0) })
+                                let validMessages = messages.filter({ $0.type == .inAppMessage && !$0.automationIsOn })
+                                                                
+                                guard messages.count != 0 else {
+                                    return
+                                }
+                                
                                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                                    MBInAppMessageManager.presentMessages(messages,
+                                    MBInAppMessageManager.presentMessages(validMessages,
                                                                           delegate: self?.viewDelegate,
                                                                           styleDelegate: self?.styleDelegate,
                                                                           ignoreShowedMessages: self?.debug ?? false)
                                 })
             }, failure: { error in
-                self.delegate?.inAppMessageCheckFailed(sender: self, error: error)
+                self.delegate?.messagesCheckFailed(sender: self, error: error)
         })
     }
     
@@ -113,6 +135,17 @@ public class MBMessages: NSObject, MBPluginProtocol {
     /// - Parameters:
     ///   - notificationDictionary: The `userInfo` dictionary arrived with the notification
     public static var userDidInteractWithNotificationBlock: ((_ notificationDictionary: [String: AnyHashable]) -> Void)?
+    
+    /// A push topic that represents all devices, used to send a push to all apps
+    public static var projectPushTopic: String {
+        return "project.all"
+    }
+    
+    /// A push topic that represents this device, used to send a push to only this device
+    public static var devicePushTopic: String {
+        let uuidString = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        return uuidString
+    }
 
     /// Register a device token to receive push notifications.
     /// This will call the device registration of the MPushSwift SDK.
@@ -192,40 +225,40 @@ public class MBMessages: NSObject, MBPluginProtocol {
     // MARK: - Metrics and notifications callbacks
     
     /**
-    This function and `userNotificationCenter(didReceive response...` is used by the `MBMessages` SDK to have informations when a push arrives and the user interacts with it.
-    You need to call this function from the app (when it receives it as a `UNUserNotificationCenter` delegate) in order to see metrics of push notifications in the dashboard and to have the `userDidInteractWithNotificationBlock` called.
-    Example usage:
-
-        func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                    willPresent notification: UNNotification,
-                                    withCompletionHandler
-            completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-            MBMessages.userNotificationCenter(willPresent: notification)
-            completionHandler(UNNotificationPresentationOptions.alert)
-        }
+     This function and `userNotificationCenter(didReceive response...` is used by the `MBMessages` SDK to have informations when a push arrives and the user interacts with it.
+     You need to call this function from the app (when it receives it as a `UNUserNotificationCenter` delegate) in order to see metrics of push notifications in the dashboard and to have the `userDidInteractWithNotificationBlock` called.
+     Example usage:
+     
+     func userNotificationCenter(_ center: UNUserNotificationCenter,
+     willPresent notification: UNNotification,
+     withCompletionHandler
+     completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+     MBMessages.userNotificationCenter(willPresent: notification)
+     completionHandler(UNNotificationPresentationOptions.alert)
+     }
      
      - Parameters:
-         - notification: The notification passed by the `UserNotifications` framework to the delegate.
-    */
+     - notification: The notification passed by the `UserNotifications` framework to the delegate.
+     */
     public static func userNotificationCenter(willPresent notification: UNNotification) {
         MBMessageMetrics.userNotificationCenter(willPresent: notification)
     }
     
     /**
-    This function and `userNotificationCenter(willPresent notification...` is used by the `MBMessages` SDK to have informations when a push arrives and the user interacts with it.
-    You need to call this function from the app (when it receives it as a `UNUserNotificationCenter` delegate) in order to see metrics of push notifications in the dashboard and to have the `userDidInteractWithNotificationBlock` called.
-    Example usage:
-
-        func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                    didReceive response: UNNotificationResponse,
-                                    withCompletionHandler
-            completionHandler: @escaping () -> Void) {
-            MBMessages.userNotificationCenter(didReceive: response)
-            completionHandler()
-        }
-
-    - Parameters:
-        - response: The response passed by the `UserNotifications` framework to the delegate.
+     This function and `userNotificationCenter(willPresent notification...` is used by the `MBMessages` SDK to have informations when a push arrives and the user interacts with it.
+     You need to call this function from the app (when it receives it as a `UNUserNotificationCenter` delegate) in order to see metrics of push notifications in the dashboard and to have the `userDidInteractWithNotificationBlock` called.
+     Example usage:
+     
+     func userNotificationCenter(_ center: UNUserNotificationCenter,
+     didReceive response: UNNotificationResponse,
+     withCompletionHandler
+     completionHandler: @escaping () -> Void) {
+     MBMessages.userNotificationCenter(didReceive: response)
+     completionHandler()
+     }
+     
+     - Parameters:
+     - response: The response passed by the `UserNotifications` framework to the delegate.
      **/
     public static func userNotificationCenter(didReceive response: UNNotificationResponse) {
         MBMessageMetrics.userNotificationCenter(didReceive: response, userDidInteractWithNotificationBlock: userDidInteractWithNotificationBlock)
@@ -243,8 +276,8 @@ public class MBMessages: NSObject, MBPluginProtocol {
     /// The startup blocks called by the main MBurger SDK.
     /// This function is used by the main MBurger SDK and should not be called.
     /// - Returns: a block that is executed at startup.
-    public func applicationStartupBlock() -> ApplicationStartupBlock? {
-        let block: ApplicationStartupBlock = { launchOptions, completionBlock in
+    public func applicationStartupBlock() -> MBApplicationStartupBlock? {
+        let block: MBApplicationStartupBlock = { launchOptions, completionBlock in
             MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions, userDidInteractWithNotificationBlock: MBMessages.userDidInteractWithNotificationBlock, completionBlock: {
                 if let completionBlock = completionBlock {
                     completionBlock()
@@ -252,5 +285,15 @@ public class MBMessages: NSObject, MBPluginProtocol {
             })
         }
         return block
+    }
+    
+    /// Presents in app messages to the user.
+    /// - Parameters:
+    ///   - messages: In app messages that will be presented
+    public func presentMessages(messages: [MBMessage]) {
+        MBInAppMessageManager.presentMessages(messages,
+                                              delegate: viewDelegate,
+                                              styleDelegate: styleDelegate,
+                                              ignoreShowedMessages: debug)
     }
 }

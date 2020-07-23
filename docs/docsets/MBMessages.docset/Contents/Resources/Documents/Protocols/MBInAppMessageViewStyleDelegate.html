@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           MBMessages 0.1 Docs
         </a>
-         (100% documented)
+         (95% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -104,6 +104,28 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Views.html#/c:@M@MBMessages@objc(cs)MBInAppMessageFullscreenImageView">MBInAppMessageFullscreenImageView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Other%20Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBInAppMessageManager.html">MBInAppMessageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBMessage.html">MBMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBPushMessage.html">MBPushMessage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Other%20Enums.html">Other Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MessageType.html">MessageType</a>
               </li>
             </ul>
           </li>
@@ -205,7 +227,7 @@ The default value is <code><a href="../Enums/MBInAppMessageViewBackgroundStyle.h
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The background color for the view.
-Default value: if the message has a background color the function returns that value, otherwise it will return <code>UIColor.systemBackground</code> for iOS 13.0+ and <code>UIColor.white</code> if the it&rsquo;s a lower iOS version.</p>
+Default value: if the message has a background color the function returns that value, otherwise it will return a black color (#1E1E1ED5) for dark style and <code>UIColor.white.withAlphaComponent(0.9)</code> for the light style.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -379,7 +401,7 @@ Default value: if the message has a body color the function returns that value, 
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The color for the close button.
-Default value: the default value is the same as <code>button1BackgroundColor</code>.</p>
+Default value: <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -391,6 +413,64 @@ Default value: the default value is the same as <code>button1BackgroundColor</co
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">closeButtonColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The in app message</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The close button color for the message</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10MBMessages31MBInAppMessageViewStyleDelegateP26closeButtonBackgroundColor03forD0So7UIColorCAA0bcD0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/closeButtonBackgroundColor(forMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10MBMessages31MBInAppMessageViewStyleDelegateP26closeButtonBackgroundColor03forD0So7UIColorCAA0bcD0C_tF">closeButtonBackgroundColor(forMessage:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The background color for the close button.
+Default value: <code>UIColor.white</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.black</code> if it&rsquo;s <code>dark</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">closeButtonBackgroundColor</span><span class="p">(</span><span class="n">forMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBInAppMessage.html">MBInAppMessage</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIColor</span></code></pre>
 
                         </div>
                       </div>
@@ -437,7 +517,7 @@ Default value: the default value is the same as <code>button1BackgroundColor</co
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The background color for the first action button.
-Default value: if the first button has a background color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+The default value is the main MBurger color (#138CFC) if the message is not a fullscreen image, <code>UIColor.white</code> otherwise.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -495,7 +575,13 @@ Default value: if the first button has a background color the function returns t
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The title color for the first action button.
-Default value: if the first button has a title color the function returns that value, otherwise it will return <code>UIColor.white</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.black</code> if it&rsquo;s <code>dark</code>.</p>
+Possible values: </p>
+
+<ul>
+<li>If the first button has a title color the function returns that value.</li>
+<li>If the message is not a fullscreen image it will return <code>UIColor.white</code>.</li>
+<li>If the message is a fullscreen image it will return the dark MBurger color (#041444).</li>
+</ul>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -553,7 +639,7 @@ Default value: if the first button has a title color the function returns that v
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The background color for the second action button.
-Default value: if the second button has a background color the function returns that value, otherwise it will return <code>UIColor.white</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.black</code> if it&rsquo;s <code>dark</code>.</p>
+If the second button has a background color the function returns that value, otherwise it returns a transparent color <code>UIColor.clear</code>.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -610,8 +696,13 @@ Default value: if the second button has a background color the function returns 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The title color for the second action button.
-Default value: if the second button has a title color the function returns that value, otherwise it will return <code>UIColor.black</code> if the <code>userInterfaceStyle</code> is <code>light</code>, <code>UIColor.white</code> if it&rsquo;s <code>dark</code>.</p>
+                        <p>The title color for the second action button.</p>
+
+<ul>
+<li>If the sencond button has a title color the function returns that value.</li>
+<li>If the message is not a fullscreen image it will return the MBurger color (#138CFC). <code>UIColor.white</code>.</li>
+<li>If the message is a fullscreen image it will return <code>UIColor.white</code>.</li>
+</ul>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -727,7 +818,7 @@ Default value: the default value is the same as the title color.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The font used fot the title.
-Default value: the default value is the headline font <code>UIFont.preferredFont(forTextStyle: .headline)</code>.</p>
+Default value: the default value is a bold font of 20pt <code>UIFont.systemFont(ofSize: 20, weight: .bold)</code>.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -785,7 +876,7 @@ Default value: the default value is the headline font <code>UIFont.preferredFont
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The font used fot the body.
-Default value: the default value is the body font <code>UIFont.preferredFont(forTextStyle: .body)</code>.</p>
+Default value: the default value is a regular font of 19pt <code>UIFont.systemFont(ofSize: 19)</code>.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -843,7 +934,12 @@ Default value: the default value is the body font <code>UIFont.preferredFont(for
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The font used fot the titles of the buttons.
-Default value: the default value is the body font <code>UIFont.preferredFont(forTextStyle: .body)</code>.</p>
+Default values:</p>
+
+<ul>
+<li>Center messages: semibold font of 17pt <code>UIFont.systemFont(ofSize: 14, weight: .semibold)</code>.</li>
+<li>All other messages: semibold font of 14pt <code>UIFont.systemFont(ofSize: 14, weight: .semibold)</code>.</li>
+</ul>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -892,8 +988,8 @@ Default value: the default value is the body font <code>UIFont.preferredFont(for
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-05-13)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-07-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

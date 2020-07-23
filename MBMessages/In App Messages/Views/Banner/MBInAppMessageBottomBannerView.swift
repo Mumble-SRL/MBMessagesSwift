@@ -15,42 +15,61 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
     var bottomConstraintNotHidden: NSLayoutConstraint?
     
     override func configure() {
-        layer.cornerRadius = 8
-        clipsToBounds = true
-        
         let padding: CGFloat = 10
         
-        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: message) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: message)
+        layer.shadowColor = UIColor(white: 162.0 / 255, alpha: 1).cgColor
+        layer.shadowOpacity = 0.37
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 10
+
+        let mainContainer = UIView(frame: .zero)
+        mainContainer.layer.cornerRadius = 10
+        mainContainer.clipsToBounds = true
+        mainContainer.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(mainContainer)
+        
+        NSLayoutConstraint.activate([
+            mainContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mainContainer.topAnchor.constraint(equalTo: topAnchor),
+            mainContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        guard let inAppMessage = message.inAppMessage else {
+            return
+        }
+        
+        let backgroundStyle = styleDelegate?.backgroundStyle(forMessage: inAppMessage) ?? MBInAppMessageViewStyle.backgroundStyle(forMessage: inAppMessage)
         if backgroundStyle == .translucent {
             let blurEffect = UIBlurEffect(style: .regular)
             contentView = UIVisualEffectView(effect: blurEffect)
             contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
+            mainContainer.addSubview(contentView)
             NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                contentView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: mainContainer.topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor)
             ])
         } else {
             contentView = UIView(frame: .zero)
             contentView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(contentView)
+            mainContainer.addSubview(contentView)
             NSLayoutConstraint.activate([
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                contentView.leadingAnchor.constraint(equalTo: mainContainer.leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: mainContainer.trailingAnchor),
+                contentView.topAnchor.constraint(equalTo: mainContainer.topAnchor),
+                contentView.bottomAnchor.constraint(equalTo: mainContainer.bottomAnchor)
             ])
             if #available(iOS 13.0, *) {
                 contentView.backgroundColor = UIColor.systemBackground
             } else {
                 contentView.backgroundColor = UIColor.white
             }
-            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: message) {
+            if let backgroundColor = styleDelegate?.backgroundColor(forMessage: inAppMessage) {
                 contentView.backgroundColor = backgroundColor
             } else {
-                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: message)
+                contentView.backgroundColor = MBInAppMessageViewStyle.backgroundColor(forMessage: inAppMessage)
             }
         }
 
@@ -64,9 +83,13 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
         gestureHandle.translatesAutoresizingMaskIntoConstraints = false
         gestureHandle.layer.cornerRadius = handleHeight / 2
         if #available(iOS 13.0, *) {
-            gestureHandle.backgroundColor = UIColor.systemFill
+            if traitCollection.userInterfaceStyle == .dark {
+                gestureHandle.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+            } else {
+                gestureHandle.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            }
         } else {
-            gestureHandle.backgroundColor = UIColor.gray
+            gestureHandle.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         }
         targetView.addSubview(gestureHandle)
         
@@ -77,7 +100,7 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
             gestureHandle.heightAnchor.constraint(equalToConstant: handleHeight)
         ])
         
-        let contentView = MBInAppMessageBannerContent(message: message, styleDelegate: styleDelegate)
+        let contentView = MBInAppMessageBannerContent(message: inAppMessage, styleDelegate: styleDelegate)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         targetView.addSubview(contentView)
         
@@ -138,8 +161,10 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
             self.delegate?.viewDidAppear(view: self)
         })
         
-        if message.duration != -1 {
-            self.perform(#selector(hide), with: nil, afterDelay: message.duration)
+        if let inAppMessage = message.inAppMessage {
+            if inAppMessage.duration != -1 {
+                self.perform(#selector(hide), with: nil, afterDelay: inAppMessage.duration)
+            }
         }
     }
     
@@ -188,8 +213,10 @@ public class MBInAppMessageBottomBannerView: MBInAppMessageView {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.layoutIfNeeded()
                 }, completion: { _ in
-                    if self.message.duration != -1 {
-                        self.perform(#selector(self.hide), with: nil, afterDelay: self.message.duration)
+                    if let inAppMessage = self.message.inAppMessage {
+                        if inAppMessage.duration != -1 {
+                            self.perform(#selector(self.hide), with: nil, afterDelay: inAppMessage.duration)
+                        }
                     }
                 })
             }

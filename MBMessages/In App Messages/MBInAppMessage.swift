@@ -10,7 +10,7 @@ import UIKit
 import MBurgerSwift
 
 /// The presentation style of the message, this enum represents the style in which the message will appear
-public enum MBInAppMessageStyle {
+public enum MBInAppMessageStyle: Int {
     /// Messages with this style will appear as a banner from the top
     case bannerTop
     /// Messages with this style will appear as a banner from the bottom
@@ -43,7 +43,7 @@ public enum MBInAppMessageStyle {
 /// This class represents an in app message retrieved by the MBurger in app messages APIs
 public class MBInAppMessage: NSObject {
     /// The id of the message
-    public let id: Int
+    public let id: Int!
     /// The style of the message
     public let style: MBInAppMessageStyle!
     /// The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds
@@ -64,19 +64,20 @@ public class MBInAppMessage: NSObject {
     public let buttons: [MBInAppMessageButton]?
     
     /// Initializes a message with the parameters passed
-    init(id: Int,
-         style: MBInAppMessageStyle!,
-         duration: TimeInterval? = 5,
-         title: String? = nil,
-         titleColor: UIColor? = nil,
-         body: String!,
-         bodyColor: UIColor? = nil,
-         image: String? = nil,
-         backgroundColor: UIColor? = nil,
-         buttons: [MBInAppMessageButton]? = nil) {
+    //TODO: remove
+    public init(id: Int,
+                style: MBInAppMessageStyle!,
+                duration: TimeInterval? = 5,
+                title: String? = nil,
+                titleColor: UIColor? = nil,
+                body: String!,
+                bodyColor: UIColor? = nil,
+                image: String? = nil,
+                backgroundColor: UIColor? = nil,
+                buttons: [MBInAppMessageButton]? = nil) {
         self.id = id
         self.style = style
-        self.duration = duration
+        self.duration = duration ?? 5
         self.title = title
         self.titleColor = titleColor
         self.body = body
@@ -91,7 +92,7 @@ public class MBInAppMessage: NSObject {
         let id = dictionary["id"] as? Int ?? 0
         let styleString = dictionary["type"] as? String ?? ""
         let style = MBInAppMessageStyle.styleFromString(styleString)
-        let duration = dictionary["duration"] as? Int
+        let duration = !(dictionary["duration"] is NSNull) ? dictionary["duration"] as? Int : nil
         let title = dictionary["title"] as? String
         let titleColor = MBInAppMessage.colorFromField(dictionary: dictionary, key: "title_color")
         let body = dictionary["content"] as? String
@@ -107,11 +108,12 @@ public class MBInAppMessage: NSObject {
         if let button1Title = button1Title,
             let button1Link = button1Link,
             let button1LinkType = button1LinkType {
+            let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button1LinkType)
             buttons.append(MBInAppMessageButton(title: button1Title,
                                                 titleColor: button1TitleColor,
                                                 backgroundColor: button1BackgroundColor,
                                                 link: button1Link,
-                                                linkType: button1LinkType))
+                                                linkType: linkType))
         }
         let button2Title = !(dictionary["cta2_text"] is NSNull) ? dictionary["cta2_text"] as? String : nil
         let button2TitleColor = MBInAppMessage.colorFromField(dictionary: dictionary, key: "cta2_text_color")
@@ -121,11 +123,12 @@ public class MBInAppMessage: NSObject {
         if let button2Title = button2Title,
             let button2Link = button2Link,
             let button2LinkType = button2LinkType {
+            let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button2LinkType)
             buttons.append(MBInAppMessageButton(title: button2Title,
                                                 titleColor: button2TitleColor,
                                                 backgroundColor: button2BackgroundColor,
                                                 link: button2Link,
-                                                linkType: button2LinkType))
+                                                linkType: linkType))
         }
         self.init(id: id,
                   style: style,
@@ -152,7 +155,7 @@ public class MBInAppMessage: NSObject {
 }
 
 /// This class represents the type of link attttached to a button
-public enum MBInAppMessageButtonLinkType {
+public enum MBInAppMessageButtonLinkType: Int {
     /// A web link
     case link
     /// An in app link
@@ -188,15 +191,15 @@ public class MBInAppMessageButton: NSObject {
     public let linkType: MBInAppMessageButtonLinkType!
     
     /// Initializes a button with the parameters passed
-    init(title: String,
-         titleColor: UIColor? = nil,
-         backgroundColor: UIColor? = nil,
-         link: String,
-         linkType: String) {
+    public init(title: String,
+                titleColor: UIColor? = nil,
+                backgroundColor: UIColor? = nil,
+                link: String,
+                linkType: MBInAppMessageButtonLinkType) {
         self.title = title
         self.titleColor = titleColor
         self.backgroundColor = backgroundColor
         self.link = link
-        self.linkType = MBInAppMessageButtonLinkType.butttonLinkType(linkType)
+        self.linkType = linkType
     }
 }

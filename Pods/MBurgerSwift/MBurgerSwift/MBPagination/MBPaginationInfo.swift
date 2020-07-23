@@ -12,13 +12,13 @@ import Foundation
 public struct MBPaginationInfo {
     
     /// The starting index.
-    let from: Int
+    public let from: Int
     
     /// The ending index.
-    let to: Int
+    public let to: Int
     
     /// The total number of elements of that type on MBurger.
-    let total: Int
+    public let total: Int
     
     /// Initializes a meta pagination info with the dictionary returned by the api.
     /// - Parameters:
