@@ -12,7 +12,16 @@ Using this library you can display the messages that you set up in the MBurger d
 
 # Installation
 
-# Installation with CocoaPods
+## Swift Package Manager
+
+With Xcode 11 you can start using [Swift Package Manager](https://swift.org/package-manager/) to add **MBMessagesSwift** to your project. Follow those simple steps:
+
+* In Xcode go to File > Swift Packages > Add Package Dependency.
+* Enter `https://github.com/Mumble-SRL/MBMessagesSwift.git` in the "Choose Package Repository" dialog and press Next.
+* Specify the version using rule "Up to Next Major" with "0.1.1" as its earliest version and press Next.
+* Xcode will try to resolving the version, after this, you can choose the `MBMessagesSwift` library and add it to your app target.
+
+## CocoaPods
 
 CocoaPods is a dependency manager for iOS, which automates and simplifies the process of using 3rd-party libraries in your projects. You can install CocoaPods with the following command:
 
@@ -20,7 +29,7 @@ CocoaPods is a dependency manager for iOS, which automates and simplifies the pr
 $ gem install cocoapods
 ```
 
-To integrate the MBurgerSwift into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate the MBMessagesSwift into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
 platform :ios, '12.0'
@@ -41,11 +50,19 @@ $ pod install
 
 CocoaPods is the preferred methot to install the library.
 
-# Manual installation
+## Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate MBMessagesSwift into your Xcode project using Carthage, specify it in your Cartfile:
+
+```
+github "Mumble-SRL/MBMessagesSwift"
+```
+
+## Manual installation
 
 To install the library manually drag and drop the folder `MBMessages` to your project structure in XCode. 
 
-Note that `MBMessagesSwift` has `MBurgerSwift (1.0.5)` and `MPushSwift (0.2.12)` as dependencies, so you have to install also those libraries.
+Note that `MBMessagesSwift` has `MBurgerSwift (1.0.8)` and `MPushSwift (0.2.13)` as dependencies, so you have to install also those libraries.
 
 # Initialization
 

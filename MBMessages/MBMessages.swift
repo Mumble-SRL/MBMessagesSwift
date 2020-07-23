@@ -276,8 +276,8 @@ public class MBMessages: NSObject, MBPlugin {
     /// The startup blocks called by the main MBurger SDK.
     /// This function is used by the main MBurger SDK and should not be called.
     /// - Returns: a block that is executed at startup.
-    public func applicationStartupBlock() -> ApplicationStartupBlock? {
-        let block: ApplicationStartupBlock = { launchOptions, completionBlock in
+    public func applicationStartupBlock() -> MBApplicationStartupBlock? {
+        let block: MBApplicationStartupBlock = { launchOptions, completionBlock in
             MBMessageMetrics.applicationDidFinishLaunchingWithOptions(launchOptions: launchOptions, userDidInteractWithNotificationBlock: MBMessages.userDidInteractWithNotificationBlock, completionBlock: {
                 if let completionBlock = completionBlock {
                     completionBlock()

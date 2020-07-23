@@ -1,85 +1,84 @@
 //
-//  MBDropdownElement.swift
+//  MBMultipleElement.swift
 //  MBurgerSwift
 //
-//  Created by Alessandro Viviani on 26/09/2019.
-//  Copyright © 2019 Mumble S.r.l (https://mumbleideas.it/). All rights reserved.
+//  Created by Lorenzo Oliveto on 22/07/2020.
+//  Copyright © 2020 Mumble S.r.l (https://mumbleideas.it/). All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-/// This class represents a MBurger dropdown element.
-public class MBDropdownElement: MBElement {
-    /// The possible options of the dropdown.
-    public let options: [MBDropdownElementOption]
+/// This class represents a MBurger multiple element, users can select multiple values from an array of options.
+public class MBMultipleElement: MBElement {
+    /// The possible options of this element.
+    public let options: [MBMultipleElementOption]
     
-    /// The selected option of the dropdown.
-    public let selectedOption: String?
-    
-    /// Initializes a dropdown element with the element id, name, order, options and, if ther's a selected option, .
+    /// The selected options of this element.
+    public let selectedOptions: [String]?
+
+    /// Initializes a multiple element with the element id, name, order, options and, if there's the selected options.
     /// - Parameters:
     ///   - elementId: The `id` of the element.
     ///   - elementName: The `name` of the element.
     ///   - order: The `id order` of the element.
-    ///   - options: An Array of `MBDropdownElementOption` of the element.
-    ///   - selectedOption: The `option` selected.
-    init(elementId: Int, elementName: String, order: Int, options: [MBDropdownElementOption], selectedOption: String?) {
+    ///   - options: An Array of `MBMultipleElementOption` of the element.
+    ///   - selectedOptions: The `options` selected.
+    init(elementId: Int, elementName: String, order: Int, options: [MBMultipleElementOption], selectedOptions: [String]?) {
         self.options = options
-        self.selectedOption = selectedOption
+        self.selectedOptions = selectedOptions
         
-        super.init(elementId: elementId, elementName: elementName, type: .dropDown, order: order)
+        super.init(elementId: elementId, elementName: elementName, type: .multiple, order: order)
     }
-    
-    /// Initializes a dropdown element with the dictionary returned by the api.
+
+    /// Initializes a multiple element with the dictionary returned by the api.
     /// - Parameters:
     ///   - dictionary: The `Dictionary` returned from the APIs reponse
     required init(dictionary: [String: Any]) {
-        selectedOption = dictionary["value"] as? String ?? nil
+        selectedOptions = dictionary["value"] as? [String] ?? nil
         if let optionsDict = dictionary["options"] as? [[String: Any]] {
-            options = optionsDict.map { (option) -> MBDropdownElementOption in
-                return MBDropdownElementOption(option)
+            options = optionsDict.map { (option) -> MBMultipleElementOption in
+                return MBMultipleElementOption(option)
             }
         } else {
             options = []
         }
         
         super.init(dictionary: dictionary)
-        
     }
-    
+
     // MARK: - Codable protocol
     enum CodingKeysElement: String, CodingKey {
         case options
-        case selectedOption
+        case selectedOptions
     }
     
-    /// Initializes a `MBDropdownElement` from a `Decoder`
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeysElement.self)
         
-        selectedOption = try container.decodeIfPresent(String.self, forKey: .selectedOption)
-        options = try container.decode([MBDropdownElementOption].self, forKey: .options)
+        selectedOptions = try container.decodeIfPresent([String].self, forKey: .selectedOptions)
+        options = try container.decode([MBMultipleElementOption].self, forKey: .options)
         
         try super.init(from: decoder)
     }
     
-    /// Encodes a `MBDropdownElement` to an `Encoder`
+    /// Encodes a `MBMultipleElement` to an `Encoder`
     override public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeysElement.self)
         
         try container.encode(options, forKey: .options)
-        try container.encodeIfPresent(selectedOption, forKey: .selectedOption)
+        try container.encodeIfPresent(selectedOptions, forKey: .selectedOptions)
     }
+
 }
 
-/// This class represents an option that can be selected in a dropdown.
-public class MBDropdownElementOption: Codable {
+/// This class represents an option that can be selected in a multiple element.
+public class MBMultipleElementOption: Codable {
     /// The key of the option.
     public let key: String
     /// The value of the option.
     public let value: String
     
-    /// Initializes a dropdown element option with a key and a value.
+    /// Initializes a multiple element option with a key and a value.
     /// - Parameters:
     ///   - key: The `key` returned of the option.
     ///   - value: The `value` of the option.
@@ -88,7 +87,7 @@ public class MBDropdownElementOption: Codable {
         self.value = value
     }
     
-    /// Initializes a the element with the dictionary returned by the api.
+    /// Initializes the element with the dictionary returned by the api.
     /// - Parameters:
     ///   - dictionary: The `Dictionary` returned from the APIs reponse
     init(_ dictionary: [String: Any]) {
@@ -96,6 +95,7 @@ public class MBDropdownElementOption: Codable {
         value = dictionary["value"] as? String ?? ""
     }
     
+    // MARK: - Codable protocol
     enum CodingKeys: String, CodingKey {
         case key
         case value
