@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "MBMessages",
-            dependencies: ["MBurgerSwift"],
+            dependencies: ["MBurgerSwift", "MPushSwift"],
             path: "MBMessages"
         )
     ]

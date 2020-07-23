@@ -18,6 +18,15 @@
           "revision": "77dcc3de68ed8c8f078e708998c507294e835fd7",
           "version": "1.0.8"
         }
+      },
+      {
+        "package": "MPushSwift",
+        "repositoryURL": "https://github.com/Mumble-SRL/MPush-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "f3e15cb2b8ea94ee3c7c8a83e117045f4ec5e419",
+          "version": "0.2.13"
+        }
       }
     ]
   },
