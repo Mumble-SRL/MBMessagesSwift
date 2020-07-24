@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           MBMessagesSwift 0.1 Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -125,6 +125,14 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MessageType.html">MessageType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Other%20Typealiases.html">Other Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Other%20Typealiases.html#/s:15MBMessagesSwift8MBPTopica">MBPTopic</a>
               </li>
             </ul>
           </li>
@@ -319,20 +327,28 @@
 
 <p>And then register your device to topics (all the other function have a similar syntax change):</p>
 <pre class="highlight swift"><code><span class="kt">MBMessages</span><span class="o">.</span><span class="nf">registerDeviceToPush</span><span class="p">(</span><span class="nv">deviceToken</span><span class="p">:</span> <span class="n">deviceToken</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span>
-    <span class="kt">MBMessages</span><span class="o">.</span><span class="nf">registerPushMessages</span><span class="p">(</span><span class="nv">toTopic</span><span class="p">:</span> <span class="s">"YOUR_TOPIC"</span><span class="p">)</span>
+    <span class="kt">MBMessages</span><span class="o">.</span><span class="nf">registerPushMessages</span><span class="p">(</span><span class="nv">toTopic</span><span class="p">:</span> <span class="kt">MBPTopic</span><span class="p">(</span><span class="s">"YOUR_TOPIC"</span><span class="p">))</span>
 <span class="p">})</span>
 </code></pre>
 
 <p>MBurger hsa 2 default topics that you should use in order to guarantee the correct functtionality of the engagement platform:</p>
 
 <ul>
-<li><code><a href="Classes/MBMessages.html#/s:15MBMessagesSwift0A0C16projectPushTopicSSvpZ">MBMessages.projectPushTopic</a></code>: this topic represents all devices registred to push notifications for this project</li>
-<li><code><a href="Classes/MBMessages.html#/s:15MBMessagesSwift0A0C15devicePushTopicSSvpZ">MBMessages.devicePushTopic</a></code>: this topic represents the current device</li>
+<li><code><a href="Classes/MBMessages.html#/s:15MBMessagesSwift0A0C16projectPushTopic05MPushB07MPTopicCvpZ">MBMessages.projectPushTopic</a></code>: this topic represents all devices registred to push notifications for this project</li>
+<li><code><a href="Classes/MBMessages.html#/s:15MBMessagesSwift0A0C15devicePushTopic05MPushB07MPTopicCvpZ">MBMessages.devicePushTopic</a></code>: this topic represents the current device</li>
 </ul>
 <pre class="highlight swift"><code><span class="kt">MBMessages</span><span class="o">.</span><span class="nf">registerPushMessages</span><span class="p">(</span><span class="nv">toTopics</span><span class="p">:[</span><span class="kt">MBMessages</span><span class="o">.</span><span class="n">mburgerPushTopic</span><span class="p">,</span>
                                           <span class="kt">MBMessages</span><span class="o">.</span><span class="n">devicePushTopic</span><span class="p">,</span>
-                                          <span class="s">"OTHER_TOPIC"</span><span class="p">])</span>
+                                          <span class="kt">MBPTopic</span><span class="p">(</span><span class="s">"OTHER_TOPIC"</span><span class="p">)])</span>
 </code></pre>
+<h3 id='mbptopic-additional-parameters' class='heading'>MBPTopic additional parameters</h3>
+
+<p>When creating topic you can specify additional parameters:</p>
+
+<ul>
+<li><code>title</code>: a title fot that topic that will be displayed in the dashboard, if not specified it has the same value as the topic id</li>
+<li><code>single</code>: If the topic identify a single user or a group of users, defaults to <code>false</code></li>
+</ul>
 <h1 id='user-interaction-with-a-push' class='heading'>User interaction with a push</h1>
 
 <p>With <code>MBMessagesSwift</code> you can setup a callback that will be called when the user interacts with a push notification or opens the app from a push. You can setup the code like this, the payload variable will be the payload of the push:</p>

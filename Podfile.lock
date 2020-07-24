@@ -2,7 +2,7 @@ PODS:
   - MBNetworkingSwift (1.0.14)
   - MBurgerSwift (1.0.8):
     - MBNetworkingSwift
-  - MPushSwift (0.2.12):
+  - MPushSwift (0.4.2):
     - MBNetworkingSwift
 
 DEPENDENCIES:
@@ -18,7 +18,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   MBNetworkingSwift: e24b93be41ce4fb9247fb902bf5db2877e73a446
   MBurgerSwift: 106e3302460301b99777ca134698e28f95f932c5
-  MPushSwift: 57b2dce59e51a17ae8f10d7863cbab8386eee485
+  MPushSwift: e77d91765f6e97987f3ae791f5a69d22f27d3334
 
 PODFILE CHECKSUM: 996e788fb7522164d52e0ad3ce9ce33ef1c188fd
 

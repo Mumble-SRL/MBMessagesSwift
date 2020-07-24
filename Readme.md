@@ -1,6 +1,6 @@
 [![Documentation](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)](https://github.com/Mumble-SRL/MBMessagesSwift/tree/master/docs)
 [![](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager/)
-[![CocoaPods](https://img.shields.io/badge/pod-v0.1.4-blue.svg)](https://cocoapods.org)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.2.1-blue.svg)](https://cocoapods.org)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
@@ -219,7 +219,7 @@ And then register your device to topics (all the other function have a similar s
 
 ```swift
 MBMessages.registerDeviceToPush(deviceToken: deviceToken, success: {
-    MBMessages.registerPushMessages(toTopic: "YOUR_TOPIC")
+    MBMessages.registerPushMessages(toTopic: MBPTopic("YOUR_TOPIC"))
 })
 ```
 
@@ -231,8 +231,16 @@ MBurger hsa 2 default topics that you should use in order to guarantee the corre
 ```swift
 MBMessages.registerPushMessages(toTopics:[MBMessages.mburgerPushTopic,
                                           MBMessages.devicePushTopic,
-                                          "OTHER_TOPIC"])
+                                          MBPTopic("OTHER_TOPIC")])
 ```
+
+### MBPTopic additional parameters
+
+When creating topic you can specify additional parameters:
+
+* `title`: a title fot that topic that will be displayed in the dashboard, if not specified it has the same value as the topic id
+* `single`: If the topic identify a single user or a group of users, defaults to `false`
+
 
 # User interaction with a push
 
