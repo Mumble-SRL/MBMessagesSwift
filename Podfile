@@ -1,6 +1,6 @@
 platform :ios, '11.0'
 
-target 'MBMessages' do
+target 'MBMessagesSwift' do
     use_frameworks!
     
     pod 'MBurgerSwift'

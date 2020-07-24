@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "MBMessagesSwift",
-            targets: ["MBMessages"])
+            targets: ["MBMessagesSwift"])
 
     ],
     dependencies: [
@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "MBMessagesSwift",
             dependencies: ["MBurgerSwift", "MPushSwift"],
-            path: "MBMessages"
+            path: "MBMessagesSwift"
         )
     ]
 )
