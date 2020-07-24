@@ -1,47 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/In App Messages/MBInAppMessage.swift",
-      "line": 68,
-      "symbol": "MBInAppMessage.init(id:style:duration:title:titleColor:body:bodyColor:image:backgroundColor:buttons:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/In App Messages/MBInAppMessageManager.swift",
-      "line": 12,
-      "symbol": "MBInAppMessageManager",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/In App Messages/MBInAppMessageManager.swift",
-      "line": 13,
-      "symbol": "MBInAppMessageManager.presentMessages(_:delegate:styleDelegate:ignoreShowedMessages:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/Messages/MBMessage.swift",
-      "line": 13,
-      "symbol": "MessageType.inAppMessage",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/Messages/MBMessage.swift",
-      "line": 14,
-      "symbol": "MessageType.push",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/lorenzooliveto/iOS/MBurger/MBMessages/MBMessages/Push Notifications/MBPushMessage.swift",
-      "line": 9,
-      "symbol": "MBPushMessage",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    }
+
   ],
-  "source_directory": "/Users/lorenzooliveto/iOS/MBurger/MBMessages"
+  "source_directory": "/Users/lorenzooliveto/iOS/MBurger/MBMessagesSwift"
 }

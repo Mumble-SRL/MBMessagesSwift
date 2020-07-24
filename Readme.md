@@ -1,6 +1,8 @@
-![Test Status](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)
-![License: MIT](https://img.shields.io/badge/pod-v1.0.2-blue.svg)
-[![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)](https://github.com/Mumble-SRL/MBMessagesSwift/tree/master/docs)
+[![](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager/)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.2.1-blue.svg)](https://cocoapods.org)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # MBMessagesSwift
 
@@ -66,7 +68,7 @@ Note that `MBMessagesSwift` has `MBurgerSwift (1.0.8)` and `MPushSwift (0.2.13)`
 
 # Initialization
 
-To initialize the SDK you have to add `MBMessages` to the array of plugins of `MBurger`.
+To initialize the SDK you have to add `MBMessagesSwift` to the array of plugins of `MBurger`.
 
 ```swift
 import MBurgerSwift
@@ -217,7 +219,7 @@ And then register your device to topics (all the other function have a similar s
 
 ```swift
 MBMessages.registerDeviceToPush(deviceToken: deviceToken, success: {
-    MBMessages.registerPushMessages(toTopic: "YOUR_TOPIC")
+    MBMessages.registerPushMessages(toTopic: MBPTopic("YOUR_TOPIC"))
 })
 ```
 
@@ -229,8 +231,16 @@ MBurger hsa 2 default topics that you should use in order to guarantee the corre
 ```swift
 MBMessages.registerPushMessages(toTopics:[MBMessages.mburgerPushTopic,
                                           MBMessages.devicePushTopic,
-                                          "OTHER_TOPIC"])
+                                          MBPTopic("OTHER_TOPIC")])
 ```
+
+### MBPTopic additional parameters
+
+When creating topic you can specify additional parameters:
+
+* `title`: a title fot that topic that will be displayed in the dashboard, if not specified it has the same value as the topic id
+* `single`: If the topic identify a single user or a group of users, defaults to `false`
+
 
 # User interaction with a push
 
@@ -267,3 +277,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 # Message Metrics
 
 Using `MBMessagesSwift` gives you also the chanche to collect informations about your user and the push, those will be displyed on the [MBurger](https://mburger.cloud) dashboard. As described in the prervious paragraph, in order for this to function, you have to tell `MBMessagesSwift` that a push has arrived, if you've already done it in the step above you're fine, otherwise you need to add `MBMessages.userNotificationCenter(willPresent: notification)` and `MBMessages.userNotificationCenter(didReceive: response)` to your `UNUserNotificationCenterDelegate` class.
+
+# Automation
+
+If messages have automation enabled they will be ignored and managed by the [MBAutomationSwift SDK](https://github.com/Mumble-SRL/MBAutomationSwift.git) so make sure to include and configure the automation SDK correctly.

@@ -137,14 +137,18 @@ public class MBMessages: NSObject, MBPlugin {
     public static var userDidInteractWithNotificationBlock: ((_ notificationDictionary: [String: AnyHashable]) -> Void)?
     
     /// A push topic that represents all devices, used to send a push to all apps
-    public static var projectPushTopic: String {
-        return "project.all"
+    public static var projectPushTopic: MBPTopic {
+        return MBPTopic("project.all",
+                        title: "All users",
+                        single: false)
     }
     
     /// A push topic that represents this device, used to send a push to only this device
-    public static var devicePushTopic: String {
+    public static var devicePushTopic: MBPTopic {
         let uuidString = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        return uuidString
+        return MBPTopic(uuidString,
+                        title: "Device: \(uuidString)",
+                        single: true)
     }
 
     /// Register a device token to receive push notifications.
@@ -166,7 +170,7 @@ public class MBMessages: NSObject, MBPlugin {
     ///   - topic: The topic you will register to
     ///   - success: A block object to be executed when the task finishes successfully. This block has no return value and no arguments.
     ///   - failure: A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
-    public static func registerPushMessages(toTopic topic: String,
+    public static func registerPushMessages(toTopic topic: MBPTopic,
                                             success: (() -> Void)? = nil,
                                             failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.register(toTopic: topic, success: success, failure: failure)
@@ -179,7 +183,7 @@ public class MBMessages: NSObject, MBPlugin {
     ///   - topics: The topics you will register to
     ///   - success: A block object to be executed when the task finishes successfully. This block has no return value and no arguments.
     ///   - failure: A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
-    public static func registerPushMessages(toTopics topics: [String],
+    public static func registerPushMessages(toTopics topics: [MBPTopic],
                                             success: (() -> Void)? = nil,
                                             failure: ((_ error: Error?) -> Void)? = nil) {
         MBPush.register(toTopics: topics, success: success, failure: failure)

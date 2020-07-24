@@ -7,221 +7,216 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A8AAD322D6959ED1782A3C1B76433B /* MBTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E45A145AE9304766F3FB9C4F867B14 /* MBTextElement.swift */; };
-		0227A4EAEA32A0AB94F1579DCF059F69 /* MBMulitpartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628D86E20D2B1235288E92D6C476A263 /* MBMulitpartFormData.swift */; };
+		00A8AAD322D6959ED1782A3C1B76433B /* MBTextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9396A51E6F8042405925CA3C4277651 /* MBTextElement.swift */; };
+		0227A4EAEA32A0AB94F1579DCF059F69 /* MBMulitpartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4655EF9F2F2C8343D2CBC5853A0F35A7 /* MBMulitpartFormData.swift */; };
 		037B06844C928284C7ED84849BCEECC2 /* Pods-MBMessagesSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503C2319D2A92A8582819A6320097023 /* Pods-MBMessagesSwift-dummy.m */; };
-		055247A46BA011BB8B76E7490F1D0AE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */; };
 		08718819AB72A9CB2E53C3135F6C63B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */; };
 		0AF48F146F64034BBD34F97BA7EB665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7698BD2D9AE9E98EA92BDD0DB4CE3E8E /* Security.framework */; };
-		0DD9170A57BEE3FC689E882B07F225EA /* MBGeofenceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F5FB4206DA61A18DC514E003EE506 /* MBGeofenceParameter.swift */; };
-		0E1D6DA4CAC063703DD7849915E63BF8 /* MBLegalContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED0AE30A32E4CFED090844C2167C9FA /* MBLegalContract.swift */; };
-		13D022EBD6FD0334607283517D3C7273 /* MBSortParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2145805E41FA88B2ADCAD65D0D6E7C /* MBSortParameter.swift */; };
-		14C31438270FC08A4F78D985ABC1AED9 /* MBDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC49B4535EA6C29DA7D898FCD4439C5 /* MBDecoder.swift */; };
-		156044746F509732FEFF758B0672A6DA /* MBPaginationParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF3DADFE87B9C224EFFA77A5D1A716 /* MBPaginationParameter.swift */; };
-		214110B989A8AC74ED8398773E03F3D1 /* MBParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65076390154C4AC900D5EDCF3A50168 /* MBParameters.swift */; };
-		282615B1459B96024B5E65D0F47A9B99 /* MBValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F7775D481C8B3C99512235360CAFC /* MBValidation.swift */; };
-		2870308DDA78E76BD51EDDBBC4B06FCC /* MBCheckboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF69DDBD665748E5F46C7FF199EE75 /* MBCheckboxElement.swift */; };
-		317F2BF2145207523BBBCE0DF1296FE0 /* MBApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD3D9335EAEFADB7A20D8ADB47B8697 /* MBApiManager.swift */; };
-		3396E36B2D0CB16356BB27FD8330884A /* MBUserContractStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1712C8C4BA1101DC6E184720959B65D6 /* MBUserContractStatus.swift */; };
-		369A849D62DCF911E644D1AF5A5D3FFA /* MBurgerTokenKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84C76889FC72AEE6B476146F60C1DA3 /* MBurgerTokenKeychain.swift */; };
-		3C1C1EC8A3874F151943E45C5CBCFC4B /* MPushApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC6ED77EA86EEFF21975FC93E8E25A /* MPushApiManager.swift */; };
-		44E8B02A4595736B5DB7A61B852BD98F /* MBColorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4776BD3B44F821B9412A78EF658EBB40 /* MBColorElement.swift */; };
-		49E562F0EC836EFABE06965AB01D68F8 /* MPushSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F9E990097F6CE95EAE4EFB4284C2B /* MPushSwift-dummy.m */; };
-		4BF999983A98A45F70DDFBB4C2260600 /* MBElementFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C39825CBD50A5A68B992FB84FED9595 /* MBElementFactory.swift */; };
-		4C5F78EC39DF6CEC92DA3F67F96B8EBC /* MBAddressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CF046BD656BC4ABD14C3918F2392C6 /* MBAddressElement.swift */; };
-		5D5554FB2B98427A26EB08C118FC0B85 /* MBProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611C6B03F8AEBF44094FAA8F34F7CA8 /* MBProject.swift */; };
-		5E13AAB9FF2AF506917A89F3BDD20A86 /* MBNetworkingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A7CD41DE7541E6F20650DF511688B4 /* MBNetworkingSwift.framework */; };
+		0DD9170A57BEE3FC689E882B07F225EA /* MBGeofenceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B76DFEFFBD23D44259A43691B8F8B7 /* MBGeofenceParameter.swift */; };
+		0E1D6DA4CAC063703DD7849915E63BF8 /* MBLegalContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD627C02CD614DA7BCDD13823831D25 /* MBLegalContract.swift */; };
+		13D022EBD6FD0334607283517D3C7273 /* MBSortParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEFC5AFA903C3438BF25FA673B71DE9 /* MBSortParameter.swift */; };
+		14C31438270FC08A4F78D985ABC1AED9 /* MBDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD6AF2B39B2B4C13523429FDE1343E /* MBDecoder.swift */; };
+		156044746F509732FEFF758B0672A6DA /* MBPaginationParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37535D8A096C8175B3B9446EAA2F3A /* MBPaginationParameter.swift */; };
+		1656341E1761549AE644A1A311074331 /* MPush.h in Headers */ = {isa = PBXBuildFile; fileRef = A54018B75AD24938491005578B474056 /* MPush.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F24CB30CA30609531B2D586B2C0FBDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */; };
+		214110B989A8AC74ED8398773E03F3D1 /* MBParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6C154DF77D2B40C3CB0E6DC2D5118 /* MBParameters.swift */; };
+		250095516945215DCF1B7EE3F3B36258 /* MBNetworkingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A7CD41DE7541E6F20650DF511688B4 /* MBNetworkingSwift.framework */; };
+		282615B1459B96024B5E65D0F47A9B99 /* MBValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF893736DB69C0D91BD8D84BA30954C2 /* MBValidation.swift */; };
+		2870308DDA78E76BD51EDDBBC4B06FCC /* MBCheckboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7109DFBCED6A912BA0313F18B4A8251 /* MBCheckboxElement.swift */; };
+		317F2BF2145207523BBBCE0DF1296FE0 /* MBApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C0D4B8C878B6FFCD4FB89FCD60CB47 /* MBApiManager.swift */; };
+		3396E36B2D0CB16356BB27FD8330884A /* MBUserContractStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE921B70EDC661B04FC2620B7784BF8 /* MBUserContractStatus.swift */; };
+		369A849D62DCF911E644D1AF5A5D3FFA /* MBurgerTokenKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2A0FB0B4E8FC75221069FD2329F01 /* MBurgerTokenKeychain.swift */; };
+		44E8B02A4595736B5DB7A61B852BD98F /* MBColorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A58007F5BAD0FC5EFF77E8F692512 /* MBColorElement.swift */; };
+		47F5466596344E190292DC02128C49E7 /* MPushSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC510ED680D42DF79DAFE5ADEB5A5BCD /* MPushSwift-dummy.m */; };
+		4BF999983A98A45F70DDFBB4C2260600 /* MBElementFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C1DDBA827866377C654239CC4A9D60 /* MBElementFactory.swift */; };
+		4C5F78EC39DF6CEC92DA3F67F96B8EBC /* MBAddressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382F8E26A2C318C2F708658A9BF0024 /* MBAddressElement.swift */; };
+		5D5554FB2B98427A26EB08C118FC0B85 /* MBProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026007BADB15381B7A972234B21F5783 /* MBProject.swift */; };
 		66DBFF03252EF9A3C2D97E69294FB079 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */; };
-		6AC6D729712ADB2CC0CA88BB9B0EAE06 /* MBRelationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBF2B67DDE136B61B4631DD0A6A3EF /* MBRelationElement.swift */; };
-		6FB45713B540AB804C4ED79DCE0DEB03 /* MBPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87BBEC84EB9C708C202274F0B7D0EE6 /* MBPlugin.swift */; };
-		6FF60EB594547532F003F366CE378921 /* MBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4ECE5194489EAC764DF90A2F122B9 /* MBError.swift */; };
-		6FF760CF0FEFA320AE61FFC9D8B48809 /* MBNetworkingSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C9E16EEA9B64931A9572EA18EF6F298 /* MBNetworkingSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7744E7073353EE8400CB6C81F9169D72 /* MBNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 974A380ABE59F6869A7F9D731BCE8AD6 /* MBNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F3CE874E1BE5EF091E3E39725E0478A /* MBNetworkingSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0569A04E283721B111AF63CBA5327 /* MBNetworkingSwift-dummy.m */; };
-		84A6D4437F40FB98FA769C72B13CCE89 /* MBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6485249FF4F3E54CBEEF898BABB7A563 /* MBUtilities.swift */; };
-		8545CF50400FC2B204C74BD960E80483 /* MBMultipleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020CB461D91C36B5E2D2F7D43685055D /* MBMultipleElement.swift */; };
-		89D6BD85AAF830B94BE579C89C889100 /* MBDropdownElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30DE56980BB677D2F77663E73F4F77A /* MBDropdownElement.swift */; };
-		8A7EB1D7ECDC0F8569291DCEF2362949 /* MBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E3D89B027DBD67792081231FD0D2D /* MBAuth.swift */; };
-		9564F4C9D75BF14A086EC20079D40E8B /* MBDateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1266995B64DB32B594E5F8C1DB97D /* MBDateElement.swift */; };
-		9927E93C8055976389207499FEDEE2A0 /* MBElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AAB603FE442B17A021610A25627CA /* MBElement.swift */; };
+		6AC6D729712ADB2CC0CA88BB9B0EAE06 /* MBRelationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60DD5BC044C7DDD94890FD194C8187 /* MBRelationElement.swift */; };
+		6FB45713B540AB804C4ED79DCE0DEB03 /* MBPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342B1AB4E1731FF6088788746133F60 /* MBPlugin.swift */; };
+		6FF60EB594547532F003F366CE378921 /* MBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550896C2A56C591E58B2F34E8E4E97B /* MBError.swift */; };
+		6FF760CF0FEFA320AE61FFC9D8B48809 /* MBNetworkingSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F00A8518CC67173EF13F359BCA5746 /* MBNetworkingSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7744E7073353EE8400CB6C81F9169D72 /* MBNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 203EB0ECA3B3D61C1BD77B8AD7918B99 /* MBNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F3CE874E1BE5EF091E3E39725E0478A /* MBNetworkingSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D6CB90FB2130A5FBC91B47F139DE61 /* MBNetworkingSwift-dummy.m */; };
+		844E2BED23F89AAEBF1E788731E57732 /* MPushApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A78EFF06F85D6B285850A3C933722 /* MPushApiManager.swift */; };
+		84A6D4437F40FB98FA769C72B13CCE89 /* MBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E95FF1AA527CA891CF3DE59903EFF /* MBUtilities.swift */; };
+		8545CF50400FC2B204C74BD960E80483 /* MBMultipleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA7D7F79CEFBF00AFD7CB8BD2506AD /* MBMultipleElement.swift */; };
+		89D6BD85AAF830B94BE579C89C889100 /* MBDropdownElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD19A8BD8F8B76306ECF7299F9EC5A /* MBDropdownElement.swift */; };
+		8A7EB1D7ECDC0F8569291DCEF2362949 /* MBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BBC3D879AEFCE859038EBFC3FA023 /* MBAuth.swift */; };
+		9564F4C9D75BF14A086EC20079D40E8B /* MBDateElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8D5B775B178C3D052A409F25557FD9 /* MBDateElement.swift */; };
+		9927E93C8055976389207499FEDEE2A0 /* MBElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E31A550289267842849D812F4F4C7EB /* MBElement.swift */; };
 		9B403E95BDEFAB37D50E63DFBD5F95BD /* Pods-MBMessagesSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B2C5C8E014D1A121C2409F1CC1A16B /* Pods-MBMessagesSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9DF41AA8F1ECAE49551049C28297F29F /* MBGeneralParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E12E72489E05E42240E4A46609D2EB /* MBGeneralParameter.swift */; };
+		9DF41AA8F1ECAE49551049C28297F29F /* MBGeneralParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE621BF933B8AF713DA209390A6BFD95 /* MBGeneralParameter.swift */; };
 		9E74CFFB760844F8C17B32A1572A64F7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2BF2679C4800463E56F9A726CA5D02 /* CoreServices.framework */; };
-		A22E5CFF5B024B39CF49973C6BD92DB2 /* MBPollElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F2B90BC1C92CEECC77502CE72AEC4C /* MBPollElement.swift */; };
-		A2A9F4D3D1749DA505253EEEF02027E5 /* MBurgerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 83C2BBD739ECC7B2A9A292A93946D7A3 /* MBurgerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5256FAA71CA083EB98B687C23827399 /* MBUserPublishedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F74A91068139BBECE99A2D3AADEF3 /* MBUserPublishedSection.swift */; };
-		A66626CAE0AA95DAB81CD516D5B5465F /* MBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9A699CC430D429787D44B5087FCF19 /* MBUser.swift */; };
-		B1FF5D45AAB8D953AC62F193C8DC64D0 /* MBMediaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE41FA5CB26A60E3ECD671E2ECE7EDE8 /* MBMediaElement.swift */; };
-		B6130782C3294BAA212F9A48F196B7B6 /* MBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E6BDFDC8E3FB1D4082B9AB04E1BD8 /* MBManager.swift */; };
-		BC3A9A95A2076D370156CAA82CB89D4F /* MBImagesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A158243AB0E13B63405F3D4755905D55 /* MBImagesElement.swift */; };
-		BF0B1CC892251CC2010E4F7144E91280 /* MBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75090AE3C43802409E167ECD4CEB4847 /* MBNetworking.swift */; };
+		A22E5CFF5B024B39CF49973C6BD92DB2 /* MBPollElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5724DEC7E4AE905F58E0E4F4D033F6 /* MBPollElement.swift */; };
+		A2A9F4D3D1749DA505253EEEF02027E5 /* MBurgerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3571EB344AE8298538EBE499383C2376 /* MBurgerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5256FAA71CA083EB98B687C23827399 /* MBUserPublishedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328BEBB4D3CD9091943A4BAE8342842 /* MBUserPublishedSection.swift */; };
+		A66626CAE0AA95DAB81CD516D5B5465F /* MBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C40BC629883C0BA8B4B92855343E34 /* MBUser.swift */; };
+		A9FE5A2A5C54207F220F09837E3A1767 /* MPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633CF933A0C8C919F19527B58DC02CA8 /* MPush.swift */; };
+		B1FF5D45AAB8D953AC62F193C8DC64D0 /* MBMediaElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD43FB9319C821C472A6D4A1292D4D /* MBMediaElement.swift */; };
+		B6130782C3294BAA212F9A48F196B7B6 /* MBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2746281BB84404BC6ADBCACC15C4773D /* MBManager.swift */; };
+		BC3A9A95A2076D370156CAA82CB89D4F /* MBImagesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98270737F421BBEC61E7B6E9E0226EB9 /* MBImagesElement.swift */; };
+		BF0B1CC892251CC2010E4F7144E91280 /* MBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0854B5F036F282A5869BAAAC2AB79DC5 /* MBNetworking.swift */; };
 		C1DA12730C12115C4C6AFA96DC04AA87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */; };
-		C60BBF3AF00645DE53845BB18F188BEF /* MBFilterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466FC35CF9ACF62EB336C9FBBB7EE77C /* MBFilterParameter.swift */; };
-		C63D0613B1D999DBF077FD04DA3CAE4C /* MBDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C623FDF7471E5E4AAE27B1419D1F6B4 /* MBDecodable.swift */; };
-		C9CBF38BFFC47E4EA25D4C0DA2F85750 /* MBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FE5704B8C966CCD061C115CA119B41 /* MBResponse.swift */; };
-		CBC21E73156706D4442DDE5ADFC8460F /* MPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AFA3CC25F39A3E24528A783C706E1 /* MPush.swift */; };
-		D84F11127B06960E412848D906192903 /* MBMarkdownElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F68A3B612352E3DA750E0E0C9EDAED /* MBMarkdownElement.swift */; };
-		DA612838516F4CBE9A561FEAFDECEC9E /* MBurgerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AFA1E309F5EC89948647D0E526C25D1 /* MBurgerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C60BBF3AF00645DE53845BB18F188BEF /* MBFilterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014256C4A01E57F7DE7D220D27CFCF4F /* MBFilterParameter.swift */; };
+		C63D0613B1D999DBF077FD04DA3CAE4C /* MBDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE841DF97C0E64EDC937607454A98329 /* MBDecodable.swift */; };
+		C78E8166C167F654AE6D5F9CF5F2E36A /* MPushSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45AAFAE659918F368FACA017B88E9CC3 /* MPushSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C908B67708CFBD5D7A938D6FF672E730 /* MPTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB30C98E367BE7CC13E01E214B84479 /* MPTopic.swift */; };
+		C9CBF38BFFC47E4EA25D4C0DA2F85750 /* MBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E1524643F2D792039BA2FFFB80E20 /* MBResponse.swift */; };
+		D84F11127B06960E412848D906192903 /* MBMarkdownElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D7F97CEB94B756749E2A1BA5B9889 /* MBMarkdownElement.swift */; };
+		DA612838516F4CBE9A561FEAFDECEC9E /* MBurgerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F947791750966E8F0977192174978B5 /* MBurgerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2D2A6C4A7FD712A5313005C595A8389 /* MBNetworkingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A7CD41DE7541E6F20650DF511688B4 /* MBNetworkingSwift.framework */; };
-		E368C02D471B864735771772E8930A77 /* MBurgerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E202616F19062941540B631CEA32B3 /* MBurgerSwift-dummy.m */; };
-		E40ED1554512DA892AB4F82B9F944F6D /* MBSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCF331CE55CC03D88990BCD3A3BBA4 /* MBSection.swift */; };
-		E54E000780333C40CFEAC144E9EA8A75 /* MBGeneralElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940176E29D254C8A5E11973B11F9B3B8 /* MBGeneralElement.swift */; };
-		E603F5C152CE01618E90FE72B7F6C401 /* MBBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F659B2890298363CF6BE10C85D2A989B /* MBBlock.swift */; };
-		EB79F0F3FBB517F7D24D7E0B9659CB20 /* MPushSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F3973B8AD9680C857043C839DC0091 /* MPushSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC4F54001D20F19A0449704166F5AB71 /* MBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E9684954110CF3D3618BEF067A036C /* MBClient.swift */; };
-		ED36D0665A13E3B5D3F8EF64AD7E4C04 /* MBResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CBEDCC07F25B53638B5BBDE893FEB1 /* MBResult.swift */; };
-		EEB1239A2C52224CE3207B65EF566BF2 /* MBPluginsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE3DF8B998DB26E4A4714432500849 /* MBPluginsManager.swift */; };
-		EFE901DEFB658030B188D2E5FBD7B546 /* MBParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA72F26A997526EB38E9CA95A2D45D6B /* MBParameter.swift */; };
-		F9695234D62072C91FE43FDEFC4B2B15 /* MBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516CA27FFB7076D9EBB8A9A9DA4C4C1B /* MBRequest.swift */; };
-		FCD0DC7D8860348C3C89261668EA3220 /* MBAuthContractAcceptanceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BFB2323DBA45BAD0AA17F8987785B6 /* MBAuthContractAcceptanceParameter.swift */; };
-		FD70ED0E372C817152CE3388BD48CAC1 /* MBPaginationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D587FCED16D2BB2F481A2E8347E374 /* MBPaginationInfo.swift */; };
-		FE62A8218B048B045A32983537909FB8 /* MBElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0410A8232781DAD918B61FA0D0B6221 /* MBElementProtocol.swift */; };
-		FF1D5C7AF0A4E54E3EA306E79CD16C9C /* MBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1092F2BE5C8726BCA0B3CB5EB7EA966 /* MBFile.swift */; };
+		E368C02D471B864735771772E8930A77 /* MBurgerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD08888E33F7291403984399D844947 /* MBurgerSwift-dummy.m */; };
+		E40ED1554512DA892AB4F82B9F944F6D /* MBSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF461AD83947D32E551F26949502DF3 /* MBSection.swift */; };
+		E54E000780333C40CFEAC144E9EA8A75 /* MBGeneralElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098A11BC7339249CF8B17813F81FD45 /* MBGeneralElement.swift */; };
+		E603F5C152CE01618E90FE72B7F6C401 /* MBBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAFC2EA1375BD684F4A6FDF8B6F95CE /* MBBlock.swift */; };
+		EC4F54001D20F19A0449704166F5AB71 /* MBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4F3979CBFA96C377941AF2FE0EFD9 /* MBClient.swift */; };
+		ED36D0665A13E3B5D3F8EF64AD7E4C04 /* MBResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184FFC135CC94F23FEFDC965E5FE31B /* MBResult.swift */; };
+		EEB1239A2C52224CE3207B65EF566BF2 /* MBPluginsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D71D48CFB0DF84E4C7077C78EE8441 /* MBPluginsManager.swift */; };
+		EFE901DEFB658030B188D2E5FBD7B546 /* MBParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA1676E52D01BB62A01CB7008235 /* MBParameter.swift */; };
+		F9695234D62072C91FE43FDEFC4B2B15 /* MBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256C96DE88B7B010A3E477B0E48FC95 /* MBRequest.swift */; };
+		FCD0DC7D8860348C3C89261668EA3220 /* MBAuthContractAcceptanceParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA912FD70D66898ADC5B1E23AC693EB /* MBAuthContractAcceptanceParameter.swift */; };
+		FD70ED0E372C817152CE3388BD48CAC1 /* MBPaginationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C849D2A3302BC4A57B33749CC2257 /* MBPaginationInfo.swift */; };
+		FE62A8218B048B045A32983537909FB8 /* MBElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81081B003201ACCC3D6FB8CA85CF020 /* MBElementProtocol.swift */; };
+		FF1D5C7AF0A4E54E3EA306E79CD16C9C /* MBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712D10FBB911AF61DDE1E4085F558844 /* MBFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		11D5462724DFBA220476A23101E7715E /* PBXContainerItemProxy */ = {
+		1850DDE8AB84113853AB0886E7932CFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8DBD1EB833A242D1B4C867B0058BA435;
 			remoteInfo = MBurgerSwift;
 		};
-		54EDCDF598CB6D1CBEB3C122564527AC /* PBXContainerItemProxy */ = {
+		84A815513E0A047A1E7C4E61BAA8B2DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
 			remoteInfo = MBNetworkingSwift;
 		};
-		89B435706957D1ED65AF317B3D2C26B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
-			remoteInfo = MBNetworkingSwift;
-		};
-		C34780F8699FD6755EB597F4779181E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
-			remoteInfo = MBNetworkingSwift;
-		};
-		C91DB0E7EC02EDE8E708285448BC9F83 /* PBXContainerItemProxy */ = {
+		8F26B10C46B8C0DEB2C5545E6DF18FA9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B3310AD0ED71B4A2AEEDD2E369174609;
 			remoteInfo = MPushSwift;
 		};
+		C99C83832B9199AFB428E3A35BD435DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
+			remoteInfo = MBNetworkingSwift;
+		};
+		D2D40814D438EE0D2C26BCB8950BF776 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761641A2390A4CA7AEB55C51CA789C90;
+			remoteInfo = MBNetworkingSwift;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002AFA3CC25F39A3E24528A783C706E1 /* MPush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPush.swift; path = MPush/MPush.swift; sourceTree = "<group>"; };
-		020CB461D91C36B5E2D2F7D43685055D /* MBMultipleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMultipleElement.swift; path = MBurgerSwift/MBElement/MBMultipleElement.swift; sourceTree = "<group>"; };
-		06D587FCED16D2BB2F481A2E8347E374 /* MBPaginationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationInfo.swift; path = MBurgerSwift/MBPagination/MBPaginationInfo.swift; sourceTree = "<group>"; };
-		09E9684954110CF3D3618BEF067A036C /* MBClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBClient.swift; path = MBurgerSwift/MBClient.swift; sourceTree = "<group>"; };
-		0C9E16EEA9B64931A9572EA18EF6F298 /* MBNetworkingSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBNetworkingSwift-umbrella.h"; sourceTree = "<group>"; };
-		0E3F7775D481C8B3C99512235360CAFC /* MBValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBValidation.swift; path = MBNetworkingSwift/MBValidation.swift; sourceTree = "<group>"; };
+		014256C4A01E57F7DE7D220D27CFCF4F /* MBFilterParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFilterParameter.swift; path = MBurgerSwift/MBParameter/MBFilterParameter.swift; sourceTree = "<group>"; };
+		0184FFC135CC94F23FEFDC965E5FE31B /* MBResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResult.swift; path = MBNetworkingSwift/MBResult.swift; sourceTree = "<group>"; };
+		026007BADB15381B7A972234B21F5783 /* MBProject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBProject.swift; path = MBurgerSwift/MBProject/MBProject.swift; sourceTree = "<group>"; };
+		02D6CB90FB2130A5FBC91B47F139DE61 /* MBNetworkingSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBNetworkingSwift-dummy.m"; sourceTree = "<group>"; };
+		05E4F3979CBFA96C377941AF2FE0EFD9 /* MBClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBClient.swift; path = MBurgerSwift/MBClient.swift; sourceTree = "<group>"; };
+		0854B5F036F282A5869BAAAC2AB79DC5 /* MBNetworking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBNetworking.swift; path = MBNetworkingSwift/MBNetworking.swift; sourceTree = "<group>"; };
+		08C40BC629883C0BA8B4B92855343E34 /* MBUser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUser.swift; path = MBurgerSwift/MBAuth/MBUser.swift; sourceTree = "<group>"; };
+		0EAA659F8A6A6761B14C852B5EBEEA5F /* MBurgerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBurgerSwift-prefix.pch"; sourceTree = "<group>"; };
+		1550896C2A56C591E58B2F34E8E4E97B /* MBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBError.swift; path = MBNetworkingSwift/MBError.swift; sourceTree = "<group>"; };
 		16A7CD41DE7541E6F20650DF511688B4 /* MBNetworkingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBNetworkingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1712C8C4BA1101DC6E184720959B65D6 /* MBUserContractStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserContractStatus.swift; path = MBurgerSwift/MBAuth/MBUserContractStatus.swift; sourceTree = "<group>"; };
-		19E0569A04E283721B111AF63CBA5327 /* MBNetworkingSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBNetworkingSwift-dummy.m"; sourceTree = "<group>"; };
-		1B90FB706B875CBD62B5A988576BF69F /* MPushSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPushSwift-Info.plist"; sourceTree = "<group>"; };
-		1C3A914D28F0B8953C2802A970630A5D /* MBurgerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBurgerSwift-prefix.pch"; sourceTree = "<group>"; };
-		1E2145805E41FA88B2ADCAD65D0D6E7C /* MBSortParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSortParameter.swift; path = MBurgerSwift/MBParameter/MBSortParameter.swift; sourceTree = "<group>"; };
-		21E202616F19062941540B631CEA32B3 /* MBurgerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBurgerSwift-dummy.m"; sourceTree = "<group>"; };
+		1DAFC2EA1375BD684F4A6FDF8B6F95CE /* MBBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBBlock.swift; path = MBurgerSwift/MBBlock/MBBlock.swift; sourceTree = "<group>"; };
+		203EB0ECA3B3D61C1BD77B8AD7918B99 /* MBNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBNetworking.h; path = MBNetworkingSwift/MBNetworking.h; sourceTree = "<group>"; };
+		2256C96DE88B7B010A3E477B0E48FC95 /* MBRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRequest.swift; path = MBNetworkingSwift/MBRequest.swift; sourceTree = "<group>"; };
+		24C1DDBA827866377C654239CC4A9D60 /* MBElementFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElementFactory.swift; path = MBurgerSwift/MBElement/MBElementFactory.swift; sourceTree = "<group>"; };
+		256E1524643F2D792039BA2FFFB80E20 /* MBResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResponse.swift; path = MBNetworkingSwift/MBResponse.swift; sourceTree = "<group>"; };
+		25D71D48CFB0DF84E4C7077C78EE8441 /* MBPluginsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPluginsManager.swift; path = MBurgerSwift/MBPlugin/MBPluginsManager.swift; sourceTree = "<group>"; };
 		25E7C65EB2CEC28AC09B67D4B4E3308C /* Pods-MBMessagesSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBMessagesSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		26C4ECE5194489EAC764DF90A2F122B9 /* MBError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBError.swift; path = MBNetworkingSwift/MBError.swift; sourceTree = "<group>"; };
-		275F74A91068139BBECE99A2D3AADEF3 /* MBUserPublishedSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserPublishedSection.swift; path = MBurgerSwift/MBAuth/MBUserPublishedSection.swift; sourceTree = "<group>"; };
-		29E984667C1187B44A5D1EBF2D26B905 /* MBurgerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBurgerSwift.release.xcconfig; sourceTree = "<group>"; };
+		2746281BB84404BC6ADBCACC15C4773D /* MBManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBManager.swift; path = MBurgerSwift/MBManager/MBManager.swift; sourceTree = "<group>"; };
+		28E2A0FB0B4E8FC75221069FD2329F01 /* MBurgerTokenKeychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBurgerTokenKeychain.swift; path = MBurgerSwift/MBAuth/MBurgerTokenKeychain.swift; sourceTree = "<group>"; };
 		2BA3AC0EF23BC5721F708225DABAE5AC /* Pods_MBMessagesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MBMessagesSwift.framework; path = "Pods-MBMessagesSwift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CA0409E24D9D00BC355873EEC4062DD /* MBNetworkingSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.release.xcconfig; sourceTree = "<group>"; };
+		2FD627C02CD614DA7BCDD13823831D25 /* MBLegalContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBLegalContract.swift; path = MBurgerSwift/MBProject/MBLegalContract.swift; sourceTree = "<group>"; };
 		317C42D6BB11FFDF58B1B1743963B344 /* MBNetworkingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBNetworkingSwift.framework; path = MBNetworkingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A0660399E29CC2664F1A5A545FBE2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		362AAB603FE442B17A021610A25627CA /* MBElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElement.swift; path = MBurgerSwift/MBElement/MBElement.swift; sourceTree = "<group>"; };
-		3C39825CBD50A5A68B992FB84FED9595 /* MBElementFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElementFactory.swift; path = MBurgerSwift/MBElement/MBElementFactory.swift; sourceTree = "<group>"; };
-		3ED0AE30A32E4CFED090844C2167C9FA /* MBLegalContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBLegalContract.swift; path = MBurgerSwift/MBProject/MBLegalContract.swift; sourceTree = "<group>"; };
-		407F5FB4206DA61A18DC514E003EE506 /* MBGeofenceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeofenceParameter.swift; path = MBurgerSwift/MBParameter/MBGeofenceParameter.swift; sourceTree = "<group>"; };
-		4611C6B03F8AEBF44094FAA8F34F7CA8 /* MBProject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBProject.swift; path = MBurgerSwift/MBProject/MBProject.swift; sourceTree = "<group>"; };
-		466FC35CF9ACF62EB336C9FBBB7EE77C /* MBFilterParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFilterParameter.swift; path = MBurgerSwift/MBParameter/MBFilterParameter.swift; sourceTree = "<group>"; };
-		4776BD3B44F821B9412A78EF658EBB40 /* MBColorElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBColorElement.swift; path = MBurgerSwift/MBElement/MBColorElement.swift; sourceTree = "<group>"; };
-		487A2C4CA64745B8D0E5B359CBCDFF75 /* MPushSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPushSwift.modulemap; sourceTree = "<group>"; };
+		344030F37934FDF7B992C3E1BF6F59D5 /* MPushSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPushSwift-prefix.pch"; sourceTree = "<group>"; };
+		3571EB344AE8298538EBE499383C2376 /* MBurgerSwift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBurgerSwift.h; path = MBurgerSwift/MBurgerSwift.h; sourceTree = "<group>"; };
+		36F00A8518CC67173EF13F359BCA5746 /* MBNetworkingSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBNetworkingSwift-umbrella.h"; sourceTree = "<group>"; };
+		4342B1AB4E1731FF6088788746133F60 /* MBPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlugin.swift; path = MBurgerSwift/MBPlugin/MBPlugin.swift; sourceTree = "<group>"; };
+		43953783B76B1A2BE11D98BB4241245B /* MBNetworkingSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBNetworkingSwift.modulemap; sourceTree = "<group>"; };
+		45AAFAE659918F368FACA017B88E9CC3 /* MPushSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPushSwift-umbrella.h"; sourceTree = "<group>"; };
+		4655EF9F2F2C8343D2CBC5853A0F35A7 /* MBMulitpartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMulitpartFormData.swift; path = MBNetworkingSwift/MBMulitpartFormData.swift; sourceTree = "<group>"; };
 		4AD682A3A21711645CC4542AC7CB05A2 /* Pods-MBMessagesSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBMessagesSwift-acknowledgements.plist"; sourceTree = "<group>"; };
 		4C2BF2679C4800463E56F9A726CA5D02 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		4C623FDF7471E5E4AAE27B1419D1F6B4 /* MBDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecodable.swift; path = MBurgerSwift/MBDecodable/MBDecodable.swift; sourceTree = "<group>"; };
-		4C9A699CC430D429787D44B5087FCF19 /* MBUser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUser.swift; path = MBurgerSwift/MBAuth/MBUser.swift; sourceTree = "<group>"; };
-		4FEC6ED77EA86EEFF21975FC93E8E25A /* MPushApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPushApiManager.swift; path = MPush/MPushApiManager.swift; sourceTree = "<group>"; };
+		4E8D5B775B178C3D052A409F25557FD9 /* MBDateElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDateElement.swift; path = MBurgerSwift/MBElement/MBDateElement.swift; sourceTree = "<group>"; };
+		4EE921B70EDC661B04FC2620B7784BF8 /* MBUserContractStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserContractStatus.swift; path = MBurgerSwift/MBAuth/MBUserContractStatus.swift; sourceTree = "<group>"; };
 		503C2319D2A92A8582819A6320097023 /* Pods-MBMessagesSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBMessagesSwift-dummy.m"; sourceTree = "<group>"; };
-		516CA27FFB7076D9EBB8A9A9DA4C4C1B /* MBRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRequest.swift; path = MBNetworkingSwift/MBRequest.swift; sourceTree = "<group>"; };
-		51F4B3E0F96BAE3E0AC6E26EBBCF79EB /* MPushSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPushSwift.debug.xcconfig; sourceTree = "<group>"; };
-		526E3D89B027DBD67792081231FD0D2D /* MBAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuth.swift; path = MBurgerSwift/MBAuth/MBAuth.swift; sourceTree = "<group>"; };
-		554F9E990097F6CE95EAE4EFB4284C2B /* MPushSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPushSwift-dummy.m"; sourceTree = "<group>"; };
-		602F31AF808D13FFF0B076FE7DA6E151 /* MPushSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPushSwift.release.xcconfig; sourceTree = "<group>"; };
-		628D86E20D2B1235288E92D6C476A263 /* MBMulitpartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMulitpartFormData.swift; path = MBNetworkingSwift/MBMulitpartFormData.swift; sourceTree = "<group>"; };
-		634A862BC4518B43F6D665CBA3DD2153 /* MBurgerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBurgerSwift.debug.xcconfig; sourceTree = "<group>"; };
-		6485249FF4F3E54CBEEF898BABB7A563 /* MBUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUtilities.swift; path = MBurgerSwift/MBUtilities/MBUtilities.swift; sourceTree = "<group>"; };
+		51C0D4B8C878B6FFCD4FB89FCD60CB47 /* MBApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBApiManager.swift; path = MBurgerSwift/MBManager/MBApiManager.swift; sourceTree = "<group>"; };
+		541C849D2A3302BC4A57B33749CC2257 /* MBPaginationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationInfo.swift; path = MBurgerSwift/MBPagination/MBPaginationInfo.swift; sourceTree = "<group>"; };
+		570A78EFF06F85D6B285850A3C933722 /* MPushApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPushApiManager.swift; path = MPushSwift/MPushApiManager.swift; sourceTree = "<group>"; };
+		6098A11BC7339249CF8B17813F81FD45 /* MBGeneralElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralElement.swift; path = MBurgerSwift/MBElement/MBGeneralElement.swift; sourceTree = "<group>"; };
+		62BBD4E235F4BD7568FA54F23B12615A /* MBurgerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBurgerSwift.modulemap; sourceTree = "<group>"; };
+		633CF933A0C8C919F19527B58DC02CA8 /* MPush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPush.swift; path = MPushSwift/MPush.swift; sourceTree = "<group>"; };
+		6382F8E26A2C318C2F708658A9BF0024 /* MBAddressElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAddressElement.swift; path = MBurgerSwift/MBElement/MBAddressElement.swift; sourceTree = "<group>"; };
 		652C84349C3673262F0D28DB86673B8C /* MBurgerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBurgerSwift.framework; path = MBurgerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C7DF905B7B20F91C68D833E75F7339 /* MBNetworkingSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.debug.xcconfig; sourceTree = "<group>"; };
+		67667411A238ED32A0C7734CAC9ECCC4 /* MPushSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPushSwift.modulemap; sourceTree = "<group>"; };
 		6AC03844C1323D52FC22B480ADC66911 /* Pods-MBMessagesSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MBMessagesSwift.modulemap"; sourceTree = "<group>"; };
-		6BD3D9335EAEFADB7A20D8ADB47B8697 /* MBApiManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBApiManager.swift; path = MBurgerSwift/MBManager/MBApiManager.swift; sourceTree = "<group>"; };
-		6F99E277705D195567B638F301E65AE4 /* MBNetworkingSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBNetworkingSwift-prefix.pch"; sourceTree = "<group>"; };
+		6BB30C98E367BE7CC13E01E214B84479 /* MPTopic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPTopic.swift; path = MPushSwift/MPTopic.swift; sourceTree = "<group>"; };
+		6C338074E9F729FA43F3D0B1B19D9578 /* MPushSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPushSwift.release.xcconfig; sourceTree = "<group>"; };
+		6E31A550289267842849D812F4F4C7EB /* MBElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElement.swift; path = MBurgerSwift/MBElement/MBElement.swift; sourceTree = "<group>"; };
+		70B76DFEFFBD23D44259A43691B8F8B7 /* MBGeofenceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeofenceParameter.swift; path = MBurgerSwift/MBParameter/MBGeofenceParameter.swift; sourceTree = "<group>"; };
 		7118060729640606F03E7B45EE82C7E6 /* Pods-MBMessagesSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBMessagesSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		72EBF2B67DDE136B61B4631DD0A6A3EF /* MBRelationElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRelationElement.swift; path = MBurgerSwift/MBElement/MBRelationElement.swift; sourceTree = "<group>"; };
+		712D10FBB911AF61DDE1E4085F558844 /* MBFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFile.swift; path = MBurgerSwift/MBElement/MBFile.swift; sourceTree = "<group>"; };
 		739860DCA7B440C9176AA0AA2602EEE7 /* Pods-MBMessagesSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBMessagesSwift-Info.plist"; sourceTree = "<group>"; };
-		75090AE3C43802409E167ECD4CEB4847 /* MBNetworking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBNetworking.swift; path = MBNetworkingSwift/MBNetworking.swift; sourceTree = "<group>"; };
+		7488F3F195BB05EF7E783D6B2773A5F7 /* MPushSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPushSwift.debug.xcconfig; sourceTree = "<group>"; };
 		7698BD2D9AE9E98EA92BDD0DB4CE3E8E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7B27FB5862EB3011682E17B2FBF782C4 /* MPushSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MPushSwift.framework; path = MPushSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		839E6BDFDC8E3FB1D4082B9AB04E1BD8 /* MBManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBManager.swift; path = MBurgerSwift/MBManager/MBManager.swift; sourceTree = "<group>"; };
-		83C2BBD739ECC7B2A9A292A93946D7A3 /* MBurgerSwift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBurgerSwift.h; path = MBurgerSwift/MBurgerSwift.h; sourceTree = "<group>"; };
-		88BFB2323DBA45BAD0AA17F8987785B6 /* MBAuthContractAcceptanceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuthContractAcceptanceParameter.swift; path = MBurgerSwift/MBAuth/MBAuthContractAcceptanceParameter.swift; sourceTree = "<group>"; };
+		7EEFC5AFA903C3438BF25FA673B71DE9 /* MBSortParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSortParameter.swift; path = MBurgerSwift/MBParameter/MBSortParameter.swift; sourceTree = "<group>"; };
+		8136CD1DBE29226DC01EC60D3FEC3182 /* MBurgerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBurgerSwift-Info.plist"; sourceTree = "<group>"; };
 		89B2C5C8E014D1A121C2409F1CC1A16B /* Pods-MBMessagesSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBMessagesSwift-umbrella.h"; sourceTree = "<group>"; };
-		8EBD6EF97277E1B8BF6D1AAB25A2755E /* MBNetworkingSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.release.xcconfig; sourceTree = "<group>"; };
-		8FE1266995B64DB32B594E5F8C1DB97D /* MBDateElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDateElement.swift; path = MBurgerSwift/MBElement/MBDateElement.swift; sourceTree = "<group>"; };
-		9192FEEC1AD36C84EEF53FBC77116F36 /* MBNetworkingSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBNetworkingSwift.debug.xcconfig; sourceTree = "<group>"; };
-		91CF046BD656BC4ABD14C3918F2392C6 /* MBAddressElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAddressElement.swift; path = MBurgerSwift/MBElement/MBAddressElement.swift; sourceTree = "<group>"; };
-		93CBEDCC07F25B53638B5BBDE893FEB1 /* MBResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResult.swift; path = MBNetworkingSwift/MBResult.swift; sourceTree = "<group>"; };
-		940176E29D254C8A5E11973B11F9B3B8 /* MBGeneralElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralElement.swift; path = MBurgerSwift/MBElement/MBGeneralElement.swift; sourceTree = "<group>"; };
-		95F3973B8AD9680C857043C839DC0091 /* MPushSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPushSwift-umbrella.h"; sourceTree = "<group>"; };
-		974A380ABE59F6869A7F9D731BCE8AD6 /* MBNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBNetworking.h; path = MBNetworkingSwift/MBNetworking.h; sourceTree = "<group>"; };
-		9AFA1E309F5EC89948647D0E526C25D1 /* MBurgerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBurgerSwift-umbrella.h"; sourceTree = "<group>"; };
+		8D5724DEC7E4AE905F58E0E4F4D033F6 /* MBPollElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPollElement.swift; path = MBurgerSwift/MBElement/MBPollElement.swift; sourceTree = "<group>"; };
+		98270737F421BBEC61E7B6E9E0226EB9 /* MBImagesElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBImagesElement.swift; path = MBurgerSwift/MBElement/MBImagesElement.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EDCF331CE55CC03D88990BCD3A3BBA4 /* MBSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSection.swift; path = MBurgerSwift/MBSection/MBSection.swift; sourceTree = "<group>"; };
-		A158243AB0E13B63405F3D4755905D55 /* MBImagesElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBImagesElement.swift; path = MBurgerSwift/MBElement/MBImagesElement.swift; sourceTree = "<group>"; };
-		A4F68A3B612352E3DA750E0E0C9EDAED /* MBMarkdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMarkdownElement.swift; path = MBurgerSwift/MBElement/MBMarkdownElement.swift; sourceTree = "<group>"; };
-		A65076390154C4AC900D5EDCF3A50168 /* MBParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameters.swift; path = MBNetworkingSwift/MBParameters.swift; sourceTree = "<group>"; };
-		A7AF3DADFE87B9C224EFFA77A5D1A716 /* MBPaginationParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationParameter.swift; path = MBurgerSwift/MBParameter/MBPaginationParameter.swift; sourceTree = "<group>"; };
+		9EA912FD70D66898ADC5B1E23AC693EB /* MBAuthContractAcceptanceParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuthContractAcceptanceParameter.swift; path = MBurgerSwift/MBAuth/MBAuthContractAcceptanceParameter.swift; sourceTree = "<group>"; };
+		9F947791750966E8F0977192174978B5 /* MBurgerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBurgerSwift-umbrella.h"; sourceTree = "<group>"; };
+		A54018B75AD24938491005578B474056 /* MPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPush.h; path = MPushSwift/MPush.h; sourceTree = "<group>"; };
 		A84048E3E7BC32F831F088B7797F015D /* Pods-MBMessagesSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBMessagesSwift.release.xcconfig"; sourceTree = "<group>"; };
-		B84C76889FC72AEE6B476146F60C1DA3 /* MBurgerTokenKeychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBurgerTokenKeychain.swift; path = MBurgerSwift/MBAuth/MBurgerTokenKeychain.swift; sourceTree = "<group>"; };
-		C1092F2BE5C8726BCA0B3CB5EB7EA966 /* MBFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBFile.swift; path = MBurgerSwift/MBElement/MBFile.swift; sourceTree = "<group>"; };
-		C50036EB230A782848BBC3F0DA8DE15A /* MPushSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPushSwift-prefix.pch"; sourceTree = "<group>"; };
-		C7E12E72489E05E42240E4A46609D2EB /* MBGeneralParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralParameter.swift; path = MBurgerSwift/MBParameter/MBGeneralParameter.swift; sourceTree = "<group>"; };
-		CCAF69DDBD665748E5F46C7FF199EE75 /* MBCheckboxElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBCheckboxElement.swift; path = MBurgerSwift/MBElement/MBCheckboxElement.swift; sourceTree = "<group>"; };
-		D0B08A20C174FE7132C7FAE8A2C2016E /* MBurgerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBurgerSwift-Info.plist"; sourceTree = "<group>"; };
-		D791281B31DA02DD8681F60F55262270 /* MBNetworkingSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBNetworkingSwift-Info.plist"; sourceTree = "<group>"; };
-		D87BBEC84EB9C708C202274F0B7D0EE6 /* MBPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPlugin.swift; path = MBurgerSwift/MBPlugin/MBPlugin.swift; sourceTree = "<group>"; };
-		DA72F26A997526EB38E9CA95A2D45D6B /* MBParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameter.swift; path = MBurgerSwift/MBParameter/MBParameter.swift; sourceTree = "<group>"; };
-		DC447ED40F8BFAA1375F34F1C8F7056F /* MBNetworkingSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBNetworkingSwift.modulemap; sourceTree = "<group>"; };
-		DECE3DF8B998DB26E4A4714432500849 /* MBPluginsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPluginsManager.swift; path = MBurgerSwift/MBPlugin/MBPluginsManager.swift; sourceTree = "<group>"; };
-		F0410A8232781DAD918B61FA0D0B6221 /* MBElementProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElementProtocol.swift; path = MBurgerSwift/MBElement/MBElementProtocol.swift; sourceTree = "<group>"; };
-		F0F2B90BC1C92CEECC77502CE72AEC4C /* MBPollElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPollElement.swift; path = MBurgerSwift/MBElement/MBPollElement.swift; sourceTree = "<group>"; };
-		F30DE56980BB677D2F77663E73F4F77A /* MBDropdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDropdownElement.swift; path = MBurgerSwift/MBElement/MBDropdownElement.swift; sourceTree = "<group>"; };
-		F4E45A145AE9304766F3FB9C4F867B14 /* MBTextElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBTextElement.swift; path = MBurgerSwift/MBElement/MBTextElement.swift; sourceTree = "<group>"; };
-		F659B2890298363CF6BE10C85D2A989B /* MBBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBBlock.swift; path = MBurgerSwift/MBBlock/MBBlock.swift; sourceTree = "<group>"; };
-		F6FE5704B8C966CCD061C115CA119B41 /* MBResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBResponse.swift; path = MBNetworkingSwift/MBResponse.swift; sourceTree = "<group>"; };
-		FB82C7ADAF983AADE106493B171A278D /* MBurgerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBurgerSwift.modulemap; sourceTree = "<group>"; };
-		FBC49B4535EA6C29DA7D898FCD4439C5 /* MBDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecoder.swift; path = MBurgerSwift/MBDecodable/MBDecoder.swift; sourceTree = "<group>"; };
-		FE41FA5CB26A60E3ECD671E2ECE7EDE8 /* MBMediaElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMediaElement.swift; path = MBurgerSwift/MBElement/MBMediaElement.swift; sourceTree = "<group>"; };
+		A9204EE87BDBC6752B6E9AECE3E92EC3 /* MPushSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPushSwift-Info.plist"; sourceTree = "<group>"; };
+		A92BBC3D879AEFCE859038EBFC3FA023 /* MBAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBAuth.swift; path = MBurgerSwift/MBAuth/MBAuth.swift; sourceTree = "<group>"; };
+		ADDD19A8BD8F8B76306ECF7299F9EC5A /* MBDropdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDropdownElement.swift; path = MBurgerSwift/MBElement/MBDropdownElement.swift; sourceTree = "<group>"; };
+		B24D7F97CEB94B756749E2A1BA5B9889 /* MBMarkdownElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMarkdownElement.swift; path = MBurgerSwift/MBElement/MBMarkdownElement.swift; sourceTree = "<group>"; };
+		B81081B003201ACCC3D6FB8CA85CF020 /* MBElementProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBElementProtocol.swift; path = MBurgerSwift/MBElement/MBElementProtocol.swift; sourceTree = "<group>"; };
+		C5D0BA1676E52D01BB62A01CB7008235 /* MBParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameter.swift; path = MBurgerSwift/MBParameter/MBParameter.swift; sourceTree = "<group>"; };
+		C5D6C154DF77D2B40C3CB0E6DC2D5118 /* MBParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBParameters.swift; path = MBNetworkingSwift/MBParameters.swift; sourceTree = "<group>"; };
+		C7109DFBCED6A912BA0313F18B4A8251 /* MBCheckboxElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBCheckboxElement.swift; path = MBurgerSwift/MBElement/MBCheckboxElement.swift; sourceTree = "<group>"; };
+		CAD08888E33F7291403984399D844947 /* MBurgerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBurgerSwift-dummy.m"; sourceTree = "<group>"; };
+		CE60DD5BC044C7DDD94890FD194C8187 /* MBRelationElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBRelationElement.swift; path = MBurgerSwift/MBElement/MBRelationElement.swift; sourceTree = "<group>"; };
+		CE621BF933B8AF713DA209390A6BFD95 /* MBGeneralParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBGeneralParameter.swift; path = MBurgerSwift/MBParameter/MBGeneralParameter.swift; sourceTree = "<group>"; };
+		CE841DF97C0E64EDC937607454A98329 /* MBDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecodable.swift; path = MBurgerSwift/MBDecodable/MBDecodable.swift; sourceTree = "<group>"; };
+		D6A8ABDCD4999437E65846C3D94FF241 /* MBNetworkingSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBNetworkingSwift-prefix.pch"; sourceTree = "<group>"; };
+		D9396A51E6F8042405925CA3C4277651 /* MBTextElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBTextElement.swift; path = MBurgerSwift/MBElement/MBTextElement.swift; sourceTree = "<group>"; };
+		DD079922597E5913E2D00B3A68BBD485 /* MBNetworkingSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBNetworkingSwift-Info.plist"; sourceTree = "<group>"; };
+		DF893736DB69C0D91BD8D84BA30954C2 /* MBValidation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBValidation.swift; path = MBNetworkingSwift/MBValidation.swift; sourceTree = "<group>"; };
+		E2AD6AF2B39B2B4C13523429FDE1343E /* MBDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBDecoder.swift; path = MBurgerSwift/MBDecodable/MBDecoder.swift; sourceTree = "<group>"; };
+		E5FD43FB9319C821C472A6D4A1292D4D /* MBMediaElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMediaElement.swift; path = MBurgerSwift/MBElement/MBMediaElement.swift; sourceTree = "<group>"; };
+		E67F64485417C1885D775C61AB96187E /* MBurgerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBurgerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		EAF461AD83947D32E551F26949502DF3 /* MBSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBSection.swift; path = MBurgerSwift/MBSection/MBSection.swift; sourceTree = "<group>"; };
+		EF0A58007F5BAD0FC5EFF77E8F692512 /* MBColorElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBColorElement.swift; path = MBurgerSwift/MBElement/MBColorElement.swift; sourceTree = "<group>"; };
+		EF37535D8A096C8175B3B9446EAA2F3A /* MBPaginationParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBPaginationParameter.swift; path = MBurgerSwift/MBParameter/MBPaginationParameter.swift; sourceTree = "<group>"; };
+		F328BEBB4D3CD9091943A4BAE8342842 /* MBUserPublishedSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUserPublishedSection.swift; path = MBurgerSwift/MBAuth/MBUserPublishedSection.swift; sourceTree = "<group>"; };
+		F8EA7D7F79CEFBF00AFD7CB8BD2506AD /* MBMultipleElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBMultipleElement.swift; path = MBurgerSwift/MBElement/MBMultipleElement.swift; sourceTree = "<group>"; };
+		FA8E95FF1AA527CA891CF3DE59903EFF /* MBUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MBUtilities.swift; path = MBurgerSwift/MBUtilities/MBUtilities.swift; sourceTree = "<group>"; };
+		FBF680BC5817DEEB961876BF9228C66E /* MBurgerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBurgerSwift.release.xcconfig; sourceTree = "<group>"; };
+		FC510ED680D42DF79DAFE5ADEB5A5BCD /* MPushSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPushSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		17011B7BAD021DFBFA095F319F8B8CFB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				055247A46BA011BB8B76E7490F1D0AE8 /* Foundation.framework in Frameworks */,
-				5E13AAB9FF2AF506917A89F3BDD20A86 /* MBNetworkingSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		28F9EFAFAE299A88BB1818AD5AB1AB16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +231,15 @@
 			files = (
 				9E74CFFB760844F8C17B32A1572A64F7 /* CoreServices.framework in Frameworks */,
 				66DBFF03252EF9A3C2D97E69294FB079 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		767228F4729920FD4C51B5A165F8E071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F24CB30CA30609531B2D586B2C0FBDC /* Foundation.framework in Frameworks */,
+				250095516945215DCF1B7EE3F3B36258 /* MBNetworkingSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,16 +264,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		179EFF3D7968B51F80C09AB72A40574C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6A908C1F7D6716D5E68C72B0068C9C30 /* MBNetworkingSwift */,
-				819A4B1B9E89309CC2F72C2B98F362CE /* MBurgerSwift */,
-				64185B57E91749342CC82559713D4EF8 /* MPushSwift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		2CC07AA84EA86C0B0F7FD14EAF11B512 /* Pods-MBMessagesSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,33 +280,84 @@
 			path = "Target Support Files/Pods-MBMessagesSwift";
 			sourceTree = "<group>";
 		};
-		64185B57E91749342CC82559713D4EF8 /* MPushSwift */ = {
+		43D5338C0B852C050F53F08CACB27801 /* MBurgerSwift */ = {
 			isa = PBXGroup;
 			children = (
-				002AFA3CC25F39A3E24528A783C706E1 /* MPush.swift */,
-				4FEC6ED77EA86EEFF21975FC93E8E25A /* MPushApiManager.swift */,
-				A20DCB91513E3AE1FAA22BBE6F6F5094 /* Support Files */,
+				6382F8E26A2C318C2F708658A9BF0024 /* MBAddressElement.swift */,
+				51C0D4B8C878B6FFCD4FB89FCD60CB47 /* MBApiManager.swift */,
+				A92BBC3D879AEFCE859038EBFC3FA023 /* MBAuth.swift */,
+				9EA912FD70D66898ADC5B1E23AC693EB /* MBAuthContractAcceptanceParameter.swift */,
+				1DAFC2EA1375BD684F4A6FDF8B6F95CE /* MBBlock.swift */,
+				C7109DFBCED6A912BA0313F18B4A8251 /* MBCheckboxElement.swift */,
+				05E4F3979CBFA96C377941AF2FE0EFD9 /* MBClient.swift */,
+				EF0A58007F5BAD0FC5EFF77E8F692512 /* MBColorElement.swift */,
+				4E8D5B775B178C3D052A409F25557FD9 /* MBDateElement.swift */,
+				CE841DF97C0E64EDC937607454A98329 /* MBDecodable.swift */,
+				E2AD6AF2B39B2B4C13523429FDE1343E /* MBDecoder.swift */,
+				ADDD19A8BD8F8B76306ECF7299F9EC5A /* MBDropdownElement.swift */,
+				6E31A550289267842849D812F4F4C7EB /* MBElement.swift */,
+				24C1DDBA827866377C654239CC4A9D60 /* MBElementFactory.swift */,
+				B81081B003201ACCC3D6FB8CA85CF020 /* MBElementProtocol.swift */,
+				712D10FBB911AF61DDE1E4085F558844 /* MBFile.swift */,
+				014256C4A01E57F7DE7D220D27CFCF4F /* MBFilterParameter.swift */,
+				6098A11BC7339249CF8B17813F81FD45 /* MBGeneralElement.swift */,
+				CE621BF933B8AF713DA209390A6BFD95 /* MBGeneralParameter.swift */,
+				70B76DFEFFBD23D44259A43691B8F8B7 /* MBGeofenceParameter.swift */,
+				98270737F421BBEC61E7B6E9E0226EB9 /* MBImagesElement.swift */,
+				2FD627C02CD614DA7BCDD13823831D25 /* MBLegalContract.swift */,
+				2746281BB84404BC6ADBCACC15C4773D /* MBManager.swift */,
+				B24D7F97CEB94B756749E2A1BA5B9889 /* MBMarkdownElement.swift */,
+				E5FD43FB9319C821C472A6D4A1292D4D /* MBMediaElement.swift */,
+				F8EA7D7F79CEFBF00AFD7CB8BD2506AD /* MBMultipleElement.swift */,
+				541C849D2A3302BC4A57B33749CC2257 /* MBPaginationInfo.swift */,
+				EF37535D8A096C8175B3B9446EAA2F3A /* MBPaginationParameter.swift */,
+				C5D0BA1676E52D01BB62A01CB7008235 /* MBParameter.swift */,
+				4342B1AB4E1731FF6088788746133F60 /* MBPlugin.swift */,
+				25D71D48CFB0DF84E4C7077C78EE8441 /* MBPluginsManager.swift */,
+				8D5724DEC7E4AE905F58E0E4F4D033F6 /* MBPollElement.swift */,
+				026007BADB15381B7A972234B21F5783 /* MBProject.swift */,
+				CE60DD5BC044C7DDD94890FD194C8187 /* MBRelationElement.swift */,
+				EAF461AD83947D32E551F26949502DF3 /* MBSection.swift */,
+				7EEFC5AFA903C3438BF25FA673B71DE9 /* MBSortParameter.swift */,
+				D9396A51E6F8042405925CA3C4277651 /* MBTextElement.swift */,
+				3571EB344AE8298538EBE499383C2376 /* MBurgerSwift.h */,
+				28E2A0FB0B4E8FC75221069FD2329F01 /* MBurgerTokenKeychain.swift */,
+				08C40BC629883C0BA8B4B92855343E34 /* MBUser.swift */,
+				4EE921B70EDC661B04FC2620B7784BF8 /* MBUserContractStatus.swift */,
+				F328BEBB4D3CD9091943A4BAE8342842 /* MBUserPublishedSection.swift */,
+				FA8E95FF1AA527CA891CF3DE59903EFF /* MBUtilities.swift */,
+				53CC25D8703B42CD74E073F46858BD1C /* Support Files */,
+			);
+			name = MBurgerSwift;
+			path = MBurgerSwift;
+			sourceTree = "<group>";
+		};
+		53CC25D8703B42CD74E073F46858BD1C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62BBD4E235F4BD7568FA54F23B12615A /* MBurgerSwift.modulemap */,
+				CAD08888E33F7291403984399D844947 /* MBurgerSwift-dummy.m */,
+				8136CD1DBE29226DC01EC60D3FEC3182 /* MBurgerSwift-Info.plist */,
+				0EAA659F8A6A6761B14C852B5EBEEA5F /* MBurgerSwift-prefix.pch */,
+				9F947791750966E8F0977192174978B5 /* MBurgerSwift-umbrella.h */,
+				E67F64485417C1885D775C61AB96187E /* MBurgerSwift.debug.xcconfig */,
+				FBF680BC5817DEEB961876BF9228C66E /* MBurgerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBurgerSwift";
+			sourceTree = "<group>";
+		};
+		5488DDB20DE001D68AEECCB4C64E32F0 /* MPushSwift */ = {
+			isa = PBXGroup;
+			children = (
+				6BB30C98E367BE7CC13E01E214B84479 /* MPTopic.swift */,
+				A54018B75AD24938491005578B474056 /* MPush.h */,
+				633CF933A0C8C919F19527B58DC02CA8 /* MPush.swift */,
+				570A78EFF06F85D6B285850A3C933722 /* MPushApiManager.swift */,
+				A31BF0557E09D5087AED9CA0E1DD81A1 /* Support Files */,
 			);
 			name = MPushSwift;
 			path = MPushSwift;
-			sourceTree = "<group>";
-		};
-		6A908C1F7D6716D5E68C72B0068C9C30 /* MBNetworkingSwift */ = {
-			isa = PBXGroup;
-			children = (
-				26C4ECE5194489EAC764DF90A2F122B9 /* MBError.swift */,
-				628D86E20D2B1235288E92D6C476A263 /* MBMulitpartFormData.swift */,
-				974A380ABE59F6869A7F9D731BCE8AD6 /* MBNetworking.h */,
-				75090AE3C43802409E167ECD4CEB4847 /* MBNetworking.swift */,
-				A65076390154C4AC900D5EDCF3A50168 /* MBParameters.swift */,
-				516CA27FFB7076D9EBB8A9A9DA4C4C1B /* MBRequest.swift */,
-				F6FE5704B8C966CCD061C115CA119B41 /* MBResponse.swift */,
-				93CBEDCC07F25B53638B5BBDE893FEB1 /* MBResult.swift */,
-				0E3F7775D481C8B3C99512235360CAFC /* MBValidation.swift */,
-				72ACABB51032DB8C3AEA6BA35FC14107 /* Support Files */,
-			);
-			name = MBNetworkingSwift;
-			path = MBNetworkingSwift;
 			sourceTree = "<group>";
 		};
 		7245E437C8E1A0BA4C62C67642AE5598 /* iOS */ = {
@@ -323,21 +368,6 @@
 				7698BD2D9AE9E98EA92BDD0DB4CE3E8E /* Security.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		72ACABB51032DB8C3AEA6BA35FC14107 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC447ED40F8BFAA1375F34F1C8F7056F /* MBNetworkingSwift.modulemap */,
-				19E0569A04E283721B111AF63CBA5327 /* MBNetworkingSwift-dummy.m */,
-				D791281B31DA02DD8681F60F55262270 /* MBNetworkingSwift-Info.plist */,
-				6F99E277705D195567B638F301E65AE4 /* MBNetworkingSwift-prefix.pch */,
-				0C9E16EEA9B64931A9572EA18EF6F298 /* MBNetworkingSwift-umbrella.h */,
-				9192FEEC1AD36C84EEF53FBC77116F36 /* MBNetworkingSwift.debug.xcconfig */,
-				8EBD6EF97277E1B8BF6D1AAB25A2755E /* MBNetworkingSwift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MBNetworkingSwift";
 			sourceTree = "<group>";
 		};
 		78C60FB2748031E0760662F5CB5EF06F /* Products */ = {
@@ -351,83 +381,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		819A4B1B9E89309CC2F72C2B98F362CE /* MBurgerSwift */ = {
+		A31BF0557E09D5087AED9CA0E1DD81A1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				91CF046BD656BC4ABD14C3918F2392C6 /* MBAddressElement.swift */,
-				6BD3D9335EAEFADB7A20D8ADB47B8697 /* MBApiManager.swift */,
-				526E3D89B027DBD67792081231FD0D2D /* MBAuth.swift */,
-				88BFB2323DBA45BAD0AA17F8987785B6 /* MBAuthContractAcceptanceParameter.swift */,
-				F659B2890298363CF6BE10C85D2A989B /* MBBlock.swift */,
-				CCAF69DDBD665748E5F46C7FF199EE75 /* MBCheckboxElement.swift */,
-				09E9684954110CF3D3618BEF067A036C /* MBClient.swift */,
-				4776BD3B44F821B9412A78EF658EBB40 /* MBColorElement.swift */,
-				8FE1266995B64DB32B594E5F8C1DB97D /* MBDateElement.swift */,
-				4C623FDF7471E5E4AAE27B1419D1F6B4 /* MBDecodable.swift */,
-				FBC49B4535EA6C29DA7D898FCD4439C5 /* MBDecoder.swift */,
-				F30DE56980BB677D2F77663E73F4F77A /* MBDropdownElement.swift */,
-				362AAB603FE442B17A021610A25627CA /* MBElement.swift */,
-				3C39825CBD50A5A68B992FB84FED9595 /* MBElementFactory.swift */,
-				F0410A8232781DAD918B61FA0D0B6221 /* MBElementProtocol.swift */,
-				C1092F2BE5C8726BCA0B3CB5EB7EA966 /* MBFile.swift */,
-				466FC35CF9ACF62EB336C9FBBB7EE77C /* MBFilterParameter.swift */,
-				940176E29D254C8A5E11973B11F9B3B8 /* MBGeneralElement.swift */,
-				C7E12E72489E05E42240E4A46609D2EB /* MBGeneralParameter.swift */,
-				407F5FB4206DA61A18DC514E003EE506 /* MBGeofenceParameter.swift */,
-				A158243AB0E13B63405F3D4755905D55 /* MBImagesElement.swift */,
-				3ED0AE30A32E4CFED090844C2167C9FA /* MBLegalContract.swift */,
-				839E6BDFDC8E3FB1D4082B9AB04E1BD8 /* MBManager.swift */,
-				A4F68A3B612352E3DA750E0E0C9EDAED /* MBMarkdownElement.swift */,
-				FE41FA5CB26A60E3ECD671E2ECE7EDE8 /* MBMediaElement.swift */,
-				020CB461D91C36B5E2D2F7D43685055D /* MBMultipleElement.swift */,
-				06D587FCED16D2BB2F481A2E8347E374 /* MBPaginationInfo.swift */,
-				A7AF3DADFE87B9C224EFFA77A5D1A716 /* MBPaginationParameter.swift */,
-				DA72F26A997526EB38E9CA95A2D45D6B /* MBParameter.swift */,
-				D87BBEC84EB9C708C202274F0B7D0EE6 /* MBPlugin.swift */,
-				DECE3DF8B998DB26E4A4714432500849 /* MBPluginsManager.swift */,
-				F0F2B90BC1C92CEECC77502CE72AEC4C /* MBPollElement.swift */,
-				4611C6B03F8AEBF44094FAA8F34F7CA8 /* MBProject.swift */,
-				72EBF2B67DDE136B61B4631DD0A6A3EF /* MBRelationElement.swift */,
-				9EDCF331CE55CC03D88990BCD3A3BBA4 /* MBSection.swift */,
-				1E2145805E41FA88B2ADCAD65D0D6E7C /* MBSortParameter.swift */,
-				F4E45A145AE9304766F3FB9C4F867B14 /* MBTextElement.swift */,
-				83C2BBD739ECC7B2A9A292A93946D7A3 /* MBurgerSwift.h */,
-				B84C76889FC72AEE6B476146F60C1DA3 /* MBurgerTokenKeychain.swift */,
-				4C9A699CC430D429787D44B5087FCF19 /* MBUser.swift */,
-				1712C8C4BA1101DC6E184720959B65D6 /* MBUserContractStatus.swift */,
-				275F74A91068139BBECE99A2D3AADEF3 /* MBUserPublishedSection.swift */,
-				6485249FF4F3E54CBEEF898BABB7A563 /* MBUtilities.swift */,
-				998B794C0F8325E7A4F47845059C03F9 /* Support Files */,
-			);
-			name = MBurgerSwift;
-			path = MBurgerSwift;
-			sourceTree = "<group>";
-		};
-		998B794C0F8325E7A4F47845059C03F9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB82C7ADAF983AADE106493B171A278D /* MBurgerSwift.modulemap */,
-				21E202616F19062941540B631CEA32B3 /* MBurgerSwift-dummy.m */,
-				D0B08A20C174FE7132C7FAE8A2C2016E /* MBurgerSwift-Info.plist */,
-				1C3A914D28F0B8953C2802A970630A5D /* MBurgerSwift-prefix.pch */,
-				9AFA1E309F5EC89948647D0E526C25D1 /* MBurgerSwift-umbrella.h */,
-				634A862BC4518B43F6D665CBA3DD2153 /* MBurgerSwift.debug.xcconfig */,
-				29E984667C1187B44A5D1EBF2D26B905 /* MBurgerSwift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MBurgerSwift";
-			sourceTree = "<group>";
-		};
-		A20DCB91513E3AE1FAA22BBE6F6F5094 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				487A2C4CA64745B8D0E5B359CBCDFF75 /* MPushSwift.modulemap */,
-				554F9E990097F6CE95EAE4EFB4284C2B /* MPushSwift-dummy.m */,
-				1B90FB706B875CBD62B5A988576BF69F /* MPushSwift-Info.plist */,
-				C50036EB230A782848BBC3F0DA8DE15A /* MPushSwift-prefix.pch */,
-				95F3973B8AD9680C857043C839DC0091 /* MPushSwift-umbrella.h */,
-				51F4B3E0F96BAE3E0AC6E26EBBCF79EB /* MPushSwift.debug.xcconfig */,
-				602F31AF808D13FFF0B076FE7DA6E151 /* MPushSwift.release.xcconfig */,
+				67667411A238ED32A0C7734CAC9ECCC4 /* MPushSwift.modulemap */,
+				FC510ED680D42DF79DAFE5ADEB5A5BCD /* MPushSwift-dummy.m */,
+				A9204EE87BDBC6752B6E9AECE3E92EC3 /* MPushSwift-Info.plist */,
+				344030F37934FDF7B992C3E1BF6F59D5 /* MPushSwift-prefix.pch */,
+				45AAFAE659918F368FACA017B88E9CC3 /* MPushSwift-umbrella.h */,
+				7488F3F195BB05EF7E783D6B2773A5F7 /* MPushSwift.debug.xcconfig */,
+				6C338074E9F729FA43F3D0B1B19D9578 /* MPushSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MPushSwift";
@@ -447,20 +410,64 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				A5EE15D26FA64077DEC43DCB9C4E2B4A /* Frameworks */,
-				179EFF3D7968B51F80C09AB72A40574C /* Pods */,
+				F0BEC6170647F25D3E46DED364970567 /* Pods */,
 				78C60FB2748031E0760662F5CB5EF06F /* Products */,
 				009C9ECF10B776A7C9A03F6D27219F7D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
+		E73A1F1A32DC928D0540A0C5078B5BCD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				43953783B76B1A2BE11D98BB4241245B /* MBNetworkingSwift.modulemap */,
+				02D6CB90FB2130A5FBC91B47F139DE61 /* MBNetworkingSwift-dummy.m */,
+				DD079922597E5913E2D00B3A68BBD485 /* MBNetworkingSwift-Info.plist */,
+				D6A8ABDCD4999437E65846C3D94FF241 /* MBNetworkingSwift-prefix.pch */,
+				36F00A8518CC67173EF13F359BCA5746 /* MBNetworkingSwift-umbrella.h */,
+				65C7DF905B7B20F91C68D833E75F7339 /* MBNetworkingSwift.debug.xcconfig */,
+				2CA0409E24D9D00BC355873EEC4062DD /* MBNetworkingSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBNetworkingSwift";
+			sourceTree = "<group>";
+		};
+		F00E49C0BE653ADAACA1855421B17C37 /* MBNetworkingSwift */ = {
+			isa = PBXGroup;
+			children = (
+				1550896C2A56C591E58B2F34E8E4E97B /* MBError.swift */,
+				4655EF9F2F2C8343D2CBC5853A0F35A7 /* MBMulitpartFormData.swift */,
+				203EB0ECA3B3D61C1BD77B8AD7918B99 /* MBNetworking.h */,
+				0854B5F036F282A5869BAAAC2AB79DC5 /* MBNetworking.swift */,
+				C5D6C154DF77D2B40C3CB0E6DC2D5118 /* MBParameters.swift */,
+				2256C96DE88B7B010A3E477B0E48FC95 /* MBRequest.swift */,
+				256E1524643F2D792039BA2FFFB80E20 /* MBResponse.swift */,
+				0184FFC135CC94F23FEFDC965E5FE31B /* MBResult.swift */,
+				DF893736DB69C0D91BD8D84BA30954C2 /* MBValidation.swift */,
+				E73A1F1A32DC928D0540A0C5078B5BCD /* Support Files */,
+			);
+			name = MBNetworkingSwift;
+			path = MBNetworkingSwift;
+			sourceTree = "<group>";
+		};
+		F0BEC6170647F25D3E46DED364970567 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F00E49C0BE653ADAACA1855421B17C37 /* MBNetworkingSwift */,
+				43D5338C0B852C050F53F08CACB27801 /* MBurgerSwift */,
+				5488DDB20DE001D68AEECCB4C64E32F0 /* MPushSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4F288F0C40CE0495AA8A7887CF59D42E /* Headers */ = {
+		878332D82EED10E6FA04A98D9EB4809F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB79F0F3FBB517F7D24D7E0B9659CB20 /* MPushSwift-umbrella.h in Headers */,
+				1656341E1761549AE644A1A311074331 /* MPush.h in Headers */,
+				C78E8166C167F654AE6D5F9CF5F2E36A /* MPushSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,9 +512,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				60199147879409A815890B8ABF07636D /* PBXTargetDependency */,
-				44E3BC2C4CCFBEFF00E26D6F17740EFE /* PBXTargetDependency */,
-				2051B879E9477CF605740D9CF112EEE3 /* PBXTargetDependency */,
+				A14855D0F0A9125CD46E1B58A44A33DC /* PBXTargetDependency */,
+				722F3DA570D5504A8EB5386971DC763B /* PBXTargetDependency */,
+				E25C427068F787A06791BF1A1294C9DC /* PBXTargetDependency */,
 			);
 			name = "Pods-MBMessagesSwift";
 			productName = "Pods-MBMessagesSwift";
@@ -544,7 +551,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A030AB28EF58445A1CFF1FA0B51FE444 /* PBXTargetDependency */,
+				69006DE13D83F0A09249857481979E7D /* PBXTargetDependency */,
 			);
 			name = MBurgerSwift;
 			productName = MBurgerSwift;
@@ -553,17 +560,17 @@
 		};
 		B3310AD0ED71B4A2AEEDD2E369174609 /* MPushSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EFD66F5B223298065621552C8E477DD7 /* Build configuration list for PBXNativeTarget "MPushSwift" */;
+			buildConfigurationList = DEA151D4B885806394A911683F9A93AF /* Build configuration list for PBXNativeTarget "MPushSwift" */;
 			buildPhases = (
-				4F288F0C40CE0495AA8A7887CF59D42E /* Headers */,
-				203E6C830891F159B79261B5D9CAB42D /* Sources */,
-				17011B7BAD021DFBFA095F319F8B8CFB /* Frameworks */,
-				6BA0B58415895CEBC7A80DE389E7F446 /* Resources */,
+				878332D82EED10E6FA04A98D9EB4809F /* Headers */,
+				6E94ED55EEFD4485CACFFF1F2FB4044F /* Sources */,
+				767228F4729920FD4C51B5A165F8E071 /* Frameworks */,
+				D723524DC4A692BABB206F4A8886329B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D53D821026C4B1C80B4A54FB6BAD3E5E /* PBXTargetDependency */,
+				A073D9DB3228E911B5B50AF127FF9642 /* PBXTargetDependency */,
 			);
 			name = MPushSwift;
 			productName = MPushSwift;
@@ -608,13 +615,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BA0B58415895CEBC7A80DE389E7F446 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		76493CFA29B1E37857B0F12087B77815 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,6 +623,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CB12334972A8CA9B1CCF3F2434A4EA64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D723524DC4A692BABB206F4A8886329B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,13 +689,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		203E6C830891F159B79261B5D9CAB42D /* Sources */ = {
+		6E94ED55EEFD4485CACFFF1F2FB4044F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC21E73156706D4442DDE5ADFC8460F /* MPush.swift in Sources */,
-				3C1C1EC8A3874F151943E45C5CBCFC4B /* MPushApiManager.swift in Sources */,
-				49E562F0EC836EFABE06965AB01D68F8 /* MPushSwift-dummy.m in Sources */,
+				C908B67708CFBD5D7A938D6FF672E730 /* MPTopic.swift in Sources */,
+				A9FE5A2A5C54207F220F09837E3A1767 /* MPush.swift in Sources */,
+				844E2BED23F89AAEBF1E788731E57732 /* MPushApiManager.swift in Sources */,
+				47F5466596344E190292DC02128C49E7 /* MPushSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,35 +727,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2051B879E9477CF605740D9CF112EEE3 /* PBXTargetDependency */ = {
+		69006DE13D83F0A09249857481979E7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MPushSwift;
-			target = B3310AD0ED71B4A2AEEDD2E369174609 /* MPushSwift */;
-			targetProxy = C91DB0E7EC02EDE8E708285448BC9F83 /* PBXContainerItemProxy */;
+			name = MBNetworkingSwift;
+			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
+			targetProxy = 84A815513E0A047A1E7C4E61BAA8B2DD /* PBXContainerItemProxy */;
 		};
-		44E3BC2C4CCFBEFF00E26D6F17740EFE /* PBXTargetDependency */ = {
+		722F3DA570D5504A8EB5386971DC763B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBurgerSwift;
 			target = 8DBD1EB833A242D1B4C867B0058BA435 /* MBurgerSwift */;
-			targetProxy = 11D5462724DFBA220476A23101E7715E /* PBXContainerItemProxy */;
+			targetProxy = 1850DDE8AB84113853AB0886E7932CFF /* PBXContainerItemProxy */;
 		};
-		60199147879409A815890B8ABF07636D /* PBXTargetDependency */ = {
+		A073D9DB3228E911B5B50AF127FF9642 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBNetworkingSwift;
 			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
-			targetProxy = C34780F8699FD6755EB597F4779181E7 /* PBXContainerItemProxy */;
+			targetProxy = C99C83832B9199AFB428E3A35BD435DB /* PBXContainerItemProxy */;
 		};
-		A030AB28EF58445A1CFF1FA0B51FE444 /* PBXTargetDependency */ = {
+		A14855D0F0A9125CD46E1B58A44A33DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MBNetworkingSwift;
 			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
-			targetProxy = 54EDCDF598CB6D1CBEB3C122564527AC /* PBXContainerItemProxy */;
+			targetProxy = D2D40814D438EE0D2C26BCB8950BF776 /* PBXContainerItemProxy */;
 		};
-		D53D821026C4B1C80B4A54FB6BAD3E5E /* PBXTargetDependency */ = {
+		E25C427068F787A06791BF1A1294C9DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBNetworkingSwift;
-			target = 761641A2390A4CA7AEB55C51CA789C90 /* MBNetworkingSwift */;
-			targetProxy = 89B435706957D1ED65AF317B3D2C26B8 /* PBXContainerItemProxy */;
+			name = MPushSwift;
+			target = B3310AD0ED71B4A2AEEDD2E369174609 /* MPushSwift */;
+			targetProxy = 8F26B10C46B8C0DEB2C5545E6DF18FA9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -889,9 +897,9 @@
 			};
 			name = Debug;
 		};
-		B54FB38008D4F93211AB77B5831D860A /* Debug */ = {
+		46386FEC07451756F35D6A7598CC7F73 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51F4B3E0F96BAE3E0AC6E26EBBCF79EB /* MPushSwift.debug.xcconfig */;
+			baseConfigurationReference = 7488F3F195BB05EF7E783D6B2773A5F7 /* MPushSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -925,9 +933,46 @@
 			};
 			name = Debug;
 		};
+		74C29006352E11A3F36F036F284D2A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C338074E9F729FA43F3D0B1B19D9578 /* MPushSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MPushSwift/MPushSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MPushSwift/MPushSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MPushSwift/MPushSwift.modulemap";
+				PRODUCT_MODULE_NAME = MPushSwift;
+				PRODUCT_NAME = MPushSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D172623500ECEB5D944902B2E0BBB01F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29E984667C1187B44A5D1EBF2D26B905 /* MBurgerSwift.release.xcconfig */;
+			baseConfigurationReference = FBF680BC5817DEEB961876BF9228C66E /* MBurgerSwift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1028,7 +1073,7 @@
 		};
 		DF59BDC136BCCCF80A4520C91109D1B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9192FEEC1AD36C84EEF53FBC77116F36 /* MBNetworkingSwift.debug.xcconfig */;
+			baseConfigurationReference = 65C7DF905B7B20F91C68D833E75F7339 /* MBNetworkingSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1064,7 +1109,7 @@
 		};
 		F4AD809B9DAB08806924433FE480E99C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EBD6EF97277E1B8BF6D1AAB25A2755E /* MBNetworkingSwift.release.xcconfig */;
+			baseConfigurationReference = 2CA0409E24D9D00BC355873EEC4062DD /* MBNetworkingSwift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1099,46 +1144,9 @@
 			};
 			name = Release;
 		};
-		F57A023BF03AEA780A29B52DBEA54E29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 602F31AF808D13FFF0B076FE7DA6E151 /* MPushSwift.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MPushSwift/MPushSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MPushSwift/MPushSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MPushSwift/MPushSwift.modulemap";
-				PRODUCT_MODULE_NAME = MPushSwift;
-				PRODUCT_NAME = MPushSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F64CBBB2DAE5C1DA765D5DC5ED17B001 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 634A862BC4518B43F6D665CBA3DD2153 /* MBurgerSwift.debug.xcconfig */;
+			baseConfigurationReference = E67F64485417C1885D775C61AB96187E /* MBurgerSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1202,20 +1210,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DEA151D4B885806394A911683F9A93AF /* Build configuration list for PBXNativeTarget "MPushSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46386FEC07451756F35D6A7598CC7F73 /* Debug */,
+				74C29006352E11A3F36F036F284D2A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E8415ECE043FD0E14A16BAA5C2663BD4 /* Build configuration list for PBXNativeTarget "MBNetworkingSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DF59BDC136BCCCF80A4520C91109D1B7 /* Debug */,
 				F4AD809B9DAB08806924433FE480E99C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EFD66F5B223298065621552C8E477DD7 /* Build configuration list for PBXNativeTarget "MPushSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B54FB38008D4F93211AB77B5831D860A /* Debug */,
-				F57A023BF03AEA780A29B52DBEA54E29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
