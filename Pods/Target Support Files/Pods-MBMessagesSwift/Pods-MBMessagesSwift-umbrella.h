@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MBMessagesVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MBMessagesVersionString[];
+FOUNDATION_EXPORT double Pods_MBMessagesSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MBMessagesSwiftVersionString[];
 

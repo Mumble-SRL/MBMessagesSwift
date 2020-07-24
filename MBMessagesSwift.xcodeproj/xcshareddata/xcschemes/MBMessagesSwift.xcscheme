@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ECC824002450817F00578A96"
-               BuildableName = "MBMessages.framework"
-               BlueprintName = "MBMessages"
-               ReferencedContainer = "container:MBMessages.xcodeproj">
+               BuildableName = "MBMessagesSwift.framework"
+               BlueprintName = "MBMessagesSwift"
+               ReferencedContainer = "container:MBMessagesSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ECC824002450817F00578A96"
-            BuildableName = "MBMessages.framework"
-            BlueprintName = "MBMessages"
-            ReferencedContainer = "container:MBMessages.xcodeproj">
+            BuildableName = "MBMessagesSwift.framework"
+            BlueprintName = "MBMessagesSwift"
+            ReferencedContainer = "container:MBMessagesSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

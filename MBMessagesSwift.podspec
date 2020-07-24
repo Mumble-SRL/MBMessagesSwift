@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBMessagesSwift"
-  s.version      = "0.1.2"
+  s.version      = "0.1.4"
   s.summary      = "MBurger messages plugin."
   s.swift_version = '4.2'
   # This description is used to generate tags and improve search results.
@@ -77,8 +77,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBMessagesSwift.git', tag: '0.1.2' }
-  s.source_files = "MBMessages/*.{h,m,swift}", "MBMessages/**/*.{h,m,swift}"
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBMessagesSwift.git', tag: '0.1.4' }
+  s.source_files = "MBMessagesSwift/*.{h,m,swift}", "MBMessagesSwift/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

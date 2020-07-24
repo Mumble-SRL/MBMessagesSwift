@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4928253D2BC8129E964D2D04 /* Pods_MBMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810CFE60D1934B17DBD63161 /* Pods_MBMessages.framework */; };
+		9D68C68C4BF0A14770DE7956 /* Pods_MBMessagesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401D8150D0580E5F7C61E221 /* Pods_MBMessagesSwift.framework */; };
 		ECC824052450817F00578A96 /* MBMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC824032450817F00578A96 /* MBMessages.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC8240E2450819200578A96 /* MBMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBMessages.swift */; };
 		ECC8240F2450828900578A96 /* MBInAppMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */; };
@@ -27,9 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17AE5B94928B12BA99B3895E /* Pods-MBMessagesSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMessagesSwift.debug.xcconfig"; path = "Target Support Files/Pods-MBMessagesSwift/Pods-MBMessagesSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		3178060CA87F39560325840A /* Pods-MBMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMessages.release.xcconfig"; path = "Target Support Files/Pods-MBMessages/Pods-MBMessages.release.xcconfig"; sourceTree = "<group>"; };
+		401D8150D0580E5F7C61E221 /* Pods_MBMessagesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBMessagesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		423637DCA248C276020CE8D4 /* Pods-MBMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMessages.debug.xcconfig"; path = "Target Support Files/Pods-MBMessages/Pods-MBMessages.debug.xcconfig"; sourceTree = "<group>"; };
-		810CFE60D1934B17DBD63161 /* Pods_MBMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1738E9FE21D28BB2031C693 /* Pods-MBMessagesSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMessagesSwift.release.xcconfig"; path = "Target Support Files/Pods-MBMessagesSwift/Pods-MBMessagesSwift.release.xcconfig"; sourceTree = "<group>"; };
 		EC036994244DEBC000220F2F /* MBMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessages.swift; sourceTree = "<group>"; };
 		EC0F42A1242113E600A3130A /* MBInAppMessageViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageViewStyle.swift; sourceTree = "<group>"; };
 		EC1286AF244F2EB9005A4005 /* MBPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBPush.swift; sourceTree = "<group>"; };
@@ -41,7 +43,7 @@
 		EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageImageLoader.swift; sourceTree = "<group>"; };
 		EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBottomBannerView.swift; sourceTree = "<group>"; };
 		ECC823D42450436000578A96 /* MBMessageMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessageMetrics.swift; sourceTree = "<group>"; };
-		ECC824012450817F00578A96 /* MBMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC824012450817F00578A96 /* MBMessagesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBMessagesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC824032450817F00578A96 /* MBMessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMessages.h; sourceTree = "<group>"; };
 		ECC824042450817F00578A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECCE5249242103C7001DB16C /* MBInAppMessageCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageCenterView.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4928253D2BC8129E964D2D04 /* Pods_MBMessages.framework in Frameworks */,
+				9D68C68C4BF0A14770DE7956 /* Pods_MBMessagesSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +67,7 @@
 		7BFCB2B5648F4278BBE5870B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				810CFE60D1934B17DBD63161 /* Pods_MBMessages.framework */,
+				401D8150D0580E5F7C61E221 /* Pods_MBMessagesSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +77,8 @@
 			children = (
 				423637DCA248C276020CE8D4 /* Pods-MBMessages.debug.xcconfig */,
 				3178060CA87F39560325840A /* Pods-MBMessages.release.xcconfig */,
+				17AE5B94928B12BA99B3895E /* Pods-MBMessagesSwift.debug.xcconfig */,
+				B1738E9FE21D28BB2031C693 /* Pods-MBMessagesSwift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -125,7 +129,7 @@
 		EC937C4D2420C8E2001B8AA1 = {
 			isa = PBXGroup;
 			children = (
-				ECC824022450817F00578A96 /* MBMessages */,
+				ECC824022450817F00578A96 /* MBMessagesSwift */,
 				EC937C572420C8E2001B8AA1 /* Products */,
 				84D48EBDD0D49E79717D68CD /* Pods */,
 				7BFCB2B5648F4278BBE5870B /* Frameworks */,
@@ -135,7 +139,7 @@
 		EC937C572420C8E2001B8AA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ECC824012450817F00578A96 /* MBMessages.framework */,
+				ECC824012450817F00578A96 /* MBMessagesSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,7 +165,7 @@
 			path = Metrics;
 			sourceTree = "<group>";
 		};
-		ECC824022450817F00578A96 /* MBMessages */ = {
+		ECC824022450817F00578A96 /* MBMessagesSwift */ = {
 			isa = PBXGroup;
 			children = (
 				ECC824032450817F00578A96 /* MBMessages.h */,
@@ -172,7 +176,7 @@
 				EC1286AE244F2EA7005A4005 /* Push Notifications */,
 				ECC823D3245042AD00578A96 /* Metrics */,
 			);
-			path = MBMessages;
+			path = MBMessagesSwift;
 			sourceTree = "<group>";
 		};
 		ECCE5248242103A9001DB16C /* Banner */ = {
@@ -199,9 +203,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ECC824002450817F00578A96 /* MBMessages */ = {
+		ECC824002450817F00578A96 /* MBMessagesSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECC8240D2450817F00578A96 /* Build configuration list for PBXNativeTarget "MBMessages" */;
+			buildConfigurationList = ECC8240D2450817F00578A96 /* Build configuration list for PBXNativeTarget "MBMessagesSwift" */;
 			buildPhases = (
 				353209C8E27D0E39E621171C /* [CP] Check Pods Manifest.lock */,
 				ECC823FC2450817F00578A96 /* Headers */,
@@ -214,9 +218,9 @@
 			);
 			dependencies = (
 			);
-			name = MBMessages;
+			name = MBMessagesSwift;
 			productName = MBMessagesSwift;
-			productReference = ECC824012450817F00578A96 /* MBMessages.framework */;
+			productReference = ECC824012450817F00578A96 /* MBMessagesSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessages" */;
+			buildConfigurationList = EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessagesSwift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -247,7 +251,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ECC824002450817F00578A96 /* MBMessages */,
+				ECC824002450817F00578A96 /* MBMessagesSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -278,7 +282,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MBMessages-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MBMessagesSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,7 +451,7 @@
 		};
 		ECC8240B2450817F00578A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 423637DCA248C276020CE8D4 /* Pods-MBMessages.debug.xcconfig */;
+			baseConfigurationReference = 17AE5B94928B12BA99B3895E /* Pods-MBMessagesSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -456,7 +460,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MBMessages/Info.plist;
+				INFOPLIST_FILE = MBMessagesSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +469,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.MBMessagesSwift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = MBMessagesSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -477,7 +481,7 @@
 		};
 		ECC8240C2450817F00578A96 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3178060CA87F39560325840A /* Pods-MBMessages.release.xcconfig */;
+			baseConfigurationReference = B1738E9FE21D28BB2031C693 /* Pods-MBMessagesSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -486,7 +490,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MBMessages/Info.plist;
+				INFOPLIST_FILE = MBMessagesSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,7 +499,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.MBMessagesSwift;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = MBMessagesSwift;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -508,7 +512,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessages" */ = {
+		EC937C512420C8E2001B8AA1 /* Build configuration list for PBXProject "MBMessagesSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC937C682420C8E4001B8AA1 /* Debug */,
@@ -517,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECC8240D2450817F00578A96 /* Build configuration list for PBXNativeTarget "MBMessages" */ = {
+		ECC8240D2450817F00578A96 /* Build configuration list for PBXNativeTarget "MBMessagesSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECC8240B2450817F00578A96 /* Debug */,
