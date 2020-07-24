@@ -64,7 +64,6 @@ public class MBInAppMessage: NSObject {
     public let buttons: [MBInAppMessageButton]?
     
     /// Initializes a message with the parameters passed
-    //TODO: remove
     public init(id: Int,
                 style: MBInAppMessageStyle!,
                 duration: TimeInterval? = 5,

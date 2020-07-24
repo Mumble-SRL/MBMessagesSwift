@@ -10,9 +10,13 @@ import UIKit
 
 /// The type of message, in-app message or push
 @objc public enum MessageType: Int {
+    /// An in-app message
     case inAppMessage
+    
+    /// A push message
     case push
     
+    /// Converts a string, tipically coming from the api, to a `MessageType`
     static func messageType(fromString messageTypeString: String) -> MessageType {
         if messageTypeString == "inApp" {
             return .inAppMessage

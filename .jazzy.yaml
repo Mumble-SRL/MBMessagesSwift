@@ -1,16 +1,16 @@
 clean: true
 objc: false
 readme: Readme.md
-framework_root: MBMessages
-module: MBMessages
+framework_root: MBMessagesSwift
+module: MBMessagesSwift
 module_version: 0.1
 sdk: iphonesimulator
 
 xcodebuild_arguments:
     - "-workspace"
-    - "MBMessages.xcworkspace"
+    - "MBMessagesSwift.xcworkspace"
     - "-scheme"
-    - "MBMessages"
+    - "MBMessagesSwift"
 
 author: Mumble
 author_url: https://mumbleideas.it/

@@ -269,3 +269,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 # Message Metrics
 
 Using `MBMessagesSwift` gives you also the chanche to collect informations about your user and the push, those will be displyed on the [MBurger](https://mburger.cloud) dashboard. As described in the prervious paragraph, in order for this to function, you have to tell `MBMessagesSwift` that a push has arrived, if you've already done it in the step above you're fine, otherwise you need to add `MBMessages.userNotificationCenter(willPresent: notification)` and `MBMessages.userNotificationCenter(didReceive: response)` to your `UNUserNotificationCenterDelegate` class.
+
+# Automation
+
+If messages have automation enabled they will be ignored and managed by the [MBAutomationSwift SDK](https://github.com/Mumble-SRL/MBAutomationSwift.git) so make sure to include and configure the automation SDK correctly.
