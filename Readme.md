@@ -1,6 +1,8 @@
-![Test Status](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)
-![License: MIT](https://img.shields.io/badge/pod-v1.0.2-blue.svg)
-[![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)](https://github.com/Mumble-SRL/MBMessagesSwift/tree/master/docs)
+[![](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager/)
+[![CocoaPods](https://img.shields.io/badge/pod-v0.1.4-blue.svg)](https://cocoapods.org)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # MBMessagesSwift
 
@@ -66,7 +68,7 @@ Note that `MBMessagesSwift` has `MBurgerSwift (1.0.8)` and `MPushSwift (0.2.13)`
 
 # Initialization
 
-To initialize the SDK you have to add `MBMessages` to the array of plugins of `MBurger`.
+To initialize the SDK you have to add `MBMessagesSwift` to the array of plugins of `MBurger`.
 
 ```swift
 import MBurgerSwift
