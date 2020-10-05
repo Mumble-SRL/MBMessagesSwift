@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-  s.frameworks = "SafariServices"
+  s.frameworks = "SafariServices", "UserNotifications"
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
@@ -123,5 +123,16 @@ Pod::Spec.new do |s|
 
   s.dependency "MBurgerSwift"
   s.dependency "MPushSwift"
+
+  s.subspec 'NotificationService' do |ext|
+    ext.source_files = [
+      "MBMessagesSwift/*.{h,m,swift}",
+      "MBMessagesSwift/**/*.{h,m,swift}"
+    ]
+
+    ext.exclude_files = [
+      "MBMessagesSwift/In App Messages/*.{h,m,swift}"
+    ]
+  end
 
 end

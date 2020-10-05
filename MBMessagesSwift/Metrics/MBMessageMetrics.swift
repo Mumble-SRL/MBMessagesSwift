@@ -32,6 +32,12 @@ class MBMessageMetrics: NSObject {
         }
     }
     
+    static func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+        if let userInfo = request.content.userInfo as? [String: AnyHashable] {
+            checkNotificationPayload(userInfo: userInfo, forMetric: .view, completionBlock: {})
+        }
+    }
+    
     static func userNotificationCenter(willPresent notification: UNNotification) {
         if let userInfo = notification.request.content.userInfo as? [String: AnyHashable] {
             checkNotificationPayload(userInfo: userInfo, forMetric: .view, completionBlock: {})

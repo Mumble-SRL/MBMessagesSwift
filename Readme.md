@@ -223,13 +223,13 @@ MBMessages.registerDeviceToPush(deviceToken: deviceToken, success: {
 })
 ```
 
-MBurger hsa 2 default topics that you should use in order to guarantee the correct functtionality of the engagement platform:
+MBurger has 2 default topics that you should use in order to guarantee the correct functtionality of the engagement platform:
 
 * `MBMessages.projectPushTopic`: this topic represents all devices registred to push notifications for this project
 * `MBMessages.devicePushTopic`: this topic represents the current device
 
 ```swift
-MBMessages.registerPushMessages(toTopics:[MBMessages.mburgerPushTopic,
+MBMessages.registerPushMessages(toTopics:[MBMessages.projectPushTopic,
                                           MBMessages.devicePushTopic,
                                           MBPTopic("OTHER_TOPIC")])
 ```
