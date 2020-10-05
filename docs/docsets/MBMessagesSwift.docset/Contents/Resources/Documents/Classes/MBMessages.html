@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           MBMessagesSwift 0.1 Docs
         </a>
-         (100% documented)
+         (99% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -117,6 +117,9 @@
                 <a class="nav-group-task-link" href="../Classes/MBMessage.html">MBMessage</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBPush.html">MBPush</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBPushMessage.html">MBPushMessage</a>
               </li>
             </ul>
@@ -185,7 +188,7 @@ You will also need to add this line if you want to start the messages fetch at s
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBMessagesDelegate.html">MBMessagesDelegate</a></span></code></pre>
 
                         </div>
                       </div>
@@ -214,7 +217,7 @@ the pressing of the buttons.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">viewDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">viewDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span></code></pre>
 
                         </div>
                       </div>
@@ -242,7 +245,7 @@ the pressing of the buttons.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span></code></pre>
 
                         </div>
                       </div>
@@ -307,9 +310,9 @@ The default is 1 second.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15MBMessagesSwift0A0C8delegate12viewDelegate05styleE013messagesDelay5debugAcA0aE0_pSg_AA018MBInAppMessageViewE0_pSgAA0jklm5StyleE0_pSgSdSbtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(delegate:viewDelegate:styleDelegate:messagesDelay:debug:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15MBMessagesSwift0A0C8delegate12viewDelegate05styleE013messagesDelay5debugAcA0aE0_pSg_AA018MBInAppMessageViewE0_pSgAA0jklm5StyleE0_pSgSdSbtcfc">init(delegate:<wbr>viewDelegate:<wbr>styleDelegate:<wbr>messagesDelay:<wbr>debug:<wbr>)</a>
+                    <a name="/s:15MBMessagesSwift0A0C8delegate12viewDelegate05styleE013messagesDelay35automaticallyCheckMessagesAtStartup5debugAcA0aE0_pSg_AA018MBInAppMessageViewE0_pSgAA0opqr5StyleE0_pSgSdS2btcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(delegate:viewDelegate:styleDelegate:messagesDelay:automaticallyCheckMessagesAtStartup:debug:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift0A0C8delegate12viewDelegate05styleE013messagesDelay35automaticallyCheckMessagesAtStartup5debugAcA0aE0_pSg_AA018MBInAppMessageViewE0_pSgAA0opqr5StyleE0_pSgSdS2btcfc">init(delegate:<wbr>viewDelegate:<wbr>styleDelegate:<wbr>messagesDelay:<wbr>automaticallyCheckMessagesAtStartup:<wbr>debug:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,6 +331,7 @@ The default is 1 second.</p>
             <span class="nv">viewDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewDelegate.html">MBInAppMessageViewDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
             <span class="nv">styleDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MBInAppMessageViewStyleDelegate.html">MBInAppMessageViewStyleDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
             <span class="nv">messagesDelay</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nv">automaticallyCheckMessagesAtStartup</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nv">debug</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -392,7 +396,19 @@ The default is 1 second.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>If this is true the plugin will show all the messages, even if they&rsquo;ve already been shoowed</p>
+                                  <p>If this is true the plugin will show all the messages, even if they&rsquo;ve already been showed</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>automaticallyCheckMessagesAtStartup</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If messages should be automatically checked at startup</p>
                                 </div>
                               </td>
                             </tr>
@@ -1226,7 +1242,7 @@ This function is used by the main MBurger SDK and should not be called.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-07-24)</p>
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-10-05)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
