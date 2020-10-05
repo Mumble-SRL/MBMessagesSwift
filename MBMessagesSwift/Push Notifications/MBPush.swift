@@ -11,7 +11,7 @@ import MPushSwift
 import UserNotifications
 
 /// Wrapper around MPush to access it from the messages plugin
-class MBPush: NSObject {
+public class MBPush: NSObject {
     static var pushToken: String {
         set {
             MPush.token = newValue
@@ -56,7 +56,7 @@ class MBPush: NSObject {
         MPush.unregisterFromAllTopics(success: success, failure: failure)
     }
     
-    static func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+    public static func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         MBMessageMetrics.didReceive(request, withContentHandler: contentHandler)
         let mutableContent = request.content.mutableCopy() as? UNMutableNotificationContent
         
