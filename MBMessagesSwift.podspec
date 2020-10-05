@@ -126,14 +126,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'NotificationService' do |ext|
     ext.source_files = [
-      "MBMessagesSwift/*.{h,m,swift}",
-      "MBMessagesSwift/**/*.{h,m,swift}"
+      "MBMessagesSwift/Push Notifications/*.{h,m,swift}",
+      "MBMessagesSwift/Metrics/*.{h,m,swift}",
     ]
 
-    ext.exclude_files = [
-      "MBMessagesSwift/In App Messages/*.{h,m,swift}",
-      "MBMessagesSwift/MBMessage/*.{h,m,swift}"
-    ]
+    ext.dependency "MBurgerSwift"
+    ext.dependency "MPushSwift"
+
+    ext.frameworks = "SafariServices", "UserNotifications"
   end
 
 end
