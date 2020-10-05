@@ -131,7 +131,8 @@ Pod::Spec.new do |s|
     ]
 
     ext.exclude_files = [
-      "MBMessagesSwift/In App Messages/*.{h,m,swift}"
+      "MBMessagesSwift/In App Messages/*.{h,m,swift}",
+      "MBMessagesSwift/MBMessage/*.{h,m,swift}"
     ]
   end
 
