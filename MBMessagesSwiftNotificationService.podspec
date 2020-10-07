@@ -17,13 +17,9 @@ Pod::Spec.new do |s|
 
   s.source       = { git: 'https://github.com/Mumble-SRL/MBMessagesSwift.git', tag: '0.2.1' }
   s.source_files = [
-    "MBMessagesSwift/Push Notifications/*.{h,m,swift}",
-    "MBMessagesSwift/Metrics/*.{h,m,swift}"
+    "MBMessagesSwift/Notification Service/*.{h,m,swift}"
   ]
 
-  s.frameworks = "SafariServices", "UserNotifications"
+  s.frameworks = "UserNotifications"
   s.requires_arc = true
-
-  s.dependency "MBurgerSwift"
-  s.dependency "MPushSwift"
 end

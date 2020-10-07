@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D68C68C4BF0A14770DE7956 /* Pods_MBMessagesSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401D8150D0580E5F7C61E221 /* Pods_MBMessagesSwift.framework */; };
+		ECAB7F29252DBFA3008F5CB3 /* MBMessagesSwiftNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB7F28252DBFA3008F5CB3 /* MBMessagesSwiftNotificationService.swift */; };
 		ECC824052450817F00578A96 /* MBMessagesSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC824032450817F00578A96 /* MBMessagesSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC8240E2450819200578A96 /* MBMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC036994244DEBC000220F2F /* MBMessages.swift */; };
 		ECC8240F2450828900578A96 /* MBInAppMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC937C6F2420CB33001B8AA1 /* MBInAppMessageManager.swift */; };
@@ -40,6 +41,7 @@
 		EC937C732420CE38001B8AA1 /* MBInAppMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageView.swift; sourceTree = "<group>"; };
 		EC937C752420D495001B8AA1 /* MBInAppMessageImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageImageLoader.swift; sourceTree = "<group>"; };
 		EC937C772420E001001B8AA1 /* MBInAppMessageBottomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBInAppMessageBottomBannerView.swift; sourceTree = "<group>"; };
+		ECAB7F28252DBFA3008F5CB3 /* MBMessagesSwiftNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessagesSwiftNotificationService.swift; sourceTree = "<group>"; };
 		ECC823D42450436000578A96 /* MBMessageMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBMessageMetrics.swift; sourceTree = "<group>"; };
 		ECC824012450817F00578A96 /* MBMessagesSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBMessagesSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC824032450817F00578A96 /* MBMessagesSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMessagesSwift.h; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ECAB7F27252DBF85008F5CB3 /* Notification Service */ = {
+			isa = PBXGroup;
+			children = (
+				ECAB7F28252DBFA3008F5CB3 /* MBMessagesSwiftNotificationService.swift */,
+			);
+			path = "Notification Service";
+			sourceTree = "<group>";
+		};
 		ECC823D3245042AD00578A96 /* Metrics */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 				EC1286A6244EF0DE005A4005 /* In App Messages */,
 				EC1286AE244F2EA7005A4005 /* Push Notifications */,
 				ECC823D3245042AD00578A96 /* Metrics */,
+				ECAB7F27252DBF85008F5CB3 /* Notification Service */,
 			);
 			path = MBMessagesSwift;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 				ECC824192450828900578A96 /* MBPush.swift in Sources */,
 				ECC8241A2450828900578A96 /* MBMessageMetrics.swift in Sources */,
 				ECC8240E2450819200578A96 /* MBMessages.swift in Sources */,
+				ECAB7F29252DBFA3008F5CB3 /* MBMessagesSwiftNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
