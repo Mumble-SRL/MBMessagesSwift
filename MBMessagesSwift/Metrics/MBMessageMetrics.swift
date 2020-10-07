@@ -57,7 +57,7 @@ class MBMessageMetrics: NSObject {
                                                   forMetric metric: MBMessageMetricsMetric,
                                                   completionBlock: @escaping () -> Void) {
         if let messageId = userInfo["message_id"] as? Int {
-            if metric == .interaction && !pushNotificationViewSent(notificationId: messageId) {
+            if metric == .interaction && !pushNotificationViewSent(messageId: messageId) {
                 createMessageMetricForPush(metric: .view, messageId: messageId, completionBlock: {
                     createMessageMetricForPush(metric: metric,
                                                messageId: messageId,
@@ -76,6 +76,9 @@ class MBMessageMetrics: NSObject {
     internal static func createMessageMetricForPush(metric: MBMessageMetricsMetric,
                                                     messageId: Int,
                                                     completionBlock: @escaping () -> Void) {
+        if metric == .view {
+            setPushNotificationViewShowed(messageId: messageId)
+        }
         createMessageMetric(metric: metric, messageId: messageId, success: {
             completionBlock()
         }, failure: { _ in
@@ -112,17 +115,17 @@ class MBMessageMetrics: NSObject {
         })
     }
     
-    private static func pushNotificationViewSent(notificationId: Int) -> Bool {
+    private static func pushNotificationViewSent(messageId: Int) -> Bool {
         let userDefaults = UserDefaults.standard
         let viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
-        return viewSentNotificationIds.contains(notificationId)
+        return viewSentNotificationIds.contains(messageId)
     }
     
-    private static func setPushNotificationViewShowed(notificationId: Int) {
+    private static func setPushNotificationViewShowed(messageId: Int) {
         let userDefaults = UserDefaults.standard
         var viewSentNotificationIds = userDefaults.object(forKey: pushNotificationViewedKey) as? [Int] ?? []
-        if !viewSentNotificationIds.contains(notificationId) {
-            viewSentNotificationIds.append(notificationId)
+        if !viewSentNotificationIds.contains(messageId) {
+            viewSentNotificationIds.append(messageId)
             UserDefaults.standard.set(viewSentNotificationIds, forKey: pushNotificationViewedKey)
         }
     }
