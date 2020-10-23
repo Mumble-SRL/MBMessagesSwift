@@ -57,6 +57,9 @@ import UIKit
     /// If automation is on for this message
     public let automationIsOn: Bool
 
+    /// The number of days to wait to show the message
+    public let sendAfterDays: Int
+    
     /// The triggers for the messages
     public var triggers: Any?
         
@@ -70,6 +73,7 @@ import UIKit
                 startDate: Date,
                 endDate: Date,
                 automationIsOn: Bool,
+                sendAfterDays: Int,
                 triggers: Any?) {
         self.id = id
         self.title = title
@@ -80,6 +84,7 @@ import UIKit
         self.startDate = startDate
         self.endDate = endDate
         self.automationIsOn = automationIsOn
+        self.sendAfterDays = sendAfterDays
         self.triggers = triggers
     }
     
@@ -113,6 +118,7 @@ import UIKit
         
         let triggers = dictionary["triggers"] as? [String: Any]
         
+        let sendAfterDays = dictionary["send_after_days"] as? Int ?? 0
         self.init(id: id,
                   title: title,
                   messageDescription: description,
@@ -122,6 +128,7 @@ import UIKit
                   startDate: startDate,
                   endDate: endDate,
                   automationIsOn: automationIsOn,
+                  sendAfterDays: sendAfterDays,
                   triggers: triggers)
     }
 }
