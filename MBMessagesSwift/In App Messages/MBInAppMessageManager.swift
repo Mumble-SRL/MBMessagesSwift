@@ -17,7 +17,7 @@ public class MBInAppMessageManager: NSObject {
     ///   - messages: The messages that needs to be presented
     ///   - delegate: The `MBInAppMessageViewDelegate` that will receive callbacks when messages are showed/hidden
     ///   - styleDelegate: The style delegate
-    ///   - ignoreShowedMessages: if this is true a message will be displayed event if it has already been displayed
+    ///   - ignoreShowedMessages: if this is true a message will be displayed even if it has already been displayed
     public static func presentMessages(_ messages: [MBMessage],
                                        delegate: MBInAppMessageViewDelegate? = nil,
                                        styleDelegate: MBInAppMessageViewStyleDelegate? = nil,

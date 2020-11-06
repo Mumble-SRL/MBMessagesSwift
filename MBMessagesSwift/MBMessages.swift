@@ -52,11 +52,13 @@ public class MBMessages: NSObject, MBPlugin {
     ///   - viewDelegate: The `MBInAppMessageViewDelegate` of the plugin. Use this to receive callbacks when `MBMessageView` instances are showed or when a button is pressed
     ///   - styleDelegate: The `MBInAppMessageViewStyleDelegate` of the plugin. Use this to customize colors and fonts of `MBMessageView` instances.
     ///   - messagesDelay: The delay applied before a `MBMessageView` is showed. Defaults to 1 second
-    ///   - debug: If this is true the plugin will show all the messages, even if they've already been shoowed
+    ///   - debug: If this is true the plugin will show all the messages, even if they've already been showed
+    ///   - automaticallyCheckMessagesAtStartup: If messages should be automatically checked at startup
     public init(delegate: MBMessagesDelegate? = nil,
                 viewDelegate: MBInAppMessageViewDelegate? = nil,
                 styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                 messagesDelay: TimeInterval = 1,
+                automaticallyCheckMessagesAtStartup: Bool = true,
                 debug: Bool = false) {
         super.init()
         self.delegate = delegate
@@ -64,7 +66,9 @@ public class MBMessages: NSObject, MBPlugin {
         self.styleDelegate = styleDelegate
         self.messagesDelay = messagesDelay
         self.debug = debug
-        performCheckMessages(fromStartup: true)
+        if automaticallyCheckMessagesAtStartup {
+            performCheckMessages(fromStartup: true)
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(checkMessages), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     

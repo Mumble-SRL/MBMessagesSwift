@@ -52,7 +52,7 @@ public class MBInAppMessage: NSObject {
     public let title: String?
     /// An optional color for the title, defaults to nil.
     public let titleColor: UIColor?
-    /// The boody of the message
+    /// The body of the message
     public let body: String!
     /// An optional color for the body, defaults to nil.
     public let bodyColor: UIColor?
@@ -168,7 +168,7 @@ public enum MBInAppMessageButtonLinkType: Int {
         switch string {
         case "link":
             return link
-        case "in_app":
+        case "in_app", "inapp":
             return inApp
         default:
             return link

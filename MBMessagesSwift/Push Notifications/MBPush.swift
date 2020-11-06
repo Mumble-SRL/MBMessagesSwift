@@ -8,9 +8,10 @@
 
 import UIKit
 import MPushSwift
+import UserNotifications
 
 /// Wrapper around MPush to access it from the messages plugin
-class MBPush: NSObject {
+public class MBPush: NSObject {
     static var pushToken: String {
         set {
             MPush.token = newValue

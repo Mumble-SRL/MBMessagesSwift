@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBInAppMessageViewBackgroundStyle Enumeration Reference</title>
+    <title>MBPush Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/MBInAppMessageViewBackgroundStyle" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/MBPush" class="dashAnchor"></a>
 
-    <a title="MBInAppMessageViewBackgroundStyle Enumeration Reference"></a>
+    <a title="MBPush Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MBMessagesSwift Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MBInAppMessageViewBackgroundStyle Enumeration Reference
+      MBPush Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -146,16 +146,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MBInAppMessageViewBackgroundStyle</h1>
+            <h1>MBPush</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MBInAppMessageViewBackgroundStyle</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">MBPush</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>The style of the background of the messages
-For banner messages the default is <code><a href="../Enums/MBInAppMessageViewBackgroundStyle.html#/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO11translucentyA2CmF">MBInAppMessageViewBackgroundStyle.translucent</a></code>, for the others it&rsquo;s <code><a href="../Enums/MBInAppMessageViewBackgroundStyle.html#/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO5solidyA2CmF">MBInAppMessageViewBackgroundStyle.solid</a></code></p>
+            <p>Wrapper around MPush to access it from the messages plugin</p>
 
           </div>
         </section>
@@ -167,9 +166,9 @@ For banner messages the default is <code><a href="../Enums/MBInAppMessageViewBac
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO5solidyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/solid" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO5solidyA2CmF">solid</a>
+                    <a name="/s:15MBMessagesSwift6MBPushC10didReceive_18withContentHandlerySo21UNNotificationRequestC_ySo0iG0CctFZ"></a>
+                    <a name="//apple_ref/swift/Method/didReceive(_:withContentHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift6MBPushC10didReceive_18withContentHandlerySo21UNNotificationRequestC_ySo0iG0CctFZ">didReceive(_:<wbr>withContentHandler:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -177,41 +176,14 @@ For banner messages the default is <code><a href="../Enums/MBInAppMessageViewBac
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A solid color background</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">solid</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO11translucentyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/translucent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15MBMessagesSwift33MBInAppMessageViewBackgroundStyleO11translucentyA2CmF">translucent</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A translucent background, created with <code>UIVisualEffectView</code></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">translucent</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">didReceive</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">UNNotificationRequest</span><span class="p">,</span> <span class="n">withContentHandler</span> <span class="nv">contentHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationContent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
