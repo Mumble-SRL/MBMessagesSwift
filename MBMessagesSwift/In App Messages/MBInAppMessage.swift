@@ -105,7 +105,6 @@ public class MBInAppMessage: NSObject {
         let button1LinkType = !(dictionary["cta_action_type"] is NSNull) ? dictionary["cta_action_type"] as? String : nil
         var buttons = [MBInAppMessageButton]()
         if let button1Title = button1Title,
-            let button1Link = button1Link,
             let button1LinkType = button1LinkType {
             let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button1LinkType)
             var sectionId: Int?
@@ -127,13 +126,12 @@ public class MBInAppMessage: NSObject {
         let button2Link = !(dictionary["cta2_action"] is NSNull) ? dictionary["cta2_action"] as? String : nil
         let button2LinkType = !(dictionary["cta2_action_type"] is NSNull) ? dictionary["cta2_action_type"] as? String : nil
         if let button2Title = button2Title,
-            let button2Link = button2Link,
             let button2LinkType = button2LinkType {
             let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button2LinkType)
             var sectionId: Int?
             var blockId: Int?
             if linkType == .section {
-                (sectionId, blockId) = MBInAppMessage.sectionBlockIdFromField(dictionary: dictionary, key: "cta_action")
+                (sectionId, blockId) = MBInAppMessage.sectionBlockIdFromField(dictionary: dictionary, key: "cta2_action")
             }
             buttons.append(MBInAppMessageButton(title: button2Title,
                                                 titleColor: button2TitleColor,
@@ -160,10 +158,12 @@ public class MBInAppMessage: NSObject {
                                                 key: String) -> (Int?, Int?) {
         var sectionId: Int?
         var blockId: Int?
-        if dictionary[key] is Int {
-            sectionId = dictionary[key] as? Int
+        if let sectionIdInt = dictionary[key] as? Int {
+            sectionId = sectionIdInt
         } else if let actionString = dictionary[key] as? String {
-            if let data = actionString.data(using: .utf8),
+            if let sectionIdInt = Int(actionString) {
+                sectionId = sectionIdInt
+            } else if let data = actionString.data(using: .utf8),
                 let actionDictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 sectionId = actionDictionary?["section_id"] as? Int
                 blockId = actionDictionary?["block_id"] as? Int
@@ -232,7 +232,7 @@ public class MBInAppMessageButton: NSObject {
     public init(title: String,
                 titleColor: UIColor? = nil,
                 backgroundColor: UIColor? = nil,
-                link: String,
+                link: String?,
                 linkType: MBInAppMessageButtonLinkType,
                 sectionId: Int?,
                 blockId: Int?) {
