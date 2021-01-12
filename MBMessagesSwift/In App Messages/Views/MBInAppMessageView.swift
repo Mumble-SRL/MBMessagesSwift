@@ -296,7 +296,10 @@ public class MBInAppMessageView: UIView {
         }
     }
     
-    private func openLink(link: String) {
+    private func openLink(link: String?) {
+        guard let link = link else {
+            return
+        }
         if link.hasPrefix("http") {
             if let viewController = viewController {
                 if let url = URL(string: link) {

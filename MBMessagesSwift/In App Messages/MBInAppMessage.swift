@@ -105,14 +105,20 @@ public class MBInAppMessage: NSObject {
         let button1LinkType = !(dictionary["cta_action_type"] is NSNull) ? dictionary["cta_action_type"] as? String : nil
         var buttons = [MBInAppMessageButton]()
         if let button1Title = button1Title,
-            let button1Link = button1Link,
             let button1LinkType = button1LinkType {
             let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button1LinkType)
+            var sectionId: Int?
+            var blockId: Int?
+            if linkType == .section {
+                (sectionId, blockId) = MBInAppMessage.sectionBlockIdFromField(dictionary: dictionary, key: "cta_action")
+            }
             buttons.append(MBInAppMessageButton(title: button1Title,
                                                 titleColor: button1TitleColor,
                                                 backgroundColor: button1BackgroundColor,
                                                 link: button1Link,
-                                                linkType: linkType))
+                                                linkType: linkType,
+                                                sectionId: sectionId,
+                                                blockId: blockId))
         }
         let button2Title = !(dictionary["cta2_text"] is NSNull) ? dictionary["cta2_text"] as? String : nil
         let button2TitleColor = MBInAppMessage.colorFromField(dictionary: dictionary, key: "cta2_text_color")
@@ -120,14 +126,20 @@ public class MBInAppMessage: NSObject {
         let button2Link = !(dictionary["cta2_action"] is NSNull) ? dictionary["cta2_action"] as? String : nil
         let button2LinkType = !(dictionary["cta2_action_type"] is NSNull) ? dictionary["cta2_action_type"] as? String : nil
         if let button2Title = button2Title,
-            let button2Link = button2Link,
             let button2LinkType = button2LinkType {
             let linkType = MBInAppMessageButtonLinkType.butttonLinkType(button2LinkType)
+            var sectionId: Int?
+            var blockId: Int?
+            if linkType == .section {
+                (sectionId, blockId) = MBInAppMessage.sectionBlockIdFromField(dictionary: dictionary, key: "cta2_action")
+            }
             buttons.append(MBInAppMessageButton(title: button2Title,
                                                 titleColor: button2TitleColor,
                                                 backgroundColor: button2BackgroundColor,
                                                 link: button2Link,
-                                                linkType: linkType))
+                                                linkType: linkType,
+                                                sectionId: sectionId,
+                                                blockId: blockId))
         }
         self.init(id: id,
                   style: style,
@@ -139,6 +151,25 @@ public class MBInAppMessage: NSObject {
                   image: image,
                   backgroundColor: backgroundColor,
                   buttons: buttons.count != 0 ? buttons : nil)
+    }
+    
+    /// Parse the field of the dictionary with the key and returns sectionId/blockId if present
+    private static func sectionBlockIdFromField(dictionary: [String: Any],
+                                                key: String) -> (Int?, Int?) {
+        var sectionId: Int?
+        var blockId: Int?
+        if let sectionIdInt = dictionary[key] as? Int {
+            sectionId = sectionIdInt
+        } else if let actionString = dictionary[key] as? String {
+            if let sectionIdInt = Int(actionString) {
+                sectionId = sectionIdInt
+            } else if let data = actionString.data(using: .utf8),
+                let actionDictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                sectionId = actionDictionary["section_id"] as? Int
+                blockId = actionDictionary["block_id"] as? Int
+            }
+        }
+        return (sectionId, blockId)
     }
     
     /// Returns a color from the field of the dictionary with the key passed
@@ -159,6 +190,8 @@ public enum MBInAppMessageButtonLinkType: Int {
     case link
     /// An in app link
     case inApp
+    /// A link to a section of MBurger
+    case section
     
     /// Returns a MBInAppMessageButtonLinkType given a string, ttipically from the APIs
     /// - Parameters:
@@ -170,6 +203,8 @@ public enum MBInAppMessageButtonLinkType: Int {
             return link
         case "in_app", "inapp":
             return inApp
+        case "section":
+            return section
         default:
             return link
         }
@@ -185,20 +220,28 @@ public class MBInAppMessageButton: NSObject {
     /// An optional background color
     public let backgroundColor: UIColor?
     /// The link of the button
-    public let link: String!
+    public let link: String?
     /// The type of link of the button
     public let linkType: MBInAppMessageButtonLinkType!
-    
+    /// If the link is a section link, the id of the section
+    public let sectionId: Int?
+    /// If the link is a section link, the id of the block
+    public let blockId: Int?
+
     /// Initializes a button with the parameters passed
     public init(title: String,
                 titleColor: UIColor? = nil,
                 backgroundColor: UIColor? = nil,
-                link: String,
-                linkType: MBInAppMessageButtonLinkType) {
+                link: String?,
+                linkType: MBInAppMessageButtonLinkType,
+                sectionId: Int?,
+                blockId: Int?) {
         self.title = title
         self.titleColor = titleColor
         self.backgroundColor = backgroundColor
         self.link = link
         self.linkType = linkType
+        self.sectionId = sectionId
+        self.blockId = blockId
     }
 }
