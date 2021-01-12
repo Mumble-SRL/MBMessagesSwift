@@ -164,10 +164,12 @@ public class MBInAppMessage: NSObject {
             if let sectionIdInt = Int(actionString) {
                 sectionId = sectionIdInt
             } else if let data = actionString.data(using: .utf8) {
-                if let actionDictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    sectionId = actionDictionary["section_id"] as? Int
-                    blockId = actionDictionary["block_id"] as? Int
-                }
+                do {
+                    if let actionDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        sectionId = actionDictionary["section_id"] as? Int
+                        blockId = actionDictionary["block_id"] as? Int
+                    }
+                } catch {}
             }
         }
         return (sectionId, blockId)
