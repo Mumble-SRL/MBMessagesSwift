@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           MBMessagesSwift 0.1 Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -117,7 +117,10 @@
                 <a class="nav-group-task-link" href="../Classes/MBMessage.html">MBMessage</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/MBPush.html">MBPush</a>
+                <a class="nav-group-task-link" href="../Classes/MBMessagesSwiftNotificationService.html">MBMessagesSwiftNotificationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Classes.html#/c:@M@MBMessagesSwift@objc(cs)MBPush">MBPush</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBPushMessage.html">MBPushMessage</a>
@@ -264,7 +267,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -301,9 +304,63 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15MBMessagesSwift20MBInAppMessageButtonC5title0G5Color010backgroundH04link0J4TypeACSS_So7UIColorCSgAKSSAA0cdef4LinkK0Otcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(title:titleColor:backgroundColor:link:linkType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15MBMessagesSwift20MBInAppMessageButtonC5title0G5Color010backgroundH04link0J4TypeACSS_So7UIColorCSgAKSSAA0cdef4LinkK0Otcfc">init(title:<wbr>titleColor:<wbr>backgroundColor:<wbr>link:<wbr>linkType:<wbr>)</a>
+                    <a name="/s:15MBMessagesSwift20MBInAppMessageButtonC9sectionIdSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/sectionId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift20MBInAppMessageButtonC9sectionIdSiSgvp">sectionId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the link is a section link, the id of the section</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15MBMessagesSwift20MBInAppMessageButtonC7blockIdSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/blockId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift20MBInAppMessageButtonC7blockIdSiSgvp">blockId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the link is a section link, the id of the block</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15MBMessagesSwift20MBInAppMessageButtonC5title0G5Color010backgroundH04link0J4Type9sectionId05blockM0ACSS_So7UIColorCSgAMSSSgAA0cdef4LinkK0OSiSgAQtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(title:titleColor:backgroundColor:link:linkType:sectionId:blockId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift20MBInAppMessageButtonC5title0G5Color010backgroundH04link0J4Type9sectionId05blockM0ACSS_So7UIColorCSgAMSSSgAA0cdef4LinkK0OSiSgAQtcfc">init(title:<wbr>titleColor:<wbr>backgroundColor:<wbr>link:<wbr>linkType:<wbr>sectionId:<wbr>blockId:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,8 +378,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
             <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
             <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-            <span class="nv">linkType</span><span class="p">:</span> <span class="kt"><a href="../Enums/MBInAppMessageButtonLinkType.html">MBInAppMessageButtonLinkType</a></span><span class="p">)</span></code></pre>
+            <span class="nv">link</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+            <span class="nv">linkType</span><span class="p">:</span> <span class="kt"><a href="../Enums/MBInAppMessageButtonLinkType.html">MBInAppMessageButtonLinkType</a></span><span class="p">,</span>
+            <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span>
+            <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -337,8 +396,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-10-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2021-01-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

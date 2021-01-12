@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           MBMessagesSwift 0.1 Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -117,7 +117,10 @@
                 <a class="nav-group-task-link" href="../Classes/MBMessage.html">MBMessage</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/MBPush.html">MBPush</a>
+                <a class="nav-group-task-link" href="../Classes/MBMessagesSwiftNotificationService.html">MBMessagesSwiftNotificationService</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Classes.html#/c:@M@MBMessagesSwift@objc(cs)MBPush">MBPush</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBPushMessage.html">MBPushMessage</a>
@@ -410,6 +413,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:15MBMessagesSwift9MBMessageC13sendAfterDaysSivp"></a>
+                    <a name="//apple_ref/swift/Property/sendAfterDays" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift9MBMessageC13sendAfterDaysSivp">sendAfterDays</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of days to wait to show the message</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">sendAfterDays</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:15MBMessagesSwift9MBMessageC8triggersypSgvp"></a>
                     <a name="//apple_ref/swift/Property/triggers" class="dashAnchor"></a>
                     <a class="token" href="#/s:15MBMessagesSwift9MBMessageC8triggersypSgvp">triggers</a>
@@ -437,9 +467,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15MBMessagesSwift9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endN014automationIsOn8triggersACSi_S2SAA0K4TypeOAA04MBInjK0CSgAA06MBPushK0CSg10Foundation0N0VAXSbypSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(id:title:messageDescription:type:inAppMessage:push:startDate:endDate:automationIsOn:triggers:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15MBMessagesSwift9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endN014automationIsOn8triggersACSi_S2SAA0K4TypeOAA04MBInjK0CSgAA06MBPushK0CSg10Foundation0N0VAXSbypSgtcfc">init(id:<wbr>title:<wbr>messageDescription:<wbr>type:<wbr>inAppMessage:<wbr>push:<wbr>startDate:<wbr>endDate:<wbr>automationIsOn:<wbr>triggers:<wbr>)</a>
+                    <a name="/s:15MBMessagesSwift9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endN014automationIsOn13sendAfterDays8triggersACSi_S2SAA0K4TypeOAA04MBInjK0CSgAA06MBPushK0CSg10Foundation0N0VAYSbSiypSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(id:title:messageDescription:type:inAppMessage:push:startDate:endDate:automationIsOn:sendAfterDays:triggers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15MBMessagesSwift9MBMessageC2id5title18messageDescription4type12inAppMessage4push9startDate03endN014automationIsOn13sendAfterDays8triggersACSi_S2SAA0K4TypeOAA04MBInjK0CSgAA06MBPushK0CSg10Foundation0N0VAYSbSiypSgtcfc">init(id:<wbr>title:<wbr>messageDescription:<wbr>type:<wbr>inAppMessage:<wbr>push:<wbr>startDate:<wbr>endDate:<wbr>automationIsOn:<wbr>sendAfterDays:<wbr>triggers:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -463,6 +493,7 @@
             <span class="nv">startDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
             <span class="nv">endDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
             <span class="nv">automationIsOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span>
+            <span class="nv">sendAfterDays</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
             <span class="nv">triggers</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span></code></pre>
 
                         </div>
@@ -506,8 +537,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-10-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2021 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2021-01-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

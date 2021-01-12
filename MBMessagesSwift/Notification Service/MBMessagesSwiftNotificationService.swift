@@ -9,7 +9,9 @@
 import UIKit
 import UserNotifications
 
+/// Notification service called when a push notification arrives and a media needs to be downloaded
 public class MBMessagesSwiftNotificationService: NSObject {
+    /// Function called by the UserNotification framework to customize the content of the push notification. It downloads and attach the media of the notification, if exists.
     public static func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         let mutableContent = request.content.mutableCopy() as? UNMutableNotificationContent
         
