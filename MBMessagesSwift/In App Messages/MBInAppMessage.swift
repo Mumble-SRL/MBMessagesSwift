@@ -46,7 +46,7 @@ public class MBInAppMessage: NSObject {
     public let id: Int!
     /// The style of the message
     public let style: MBInAppMessageStyle!
-    /// The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds
+    /// The duration it will be on screen, after this duration the message will disappear automatically, by default it stays on screen until the user closes it.
     public let duration: TimeInterval!
     /// The title of the message, it's optional and defaults to nil.
     public let title: String?
@@ -66,7 +66,7 @@ public class MBInAppMessage: NSObject {
     /// Initializes a message with the parameters passed
     public init(id: Int,
                 style: MBInAppMessageStyle!,
-                duration: TimeInterval? = 5,
+                duration: TimeInterval? = -1,
                 title: String? = nil,
                 titleColor: UIColor? = nil,
                 body: String!,
@@ -76,7 +76,7 @@ public class MBInAppMessage: NSObject {
                 buttons: [MBInAppMessageButton]? = nil) {
         self.id = id
         self.style = style
-        self.duration = duration ?? 5
+        self.duration = duration ?? -1
         self.title = title
         self.titleColor = titleColor
         self.body = body
