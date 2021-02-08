@@ -26,10 +26,10 @@ public class MBInAppMessageManager: NSObject {
                                        styleDelegate: MBInAppMessageViewStyleDelegate? = nil,
                                        ignoreShowedMessages: Bool = false) {
         guard showingMessages == nil else {
+            let showingMessagesIds: [Int] = (showingMessages ?? []).map({ $0.id })
+            var messagesWithoutShowedMessages = messages
+            messagesWithoutShowedMessages.removeAll(where: {showingMessagesIds.contains($0.id)})
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                let showingMessagesIds: [Int] = (showingMessages ?? []).map({ $0.id })
-                var messagesWithoutShowedMessages = messages
-                messagesWithoutShowedMessages.removeAll(where: {showingMessagesIds.contains($0.id)})
                 self.presentMessages(messagesWithoutShowedMessages,
                                      delegate: delegate,
                                      styleDelegate: styleDelegate,
