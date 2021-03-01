@@ -196,6 +196,9 @@ public enum MBInAppMessageButtonLinkType: Int {
     /// A link to a section of MBurger
     case section
     
+    /// No action
+    case noAction
+
     /// Returns a MBInAppMessageButtonLinkType given a string, ttipically from the APIs
     /// - Parameters:
     ///   - string: The string to convert.
@@ -208,8 +211,10 @@ public enum MBInAppMessageButtonLinkType: Int {
             return inApp
         case "section":
             return section
+        case "no-action":
+            return noAction
         default:
-            return link
+            return noAction
         }
     }
 }

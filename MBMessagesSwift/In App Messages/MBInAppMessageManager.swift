@@ -110,6 +110,9 @@ public class MBInAppMessageManager: NSObject {
                     showingMessages = nil
                 }
             }
+            messageView.buttonPressedBlock = {
+                showingMessages = nil
+            }
             setMessageShowed(message: message)
             MBMessageMetrics.createMessageMetricForInAppMessage(metric: .view, messageId: message.id)
             messageView.present()
@@ -142,8 +145,10 @@ public class MBInAppMessageManager: NSObject {
     // MARK: - Showed message handling
     
     private static func needsToShowMessage(message: MBMessage) -> Bool {
-        guard message.endDate >= Date() else {
-            return false
+        if message.automationIsOn {
+            guard message.endDate >= Date() else {
+                return false
+            }
         }
         guard let messageId = message.inAppMessage?.id else {
             return false

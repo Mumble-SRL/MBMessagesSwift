@@ -222,7 +222,10 @@ public class MBInAppMessageView: UIView {
     weak var viewController: UIViewController?
     
     /// Completion block called by the manager to display next messages if no button is pressed and the message view is dismissed
-    var completionBlock: (() -> Void)?
+    internal var completionBlock: (() -> Void)?
+    
+    /// Block called when a button is pressed, used by the manager to cleanup if a button is pressed
+    internal var buttonPressedBlock: (() -> Void)?
     
     init(message: MBMessage,
          delegate: MBInAppMessageViewDelegate? = nil,
@@ -274,6 +277,9 @@ public class MBInAppMessageView: UIView {
     
     @objc func buttonPressed(_ sender: UIButton) {
         MBMessageMetrics.createMessageMetricForInAppMessage(metric: .interaction, messageId: message.id)
+        if let buttonPressedBlock = buttonPressedBlock {
+            buttonPressedBlock()
+        }
         hideWithoutCallingCompletionBlock {
             guard let buttons = self.inAppMessage?.buttons else {
                 return
