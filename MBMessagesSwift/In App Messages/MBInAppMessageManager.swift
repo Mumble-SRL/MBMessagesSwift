@@ -44,6 +44,9 @@ public class MBInAppMessageManager: NSObject {
         guard messagesToShow.count != 0 else {
             return
         }
+        messagesToShow.sort { (m1, m2) -> Bool in
+            m1.createdAt.compare(m2.createdAt) == .orderedDescending
+        }
         guard let topMostViewController = topMostViewController() else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.presentMessages(messagesToShow,
