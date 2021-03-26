@@ -252,10 +252,17 @@ public class MBInAppMessageView: UIView {
     }
     
     func hideWithDuration(duration: TimeInterval) {
-        performHide(duration: duration, completionBlock: self.completionBlock)
+        let isBlockingMessage = inAppMessage?.isBlocking ?? false
+        if !isBlockingMessage {
+            performHide(duration: duration, completionBlock: self.completionBlock)
+        }
     }
     
     @objc func hide() {
+        let isBlockingMessage = inAppMessage?.isBlocking ?? false
+        if isBlockingMessage {
+            return
+        }
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         if self.superview != nil {
             performHide(duration: 0.3, completionBlock: self.completionBlock)
@@ -264,6 +271,13 @@ public class MBInAppMessageView: UIView {
     
     /// Used when a button is pressed, the completion block of the view is not called, but the one passed yes
     @objc func hideWithoutCallingCompletionBlock(completionBlock: (() -> Void)?) {
+        let isBlockingMessage = inAppMessage?.isBlocking ?? false
+        if isBlockingMessage {
+            if let completionBlock = completionBlock {
+                completionBlock()
+            }
+            return
+        }
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         if self.superview != nil {
             performHide(duration: 0.3, completionBlock: completionBlock)
