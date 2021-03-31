@@ -46,7 +46,9 @@ public class MBInAppMessage: NSObject {
     public let id: Int!
     /// The style of the message
     public let style: MBInAppMessageStyle!
-    /// The duration it will be on screen, after this duration the message will disappear automatically, the default is 5 seconds
+    /// If this is true the message blocks the user from navigating the app
+    public let isBlocking: Bool
+    /// The duration it will be on screen, after this duration the message will disappear automatically, by default it stays on screen until the user closes it.
     public let duration: TimeInterval!
     /// The title of the message, it's optional and defaults to nil.
     public let title: String?
@@ -66,7 +68,8 @@ public class MBInAppMessage: NSObject {
     /// Initializes a message with the parameters passed
     public init(id: Int,
                 style: MBInAppMessageStyle!,
-                duration: TimeInterval? = 5,
+                isBlocking: Bool,
+                duration: TimeInterval? = -1,
                 title: String? = nil,
                 titleColor: UIColor? = nil,
                 body: String!,
@@ -76,7 +79,8 @@ public class MBInAppMessage: NSObject {
                 buttons: [MBInAppMessageButton]? = nil) {
         self.id = id
         self.style = style
-        self.duration = duration ?? 5
+        self.isBlocking = isBlocking
+        self.duration = duration ?? -1
         self.title = title
         self.titleColor = titleColor
         self.body = body
@@ -91,6 +95,7 @@ public class MBInAppMessage: NSObject {
         let id = dictionary["id"] as? Int ?? 0
         let styleString = dictionary["type"] as? String ?? ""
         let style = MBInAppMessageStyle.styleFromString(styleString)
+        let isBlocking = dictionary["is_blocking"] as? Bool ?? false
         let duration = !(dictionary["duration"] is NSNull) ? dictionary["duration"] as? Int : nil
         let title = dictionary["title"] as? String
         let titleColor = MBInAppMessage.colorFromField(dictionary: dictionary, key: "title_color")
@@ -143,6 +148,7 @@ public class MBInAppMessage: NSObject {
         }
         self.init(id: id,
                   style: style,
+                  isBlocking: isBlocking,
                   duration: duration != nil ? TimeInterval(duration!) : nil,
                   title: title,
                   titleColor: titleColor,
@@ -196,6 +202,9 @@ public enum MBInAppMessageButtonLinkType: Int {
     /// A link to a section of MBurger
     case section
     
+    /// No action
+    case noAction
+
     /// Returns a MBInAppMessageButtonLinkType given a string, ttipically from the APIs
     /// - Parameters:
     ///   - string: The string to convert.
@@ -208,8 +217,10 @@ public enum MBInAppMessageButtonLinkType: Int {
             return inApp
         case "section":
             return section
+        case "no-action":
+            return noAction
         default:
-            return link
+            return noAction
         }
     }
 }
