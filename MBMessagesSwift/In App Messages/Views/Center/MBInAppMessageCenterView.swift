@@ -111,7 +111,7 @@ public class MBInAppMessageCenterView: MBInAppMessageView {
                 imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                 imageView.heightAnchor.constraint(equalToConstant: imageHeight),
                 imageView.topAnchor.constraint(equalTo: closeButton?.bottomAnchor ?? contentView.topAnchor,
-                                               constant: 8)
+                                               constant: closeButton != nil ? 8 : 0)
             ])
             
             MBInAppMessageImageLoader.loadImage(url: image) { [weak self] (image) in

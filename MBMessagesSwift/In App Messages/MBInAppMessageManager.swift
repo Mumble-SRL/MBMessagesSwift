@@ -156,6 +156,9 @@ public class MBInAppMessageManager: NSObject {
         guard let messageId = message.inAppMessage?.id else {
             return false
         }
+        if message.inAppMessage?.isBlocking ?? false {
+            return true
+        }
         var showedMessagesCount: [Int: Int] = [:]
         let userDefaults = UserDefaults.standard
         if let outData = userDefaults.data(forKey: showedMessagesCountKey) {

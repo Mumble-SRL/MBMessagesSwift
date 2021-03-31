@@ -124,7 +124,7 @@ public class MBInAppMessageTopBannerView: MBInAppMessageView {
             addGestureRecognizer(panGesture)
         } else {
             NSLayoutConstraint.activate([
-                contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+                contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
             ])
         }
     }
