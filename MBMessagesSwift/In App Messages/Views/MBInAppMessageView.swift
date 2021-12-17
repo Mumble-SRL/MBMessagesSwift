@@ -12,7 +12,7 @@ import SafariServices
 /// This protocol can be used to receive calls when a `MBInAppMessageView` is displayed and is hidden, it will also receives a call when a button is pressed.
 /// Implement this delegate if your app need to perform actions when a button is tapped, e.g. open a section of the app if a button with an in-app link is pressed.
 /// All functions of this protocol are optional and, by default, they don't do anything.
-public protocol MBInAppMessageViewDelegate: class {
+public protocol MBInAppMessageViewDelegate: AnyObject {
     /// This function is called just before a `MBInAppMessageView` appears.
     /// - Parameters:
     ///   - view: The view that will be showed.
@@ -49,7 +49,7 @@ public extension MBInAppMessageViewDelegate {
 
 /// This protocol can be used to use different colors and fonts to the in-app messages views.
 /// Returning values from those functions will override the defults and the colors and fonts setted in the dashboard.
-public protocol MBInAppMessageViewStyleDelegate: class {
+public protocol MBInAppMessageViewStyleDelegate: AnyObject {
     /// The background style that will be used for the message.
     /// The default value is `MBInAppMessageViewBackgroundStyle.translucent` for banner messages, `MBInAppMessageViewBackgroundStyle.solid` otherwise
     /// - Parameters:
