@@ -11,7 +11,7 @@ import MBurgerSwift
 import MBNetworkingSwift
 
 /// The delegate of the plugin, you can use this to check if the message check fails.
-public protocol MBMessagesDelegate: class {
+public protocol MBMessagesDelegate: AnyObject {
     /// Tells the delegate the the message check failed
     /// - Parameters:
     ///   - sender: The `MBMessages` plugins that sent checked the messages.
@@ -127,11 +127,11 @@ public class MBMessages: NSObject, MBPlugin {
     /// This will set the token of the MPushSwift SDK.
     /// If you need help setting up the push notifiications go to the [MPush documentation](https://docs.mumbleideas.it/mpush/ios/introduction/).
     public static var pushToken: String {
-        set {
-            MBPush.pushToken = newValue
-        }
         get {
             return MBPush.pushToken
+        }
+        set {
+            MBPush.pushToken = newValue
         }
     }
     

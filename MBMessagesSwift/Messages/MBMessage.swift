@@ -52,10 +52,10 @@ import UIKit
     public let createdAt: Date
 
     /// The start date of the message
-    public let startDate: Date
+    public let startDate: Date?
     
     /// The end date of the message
-    public let endDate: Date
+    public let endDate: Date?
 
     /// If automation is on for this message
     public let automationIsOn: Bool
@@ -77,8 +77,8 @@ import UIKit
                 inAppMessage: MBInAppMessage? = nil,
                 push: MBPushMessage? = nil,
                 createdAt: Date,
-                startDate: Date,
-                endDate: Date,
+                startDate: Date?,
+                endDate: Date?,
                 automationIsOn: Bool,
                 sendAfterDays: Int,
                 repeatTimes: Int,
@@ -121,12 +121,17 @@ import UIKit
         let createdDateInt = dictionary["created_at"] as? Int ?? 0
         let createdDate = Date(timeIntervalSince1970: TimeInterval(createdDateInt))
 
-        let startDateInt = dictionary["starts_at"] as? Int ?? 0
-        let startDate = Date(timeIntervalSince1970: TimeInterval(startDateInt))
+        var startDate: Date?
+        var endDate: Date?
         
-        let endDateInt = dictionary["ends_at"] as? Int ?? 0
-        let endDate = Date(timeIntervalSince1970: TimeInterval(endDateInt))
-
+        if let startDateInt = dictionary["starts_at"] as? Int {
+            startDate = Date(timeIntervalSince1970: TimeInterval(startDateInt))
+        }
+        
+        if let endDateInt = dictionary["ends_at"] as? Int {
+            endDate = Date(timeIntervalSince1970: TimeInterval(endDateInt))
+        }
+        
         let automationIsOn = dictionary["automation"] as? Bool ?? false
         
         let triggers = dictionary["triggers"] as? [String: Any]

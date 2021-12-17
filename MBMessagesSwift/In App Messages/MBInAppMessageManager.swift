@@ -13,7 +13,7 @@ import SafariServices
 public class MBInAppMessageManager: NSObject {
     
     /// If the manager is showing messages, this var has the messages showed.
-    private static var showingMessages: [MBMessage]? = nil
+    private static var showingMessages: [MBMessage]?
     
     /// Present an array of in-app messages, if they're not been already presented
     /// - Parameters:
@@ -148,8 +148,8 @@ public class MBInAppMessageManager: NSObject {
     // MARK: - Showed message handling
     
     private static func needsToShowMessage(message: MBMessage) -> Bool {
-        if message.automationIsOn {
-            guard message.endDate >= Date() else {
+        if let endDate = message.endDate {
+            guard endDate >= Date() else {
                 return false
             }
         }

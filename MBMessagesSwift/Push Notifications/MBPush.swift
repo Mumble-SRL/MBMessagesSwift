@@ -13,11 +13,11 @@ import UserNotifications
 /// Wrapper around MPush to access it from the messages plugin
 public class MBPush: NSObject {
     static var pushToken: String {
-        set {
-            MPush.token = newValue
-        }
         get {
             return MPush.token
+        }
+        set {
+            MPush.token = newValue
         }
     }
     
